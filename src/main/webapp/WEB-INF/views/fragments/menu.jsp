@@ -21,6 +21,7 @@
 		<acme:menu-option code="master.menu.anonymous" access="isAnonymous()">
 			<acme:menu-suboption code="master.menu.anonymous.favourite-link" action="http://www.example.com/"/>
 			<acme:menu-suboption code="master.menu.anonymous.jorge-toledo-vega" action="https://github.com/jvegax"/>
+			<acme:menu-suboption code="master.menu.anonymous.jose-antonio-marquez-lopez" action="https://github.com/josmarlop16"/>
 		</acme:menu-option>
 
 		<acme:menu-option code="master.menu.administrator" access="hasRole('Administrator')">
