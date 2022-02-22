@@ -18,7 +18,7 @@ master.menu.sign-out = Salir
 # master.menu.anonymous #######################################################
 
 master.menu.anonymous = Anónimo
-master.menu.anonymous.favourite-link = Enlace favorito
+master.menu.anonymous.favourite-link =  20063966P: OÑATE PARRA, JULIÁN
 
 # master.menu.administrator ###################################################
 
@@ -32,12 +32,12 @@ master.menu.administrator.shut-down = Parar el sistema
 # master.menu.provider ########################################################
 
 master.menu.provider = Proveedor
-master.menu.provider.favourite-link = Enlace favorito
+master.menu.provider.favourite-link = 20063966P: OÑATE PARRA, JULIÁN
 
 # master.menu.consumer ##########################################################
 
 master.menu.consumer = Consumidor
-master.menu.consumer.favourite-link = Enlace favorito
+master.menu.consumer.favourite-link = 20063966P: OÑATE PARRA, JULIÁN
 
 # master.menu.user-account ####################################################
 
