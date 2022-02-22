@@ -20,8 +20,10 @@
 	<acme:menu-left>
 		<acme:menu-option code="master.menu.anonymous" access="isAnonymous()">
 			<acme:menu-suboption code="master.menu.anonymous.favourite-link" action="http://www.example.com/"/>
+
 			<acme:menu-suboption code="master.menu.anonymous.jorge-toledo-vega" action="https://github.com/jvegax"/>
       <acme:menu-suboption code="master.menu.anonymous.antonio-mira-otero" action="https://github.com/Anton1o007"/>
+      <acme:menu-suboption code="master.menu.anonymous.jose-caceres-gomez" action="https://github.com/joscacgom"/>
 		</acme:menu-option>
 
 		<acme:menu-option code="master.menu.administrator" access="hasRole('Administrator')">
