@@ -25,6 +25,7 @@
 			<acme:menu-suboption code="master.menu.anonymous.jose-antonio-marquez-lopez" action="https://github.com/josmarlop16"/>
       <acme:menu-suboption code="master.menu.anonymous.antonio-mira-otero" action="https://github.com/Anton1o007"/>
       <acme:menu-suboption code="master.menu.anonymous.jose-caceres-gomez" action="https://github.com/joscacgom"/>
+			<acme:menu-suboption code="master.menu.anonymous.luis-rodriguez-garcia" action="https://github.com/LuisUsrDev"/>
 		</acme:menu-option>
 
 		<acme:menu-option code="master.menu.administrator" access="hasRole('Administrator')">
