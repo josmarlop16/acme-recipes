@@ -1,14 +1,12 @@
-logs/
-
 target/
 !.mvn/wrapper/maven-wrapper.jar
 
 ### STS ###
 .apt_generated
-.classpath
+#.classpath
 .factorypath
-.project
-.settings
+#.project
+#.settings
 .springBeans
 
 ### IntelliJ IDEA ###

@@ -20,13 +20,6 @@ master.menu.sign-out = Sign out
 master.menu.anonymous = Anonymous
 master.menu.anonymous.favourite-link = Favourite link
 
-master.menu.anonymous.jorge-toledo-vega = 49520347J: TOLEDO VEGA, JORGE
-master.menu.anonymous.jose-antonio-marquez-lopez = 80236202N: MARQUEZ LOPEZ, JOSE ANTONIO
-master.menu.anonymous.antonio-mira-otero = 53932915P: MIRA OTERO, ANTONIO
-master.menu.anonymous.jose-caceres-gomez = 44248655J: CÁCERES GÓMEZ, JOSÉ
-master.menu.anonymous.favourite-link = 20063966P: OÑATE PARRA, JULIÁN
-master.menu.anonymous.luis-rodriguez-garcia = 30261073L: RODRIGUEZ GARCIA, LUIS
-
 # master.menu.administrator ###################################################
 
 master.menu.administrator = Administrator
@@ -39,12 +32,12 @@ master.menu.administrator.shut-down = Shut down
 # master.menu.provider ########################################################
 
 master.menu.provider = Provider
-master.menu.provider.favourite-link = 20063966P: OÑATE PARRA, JULIÁN
+master.menu.provider.favourite-link = Favourite link
 
 # master.menu.consumer ##########################################################
 
 master.menu.consumer = Consumer
-master.menu.consumer.favourite-link = 20063966P: OÑATE PARRA, JULIÁN
+master.menu.consumer.favourite-link = Favourite link
 
 # master.menu.user-account ####################################################
 
