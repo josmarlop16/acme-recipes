@@ -9,10 +9,3 @@
 # they accept any liabilities with respect to them.
 
 - Rafael Corchuelo (corchu@us.es)
-
-- Jorge Toledo Vega (jortolhur@alum.us.es)
-- Antonio Mira Otero (antmirote@alum.us.es
-- Jose Antonio Marquez Lopez (josmarlop16@alum.us.es)
-- Julián Oñate (julonapar1@alum.us.es)
-- Luis Rodríguez García (luirodgar3@alum.us.es)
-- José Cáceres Gómez (joscacgom@alum.us.es)
