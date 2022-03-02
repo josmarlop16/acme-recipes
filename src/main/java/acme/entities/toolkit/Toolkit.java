@@ -2,11 +2,15 @@ package acme.entities.toolkit;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Pattern;
+
 import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.URL;
+
+import acme.entities.component.Component;
 import acme.framework.entities.AbstractEntity;
 import lombok.Getter;
 import lombok.Setter;
@@ -31,10 +35,6 @@ public class Toolkit extends AbstractEntity {
 	protected String code;
 	
 	@NotBlank
-	@Length(min = 0, max = 100)
-	protected String technology;
-	
-	@NotBlank
 	@Length(min = 0, max = 255)
 	protected String description;
 	
@@ -45,5 +45,11 @@ public class Toolkit extends AbstractEntity {
 	@OneToOne(optional = true)
 	@URL
 	protected String optionalLink;
+	
+	@ManyToOne
+	protected Component component;
+	
+	@OneToOne
+	protected Tool tool;
 
 }
