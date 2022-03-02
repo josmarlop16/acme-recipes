@@ -17,9 +17,11 @@ import lombok.Setter;
 public class Toolkit extends AbstractEntity {
 
 	// Serialisation identifier -----------------------------------------------
+	
 	protected static final long	serialVersionUID	= 1L;
 
 	// Attributes -------------------------------------------------------------
+	
 	@NotBlank
 	@Length(min = 0, max = 100)
 	protected String title;
