@@ -1,6 +1,5 @@
 package acme.roles;
 
-import javax.persistence.OneToOne;
 import javax.validation.constraints.NotBlank;
 
 import org.hibernate.validator.constraints.Length;
@@ -24,7 +23,6 @@ public class Patron extends UserRole{
 	@Length(max = 256)
 	protected String statement;
 
-	@OneToOne(optional = true)
 	@URL
 	protected String optionalLink;
 

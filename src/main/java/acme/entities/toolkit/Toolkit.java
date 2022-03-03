@@ -43,7 +43,6 @@ public class Toolkit extends AbstractEntity {
 	@Length(min = 0, max = 255)
 	protected String assemblyNotes;
 	
-	@OneToOne(optional = true)
 	@URL
 	protected String optionalLink;
 	

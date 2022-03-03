@@ -2,8 +2,6 @@ package acme.entities.component;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.OneToOne;
-
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Positive;
@@ -43,7 +41,6 @@ public class Component extends AbstractEntity {
 	@Positive
 	protected Double retailPrice;
 	
-	@OneToOne(optional = true)
 	@URL
 	protected String optionalLink;
 
