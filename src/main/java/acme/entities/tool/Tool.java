@@ -1,3 +1,4 @@
+
 package acme.entities.tool;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -43,3 +44,4 @@ public class Tool extends AbstractEntity {
 		@URL
 		protected String furtherInfo;
 }
+
