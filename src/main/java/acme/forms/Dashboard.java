@@ -22,10 +22,8 @@ import lombok.Setter;
 public class Dashboard implements Serializable {
 
 	// Serialisation identifier -----------------------------------------------
-
 	protected static final long	serialVersionUID	= 1L;
 
-	// Attributes -------------------------------------------------------------
 
 //	total number of pro-posed/accepted/denied patronages
 	Integer						totalNumberOfProposedPatronages;
@@ -46,16 +44,5 @@ public class Dashboard implements Serializable {
 	Double						maximumBudgetOfProposedPatronages;
 	Double						maximumBudgetOfAcceptedPatronages;
 	Double						maximumBudgetOfDeniedPatronages;
-	
-	
-	
-	
-	
-	
-
-
-	// Derived attributes -----------------------------------------------------
-
-	// Relationships ----------------------------------------------------------
 
 }
