@@ -20,37 +20,56 @@ import acme.framework.repositories.AbstractRepository;
 @Repository
 public interface PatronDashboardRepository extends AbstractRepository {
 
-	@Query("select count(t) from Patron t")
+//	Number of patronages by statuses
+	@Query("select count(p) from Patronage p where p.status = 0")
 	Integer totalNumberOfProposedPatronages();
 
-	@Query("select count(t) from Patron t")
+	@Query("select count(p) from Patronage p where p.status = 1")
 	Integer totalNumberOfAcceptedPatronages();
 
-	@Query("select count(t) from Patron t")
+	@Query("select count(p) from Patronage p where p.status = 2")
 	Integer totalNumberOfDeniedPatronages();
 
-	@Query("select count(t) from Patron t")
-	Double averageNumberOfPatronages();
+//	Average budget from patronages by statuses
+	@Query("select avg(p.budget) from Patronage p where p.status = 0")
+	Double averageBudgetOfProposedPatronages();
+	
+	@Query("select avg(p.budget) from Patronage p where p.status = 1")
+	Double averageBudgetOfAcceptedPatronages();
+	
+	@Query("select avg(p.budget) from Patronage p where p.status = 2")
+	Double averageBudgetOfDeniedPatronages();
 
-	@Query("select count(t) from Patron t")
-	Long deviationOfPatronages();
-
-	@Query("select count(t) from Patron t")
+	
+//	Deviation of budgets by patronage statuses
+	@Query("select stddev(p.budget) from Patronage p where p.status = 0")
+	Long deviationBudgetOfProposedPatronages();
+	
+	@Query("select stddev(p.budget) from Patronage p where p.status = 1")
+	Long deviationBudgetOfAcceptedPatronages();
+	
+	@Query("select stddev(p.budget) from Patronage p where p.status = 2")
+	Long deviationBudgetOfDeniedPatronages();
+	
+	
+//	Minimum budget of patronages by statuses
+	@Query("select min(p.budget) from Patronage p where p.status = 0")
 	Double minimumBudgetOfProposedPatronages();
 
-	@Query("select count(t) from Patron t")
+	@Query("select min(p.budget) from Patronage p where p.status = 1")
 	Double minimumBudgetOfAcceptedPatronages();
 
-	@Query("select count(t) from Patron t")
+	@Query("select min(p.budget) from Patronage p where p.status = 2")
 	Double minimumBudgetOfDeniedPatronages();
 
-	@Query("select count(t) from Patron t")
+//	Maximum budget of patronages by statuses
+	@Query("select max(p.budget) from Patronage p where p.status = 0")
 	Double maximumBudgetOfProposedPatronages();
 
-	@Query("select count(t) from Patron t")
+	@Query("select max(p.budget) from Patronage p where p.status = 1")
 	Double maximumBudgetOfAcceptedPatronages();
 
-	@Query("select count(t) from Patron t")
+	@Query("select max(p.budget) from Patronage p where p.status = 2")
 	Double maximumBudgetOfDeniedPatronages();
  
 }

@@ -30,13 +30,19 @@ public class Dashboard implements Serializable {
 	Integer						totalNumberOfAcceptedPatronages;
 	Integer						totalNumberOfDeniedPatronages;
 	
-//	average
-	Double						averageNumberOfPatronages;
+//	average budget
+	Double						averageBudgetOfProposedPatronages;
+	Double						averageBudgetOfAcceptedPatronages;
+	Double						averageBudgetOfDeniedPatronages;
 	
-//	deviation
-	Long						deviationOfPatronages;
+	
+//	deviation budget
+	Long						deviationBudgetOfProposedPatronages;
+	Long						deviationBudgetOfAcceptedPatronages;
+	Long						deviationBudgetOfDeniedPatronages;
+	
 
-//	minimum, and maximum budget of proposed/accepted/denied patronages grouped by currency.
+//	minimum, and maximum budget
 	Double						minimumBudgetOfProposedPatronages;
 	Double						minimumBudgetOfAcceptedPatronages;
 	Double						minimumBudgetOfDeniedPatronages;

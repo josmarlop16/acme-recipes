@@ -157,7 +157,7 @@
 					{
 						ticks : {
 							suggestedMin : 0.0,
-							suggestedMax : 1.0
+							suggestedMax : 10
 						}
 					}
 				]
