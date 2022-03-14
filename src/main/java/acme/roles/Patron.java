@@ -1,12 +1,18 @@
 package acme.roles;
 
+import javax.persistence.Entity;
 import javax.validation.constraints.NotBlank;
 
 import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.URL;
 
 import acme.framework.roles.UserRole;
+import lombok.Getter;
+import lombok.Setter;
 
+@Entity
+@Getter
+@Setter
 public class Patron extends UserRole{
 	
 	// Serialisation identifier -----------------------------------------------
@@ -16,11 +22,11 @@ public class Patron extends UserRole{
 	// Attributes -------------------------------------------------------------
 
 	@NotBlank
-	@Length(max = 101)
+	@Length(min = 0, max = 100)
 	protected String company;
 
 	@NotBlank
-	@Length(max = 256)
+	@Length(min = 0, max = 255)
 	protected String statement;
 
 	@URL
