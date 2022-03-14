@@ -57,9 +57,9 @@ public class PatronDashboardShowService implements AbstractShowService<Patron, D
 		final Dashboard result = new Dashboard();
 		
 //		total number of pro-posed/accepted/denied patronages
-		final Integer						totalNumberOfProposedPatronages;
-		final Integer						totalNumberOfAcceptedPatronages;
-		final Integer						totalNumberOfDeniedPatronages;
+		final Integer totalNumberOfProposedPatronages;
+		final Integer totalNumberOfAcceptedPatronages;
+		final Integer totalNumberOfDeniedPatronages;
 		
 //		average
 		final Double averageBudgetOfProposedPatronages;
@@ -73,13 +73,13 @@ public class PatronDashboardShowService implements AbstractShowService<Patron, D
 		
 
 //		minimum, and maximum budget of proposed/accepted/denied patronages grouped by currency.
-		final Double						minimumBudgetOfProposedPatronages;
-		final Double						minimumBudgetOfAcceptedPatronages;
-		final Double						minimumBudgetOfDeniedPatronages;
+		final Double minimumBudgetOfProposedPatronages;
+		final Double minimumBudgetOfAcceptedPatronages;
+		final Double minimumBudgetOfDeniedPatronages;
 		
-		final Double						maximumBudgetOfProposedPatronages;
-		final Double						maximumBudgetOfAcceptedPatronages;
-		final Double						maximumBudgetOfDeniedPatronages;
+		final Double maximumBudgetOfProposedPatronages;
+		final Double maximumBudgetOfAcceptedPatronages;
+		final Double maximumBudgetOfDeniedPatronages;
 		
 //		Number of proposed patronages
 		totalNumberOfProposedPatronages = this.repository.totalNumberOfProposedPatronages();

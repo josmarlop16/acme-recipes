@@ -37,7 +37,6 @@
 		</td>
 	</tr> 
 	<tr>
-	
 		<th scope="row">
 			<acme:message code="patron.dashboard.form.label.total-number-of-denied-patronages"/>
 		</th>
@@ -46,25 +45,54 @@
 		</td>
 	</tr> 
 	<tr>
-
 		<th scope="row">
-			<acme:message code="patron.dashboard.form.label.average-number-of-patronages"/>
+			<acme:message code="patron.dashboard.form.label.average-budget-proposed-patronages"/>
 		</th>
 		<td>
-			<acme:print value="${averageNumberOfPatronages}"/>
+			<acme:print value="${averageBudgetOfProposedPatronages}"/>
 		</td>
 	</tr> 
 	<tr>
-		
 		<th scope="row">
-			<acme:message code="patron.dashboard.form.label.deviation-of-patronages"/>
+			<acme:message code="patron.dashboard.form.label.average-budget-accepted-patronages"/>
 		</th>
 		<td>
-			<acme:print value="${deviationOfPatronages}"/>
+			<acme:print value="${averageBudgetOfAcceptedPatronages}"/>
+		</td>
+	</tr>
+	<tr>
+		<th scope="row">
+			<acme:message code="patron.dashboard.form.label.average-budget-denied-patronages"/>
+		</th>
+		<td>
+			<acme:print value="${averageBudgetOfDeniedPatronages}"/>
 		</td>
 	</tr> 
 	<tr>
-
+		<th scope="row">
+			<acme:message code="patron.dashboard.form.label.deviation-budget-proposed-patronages"/>
+		</th>
+		<td>
+			<acme:print value="${deviationBudgetOfProposedPatronages}"/>
+		</td>
+	</tr> 
+	<tr>
+		<th scope="row">
+			<acme:message code="patron.dashboard.form.label.deviation-budget-accepted-patronages"/>
+		</th>
+		<td>
+			<acme:print value="${deviationBudgetOfAcceptedPatronages}"/>
+		</td>
+	</tr> 
+	<tr>
+		<th scope="row">
+			<acme:message code="patron.dashboard.form.label.deviation-budget-denied-patronages"/>
+		</th>
+		<td>
+			<acme:print value="${deviationBudgetOfDeniedPatronages}"/>
+		</td>
+	</tr> 
+	<tr>
 		<th scope="row">
 			<acme:message code="patron.dashboard.form.label.minimum-budget-of-proposed-patronages"/>
 		</th>
@@ -74,15 +102,12 @@
 		
 	</tr> 
 	<tr>
-		
-		
 		<th scope="row">
 			<acme:message code="patron.dashboard.form.label.minimum-budget-of-accepted-patronages"/>
 		</th>
 		<td>
 			<acme:print value="${minimumBudgetOfAcceptedPatronages}"/>
 		</td>
-		
 	</tr> 
 	<tr>
 		
@@ -94,8 +119,6 @@
 		</td>
 	</tr> 
 	<tr>
-
-
 		<th scope="row">
 			<acme:message code="patron.dashboard.form.label.maximum-budget-of-proposed-patronages"/>
 		</th>
@@ -105,7 +128,6 @@
 		
 	</tr> 
 	<tr>
-		
 		<th scope="row">
 			<acme:message code="patron.dashboard.form.label.maximum-budget-of-accepted-patronages"/>
 		</th>
@@ -122,7 +144,6 @@
 		<td>
 			<acme:print value="${maximumBudgetOfDeniedPatronages}"/>
 		</td>
-		
 	</tr> 
 
 </table>
@@ -157,7 +178,7 @@
 					{
 						ticks : {
 							suggestedMin : 0.0,
-							suggestedMax : 10
+							suggestedMax : 5
 						}
 					}
 				]

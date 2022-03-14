@@ -15,8 +15,14 @@ patron.dashboard.form.label.total-number-of-proposed-patronages = Proposed patro
 patron.dashboard.form.label.total-number-of-accepted-patronages = Accepted patronages
 patron.dashboard.form.label.total-number-of-denied-patronages = Denied patronages
 
-patron.dashboard.form.label.average-number-of-patronages = Average number of patronages
-patron.dashboard.form.label.deviation-of-patronages = Deviation patronages
+patron.dashboard.form.label.average-budget-proposed-patronages = Average budget of proposed patronages
+patron.dashboard.form.label.average-budget-accepted-patronages = Average budget of accepted patronages
+patron.dashboard.form.label.average-budget-denied-patronages = Average budget of denied patronages
+
+
+patron.dashboard.form.label.deviation-budget-proposed-patronages = Deviation budget of proposed patronages
+patron.dashboard.form.label.deviation-budget-accepted-patronages = Deviation budget of accepted patronages
+patron.dashboard.form.label.deviation-budget-denied-patronages = Deviation budget of denied patronages
 
 patron.dashboard.form.label.minimum-budget-of-proposed-patronages = Minimum budget of proposed patronages
 patron.dashboard.form.label.minimum-budget-of-accepted-patronages = Minimum budget of accepted patronages

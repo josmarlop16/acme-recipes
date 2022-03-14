@@ -10,7 +10,7 @@
 
 authenticated.patron.form.label.company = Compañia: 
 authenticated.patron.form.label.statement = Statement:
-authenticated.patron.form.label.optional-link = Link:
+authenticated.patron.form.label.optionalLink = Link:
 
 
 authenticated.patron.form.button.create = Registrar
