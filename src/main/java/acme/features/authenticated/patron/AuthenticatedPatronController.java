@@ -1,5 +1,5 @@
 /*
- * AdministratorDashboardController.java
+ * AuthenticatedEmployerController.java
  *
  * Copyright (C) 2012-2022 Rafael Corchuelo.
  *
@@ -10,7 +10,7 @@
  * they accept any liabilities with respect to them.
  */
 
-package acme.features.patron.dashboard;
+package acme.features.authenticated.patron;
 
 import javax.annotation.PostConstruct;
 
@@ -18,25 +18,29 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import acme.forms.Dashboard;
 import acme.framework.controllers.AbstractController;
+import acme.framework.roles.Authenticated;
 import acme.roles.Patron;
 
 @Controller
-@RequestMapping("/patron/dashboard/")
-public class PatronDashboardController extends AbstractController<Patron, Dashboard> {
+@RequestMapping("/authenticated/patron/")
+public class AuthenticatedPatronController extends AbstractController<Authenticated, Patron> {
 
 	// Internal state ---------------------------------------------------------
 
 	@Autowired
-	protected PatronDashboardShowService showService;
+	protected AuthenticatedPatronCreateService	createService;
+
+	@Autowired
+	protected AuthenticatedPatronUpdateService	updateService;
 
 	// Constructors -----------------------------------------------------------
 
 
 	@PostConstruct
 	protected void initialise() {
-		super.addCommand("show", this.showService);
+		super.addCommand("create", this.createService);
+		super.addCommand("update", this.updateService);
 	}
 
 }
