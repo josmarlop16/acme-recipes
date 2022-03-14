@@ -58,12 +58,12 @@ public class Patronage extends AbstractEntity{
 	
 	@NotNull
 	@Valid
-//	@OneToOne(optional = false)
+	//	@OneToOne(optional = false)
 	protected Patron patron;
 	
 	@NotNull
 	@Valid
-//	@OneToOne(optional = false)
+	//	@OneToOne(optional = false)
 	protected Inventor inventor;
 	
 	

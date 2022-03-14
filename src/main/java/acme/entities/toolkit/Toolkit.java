@@ -23,7 +23,7 @@ public class Toolkit extends AbstractEntity {
 
 	// Serialisation identifier -----------------------------------------------
 	
-	protected static final long	serialVersionUID	= 1L;
+	protected static final long	serialVersionUID = 1L;
 
 	// Attributes -------------------------------------------------------------
 	
@@ -45,6 +45,8 @@ public class Toolkit extends AbstractEntity {
 	
 	@URL
 	protected String optionalLink;
+	
+	// Relationships ----------------------------------------------------------
 	
 	@ManyToOne
 	protected Component component;
