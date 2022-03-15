@@ -25,24 +25,24 @@ public class Dashboard implements Serializable {
 	protected static final long	serialVersionUID	= 1L;
 
 
-//	total number of pro-posed/accepted/denied patronages
+	//	total number of pro-posed/accepted/denied patronages
 	Integer						totalNumberOfProposedPatronages;
 	Integer						totalNumberOfAcceptedPatronages;
 	Integer						totalNumberOfDeniedPatronages;
 	
-//	average budget
+	//	average budget
 	Double						averageBudgetOfProposedPatronages;
 	Double						averageBudgetOfAcceptedPatronages;
 	Double						averageBudgetOfDeniedPatronages;
 	
 	
-//	deviation budget
+	//	deviation budget
 	Long						deviationBudgetOfProposedPatronages;
 	Long						deviationBudgetOfAcceptedPatronages;
 	Long						deviationBudgetOfDeniedPatronages;
 	
 
-//	minimum, and maximum budget
+	//	minimum, and maximum budget
 	Double						minimumBudgetOfProposedPatronages;
 	Double						minimumBudgetOfAcceptedPatronages;
 	Double						minimumBudgetOfDeniedPatronages;
