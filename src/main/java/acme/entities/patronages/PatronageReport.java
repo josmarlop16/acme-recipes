@@ -2,18 +2,17 @@ package acme.entities.patronages;
 
 import java.util.Date;
 
-import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.ManyToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
-import javax.persistence.Transient;
-import javax.persistence.GeneratedValue;
+
 import javax.validation.Valid;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Past;
+import javax.validation.constraints.Pattern;
 
-import org.hibernate.annotations.GenericGenerator;
 import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.URL;
 
@@ -30,7 +29,12 @@ public class PatronageReport extends AbstractEntity{
 	protected static final long serialVersionUID = 1L;
 	
 	// Attributes --------------------------------------------------------------
-
+	
+	@NotBlank
+	@Pattern(regexp = "(^[A-Z]{3}-[0-9]{3}(-[A-Z])?):(?!0000)\\d{4}")
+	protected String seqNumber;
+	
+	
 	@Past
 	@Temporal(TemporalType.DATE)
 	protected Date creation;
@@ -44,31 +48,11 @@ public class PatronageReport extends AbstractEntity{
 	
 	// Derived attributes -----------------------------------------------------
 	
-	@Column(unique = true)
-	@GeneratedValue(generator = "seqNumber")
-	protected String seqNumber;
-	
-	@GenericGenerator(name = "seqNumber", strategy = "native")
-	protected String getSeqNumber() {
-		String patronageCode = this.patronage.code;
-		String serialNumber = getSerialNumber();
-		return patronageCode + ":" + serialNumber;
-	}
-	
-	@Transient
-	protected String getSerialNumber() {
-		Integer reportId = this.id;
-		Integer nZeros = 4 - reportId.toString().length();
-		String serialNumber = new String(new char[nZeros]).replace("\0", "0");
-		serialNumber += reportId;
-		return serialNumber;
-	}
-	
 	// Relationships ----------------------------------------------------------
 	
 	@NotNull
 	@Valid
-//	@OneToOne(optional = false)
+	@ManyToOne(optional = true) //TODO: Preguntar acerca del optional = true
 	protected Patronage patronage;
 	
 	
