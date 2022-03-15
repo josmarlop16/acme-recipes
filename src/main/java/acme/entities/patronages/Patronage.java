@@ -5,6 +5,7 @@ import java.util.Date;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Enumerated;
+import javax.persistence.OneToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.validation.Valid;
@@ -58,12 +59,12 @@ public class Patronage extends AbstractEntity{
 	
 	@NotNull
 	@Valid
-	//	@OneToOne(optional = false)
+	@OneToOne(optional = false)
 	protected Patron patron;
 	
 	@NotNull
 	@Valid
-	//	@OneToOne(optional = false)
+	@OneToOne(optional = false)
 	protected Inventor inventor;
 	
 	
