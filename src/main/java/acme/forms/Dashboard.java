@@ -14,6 +14,7 @@ package acme.forms;
 
 import java.io.Serializable;
 
+import acme.framework.datatypes.Money;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -26,27 +27,41 @@ public class Dashboard implements Serializable {
 
 
 	//	total number of pro-posed/accepted/denied patronages
+	Integer						totalNumberOfComponents;
+	Integer						totalNumberOfTools;
 	Integer						totalNumberOfProposedPatronages;
 	Integer						totalNumberOfAcceptedPatronages;
 	Integer						totalNumberOfDeniedPatronages;
 	
 	//	average budget
+	Money						averageRetailPriceOfComponentGroupedByTechnology;
+	Money   					averageRetailPriceOfComponentGroupedByCurrency;
+	Money 						averageRetailPriceOfToolGroupedByCurrency;
 	Double						averageBudgetOfProposedPatronages;
 	Double						averageBudgetOfAcceptedPatronages;
 	Double						averageBudgetOfDeniedPatronages;
 	
 	
 	//	deviation budget
+	Money						deviationRetailPriceOfComponentGroupedByTechnology;
+	Money						deviationRetailPriceOfComponentGroupedByCurrency;
+	Money						deviationRetailPriceOfToolGroupedByCurrency;
 	Long						deviationBudgetOfProposedPatronages;
 	Long						deviationBudgetOfAcceptedPatronages;
 	Long						deviationBudgetOfDeniedPatronages;
 	
 
 	//	minimum, and maximum budget
+	Money						minimumRetailPriceOfComponentGroupedByTechnology;
+	Money						minimumRetailPriceOfComponentGroupedByCurrency;
+	Money						minimumRetailPriceOfToolGroupedByCurrency;
 	Double						minimumBudgetOfProposedPatronages;
 	Double						minimumBudgetOfAcceptedPatronages;
 	Double						minimumBudgetOfDeniedPatronages;
 	
+	Money						maximumRetailPriceOfComponentGroupedByTechnology;
+	Money						maximumRetailPriceOfComponentGroupedByCurrency;
+	Money						maximumRetailPriceOfToolGroupedByCurrency;
 	Double						maximumBudgetOfProposedPatronages;
 	Double						maximumBudgetOfAcceptedPatronages;
 	Double						maximumBudgetOfDeniedPatronages;
