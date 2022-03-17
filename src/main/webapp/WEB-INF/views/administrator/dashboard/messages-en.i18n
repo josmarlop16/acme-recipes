@@ -1,0 +1,50 @@
+# i18n-en.i18n
+#
+# Copyright (C) 2012-2022 Rafael Corchuelo.
+#
+# In keeping with the traditional purpose of furthering education and research, it is
+# the policy of the copyright owner to permit non-commercial use and redistribution of
+# this software. It has been tested carefully, but it is not guaranteed for any particular
+# purposes.  The copyright owner does not offer any warranties or representations, nor do
+# they accept any liabilities with respect to them.
+
+administrator.dashboard.form.title.general-indicators = General indicators
+administrator.dashboard.form.title.application-statuses = Patronages statuses  
+
+
+administrator.dashboard.form.label.total-number-of-components = Number of components
+administrator.dashboard.form.label.total-number-of-tools= Number of tools
+
+administrator.dashboard.form.label.total-number-of-proposed-patronages = Proposed patronages
+administrator.dashboard.form.label.total-number-of-accepted-patronages = Accepted patronages
+administrator.dashboard.form.label.total-number-of-denied-patronages = Denied patronages
+
+administrator.dashboard.form.label.average-retailprice-components-groupedby-technology= Average retail price of components by technology
+administrator.dashboard.form.label.average-retailprice-components-groupedby-currency= Average retail price of components by currency
+administrator.dashboard.form.label.average-retailprice-tools-groupedby-currency= Average retail price of tools by currency
+administrator.dashboard.form.label.average-budget-proposed-patronages = Average budget of proposed patronages
+administrator.dashboard.form.label.average-budget-accepted-patronages = Average budget of accepted patronages
+administrator.dashboard.form.label.average-budget-denied-patronages = Average budget of denied patronages
+
+administrator.dashboard.form.label.deviation-retailprice-components-groupedby-technology= Deviation retail price of components by technology
+administrator.dashboard.form.label.deviation-retailprice-components-groupedby-currency= Deviation retail price of components by currency
+administrator.dashboard.form.label.deviation-retailprice-tools-groupedby-currency= Deviation retail price of tools by currency
+administrator.dashboard.form.label.deviation-budget-proposed-patronages = Deviation budget of proposed patronages
+administrator.dashboard.form.label.deviation-budget-accepted-patronages = Deviation budget of accepted patronages
+administrator.dashboard.form.label.deviation-budget-denied-patronages = Deviation budget of denied patronages
+
+administrator.dashboard.form.label.minimum-retailprice-components-groupedby-technology= Minimum retail price of components by technology
+administrator.dashboard.form.label.minimum-retailprice-components-groupedby-currency= Minimum retail price of components by currency
+administrator.dashboard.form.label.minimum-retailprice-tools-groupedby-currency= Minimum retail price of tools by currency
+administrator.dashboard.form.label.minimum-budget-of-proposed-patronages = Minimum budget of proposed patronages
+administrator.dashboard.form.label.minimum-budget-of-accepted-patronages = Minimum budget of accepted patronages
+administrator.dashboard.form.label.minimum-budget-of-denied-patronages = Minimum budget of denied patronages
+
+administrator.dashboard.form.label.maximum-retailprice-components-groupedby-technology= Maximum retail price of components by technology
+administrator.dashboard.form.label.maximum-retailprice-components-groupedby-currency= Maximum retail price of components by currency
+administrator.dashboard.form.label.maximum-retailprice-tools-groupedby-currency= Maximum retail price of tools by currency
+administrator.dashboard.form.label.maximum-budget-of-proposed-patronages = Maximum budget of proposed patronages
+administrator.dashboard.form.label.maximum-budget-of-accepted-patronages = Maximum budget of accepted patronages
+administrator.dashboard.form.label.maximum-budget-of-denied-patronages = Maximum budget of denied patronages
+
+ 
