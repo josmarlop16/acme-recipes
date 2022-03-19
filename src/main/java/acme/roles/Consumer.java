@@ -14,7 +14,6 @@ package acme.roles;
 
 import javax.persistence.Entity;
 import javax.validation.constraints.NotBlank;
-
 import acme.framework.roles.UserRole;
 import lombok.Getter;
 import lombok.Setter;

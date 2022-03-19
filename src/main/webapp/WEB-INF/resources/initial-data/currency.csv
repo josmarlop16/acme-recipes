@@ -1,0 +1,4 @@
+key,currency-initials,accepted,is-default
+currency-01,"EUR",true,true
+currency-02,"GBP",true,false
+currency-03,"USD",true,false

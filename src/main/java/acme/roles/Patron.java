@@ -9,6 +9,7 @@ import org.hibernate.validator.constraints.URL;
 import acme.framework.roles.UserRole;
 import lombok.Getter;
 import lombok.Setter;
+
 @Entity
 @Getter
 @Setter

@@ -14,6 +14,7 @@ package acme.forms;
 
 import java.io.Serializable;
 
+import acme.framework.datatypes.Money;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -22,40 +23,47 @@ import lombok.Setter;
 public class Dashboard implements Serializable {
 
 	// Serialisation identifier -----------------------------------------------
-
 	protected static final long	serialVersionUID	= 1L;
 
-	// Attributes -------------------------------------------------------------
 
-//	total number of pro-posed/accepted/denied patronages
+	//	total number of pro-posed/accepted/denied patronages
+	Integer						totalNumberOfComponents;
+	Integer						totalNumberOfTools;
 	Integer						totalNumberOfProposedPatronages;
 	Integer						totalNumberOfAcceptedPatronages;
 	Integer						totalNumberOfDeniedPatronages;
 	
-//	average
-	Double						averageNumberOfPatronages;
+	//	average budget
+	Money						averageRetailPriceOfComponentGroupedByTechnology;
+	Money   					averageRetailPriceOfComponentGroupedByCurrency;
+	Money 						averageRetailPriceOfToolGroupedByCurrency;
+	Double						averageBudgetOfProposedPatronages;
+	Double						averageBudgetOfAcceptedPatronages;
+	Double						averageBudgetOfDeniedPatronages;
 	
-//	deviation
-	Long						deviationOfPatronages;
+	
+	//	deviation budget
+	Money						deviationRetailPriceOfComponentGroupedByTechnology;
+	Money						deviationRetailPriceOfComponentGroupedByCurrency;
+	Money						deviationRetailPriceOfToolGroupedByCurrency;
+	Long						deviationBudgetOfProposedPatronages;
+	Long						deviationBudgetOfAcceptedPatronages;
+	Long						deviationBudgetOfDeniedPatronages;
+	
 
-//	minimum, and maximum budget of proposed/accepted/denied patronages grouped by currency.
+	//	minimum, and maximum budget
+	Money						minimumRetailPriceOfComponentGroupedByTechnology;
+	Money						minimumRetailPriceOfComponentGroupedByCurrency;
+	Money						minimumRetailPriceOfToolGroupedByCurrency;
 	Double						minimumBudgetOfProposedPatronages;
 	Double						minimumBudgetOfAcceptedPatronages;
 	Double						minimumBudgetOfDeniedPatronages;
 	
+	Money						maximumRetailPriceOfComponentGroupedByTechnology;
+	Money						maximumRetailPriceOfComponentGroupedByCurrency;
+	Money						maximumRetailPriceOfToolGroupedByCurrency;
 	Double						maximumBudgetOfProposedPatronages;
 	Double						maximumBudgetOfAcceptedPatronages;
 	Double						maximumBudgetOfDeniedPatronages;
-	
-	
-	
-	
-	
-	
-
-
-	// Derived attributes -----------------------------------------------------
-
-	// Relationships ----------------------------------------------------------
 
 }
