@@ -9,8 +9,6 @@
 # they accept any liabilities with respect to them.
 
 administrator.dashboard.form.title.general-indicators = General indicators
-administrator.dashboard.form.title.application-statuses = Patronages statuses  
-
 
 administrator.dashboard.form.label.total-number-of-components = Number of components
 administrator.dashboard.form.label.total-number-of-tools= Number of tools

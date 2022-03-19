@@ -1,3 +1,3 @@
 key,type,name,code,technology,description,retailPrice,link
-item-01,COMPONENT,Component-01,TRE-897-O,Technology-01,This is a description,13.00,http://www.component-01.org
-item-02,TOOL,Tool-01,TYE-567-U,Technology-01,This is a description,10.87,http://www.further-info.com
+item-01,COMPONENT,Component-01,TRE-897-O,Technology-01,This is a description,EUR 13.00,http://www.component-01.org
+item-02,TOOL,Tool-01,TYE-567-U,Technology-01,This is a description,EUR 10.87,http://www.further-info.com

@@ -168,57 +168,5 @@
 </table>
 
 
-<h2>
-	<acme:message code="administrator.dashboard.form.title.application-statuses"/>
-</h2>
-
-<div>
-	<canvas id="canvas"></canvas>
-</div>
-<script type="text/javascript">
-	$(document).ready(function() {
-		var data = {
-			labels : [
-					"PENDING", "ACCEPTED", "DENIED"
-			],
-			datasets : [
-				{
-					data : [
-						<jstl:out value="${totalNumberOfProposedPatronages}"/>, 
-						<jstl:out value="${totalNumberOfAcceptedPatronages}"/>, 
-						<jstl:out value="${totalNumberOfDeniedPatronages}"/>
-					]
-				}
-			]
-		};
-		var options = {
-			scales : {
-				yAxes : [
-					{
-						ticks : {
-							suggestedMin : 0.0,
-							suggestedMax : 5
-						}
-					}
-				]
-			},
-			legend : {
-				display : false
-			}
-		};
-	
-		var canvas, context;
-	
-		canvas = document.getElementById("canvas");
-		context = canvas.getContext("2d");
-		new Chart(context, {
-			type : "bar",
-			data : data,
-			options : options
-		});
-	});
-</script>
-
-
 <acme:return/>
 
