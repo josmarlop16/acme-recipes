@@ -20,7 +20,7 @@ public class Currency extends AbstractEntity{
 	// Attributes -------------------------------------------------------------
 	
 	@NotBlank
-	protected String currencyInitials;
+	protected String name;
 
 	@NotNull
 	protected Boolean accepted;

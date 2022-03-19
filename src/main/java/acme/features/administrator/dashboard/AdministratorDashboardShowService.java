@@ -94,9 +94,9 @@ public class AdministratorDashboardShowService implements AbstractShowService<Ad
 		
 //		Average 
 		
-		averageRetailPriceOfComponentGroupedByTechnology=this.repository.averageRetailPriceOfComponentGroupedByTechnology();
-		averageRetailPriceOfComponentGroupedByCurrency=this.repository.averageRetailPriceOfComponentGroupedByCurrency();
-		averageRetailPriceOfToolGroupedByCurrency=this.repository.averageRetailPriceOfToolGroupedByCurrency();
+//		averageRetailPriceOfComponentGroupedByTechnology=this.repository.averageRetailPriceOfComponentGroupedByTechnology();
+//		averageRetailPriceOfComponentGroupedByCurrency=this.repository.averageRetailPriceOfComponentGroupedByCurrency();
+//		averageRetailPriceOfToolGroupedByCurrency=this.repository.averageRetailPriceOfToolGroupedByCurrency();
 		averageBudgetOfProposedPatronages = this.repository.averageBudgetOfProposedPatronages();
 		averageBudgetOfAcceptedPatronages = this.repository.averageBudgetOfAcceptedPatronages();
 		averageBudgetOfDeniedPatronages = this.repository.averageBudgetOfDeniedPatronages();
@@ -104,9 +104,9 @@ public class AdministratorDashboardShowService implements AbstractShowService<Ad
 		
 //		Deviation
 		
-		deviationRetailPriceOfComponentGroupedByTechnology=this.repository.deviationRetailPriceOfComponentGroupedByTechnology();
-		deviationRetailPriceOfComponentGroupedByCurrency=this.repository.deviationRetailPriceOfComponentGroupedByCurrency();
-		deviationRetailPriceOfToolGroupedByCurrency=this.repository.deviationRetailPriceOfToolGroupedByCurrency();
+//		deviationRetailPriceOfComponentGroupedByTechnology=this.repository.deviationRetailPriceOfComponentGroupedByTechnology();
+//		deviationRetailPriceOfComponentGroupedByCurrency=this.repository.deviationRetailPriceOfComponentGroupedByCurrency();
+//		deviationRetailPriceOfToolGroupedByCurrency=this.repository.deviationRetailPriceOfToolGroupedByCurrency();
 		deviationBudgetOfProposedPatronages = this.repository.deviationBudgetOfProposedPatronages();
 		deviationBudgetOfAcceptedPatronages = this.repository.deviationBudgetOfAcceptedPatronages();
 		deviationBudgetOfDeniedPatronages = this.repository.deviationBudgetOfDeniedPatronages();
@@ -115,9 +115,9 @@ public class AdministratorDashboardShowService implements AbstractShowService<Ad
 //		Minimum 
 		
 		
-		minimumRetailPriceOfComponentGroupedByTechnology=this.repository.minimumRetailPriceOfComponentGroupedByTechnology();
-		minimumRetailPriceOfComponentGroupedByCurrency=this.repository.minimumRetailPriceOfComponentGroupedByCurrency();
-	    minimumRetailPriceOfToolGroupedByCurrency=this.repository.minimumRetailPriceOfToolGroupedByCurrency();
+//		minimumRetailPriceOfComponentGroupedByTechnology=this.repository.minimumRetailPriceOfComponentGroupedByTechnology();
+//		minimumRetailPriceOfComponentGroupedByCurrency=this.repository.minimumRetailPriceOfComponentGroupedByCurrency();
+//	    minimumRetailPriceOfToolGroupedByCurrency=this.repository.minimumRetailPriceOfToolGroupedByCurrency();
 		minimumBudgetOfProposedPatronages = this.repository.minimumBudgetOfProposedPatronages();
 		minimumBudgetOfAcceptedPatronages = this.repository.minimumBudgetOfAcceptedPatronages();
 		minimumBudgetOfDeniedPatronages = this.repository.minimumBudgetOfDeniedPatronages();
@@ -126,9 +126,9 @@ public class AdministratorDashboardShowService implements AbstractShowService<Ad
 //		Maximum 
 		
 		
-		maximumRetailPriceOfComponentGroupedByTechnology=this.repository.maximumRetailPriceOfComponentGroupedByTechnology();
-	    maximumRetailPriceOfComponentGroupedByCurrency=this.repository.maximumRetailPriceOfComponentGroupedByCurrency();
-		maximumRetailPriceOfToolGroupedByCurrency=this.repository.maximumRetailPriceOfToolGroupedByCurrency();
+//		maximumRetailPriceOfComponentGroupedByTechnology=this.repository.maximumRetailPriceOfComponentGroupedByTechnology();
+//	    maximumRetailPriceOfComponentGroupedByCurrency=this.repository.maximumRetailPriceOfComponentGroupedByCurrency();
+//		maximumRetailPriceOfToolGroupedByCurrency=this.repository.maximumRetailPriceOfToolGroupedByCurrency();
 		maximumBudgetOfProposedPatronages = this.repository.maximumBudgetOfProposedPatronages();
 		maximumBudgetOfAcceptedPatronages = this.repository.maximumBudgetOfAcceptedPatronages();
 		maximumBudgetOfDeniedPatronages = this.repository.maximumBudgetOfDeniedPatronages();
@@ -140,31 +140,31 @@ public class AdministratorDashboardShowService implements AbstractShowService<Ad
 		result.setTotalNumberOfAcceptedPatronages(totalNumberOfAcceptedPatronages);
 		result.setTotalNumberOfDeniedPatronages(totalNumberOfDeniedPatronages);
 	
-		result.setAverageRetailPriceOfComponentGroupedByTechnology(averageRetailPriceOfComponentGroupedByTechnology);
-		result.setAverageRetailPriceOfComponentGroupedByCurrency(averageRetailPriceOfComponentGroupedByCurrency);
-		result.setAverageRetailPriceOfToolGroupedByCurrency(averageRetailPriceOfToolGroupedByCurrency);
+//		result.setAverageRetailPriceOfComponentGroupedByTechnology(averageRetailPriceOfComponentGroupedByTechnology);
+//		result.setAverageRetailPriceOfComponentGroupedByCurrency(averageRetailPriceOfComponentGroupedByCurrency);
+//		result.setAverageRetailPriceOfToolGroupedByCurrency(averageRetailPriceOfToolGroupedByCurrency);
 		result.setAverageBudgetOfProposedPatronages(averageBudgetOfProposedPatronages);
 		result.setAverageBudgetOfAcceptedPatronages(averageBudgetOfAcceptedPatronages);
 		result.setAverageBudgetOfDeniedPatronages(averageBudgetOfDeniedPatronages);
 		
 		
-		result.setDeviationRetailPriceOfComponentGroupedByTechnology(deviationRetailPriceOfComponentGroupedByTechnology);
-		result.setDeviationRetailPriceOfComponentGroupedByCurrency(deviationRetailPriceOfComponentGroupedByCurrency);
-		result.setDeviationRetailPriceOfToolGroupedByCurrency(deviationRetailPriceOfToolGroupedByCurrency);
+//		result.setDeviationRetailPriceOfComponentGroupedByTechnology(deviationRetailPriceOfComponentGroupedByTechnology);
+//		result.setDeviationRetailPriceOfComponentGroupedByCurrency(deviationRetailPriceOfComponentGroupedByCurrency);
+//		result.setDeviationRetailPriceOfToolGroupedByCurrency(deviationRetailPriceOfToolGroupedByCurrency);
 		result.setDeviationBudgetOfProposedPatronages(deviationBudgetOfProposedPatronages);
 		result.setDeviationBudgetOfDeniedPatronages(deviationBudgetOfDeniedPatronages);
 		result.setDeviationBudgetOfAcceptedPatronages(deviationBudgetOfAcceptedPatronages);
 		
-		result.setMinimumRetailPriceOfComponentGroupedByTechnology(minimumRetailPriceOfComponentGroupedByTechnology);
-		result.setMinimumRetailPriceOfComponentGroupedByCurrency(minimumRetailPriceOfComponentGroupedByCurrency);
-		result.setMinimumRetailPriceOfToolGroupedByCurrency(minimumRetailPriceOfToolGroupedByCurrency);
+//		result.setMinimumRetailPriceOfComponentGroupedByTechnology(minimumRetailPriceOfComponentGroupedByTechnology);
+//		result.setMinimumRetailPriceOfComponentGroupedByCurrency(minimumRetailPriceOfComponentGroupedByCurrency);
+//		result.setMinimumRetailPriceOfToolGroupedByCurrency(minimumRetailPriceOfToolGroupedByCurrency);
 		result.setMinimumBudgetOfProposedPatronages(minimumBudgetOfProposedPatronages);
 		result.setMinimumBudgetOfAcceptedPatronages(minimumBudgetOfAcceptedPatronages);
 		result.setMinimumBudgetOfDeniedPatronages(minimumBudgetOfDeniedPatronages);
 		
-		result.setMaximumRetailPriceOfComponentGroupedByTechnology(maximumRetailPriceOfComponentGroupedByTechnology);
-		result.setMaximumRetailPriceOfComponentGroupedByCurrency(maximumRetailPriceOfComponentGroupedByCurrency);
-		result.setMaximumRetailPriceOfToolGroupedByCurrency(maximumRetailPriceOfToolGroupedByCurrency);
+//		result.setMaximumRetailPriceOfComponentGroupedByTechnology(maximumRetailPriceOfComponentGroupedByTechnology);
+//		result.setMaximumRetailPriceOfComponentGroupedByCurrency(maximumRetailPriceOfComponentGroupedByCurrency);
+//		result.setMaximumRetailPriceOfToolGroupedByCurrency(maximumRetailPriceOfToolGroupedByCurrency);
 		result.setMaximumBudgetOfProposedPatronages(maximumBudgetOfProposedPatronages);
 		result.setMaximumBudgetOfAcceptedPatronages(maximumBudgetOfAcceptedPatronages);
 		result.setMaximumBudgetOfDeniedPatronages(maximumBudgetOfDeniedPatronages);
