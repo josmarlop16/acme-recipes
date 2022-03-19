@@ -1,105 +1,69 @@
 package acme.features.administrator.dashboard;
 
+import java.util.Map;
+
+import org.apache.commons.lang3.tuple.Pair;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
+import acme.entities.patronages.PatronageStatus;
 import acme.framework.repositories.AbstractRepository;
 
 @Repository
 public interface AdministratorDashboardRepository extends AbstractRepository {
 //	Number of components,tools and patronages by their status
-	@Query("select count(c) from Component c")
-	Integer totalNumberOfComponents();
+	@Query("select count(i) from Item i where i.type=1")
+	int totalNumberOfComponents();
 	
-	@Query("select count(t) from Tool t")
-	Integer totalNumberOfTools();
+	@Query("select count(i) from Item i where i.type=0")
+	int totalNumberOfTools();
 	
-	@Query("select count(p) from Patronage p where p.status = 0")
-	Integer totalNumberOfProposedPatronages();
+	@Query("select count(p) from Patronage p")
+	int totalNumberOfPatronages();
 	
-	@Query("select count(p) from Patronage p where p.status = 1")
-	Integer totalNumberOfAcceptedPatronages();
-
-	@Query("select count(p) from Patronage p where p.status = 2")
-	Integer totalNumberOfDeniedPatronages();
+	@Query("select p.status, count(p) from Patronage p group by p.status")
+	Map<PatronageStatus,Integer> totalNumberOfPatronagesGroupedByPatronageStatus();
 
 //	Average 
-//	@Query("select c.technology, avg(c.retailPrice.amount) from Component c group by c.technology")
-//	Money averageRetailPriceOfComponentGroupedByTechnology();
+
+	@Query("select c.technology,c.retailPrice.currency, avg(c.retailPrice.amount) from Item c  where c.type=1 group by c.technology,c.retailPrice.currency")
+	Map<Pair<String,String>,Double> averageRetailPriceOfComponentGroupedByTechnologyAndCurrency();
 	
-//	@Query("select c.retailPrice.currency, avg(c.retailPrice.amount) from Component c group by c.retailPrice.currency")
-//	Money averageRetailPriceOfComponentGroupedByCurrency();
-//	
-//	@Query("select t.retailPrice.currency, avg(t.retailPrice.amount) from Tool t group by t.retailPrice.currency")
-//	Money averageRetailPriceOfToolGroupedByCurrency();
-	
-	@Query("select avg(p.budget) from Patronage p where p.status = 0")
-	Double averageBudgetOfProposedPatronages();
-	
-	@Query("select avg(p.budget) from Patronage p where p.status = 1")
-	Double averageBudgetOfAcceptedPatronages();
-	
-	@Query("select avg(p.budget) from Patronage p where p.status = 2")
-	Double averageBudgetOfDeniedPatronages();
-	
+	@Query("select t.retailPrice.currency, avg(t.retailPrice.amount) from Item t where t.type=0 group by t.retailPrice.currency")
+	Map<String,Double> averageRetailPriceOfToolGroupedByCurrency();
+
+	@Query("select p.status ,avg(p.budget) from Patronage p group by p.status")
+	Map<PatronageStatus,Double> averageBudgetOfPatronagesGroupedByPatronageStatus();
 	
 //	Deviation
-//	@Query("select c.technology, stddev(c.retailPrice.amount) from Component c group by c.technology")
-//	Money deviationRetailPriceOfComponentGroupedByTechnology();
-	
-//	@Query("select c.retailPrice.currency, stddev(c.retailPrice.amount) from Component c group by c.retailPrice.currency")
-//	Money deviationRetailPriceOfComponentGroupedByCurrency();
-//	
-//	@Query("select t.retailPrice.currency, stddev(t.retailPrice.amount) from Tool t group by t.retailPrice.currency")
-//	Money deviationRetailPriceOfToolGroupedByCurrency();
-	
-	@Query("select stddev(p.budget) from Patronage p where p.status = 0")
-	Long deviationBudgetOfProposedPatronages();
-	
-	@Query("select stddev(p.budget) from Patronage p where p.status = 1")
-	Long deviationBudgetOfAcceptedPatronages();
-	
-	@Query("select stddev(p.budget) from Patronage p where p.status = 2")
-	Long deviationBudgetOfDeniedPatronages();
-	
-	
+
+	@Query("select c.technology,c.retailPrice.currency, stddev(c.retailPrice.amount) from Item c where c.type=1 group by c.technology,c.retailPrice.currency")
+	Map<Pair<String,String>,Double> deviationRetailPriceOfComponentGroupedByTechnologyAndCurrency();
+
+	@Query("select t.retailPrice.currency, stddev(t.retailPrice.amount) from Item t where t.type=0 group by t.retailPrice.currency")
+	Map<String,Double> deviationRetailPriceOfToolGroupedByCurrency();
+
+	@Query("select p.status ,stddev(p.budget) from Patronage p group by p.status")
+	Map<PatronageStatus,Double> deviationBudgetOfPatronagesGroupedByPatronageStatus();
+
 //	Minimum 
-	
-//	@Query("select c.technology, min(c.retailPrice.amount) from Component c group by c.technology")
-//	Money minimumRetailPriceOfComponentGroupedByTechnology();
-//	
-//	@Query("select c.retailPrice.currency, min(c.retailPrice.amount) from Component c group by c.retailPrice.currency")
-//	Money minimumRetailPriceOfComponentGroupedByCurrency();
-//	
-//	@Query("select t.retailPrice.currency, min(t.retailPrice.amount) from Tool t group by t.retailPrice.currency")
-//	Money minimumRetailPriceOfToolGroupedByCurrency();
-	
-	@Query("select min(p.budget) from Patronage p where p.status = 0")
-	Double minimumBudgetOfProposedPatronages();
+	@Query("select c.technology,c.retailPrice.currency, min(c.retailPrice.amount) from Item c where c.type=1 group by c.technology,c.retailPrice.currency")
+	Map<Pair<String,String>,Double> minimumRetailPriceOfComponentGroupedByTechnologyAndCurrency();
 
-	@Query("select min(p.budget) from Patronage p where p.status = 1")
-	Double minimumBudgetOfAcceptedPatronages();
+	@Query("select t.retailPrice.currency, min(t.retailPrice.amount) from Item t where t.type=0 group by t.retailPrice.currency")
+	Map<String,Double> minimumRetailPriceOfToolGroupedByCurrency();
 
-	@Query("select min(p.budget) from Patronage p where p.status = 2")
-	Double minimumBudgetOfDeniedPatronages();
+	@Query("select p.status ,min(p.budget) from Patronage p group by p.status")
+	Map<PatronageStatus,Double> minimumBudgetOfPatronagesGroupedByPatronageStatus();
 
 //	Maximum 
-//	@Query("select c.technology, max(c.retailPrice.amount) from Component c group by c.technology")
-//	Money maximumRetailPriceOfComponentGroupedByTechnology();
-//	
-//	@Query("select c.retailPrice.currency, max(c.retailPrice.amount) from Component c group by c.retailPrice.currency")
-//	Money maximumRetailPriceOfComponentGroupedByCurrency();
-//	
-//	@Query("select t.retailPrice.currency, max(t.retailPrice.amount) from Tool t group by t.retailPrice.currency")
-//	Money maximumRetailPriceOfToolGroupedByCurrency();
+	@Query("select c.technology,c.retailPrice.currency, max(c.retailPrice.amount) from Item c where c.type=1 group by c.technology,c.retailPrice.currency")
+	Map<Pair<String,String>,Double> maximumRetailPriceOfComponentGroupedByTechnologyAndCurrency();
 	
-	@Query("select max(p.budget) from Patronage p where p.status = 0")
-	Double maximumBudgetOfProposedPatronages();
+	@Query("select t.retailPrice.currency, max(t.retailPrice.amount) from Item t where t.type=0 group by t.retailPrice.currency")
+	Map<String,Double> maximumRetailPriceOfToolGroupedByCurrency();
 
-	@Query("select max(p.budget) from Patronage p where p.status = 1")
-	Double maximumBudgetOfAcceptedPatronages();
-
-	@Query("select max(p.budget) from Patronage p where p.status = 2")
-	Double maximumBudgetOfDeniedPatronages();
+	@Query("select p.status ,max(p.budget) from Patronage p group by p.status")
+	Map<PatronageStatus,Double> maximumBudgetOfPatronagesGroupedByPatronageStatus();
  
 }
