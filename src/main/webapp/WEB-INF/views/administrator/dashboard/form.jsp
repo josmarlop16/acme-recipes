@@ -39,44 +39,29 @@
 	</tr>
 	<tr> 
 		<th scope="row">
-			<acme:message code="administrator.dashboard.form.label.total-number-of-proposed-patronages"/>
+			<acme:message code="administrator.dashboard.form.label.total-number-of-patronages"/>
 		</th>
 		<td>
-			<acme:print value="${totalNumberOfProposedPatronages}"/>
+			<acme:print value="${totalNumberOfPatronages}"/>
 		</td>
 	</tr> 
 	<tr>
 		<th scope="row">
-			<acme:message code="administrator.dashboard.form.label.total-number-of-accepted-patronages"/>
+			<acme:message code="administrator.dashboard.form.label.total-number-of-patronages-groupedby-status"/>
 		</th>
 		<td>
-			<acme:print value="${totalNumberOfAcceptedPatronages}"/>
+			<acme:print value="${totalNumberOfPatronagesGroupedByPatronageStatus}"/>
 		</td>
 	</tr> 
-	<tr>
-		<th scope="row">
-			<acme:message code="administrator.dashboard.form.label.total-number-of-denied-patronages"/>
-		</th>
-		<td>
-			<acme:print value="${totalNumberOfDeniedPatronages}"/>
-		</td>
-	</tr>
 	<tr>
 		<th scope="row">
 			<acme:message code="administrator.dashboard.form.label.average-retailprice-components-groupedby-technology"/>
 		</th>
 		<td>
-			<acme:print value="${averageRetailPriceOfComponentGroupedByTechnology}"/>
+			<acme:print value="${averageRetailPriceOfComponentGroupedByTechnologyAndCurrency}"/>
 		</td>
 	</tr>
-	<tr>
-		<th scope="row">
-			<acme:message code="administrator.dashboard.form.label.average-retailprice-components-groupedby-currency"/>
-		</th>
-		<td>
-			<acme:print value="${averageRetailPriceOfComponentGroupedByCurrency}"/>
-		</td>
-	</tr> 
+
 	<tr>
 		<tr>
 		<th scope="row">
@@ -88,44 +73,22 @@
 	</tr> 
 	<tr>
 		<th scope="row">
-			<acme:message code="administrator.dashboard.form.label.average-budget-proposed-patronages"/>
+			<acme:message code="administrator.dashboard.form.label.average-budget-patronages-groupedby-status"/>
 		</th>
 		<td>
-			<acme:print value="${averageBudgetOfProposedPatronages}"/>
+			<acme:print value="${averageBudgetOfPatronagesGroupedByPatronageStatus}"/>
 		</td>
 	</tr> 
-	<tr>
-		<th scope="row">
-			<acme:message code="administrator.dashboard.form.label.average-budget-accepted-patronages"/>
-		</th>
-		<td>
-			<acme:print value="${averageBudgetOfAcceptedPatronages}"/>
-		</td>
-	</tr>
-	<tr>
-		<th scope="row">
-			<acme:message code="administrator.dashboard.form.label.average-budget-denied-patronages"/>
-		</th>
-		<td>
-			<acme:print value="${averageBudgetOfDeniedPatronages}"/>
-		</td>
-	</tr>
+
 	<tr>
 		<th scope="row">
 			<acme:message code="administrator.dashboard.form.label.deviation-retailprice-components-groupedby-technology"/>
 		</th>
 		<td>
-			<acme:print value="${deviationRetailPriceOfComponentGroupedByTechnology}"/>
+			<acme:print value="${deviationRetailPriceOfComponentGroupedByTechnologyAndCurrency}"/>
 		</td>
 	</tr> 
-	<tr>
-		<th scope="row">
-			<acme:message code="administrator.dashboard.form.label.deviation-retailprice-components-groupedby-currency"/>
-		</th>
-		<td>
-			<acme:print value="${deviationRetailPriceOfComponentGroupedByCurrency}"/>
-		</td>
-	</tr> 
+ 
 	<tr>
 		<th scope="row">
 			<acme:message code="administrator.dashboard.form.label.deviation-retailprice-tools-groupedby-currency"/>
@@ -136,46 +99,23 @@
 	</tr>  
 	<tr>
 		<th scope="row">
-			<acme:message code="administrator.dashboard.form.label.deviation-budget-proposed-patronages"/>
+			<acme:message code="administrator.dashboard.form.label.deviation-budget-patronages-groupedby-status"/>
 		</th>
 		<td>
-			<acme:print value="${deviationBudgetOfProposedPatronages}"/>
+			<acme:print value="${deviationBudgetOfPatronagesGroupedByPatronageStatus}"/>
 		</td>
 	</tr> 
-	<tr>
-		<th scope="row">
-			<acme:message code="administrator.dashboard.form.label.deviation-budget-accepted-patronages"/>
-		</th>
-		<td>
-			<acme:print value="${deviationBudgetOfAcceptedPatronages}"/>
-		</td>
-	</tr> 
-	<tr>
-		<th scope="row">
-			<acme:message code="administrator.dashboard.form.label.deviation-budget-denied-patronages"/>
-		</th>
-		<td>
-			<acme:print value="${deviationBudgetOfDeniedPatronages}"/>
-		</td>
-	</tr> 
+
 	<tr>
 		<th scope="row">
 			<acme:message code="administrator.dashboard.form.label.minimum-retailprice-components-groupedby-technology"/>
 		</th>
 		<td>
-			<acme:print value="${minimumRetailPriceOfComponentGroupedByTechnology}"/>
+			<acme:print value="${minimumRetailPriceOfComponentGroupedByTechnologyAndCurrency}"/>
 		</td>
 		
 	</tr>
-	<tr>
-		<th scope="row">
-			<acme:message code="administrator.dashboard.form.label.minimum-retailprice-components-groupedby-currency"/>
-		</th>
-		<td>
-			<acme:print value="${minimumRetailPriceOfComponentGroupedByCurrency}"/>
-		</td>
-		
-	</tr>
+
 	<tr>
 		<th scope="row">
 			<acme:message code="administrator.dashboard.form.label.minimum-retailprice-tools-groupedby-currency"/>
@@ -187,48 +127,24 @@
 	</tr>
 	<tr>
 		<th scope="row">
-			<acme:message code="administrator.dashboard.form.label.minimum-budget-of-proposed-patronages"/>
+			<acme:message code="administrator.dashboard.form.label.minimum-budget-of-patronages-groupedby-status"/>
 		</th>
 		<td>
-			<acme:print value="${minimumBudgetOfProposedPatronages}"/>
+			<acme:print value="${minimumBudgetOfPatronagesGroupedByPatronageStatus}"/>
 		</td>
 		
 	</tr> 
-	<tr>
-		<th scope="row">
-			<acme:message code="administrator.dashboard.form.label.minimum-budget-of-accepted-patronages"/>
-		</th>
-		<td>
-			<acme:print value="${minimumBudgetOfAcceptedPatronages}"/>
-		</td>
-	</tr> 
-	<tr>
-		
-		<th scope="row">
-			<acme:message code="administrator.dashboard.form.label.minimum-budget-of-denied-patronages"/>
-		</th>
-		<td>
-			<acme:print value="${minimumBudgetOfDeniedPatronages}"/>
-		</td>
-	</tr>
+
 	<tr>
 		<th scope="row">
 			<acme:message code="administrator.dashboard.form.label.maximum-retailprice-components-groupedby-technology"/>
 		</th>
 		<td>
-			<acme:print value="${maximumRetailPriceOfComponentGroupedByTechnology}"/>
+			<acme:print value="${maximumRetailPriceOfComponentGroupedByTechnologyAndCurrency}"/>
 		</td>
 		
 	</tr> 
-	<tr>
-		<th scope="row">
-			<acme:message code="administrator.dashboard.form.label.maximum-retailprice-components-groupedby-currency"/>
-		</th>
-		<td>
-			<acme:print value="${maximumRetailPriceOfComponentGroupedByCurrency}"/>
-		</td>
-		
-	</tr> 
+
 	<tr>
 		<th scope="row">
 			<acme:message code="administrator.dashboard.form.label.maximum-retailprice-tools-groupedby-currency"/>
@@ -240,94 +156,16 @@
 	</tr>  
 	<tr>
 		<th scope="row">
-			<acme:message code="administrator.dashboard.form.label.maximum-budget-of-proposed-patronages"/>
+			<acme:message code="administrator.dashboard.form.label.maximum-budget-of-patronages-groupedby-status"/>
 		</th>
 		<td>
-			<acme:print value="${maximumBudgetOfProposedPatronages}"/>
+			<acme:print value="${maximumBudgetOfPatronagesGroupedByPatronageStatus}"/>
 		</td>
 		
 	</tr> 
-	<tr>
-		<th scope="row">
-			<acme:message code="administrator.dashboard.form.label.maximum-budget-of-accepted-patronages"/>
-		</th>
-		<td>
-			<acme:print value="${maximumBudgetOfAcceptedPatronages}"/>
-		</td>
-		
-	</tr> 
-	<tr>
-		
-		<th scope="row">
-			<acme:message code="administrator.dashboard.form.label.maximum-budget-of-denied-patronages"/>
-		</th>
-		<td>
-			<acme:print value="${maximumBudgetOfDeniedPatronages}"/>
-		</td>
-	</tr> 
+
 
 </table>
-
-
-<h2>
-	<acme:message code="administrator.dashboard.form.title.application-statuses"/>
-</h2>
-
-<div>
-	<canvas id="canvas"></canvas>
-</div>
-
-<h2>
-	<acme:message code="administrator.dashboard.form.title.application-currencies"/>
-</h2>
-
-<div>
-	<canvas id="canvas1"></canvas>
-</div>
-<script type="text/javascript">
-	$(document).ready(function() {
-		var data = {
-			labels : [
-					"PENDING", "ACCEPTED", "DENIED"
-			],
-			datasets : [
-				{
-					data : [
-						<jstl:out value="${totalNumberOfProposedPatronages}"/>, 
-						<jstl:out value="${totalNumberOfAcceptedPatronages}"/>, 
-						<jstl:out value="${totalNumberOfDeniedPatronages}"/>
-					]
-				}
-			]
-		};
-		var options = {
-			scales : {
-				yAxes : [
-					{
-						ticks : {
-							suggestedMin : 0.0,
-							suggestedMax : 5
-						}
-					}
-				]
-			},
-			legend : {
-				display : false
-			}
-		};
-	
-		var canvas, context;
-	
-		canvas = document.getElementById("canvas");
-		context = canvas.getContext("2d");
-		new Chart(context, {
-			type : "bar",
-			data : data,
-			options : options
-		});
-	});
-</script>
-
 
 
 <acme:return/>
