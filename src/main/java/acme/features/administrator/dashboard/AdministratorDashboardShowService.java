@@ -52,44 +52,27 @@ public class AdministratorDashboardShowService implements AbstractShowService<Ad
 		final int totalNumberOfComponents;
 		final int totalNumberOfTools;
 		final int totalNumberOfPatronages;
-//		final List<Object[]> totalNumberOfPatronagesGroupedByPatronageStatus;
 		final Map<PatronageStatus,Integer> totalNumberOfPatronagesGroupedByPatronageStatus;
 		
 //		average
-/*
- * final List<Object[]> averageRetailPriceOfComponentGroupedByTechnologyAndCurrency;
- * final List<Object[]> averageRetailPriceOfToolGroupedByCurrency;
- * final List<Object[]> averageBudgetOfPatronagesGroupedByPatronageStatus;
- */
+
 		final Map<Pair<String,String>,Double> averageRetailPriceOfComponentGroupedByTechnologyAndCurrency;
 		final Map<String,Double> averageRetailPriceOfToolGroupedByCurrency;
 		final Map<PatronageStatus,Double> averageBudgetOfPatronagesGroupedByPatronageStatus;
 		
 //		deviation
-/*
- * final List<Object[]> deviationRetailPriceOfComponentGroupedByTechnologyAndCurrency;
- * final List<Object[]> deviationRetailPriceOfToolGroupedByCurrency;
- * final List<Object[]> deviationBudgetOfPatronagesGroupedByPatronageStatus;
- */
+
 		final Map<Pair<String,String>,Double> deviationRetailPriceOfComponentGroupedByTechnologyAndCurrency;
 		final Map<String,Double> deviationRetailPriceOfToolGroupedByCurrency;
 		final Map<PatronageStatus,Double> deviationBudgetOfPatronagesGroupedByPatronageStatus;
 		
 //		minimum, and maximum 
-/*
- * final List<Object[]> minimumRetailPriceOfComponentGroupedByTechnologyAndCurrency;
- * final List<Object[]> minimumRetailPriceOfToolGroupedByCurrency;
- * final List<Object[]> minimumBudgetOfPatronagesGroupedByPatronageStatus;
- */
+
 		final Map<Pair<String,String>,Double> minimumRetailPriceOfComponentGroupedByTechnologyAndCurrency;
 		final Map<String,Double> minimumRetailPriceOfToolGroupedByCurrency;
 		final Map<PatronageStatus,Double> minimumBudgetOfPatronagesGroupedByPatronageStatus;
 		
-		/*
-		 * final List<Object[]> maximumRetailPriceOfComponentGroupedByTechnologyAndCurrency;
-		 * final List<Object[]> maximumRetailPriceOfToolGroupedByCurrency;
-		 * final List<Object[]> maximumBudgetOfPatronagesGroupedByPatronageStatus;
-		 */
+
 		final Map<Pair<String,String>,Double> maximumRetailPriceOfComponentGroupedByTechnologyAndCurrency;
 		final Map<String,Double> maximumRetailPriceOfToolGroupedByCurrency;
 		final Map<PatronageStatus,Double> maximumBudgetOfPatronagesGroupedByPatronageStatus;

@@ -53,11 +53,8 @@ public class Patronage extends AbstractEntity{
 	@URL
 	protected String optionalLink;
 	
-	// Derived attributes -----------------------------------------------------
 	
 	// Relationships ----------------------------------------------------------
-	
-	//ES POSIBLE QUE HAYA QUE MODIFICAR EL TIPO DE RELACIÓN DE PATRON E INVENTOR
 	
 	@NotNull
 	@Valid
