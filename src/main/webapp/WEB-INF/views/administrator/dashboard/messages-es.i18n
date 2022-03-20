@@ -1,0 +1,35 @@
+# i18n-es.i18n
+#
+# Copyright (C) 2012-2022 Rafael Corchuelo.
+#
+# In keeping with the traditional purpose of furthering education and research, it is
+# the policy of the copyright owner to permit non-commercial use and redistribution of
+# this software. It has been tested carefully, but it is not guaranteed for any particular
+# purposes.  The copyright owner does not offer any warranties or representations, nor do
+# they accept any liabilities with respect to them.
+
+administrator.dashboard.form.title.general-indicators = Indicadores generales
+administrator.dashboard.form.title.application-statuses = Estados de patronazgo
+ 
+
+administrator.dashboard.form.label.total-number-of-components = Numero de componentes
+administrator.dashboard.form.label.total-number-of-tools= Numero de herramientas
+administrator.dashboard.form.label.total-number-of-patronages = Numero de patronazgos
+administrator.dashboard.form.label.total-number-of-patronages-groupedby-status = Numero de patronazgos agrupados por estado
+
+administrator.dashboard.form.label.average-retailprice-components-groupedby-technology= Media de precios de componentes agrupados por tecnologia y divisa
+administrator.dashboard.form.label.average-retailprice-tools-groupedby-currency= Media de precios de herramientas agrupados por divisa
+administrator.dashboard.form.label.average-budget-patronages-groupedby-status = Media de presupuestos de patronazgos agrupados por estado
+
+administrator.dashboard.form.label.deviation-retailprice-components-groupedby-technology= Desviacion de precios de componentes agrupados por tecnologia y divisa
+administrator.dashboard.form.label.deviation-retailprice-tools-groupedby-currency= Desviacion de precios de herramientas agrupados por divisa
+administrator.dashboard.form.label.deviation-budget-patronages-groupedby-status = Desviacion de presupuestos de patronazgos agrupados por estado
+
+administrator.dashboard.form.label.minimum-retailprice-components-groupedby-technology= Minimo de precios de componentes agrupados por tecnologia y divisa
+administrator.dashboard.form.label.minimum-retailprice-tools-groupedby-currency= Minimo de precios de herramientas agrupados por divisa
+administrator.dashboard.form.label.minimum-budget-of-patronages-groupedby-status = Minimo de presupuestos de patronazgos agrupados por estado
+
+administrator.dashboard.form.label.maximum-retailprice-components-groupedby-technology= Maximo de precios de componentes agrupados por tecnologia y divisa
+administrator.dashboard.form.label.maximum-retailprice-tools-groupedby-currency= Maximo de precios de herramientas agrupados por divisa
+administrator.dashboard.form.label.maximum-budget-of-patronages-groupedby-status = Maximo de presupuestos de patronazgos agrupados por estado
+
