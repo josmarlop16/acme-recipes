@@ -34,7 +34,7 @@ public interface AdministratorDashboardRepository extends AbstractRepository {
 	List<Object[]> averageRetailPriceOfToolGroupedByCurrency();
 
 	
-	@Query("select p.status ,avg(p.budget) from Patronage p group by p.status")
+	@Query("select p.status ,avg(p.budget.amount) from Patronage p group by p.status")
 	List<Object[]> averageBudgetOfPatronagesGroupedByPatronageStatus();
 
 	
@@ -48,7 +48,7 @@ public interface AdministratorDashboardRepository extends AbstractRepository {
 	List<Object[]> deviationRetailPriceOfToolGroupedByCurrency();
 
 	
-	@Query("select p.status ,stddev(p.budget) from Patronage p group by p.status")
+	@Query("select p.status ,stddev(p.budget.amount) from Patronage p group by p.status")
 	List<Object[]> deviationBudgetOfPatronagesGroupedByPatronageStatus();
 
 	
@@ -62,7 +62,7 @@ public interface AdministratorDashboardRepository extends AbstractRepository {
 	List<Object[]> minimumRetailPriceOfToolGroupedByCurrency();
 
 	
-	@Query("select p.status ,min(p.budget) from Patronage p group by p.status")
+	@Query("select p.status ,min(p.budget.amount) from Patronage p group by p.status")
 	List<Object[]> minimumBudgetOfPatronagesGroupedByPatronageStatus();
 
 	
@@ -80,7 +80,7 @@ public interface AdministratorDashboardRepository extends AbstractRepository {
 
 	
 	
-	@Query("select p.status ,max(p.budget) from Patronage p group by p.status")
+	@Query("select p.status ,max(p.budget.amount) from Patronage p group by p.status")
 	List<Object[]> maximumBudgetOfPatronagesGroupedByPatronageStatus();
 	
 
