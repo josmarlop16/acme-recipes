@@ -12,11 +12,11 @@ import javax.validation.Valid;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
-import javax.validation.constraints.Positive;
 
 import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.URL;
 
+import acme.framework.datatypes.Money;
 import acme.framework.entities.AbstractEntity;
 import acme.roles.Inventor;
 import acme.roles.Patron;
@@ -43,8 +43,9 @@ public class Patronage extends AbstractEntity{
 	@Length(min = 0, max = 255)
 	protected String stuff;
 	
-	@Positive
-	protected Integer budget;	
+	@Valid
+	@NotNull
+	protected Money budget;	
 	
 	@NotNull
 	@Temporal(TemporalType.TIMESTAMP)
@@ -66,7 +67,5 @@ public class Patronage extends AbstractEntity{
 	@ManyToOne(optional = false)
 	protected Inventor inventor;
 	
-	
-
 }
 

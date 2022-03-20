@@ -30,46 +30,50 @@ public interface PatronDashboardRepository extends AbstractRepository {
 	@Query("select count(p) from Patronage p where p.status = 2")
 	Integer totalNumberOfDeniedPatronages();
 
+	
+	
+	
+	
 //	Average budget from patronages by statuses
-	@Query("select avg(p.budget) from Patronage p where p.status = 0")
+	@Query("select avg(p.budget.amount) from Patronage p where p.status = 0 group by p.budget.currency")
 	Double averageBudgetOfProposedPatronages();
 	
-	@Query("select avg(p.budget) from Patronage p where p.status = 1")
+	@Query("select avg(p.budget.amount) from Patronage p where p.status = 1 group by p.budget.currency")
 	Double averageBudgetOfAcceptedPatronages();
 	
-	@Query("select avg(p.budget) from Patronage p where p.status = 2")
+	@Query("select avg(p.budget.amount) from Patronage p where p.status = 2 group by p.budget.currency")
 	Double averageBudgetOfDeniedPatronages();
 
 	
 //	Deviation of budgets by patronage statuses
-	@Query("select stddev(p.budget) from Patronage p where p.status = 0")
+	@Query("select stddev(p.budget.amount) from Patronage p where p.status = 0 group by p.budget.currency")
 	Long deviationBudgetOfProposedPatronages();
 	
-	@Query("select stddev(p.budget) from Patronage p where p.status = 1")
+	@Query("select stddev(p.budget.amount) from Patronage p where p.status = 1 group by p.budget.currency")
 	Long deviationBudgetOfAcceptedPatronages();
 	
-	@Query("select stddev(p.budget) from Patronage p where p.status = 2")
+	@Query("select stddev(p.budget.amount) from Patronage p where p.status = 2 group by p.budget.currency")
 	Long deviationBudgetOfDeniedPatronages();
 	
 	
 //	Minimum budget of patronages by statuses
-	@Query("select min(p.budget) from Patronage p where p.status = 0")
+	@Query("select min(p.budget.amount) from Patronage p where p.status = 0 group by p.budget.currency")
 	Double minimumBudgetOfProposedPatronages();
 
-	@Query("select min(p.budget) from Patronage p where p.status = 1")
+	@Query("select min(p.budget.amount) from Patronage p where p.status = 1 group by p.budget.currency")
 	Double minimumBudgetOfAcceptedPatronages();
 
-	@Query("select min(p.budget) from Patronage p where p.status = 2")
+	@Query("select min(p.budget.amount) from Patronage p where p.status = 2 group by p.budget.currency")
 	Double minimumBudgetOfDeniedPatronages();
 
 //	Maximum budget of patronages by statuses
-	@Query("select max(p.budget) from Patronage p where p.status = 0")
+	@Query("select max(p.budget.amount) from Patronage p where p.status = 0 group by p.budget.currency")
 	Double maximumBudgetOfProposedPatronages();
 
-	@Query("select max(p.budget) from Patronage p where p.status = 1")
+	@Query("select max(p.budget.amount) from Patronage p where p.status = 1 group by p.budget.currency")
 	Double maximumBudgetOfAcceptedPatronages();
 
-	@Query("select max(p.budget) from Patronage p where p.status = 2")
+	@Query("select max(p.budget.amount) from Patronage p where p.status = 2 group by p.budget.currency")
 	Double maximumBudgetOfDeniedPatronages();
  
 }
