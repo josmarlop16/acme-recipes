@@ -40,6 +40,10 @@
 			<acme:menu-suboption code="master.menu.patron.dashboard" action="/patron/dashboard/show"/>
 		</acme:menu-option>
 		
+		<acme:menu-option code="master.menu.inventor.tools" access="hasRole('Inventor')">
+			<acme:menu-suboption code="master.menu.inventor.list-tools" action="/authenticated/inventor/tool/list"/>		
+		</acme:menu-option>
+		
 		<acme:menu-option code="master.menu.administrator" access="hasRole('Administrator')">
 			<acme:menu-suboption code="master.menu.administrator.user-accounts" action="/administrator/user-account/list"/>
 			<acme:menu-suboption code="master.menu.administrator.dashboard" action="/administrator/dashboard/show"/>

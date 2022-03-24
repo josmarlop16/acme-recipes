@@ -20,6 +20,10 @@ master.menu.sign-out = Salir
 master.menu.anonymous = Anónimo
 master.menu.components = Componentes
 
+master.menu.inventor.tools = Herramientas
+
+master.menu.inventor.list-tools = Lista de herramientas
+
 master.menu.anonymous.list-components = Listar componentes
 
 master.menu.anonymous.jorge-toledo-vega = 49520347J: TOLEDO VEGA, JORGE
