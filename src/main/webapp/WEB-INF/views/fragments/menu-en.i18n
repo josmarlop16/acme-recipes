@@ -22,7 +22,7 @@ master.menu.components = Components
 master.menu.inventor.tools = Tools
 
 master.menu.inventor.list-tools = Tool list
-master.menu.inventor.list-components = Components list
+master.menu.anonymous.list-components = Components list
 
 master.menu.anonymous.jorge-toledo-vega = 49520347J: TOLEDO VEGA, JORGE
 master.menu.anonymous.jose-antonio-marquez-lopez = 80236202N: MARQUEZ LOPEZ, JOSE ANTONIO

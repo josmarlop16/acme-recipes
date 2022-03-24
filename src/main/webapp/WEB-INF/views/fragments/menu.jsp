@@ -41,7 +41,7 @@
 		</acme:menu-option>
 		
 		<acme:menu-option code="master.menu.inventor.tools" access="hasRole('Inventor')">
-			<acme:menu-suboption code="master.menu.inventor.list-tools" action="/authenticated/inventor/tool/list"/>		
+			<acme:menu-suboption code="master.menu.inventor.list-tools" action="/inventor/tools/list"/>		
 		</acme:menu-option>
 		
 		<acme:menu-option code="master.menu.administrator" access="hasRole('Administrator')">

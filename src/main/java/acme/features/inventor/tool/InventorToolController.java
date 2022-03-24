@@ -10,18 +10,20 @@
  * they accept any liabilities with respect to them.
  */
 
-package acme.features.authenticated.inventor.tool;
+package acme.features.inventor.tool;
 
 import javax.annotation.PostConstruct;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
 
 import acme.entities.item.Item;
 import acme.framework.controllers.AbstractController;
 import acme.roles.Inventor;
 
 @Controller
+@RequestMapping("/inventor/tools/")
 public class InventorToolController extends AbstractController<Inventor, Item> {
 
 	// Internal state ---------------------------------------------------------
