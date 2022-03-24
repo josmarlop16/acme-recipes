@@ -18,7 +18,10 @@ master.menu.sign-out = Salir
 # master.menu.anonymous #######################################################
 
 master.menu.anonymous = Anónimo
-master.menu.anonymous.favourite-link = Enlace favorito
+master.menu.components = Componentes
+
+master.menu.anonymous.list-components = Listar componentes
+
 master.menu.anonymous.jorge-toledo-vega = 49520347J: TOLEDO VEGA, JORGE
 master.menu.anonymous.jose-antonio-marquez-lopez = 80236202N: MARQUEZ LOPEZ, JOSE ANTONIO
 master.menu.anonymous.antonio-mira-otero = 53932915P: MIRA OTERO, ANTONIO
