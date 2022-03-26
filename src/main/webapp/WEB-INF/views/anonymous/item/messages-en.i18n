@@ -8,10 +8,11 @@
 # purposes.  The copyright owner does not offer any warranties or representations, nor do
 # they accept any liabilities with respect to them.
 
+
+# List
 anonymous.component.list.label.name = Name
-anonymous.component.list.label.code = code
+anonymous.component.list.label.code = Code
 anonymous.component.list.label.technology = Technology
 anonymous.component.list.label.description = Description
 anonymous.component.list.label.retailPrice = Retail price
 anonymous.component.list.label.link = Link
-
