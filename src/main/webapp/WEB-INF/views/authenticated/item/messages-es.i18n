@@ -8,9 +8,9 @@
 # purposes.  The copyright owner does not offer any warranties or representations, nor do
 # they accept any liabilities with respect to them.
 
-anonymous.component.list.label.name = Nombre
-anonymous.component.list.label.code = Código
-anonymous.component.list.label.technology = Tecnología
-anonymous.component.list.label.description = Descripción
-anonymous.component.list.label.retailPrice = Precio
-anonymous.component.list.label.link = Enlace
+authenticated.component.list.label.name = Nombre
+authenticated.component.list.label.code = Código
+authenticated.component.list.label.technology = Tecnología
+authenticated.component.list.label.description = Descripción
+authenticated.component.list.label.retailPrice = Precio
+authenticated.component.list.label.link = Enlace
