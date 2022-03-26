@@ -32,6 +32,10 @@
 			<acme:menu-suboption code="master.menu.patron.dashboard" action="/patron/dashboard/show"/>
 		</acme:menu-option>
 		
+		<acme:menu-option code="master.menu.toolkits" access="isAnonymous()">
+			<acme:menu-suboption code="master.menu.anonymous.list-toolkits" action="/anonymous/toolkit/list"/>		
+		</acme:menu-option>
+		
 		<acme:menu-option code="master.menu.administrator" access="hasRole('Administrator')">
 			<acme:menu-suboption code="master.menu.administrator.user-accounts" action="/administrator/user-account/list"/>
 			<acme:menu-suboption code="master.menu.administrator.dashboard" action="/administrator/dashboard/show"/>
