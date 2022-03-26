@@ -28,6 +28,9 @@ public class AuthenticatedComponentController extends AbstractController<Authent
 
 	@Autowired
 	protected AuthenticatedComponentListService		listService;
+	
+	@Autowired
+	protected AuthenticatedComponentShowService		showService;
 
 //	@Autowired
 //	protected AnonymousComponentCreateService	createService;
@@ -38,6 +41,7 @@ public class AuthenticatedComponentController extends AbstractController<Authent
 	@PostConstruct
 	protected void initialise() {
 		super.addCommand("list", this.listService);
+		super.addCommand("show", this.showService);
 //		super.addCommand("create", this.createService);
 	}
 
