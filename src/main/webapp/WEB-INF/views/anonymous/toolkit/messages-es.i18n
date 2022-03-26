@@ -13,4 +13,4 @@ anonymous.toolkit.list.label.code = Código
 anonymous.toolkit.list.label.description = Descripción
 anonymous.toolkit.list.label.assemblyNotes = Notas de asamblea
 anonymous.toolkit.list.label.link = Link
-anonymous.toolkit.list.label.item = Objeto
+anonymous.toolkit.list.label.item.name = Objeto

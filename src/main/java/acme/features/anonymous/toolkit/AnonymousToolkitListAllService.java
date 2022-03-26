@@ -3,6 +3,7 @@ import java.util.Collection;
 
 import org.springframework.stereotype.Service;
 
+import acme.entities.item.Item;
 import acme.entities.toolkit.Toolkit;
 import acme.framework.components.models.Model;
 import acme.framework.controllers.Request;
@@ -43,7 +44,7 @@ public class AnonymousToolkitListAllService implements AbstractListService<Anony
 		assert entity != null;
 		assert model != null;
 		
-		request.unbind(entity, model, "title", "code", "description", "assemblyNotes", "link");
+		request.unbind(entity, model, "title", "code", "description", "assemblyNotes", "link", "item.name", "item.id");
 		
 	}
 

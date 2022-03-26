@@ -13,6 +13,6 @@ anonymous.toolkit.list.label.code = Code
 anonymous.toolkit.list.label.description = Description
 anonymous.toolkit.list.label.assemblyNotes = Assembly Notes
 anonymous.toolkit.list.label.link = Link
-anonymous.toolkit.list.label.item = Item
+anonymous.toolkit.list.label.item.name = Item
 
 

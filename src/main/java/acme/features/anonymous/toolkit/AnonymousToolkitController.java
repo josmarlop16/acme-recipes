@@ -17,6 +17,9 @@ public class AnonymousToolkitController extends AbstractController<Anonymous, To
 
 	@Autowired
 	protected AnonymousToolkitListAllService listAllService;
+	
+	@Autowired
+	protected AnonymousToolkitShowService showService;
 
 	// Constructors -----------------------------------------------------------
 
@@ -24,6 +27,7 @@ public class AnonymousToolkitController extends AbstractController<Anonymous, To
 	@PostConstruct
 	protected void initialise() {
 		super.addCommand("list", this.listAllService);
+		super.addCommand("show", this.showService);
 	}
 	
 }
