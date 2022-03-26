@@ -19,7 +19,8 @@
 <acme:menu-bar code="master.menu.home">
 	<acme:menu-left>
 		<acme:menu-option code="master.menu.anonymous" access="isAnonymous()">
-			<acme:menu-suboption code="master.menu.anonymous.favourite-link" action="http://www.example.com/"/>
+	
+			
 			<acme:menu-suboption code="master.menu.anonymous.jorge-toledo-vega" action="https://github.com/jvegax"/>
 			<acme:menu-suboption code="master.menu.anonymous.jose-antonio-marquez-lopez" action="https://github.com/josmarlop16"/>
 			<acme:menu-suboption code="master.menu.anonymous.antonio-mira-otero" action="https://github.com/Anton1o007"/>
@@ -27,7 +28,14 @@
 			<acme:menu-suboption code="master.menu.anonymous.julian-otane-parra" action="https://github.com/jonatep"/>
 			<acme:menu-suboption code="master.menu.anonymous.luis-rodriguez-garcia" action="https://github.com/LuisUsrDev"/>
 		</acme:menu-option>
-			
+		
+		<acme:menu-option code="master.menu.components" access="isAnonymous()">
+			<acme:menu-suboption code="master.menu.anonymous.list-components" action="/anonymous/item/list"/>		
+		</acme:menu-option>
+		<acme:menu-option code="master.menu.components" access="isAuthenticated()">
+			<acme:menu-suboption code="master.menu.anonymous.list-components" action="/authenticated/item/list"/>		
+		</acme:menu-option>
+		
 		<acme:menu-option code="master.menu.patron" access="hasRole('Patron')">
 			<acme:menu-suboption code="master.menu.patron.dashboard" action="/patron/dashboard/show"/>
 		</acme:menu-option>
