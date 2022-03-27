@@ -16,10 +16,11 @@
 <%@taglib prefix="acme" uri="urn:jsptagdir:/WEB-INF/tags"%>
 
 <acme:list>
-	<acme:list-column code="anonymous.component.list.label.name" path="name" width="20%"/>
-	<acme:list-column code="anonymous.component.list.label.code" path="code" width="20%"/>
-	<acme:list-column code="anonymous.component.list.label.technology" path="technology" width="20%"/>
-	<acme:list-column code="anonymous.component.list.label.description" path="description" width="20%"/>
-	<acme:list-column code="anonymous.component.list.label.retailPrice" path="retailPrice" width="20%"/>
-	<acme:list-column code="anonymous.component.list.label.link" path="link" width="60%"/>
-</acme:list>
+	<acme:list-column code="anonymous.toolkit.list.label.title" path="title" width="20%"/>
+	<acme:list-column code="anonymous.toolkit.list.label.code" path="code" width="20%"/>
+	<acme:list-column code="anonymous.toolkit.list.label.description" path="description" width="20%"/>
+	<acme:list-column code="anonymous.toolkit.list.label.assemblyNotes" path="assemblyNotes" width="20%"/>
+	<acme:list-column code="anonymous.toolkit.list.label.link" path="link" width="20%"/>
+	<acme:list-column code="anonymous.toolkit.list.label.item.name" path="item.name" width="20%"/>
+	
+</acme:list> 
