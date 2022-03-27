@@ -1,4 +1,4 @@
-# i18n-es.i18n
+# i18n-en.i18n
 #
 # Copyright (C) 2012-2022 Rafael Corchuelo.
 #
@@ -8,9 +8,10 @@
 # purposes.  The copyright owner does not offer any warranties or representations, nor do
 # they accept any liabilities with respect to them.
 
-anonymous.tool.list.label.name = Nombre
-anonymous.tool.list.label.code = Código
-anonymous.tool.list.label.technology = Tecnología
-anonymous.tool.list.label.description = Descripción
-anonymous.tool.list.label.retailPrice = Precio
-anonymous.tool.list.label.link = Enlace
+inventor.item.list.label.name = Name
+inventor.item.list.label.code = Code
+inventor.item.list.label.technology = Technology
+inventor.item.list.label.description = Description
+inventor.item.list.label.retailPrice = Retail price
+inventor.item.list.label.link = Link
+

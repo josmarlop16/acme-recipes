@@ -10,20 +10,18 @@
  * they accept any liabilities with respect to them.
  */
 
-package acme.features.inventor.tool;
+package acme.features.inventor.item;
 
 import javax.annotation.PostConstruct;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestMapping;
 
 import acme.entities.item.Item;
 import acme.framework.controllers.AbstractController;
 import acme.roles.Inventor;
 
 @Controller
-@RequestMapping("/inventor/tools/")
 public class InventorToolController extends AbstractController<Inventor, Item> {
 
 	// Internal state ---------------------------------------------------------
@@ -31,6 +29,10 @@ public class InventorToolController extends AbstractController<Inventor, Item> {
 	@Autowired
 	protected InventorToolListService		listService;
 
+	@Autowired
+	protected InventorToolShowService		showService;
+
+	
 //	@Autowired
 //	protected AnonymousComponentCreateService	createService;
 
@@ -40,6 +42,7 @@ public class InventorToolController extends AbstractController<Inventor, Item> {
 	@PostConstruct
 	protected void initialise() {
 		super.addCommand("list", this.listService);
+		super.addCommand("show", this.showService);
 //		super.addCommand("create", this.createService);
 	}
 

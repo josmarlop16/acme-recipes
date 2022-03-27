@@ -10,7 +10,7 @@
  * they accept any liabilities with respect to them.
  */
 
-package acme.features.inventor.tool;
+package acme.features.inventor.item;
 
 import java.util.Collection;
 
@@ -23,7 +23,12 @@ import acme.framework.repositories.AbstractRepository;
 @Repository
 public interface InventorToolRepository extends AbstractRepository {
 
-	@Query("select i from Item i where i.type = 0")
-	Collection<Item> findTools();
+	@Query("select i from Item i where i.type = 0 and i.inventor.id = :inventorId")
+	Collection<Item> findToolsByInventorId(int inventorId);
+
+	@Query("select i from Item i where i.id = :id and i.type = 0 and i.inventor.id = :inventorId")
+	Item findToolById(int id);
+
+
 
 }

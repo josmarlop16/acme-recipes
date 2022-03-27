@@ -10,7 +10,7 @@
  * they accept any liabilities with respect to them.
  */
 
-package acme.features.inventor.tool;
+package acme.features.inventor.item;
 
 import java.util.Collection;
 
@@ -20,6 +20,7 @@ import org.springframework.stereotype.Service;
 import acme.entities.item.Item;
 import acme.framework.components.models.Model;
 import acme.framework.controllers.Request;
+import acme.framework.entities.Principal;
 import acme.framework.services.AbstractListService;
 import acme.roles.Inventor;
 
@@ -31,7 +32,6 @@ public class InventorToolListService implements AbstractListService<Inventor, It
 	@Autowired
 	protected InventorToolRepository repository;
 
-	// AbstractListService<Administrator, Shout> interface --------------
 
 	@Override
 	public boolean authorise(final Request<Item> request) {
@@ -45,8 +45,11 @@ public class InventorToolListService implements AbstractListService<Inventor, It
 		assert request != null;
 
 		Collection<Item> result;
+		Principal principal;
+		
+		principal = request.getPrincipal();
+		result = this.repository.findToolsByInventorId(principal.getActiveRoleId());
 
-		result = this.repository.findTools();
 
 		return result;
 	}
