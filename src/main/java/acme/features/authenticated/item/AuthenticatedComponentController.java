@@ -18,6 +18,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 
 import acme.entities.item.Item;
+import acme.features.anonymous.item.AnonymousComponentToolListService;
+import acme.features.anonymous.item.AnonymousComponentToolShowService;
 import acme.framework.controllers.AbstractController;
 import acme.framework.roles.Authenticated;
 
@@ -31,6 +33,12 @@ public class AuthenticatedComponentController extends AbstractController<Authent
 	
 	@Autowired
 	protected AuthenticatedComponentShowService		showService;
+	
+	@Autowired
+	protected AuthenticatedComponentToolListService		toollistService;
+	
+	@Autowired
+	protected AuthenticatedComponentToolShowService		toolshowService;
 
 //	@Autowired
 //	protected AnonymousComponentCreateService	createService;
@@ -40,8 +48,10 @@ public class AuthenticatedComponentController extends AbstractController<Authent
 
 	@PostConstruct
 	protected void initialise() {
-		super.addCommand("list", this.listService);
-		super.addCommand("show", this.showService);
+		super.addCommand("list-component", "list", this.listService);
+		super.addCommand("show-component", this.showService);
+		super.addCommand("list-tool", "list", this.toollistService);
+		super.addCommand("show-tool", this.showService);
 //		super.addCommand("create", this.createService);
 	}
 

@@ -1,9 +1,7 @@
 package acme.features.anonymous.toolkit;
+
 import java.util.Collection;
-
 import org.springframework.stereotype.Service;
-
-import acme.entities.item.Item;
 import acme.entities.toolkit.Toolkit;
 import acme.framework.components.models.Model;
 import acme.framework.controllers.Request;
