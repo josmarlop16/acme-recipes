@@ -36,6 +36,11 @@
 			<acme:menu-suboption code="master.menu.anonymous.list-components" action="/authenticated/item/list"/>		
 		</acme:menu-option>
 		
+		<acme:menu-option code="master.menu.authenticated.configuration" access="isAuthenticated()">
+			<acme:menu-suboption code="master.menu.authenticated.configuration.list-spam" action="/authenticated/spam/list"/>
+			<acme:menu-suboption code="master.menu.authenticated.configuration.list-currency" action="/authenticated/currency/list"/>			
+		</acme:menu-option>
+		
 		<acme:menu-option code="master.menu.patron" access="hasRole('Patron')">
 			<acme:menu-suboption code="master.menu.patron.dashboard" action="/patron/dashboard/show"/>
 		</acme:menu-option>

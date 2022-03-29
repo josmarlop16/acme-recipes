@@ -48,6 +48,9 @@ master.menu.administrator.shut-down = Parar el sistema
 
 
 master.menu.authenticated.list-toolkits = Listar Toolkits
+master.menu.authenticated.configuration = Configuración
+master.menu.authenticated.configuration.list-spam = Lista de Spam
+master.menu.authenticated.configuration.list-currency = Lista de divisas
 
 # master.menu.patron ##########################################################
 
