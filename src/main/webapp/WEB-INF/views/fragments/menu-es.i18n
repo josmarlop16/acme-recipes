@@ -15,15 +15,11 @@ master.menu.sign-up = Registrarse
 master.menu.sign-in = Entrar
 master.menu.sign-out = Salir
 master.menu.toolkits = Toolkits
+master.menu.components = Componentes
 
 # master.menu.anonymous #######################################################
 
 master.menu.anonymous = Anónimo
-master.menu.components = Componentes
-
-master.menu.inventor.tools = Herramientas
-
-master.menu.inventor.list-tools = Lista de herramientas
 
 master.menu.anonymous.list-components = Listar componentes
 
@@ -46,7 +42,6 @@ master.menu.administrator.shut-down = Parar el sistema
 
 # master.menu.authenticated ###################################################
 
-
 master.menu.authenticated.list-toolkits = Listar Toolkits
 
 # master.menu.patron ##########################################################
@@ -54,6 +49,12 @@ master.menu.authenticated.list-toolkits = Listar Toolkits
 master.menu.patron = Patron
 master.menu.patron.dashboard = Dashboard
 
+# master.menu.patron ##########################################################
+
+master.menu.inventor.tools = Herramientas
+master.menu.inventor.list-tools = Lista de herramientas
+master.menu.inventor.patronage-reports = Reportes de patrones
+master.menu.inventor.list-patronage-reports = Lista de reportes de patrones
 
 # master.menu.user-account ####################################################
 
