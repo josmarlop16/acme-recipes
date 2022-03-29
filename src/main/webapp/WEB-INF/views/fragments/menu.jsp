@@ -54,11 +54,16 @@
 		<acme:menu-option code="master.menu.patron" access="hasRole('Patron')">
 			<acme:menu-suboption code="master.menu.patron.dashboard" action="/patron/dashboard/show"/>
 		</acme:menu-option>
-		
+
 		<acme:menu-option code="master.menu.inventor.tools" access="hasRole('Inventor')">
 			<acme:menu-suboption code="master.menu.inventor.list-tools" action="/inventor/item/list"/>		
     	</acme:menu-option>
     	
+    	<acme:menu-option code="master.menu.inventor.patronage-reports" access="hasRole('Inventor')">
+			<acme:menu-suboption code="master.menu.inventor.list-patronage-reports" action="/inventor/patronage-report/list"/>		
+    	</acme:menu-option>
+    	
+
 		<acme:menu-option code="master.menu.administrator" access="hasRole('Administrator')">
 			<acme:menu-suboption code="master.menu.administrator.user-accounts" action="/administrator/user-account/list"/>
 			<acme:menu-suboption code="master.menu.administrator.dashboard" action="/administrator/dashboard/show"/>
@@ -68,7 +73,7 @@
 			<acme:menu-separator/>
 			<acme:menu-suboption code="master.menu.administrator.shut-down" action="/administrator/shut-down"/>
 		</acme:menu-option>
-		
+
 	</acme:menu-left>
 
 	<acme:menu-right>

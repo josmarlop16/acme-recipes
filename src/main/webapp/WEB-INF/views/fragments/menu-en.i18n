@@ -18,6 +18,7 @@ master.menu.toolkits = Toolkits
 master.menu.components = Components
 master.menu.tools = Tools
 
+
 # master.menu.anonymous #######################################################
 
 master.menu.anonymous = Anonymous
@@ -48,15 +49,20 @@ master.menu.authenticated.list-toolkits = List Toolkits
 master.menu.authenticated.list-components = List Component
 master.menu.authenticated.list-tools = List Tool
 
+
 # master.menu.patron ##########################################################
 
 master.menu.patron = Patron
 master.menu.patron.dashboard = Dashboard
 
-# master.menu.patron ##########################################################
+
+# master.menu.inventor ##########################################################
 
 master.menu.inventor.tools = Tools
 master.menu.inventor.list-tools = Tool list
+master.menu.inventor.patronage-reports = Patronage Reports
+master.menu.inventor.list-patronage-reports = Patronage Reports list
+
 
 # master.menu.user-account ####################################################
 

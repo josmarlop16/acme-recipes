@@ -8,7 +8,7 @@
 # purposes.  The copyright owner does not offer any warranties or representations, nor do
 # they accept any liabilities with respect to them.
 
-﻿# master.menu #################################################################
+# master.menu #################################################################
 
 master.menu.home = Inicio
 master.menu.sign-up = Registrarse
@@ -17,6 +17,7 @@ master.menu.sign-out = Salir
 master.menu.toolkits = Toolkits
 master.menu.components = Componentes
 master.menu.tools = Herramientas
+
 
 # master.menu.anonymous #######################################################
 
@@ -53,10 +54,14 @@ master.menu.authenticated.list-tools = Listar Herramientas
 master.menu.patron = Patron
 master.menu.patron.dashboard = Dashboard
 
+
 # master.menu.inventor ##########################################################
 
 master.menu.inventor.tools = Herramientas
 master.menu.inventor.list-tools = Lista de herramientas
+master.menu.inventor.patronage-reports = Reportes de patrones
+master.menu.inventor.list-patronage-reports = Lista de reportes de patrones
+
 
 # master.menu.user-account ####################################################
 
