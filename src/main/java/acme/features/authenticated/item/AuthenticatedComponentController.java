@@ -49,9 +49,8 @@ public class AuthenticatedComponentController extends AbstractController<Authent
 	@PostConstruct
 	protected void initialise() {
 		super.addCommand("list-component", "list", this.listService);
-		super.addCommand("show-component", this.showService);
 		super.addCommand("list-tool", "list", this.toollistService);
-		super.addCommand("show-tool", this.showService);
+		super.addCommand("show", this.showService);
 //		super.addCommand("create", this.createService);
 	}
 

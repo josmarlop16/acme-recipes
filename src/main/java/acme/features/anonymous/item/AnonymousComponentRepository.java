@@ -26,13 +26,13 @@ public interface AnonymousComponentRepository extends AbstractRepository {
 	@Query("select i from Item i where i.type = 1")
 	Collection<Item> findComponents();
 	
-	@Query("select i from Item i where i.id = :id and i.type = 1")
+	@Query("select i from Item i where i.id = id and i.type = 1")
 	Item findComponentById(int id);
 	
 	@Query("select i from Item i where i.type = 0")
 	Collection<Item> findTools();
 	
-	@Query("select i from Item i where i.id = :id and i.type = 0")
+	@Query("select i from Item i where i.id = id and i.type = 0")
 	Item findToolById(int id);
 
 }

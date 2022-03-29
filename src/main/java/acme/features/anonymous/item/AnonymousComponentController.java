@@ -47,9 +47,8 @@ public class AnonymousComponentController extends AbstractController<Anonymous, 
 	@PostConstruct
 	protected void initialise() {
 		super.addCommand("list-component", "list", this.listService);
-		super.addCommand("show-component", this.showService);
 		super.addCommand("list-tool", "list", this.toollistService);
-		super.addCommand("show-tool", this.toolshowService);
+		super.addCommand("show", this.toolshowService);
 //		super.addCommand("create", this.createService);
 	}
 
