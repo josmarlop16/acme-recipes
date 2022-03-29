@@ -18,8 +18,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 
 import acme.entities.item.Item;
-import acme.features.anonymous.item.AnonymousComponentToolListService;
-import acme.features.anonymous.item.AnonymousComponentToolShowService;
 import acme.framework.controllers.AbstractController;
 import acme.framework.roles.Authenticated;
 
