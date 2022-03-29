@@ -22,7 +22,7 @@ import acme.framework.roles.Authenticated;
 import acme.framework.services.AbstractListService;
 
 @Service
-public class AuthenticatedComponentListService implements AbstractListService<Authenticated, Item> {
+public class AuthenticatedComponentToolListService implements AbstractListService<Authenticated, Item> {
 
 	// Internal state ---------------------------------------------------------
 
@@ -42,7 +42,7 @@ public class AuthenticatedComponentListService implements AbstractListService<Au
 	public Collection<Item> findMany(final Request<Item> request) {
 		assert request != null;
 		Collection<Item> result;
-		result = this.repository.findComponents();
+		result = this.repository.findTools();	
 		return result;
 	}
 	
