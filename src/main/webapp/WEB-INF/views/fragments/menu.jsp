@@ -27,12 +27,20 @@
 			<acme:menu-suboption code="master.menu.anonymous.luis-rodriguez-garcia" action="https://github.com/LuisUsrDev"/>
 		</acme:menu-option>
 		
+		<acme:menu-option code="master.menu.tools" access="isAnonymous()">
+			<acme:menu-suboption code="master.menu.anonymous.list-tools" action="/anonymous/item/list-tool"/>		
+		</acme:menu-option>
+		
+		<acme:menu-option code="master.menu.tools" access="isAuthenticated()">
+			<acme:menu-suboption code="master.menu.authenticated.list-tools" action="/authenticated/item/list-tool"/>		
+		</acme:menu-option>
+		
 		<acme:menu-option code="master.menu.components" access="isAnonymous()">
-			<acme:menu-suboption code="master.menu.anonymous.list-components" action="/anonymous/item/list"/>		
+			<acme:menu-suboption code="master.menu.anonymous.list-components" action="/anonymous/item/list-component"/>		
 		</acme:menu-option>
 		
 		<acme:menu-option code="master.menu.components" access="isAuthenticated()">
-			<acme:menu-suboption code="master.menu.anonymous.list-components" action="/authenticated/item/list"/>		
+			<acme:menu-suboption code="master.menu.authenticated.list-components" action="/authenticated/item/list-component"/>		
 		</acme:menu-option>
 		
 		<acme:menu-option code="master.menu.toolkits" access="isAnonymous()">
@@ -55,6 +63,7 @@
 			<acme:menu-suboption code="master.menu.inventor.list-patronage-reports" action="/inventor/patronage-report/list"/>		
     	</acme:menu-option>
     	
+
 		<acme:menu-option code="master.menu.administrator" access="hasRole('Administrator')">
 			<acme:menu-suboption code="master.menu.administrator.user-accounts" action="/administrator/user-account/list"/>
 			<acme:menu-suboption code="master.menu.administrator.dashboard" action="/administrator/dashboard/show"/>
@@ -64,6 +73,7 @@
 			<acme:menu-separator/>
 			<acme:menu-suboption code="master.menu.administrator.shut-down" action="/administrator/shut-down"/>
 		</acme:menu-option>
+
 	</acme:menu-left>
 
 	<acme:menu-right>
