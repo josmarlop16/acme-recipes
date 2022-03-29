@@ -21,11 +21,15 @@ master.menu.toolkits = Toolkits
 master.menu.anonymous = Anónimo
 master.menu.components = Componentes
 
+master.menu.userAccounts = Cuentas de usuario
+
 master.menu.inventor.tools = Herramientas
 
 master.menu.inventor.list-tools = Lista de herramientas
 
 master.menu.anonymous.list-components = Listar componentes
+
+master.menu.anonymous.list-userAccounts = Listar cuentas de usuario
 
 master.menu.anonymous.jorge-toledo-vega = 49520347J: TOLEDO VEGA, JORGE
 master.menu.anonymous.jose-antonio-marquez-lopez = 80236202N: MARQUEZ LOPEZ, JOSE ANTONIO
@@ -48,6 +52,8 @@ master.menu.administrator.shut-down = Parar el sistema
 
 
 master.menu.authenticated.list-toolkits = Listar Toolkits
+
+master.menu.authenticated.list-userAccounts = Listar cuentas de usuario
 
 # master.menu.patron ##########################################################
 
