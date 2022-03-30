@@ -9,6 +9,6 @@
 # they accept any liabilities with respect to them.
 
 authenticated.currency.list.label.name = Name
-authenticated.currency.list.label.isDefault = Is Default?
+authenticated.currency.list.label.isDefault = Default currency
 
 

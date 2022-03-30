@@ -8,6 +8,6 @@
 # purposes.  The copyright owner does not offer any warranties or representations, nor do
 # they accept any liabilities with respect to them.
 
-authenticated.spam.list.label.spamTerm = Término spam
-authenticated.spam.list.label.isStrong = Es explícito?
+authenticated.spam.list.label.spamTerm = Palabra
+authenticated.spam.list.label.isStrong = Explícito
 authenticated.spam.list.label.threshold = Umbral

@@ -8,8 +8,8 @@
 # purposes.  The copyright owner does not offer any warranties or representations, nor do
 # they accept any liabilities with respect to them.
 
-authenticated.spam.list.label.spamTerm = Spam Term
-authenticated.spam.list.label.isStrong = Is Strong?
+authenticated.spam.list.label.spamTerm = Word
+authenticated.spam.list.label.isStrong = Explicit
 authenticated.spam.list.label.threshold = Threshold
 
 

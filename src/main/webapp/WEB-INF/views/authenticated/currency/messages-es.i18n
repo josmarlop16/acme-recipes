@@ -9,4 +9,4 @@
 # they accept any liabilities with respect to them.
 
 authenticated.currency.list.label.name = Nombre
-authenticated.currency.list.label.isDefault = Por defecto
+authenticated.currency.list.label.isDefault = Moneda por defecto
