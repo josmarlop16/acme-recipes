@@ -1,5 +1,5 @@
 <%--
-- list.jsp
+- form.jsp
 -
 - Copyright (C) 2012-2022 Rafael Corchuelo.
 -
@@ -15,12 +15,14 @@
 <%@taglib prefix="jstl" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@taglib prefix="acme" uri="urn:jsptagdir:/WEB-INF/tags"%>
 
-<acme:list>
-	<acme:list-column code="authenticated.toolkit.list.label.title" path="title" width="20%"/>
-	<acme:list-column code="authenticated.toolkit.list.label.code" path="code" width="20%"/>
-	<acme:list-column code="authenticated.toolkit.list.label.description" path="description" width="20%"/>
-	<acme:list-column code="authenticated.toolkit.list.label.assemblyNotes" path="assemblyNotes" width="20%"/>
-	<acme:list-column code="authenticated.toolkit.list.label.link" path="link" width="20%"/>
-	<acme:list-column code="authenticated.toolkit.list.label.item.name" path="item.name" width="20%"/>
+<acme:form>
+	<acme:input-textbox code="any.toolkit.list.label.title" path="title"/>
+	<acme:input-textbox code="any.toolkit.list.label.code" path="code"/>
+	<acme:input-textarea code="any.toolkit.list.label.description" path="description"/>
+	<acme:input-textarea code="any.toolkit.list.label.assemblyNotes" path="assemblyNotes"/>
+	<acme:input-url code="any.toolkit.list.label.link" path="link"/>
+	<acme:input-money code="any.toolkit.list.label.item.price" path="item.retailPrice"/>
 	
-</acme:list> 
+	<acme:button code="any.toolkit.form.button.item" action="/any/item/show?id=${itemId}"/>
+	
+</acme:form>

@@ -1,4 +1,4 @@
-package acme.features.authenticated.toolkit;
+package acme.features.any.toolkit;
 
 import java.util.Collection;
 
@@ -10,7 +10,7 @@ import acme.framework.repositories.AbstractRepository;
 
 
 @Repository
-public interface AuthenticatedToolkitRepository extends AbstractRepository {
+public interface AnyToolkitRepository extends AbstractRepository {
 
 	@Query("select t from Toolkit t where t.id = id")
 	Toolkit findOneToolkitById(int id);
