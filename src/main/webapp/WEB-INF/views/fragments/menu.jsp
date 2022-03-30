@@ -28,8 +28,8 @@
 			<acme:menu-suboption code="master.menu.anonymous.luis-rodriguez-garcia" action="https://github.com/LuisUsrDev"/>
 		</acme:menu-option>
 		
-		<acme:menu-option code="master.menu.chirps" access="isAuthenticated()">
-			<acme:menu-suboption code="master.menu.authenticated.list-chirps" action="/authenticated/chirp/list"/>		
+		<acme:menu-option code="master.menu.chirps" access="permitAll()">
+			<acme:menu-suboption code="master.menu.any.list-chirps" action="/any/chirp/list"/>		
 		</acme:menu-option>
 			
 		<acme:menu-option code="master.menu.patron" access="hasRole('Patron')">

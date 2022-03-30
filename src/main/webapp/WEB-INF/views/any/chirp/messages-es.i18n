@@ -1,4 +1,4 @@
-# i18n-en.i18n
+# i18n-es.i18n
 #
 # Copyright (C) 2012-2022 Rafael Corchuelo.
 #
@@ -8,8 +8,8 @@
 # purposes.  The copyright owner does not offer any warranties or representations, nor do
 # they accept any liabilities with respect to them.
 
-authenticated.chirp.list.label.creationMoment = CreationMoment
-authenticated.chirp.list.label.title = Title
-authenticated.chirp.list.label.author = Author
-authenticated.chirp.list.label.body = Body
-authenticated.chirp.list.label.emailAddress = EmailAddress
+any.chirp.list.label.creationMoment = Momento de Creación
+any.chirp.list.label.title = Título
+any.chirp.list.label.author = Autor
+any.chirp.list.label.body = Cuerpo
+any.chirp.list.label.emailAddress = Dirección de Correo

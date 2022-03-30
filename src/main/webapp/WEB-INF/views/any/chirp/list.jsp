@@ -16,10 +16,10 @@
 <%@taglib prefix="acme" uri="urn:jsptagdir:/WEB-INF/tags"%>
 
 <acme:list>
-	<acme:list-column code="authenticated.chirp.list.label.creationMoment" path="creationMoment" width="20%"/>
-	<acme:list-column code="authenticated.chirp.list.label.title" path="title" width="20%"/>
-	<acme:list-column code="authenticated.chirp.list.label.author" path="author" width="20%"/>
-	<acme:list-column code="authenticated.chirp.list.label.body" path="body" width="20%"/>
-	<acme:list-column code="authenticated.chirp.list.label.emailAddress" path="emailAddress" width="20%"/>
+	<acme:list-column code="any.chirp.list.label.creationMoment" path="creationMoment" width="20%"/>
+	<acme:list-column code="any.chirp.list.label.title" path="title" width="20%"/>
+	<acme:list-column code="any.chirp.list.label.author" path="author" width="20%"/>
+	<acme:list-column code="any.chirp.list.label.body" path="body" width="20%"/>
+	<acme:list-column code="any.chirp.list.label.emailAddress" path="emailAddress" width="20%"/>
 	
 </acme:list> 

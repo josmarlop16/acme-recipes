@@ -1,4 +1,4 @@
-package acme.features.authenticated.chirp;
+package acme.features.any.chirp;
 
 import java.util.Collection;
 import java.util.Date;
@@ -11,7 +11,7 @@ import acme.framework.repositories.AbstractRepository;
 
 
 @Repository
-public interface AuthenticatedChirpRepository extends AbstractRepository {
+public interface AnyChirpRepository extends AbstractRepository {
 
 	@Query("select c from Chirp c where c.id = id")
 	Chirp findOneChirpById(int id);
