@@ -43,6 +43,20 @@
 			<acme:menu-suboption code="master.menu.authenticated.list-components" action="/authenticated/item/list-component"/>		
 		</acme:menu-option>
 		
+		<acme:menu-option code="master.menu.authenticated.configuration" access="isAuthenticated()">
+			<acme:menu-suboption code="master.menu.authenticated.configuration.list-spam" action="/authenticated/spam/list"/>
+			<acme:menu-suboption code="master.menu.authenticated.configuration.list-currency" action="/authenticated/currency/list"/>			
+		</acme:menu-option>
+		
+		<acme:menu-option code="master.menu.patron" access="hasRole('Patron')">
+			<acme:menu-suboption code="master.menu.patron.dashboard" action="/patron/dashboard/show"/>
+		</acme:menu-option>
+
+		<acme:menu-option code="master.menu.inventor.tools" access="hasRole('Inventor')">
+			<acme:menu-suboption code="master.menu.inventor.list-tools" action="/inventor/item/list"/>		
+    </acme:menu-option>
+
+
 		<acme:menu-option code="master.menu.toolkits" access="isAnonymous()">
 			<acme:menu-suboption code="master.menu.anonymous.list-toolkits" action="/anonymous/toolkit/list"/>		
 		</acme:menu-option>
