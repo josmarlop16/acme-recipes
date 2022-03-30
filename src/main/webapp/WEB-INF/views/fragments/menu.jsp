@@ -27,6 +27,10 @@
 			<acme:menu-suboption code="master.menu.anonymous.julian-otane-parra" action="https://github.com/jonatep"/>
 			<acme:menu-suboption code="master.menu.anonymous.luis-rodriguez-garcia" action="https://github.com/LuisUsrDev"/>
 		</acme:menu-option>
+		
+		<acme:menu-option code="master.menu.chirps" access="isAuthenticated()">
+			<acme:menu-suboption code="master.menu.authenticated.list-chirps" action="/authenticated/chirp/list"/>		
+		</acme:menu-option>
 			
 		<acme:menu-option code="master.menu.patron" access="hasRole('Patron')">
 			<acme:menu-suboption code="master.menu.patron.dashboard" action="/patron/dashboard/show"/>
