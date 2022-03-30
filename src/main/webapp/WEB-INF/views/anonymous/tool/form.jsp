@@ -17,10 +17,10 @@
 <%@taglib prefix="acme" uri="urn:jsptagdir:/WEB-INF/tags"%>
 
 <acme:form>
-	<acme:input-textbox code="anonymous.component.list.label.name" path="name"/>
-	<acme:input-textbox code="anonymous.component.list.label.code" path="code"/>
-	<acme:input-textbox code="anonymous.component.list.label.technology" path="technology"/>
-	<acme:input-textarea code="anonymous.component.list.label.description" path="description"/>
-	<acme:input-money code="anonymous.component.list.label.retailPrice" path="retailPrice"/>
-	<acme:input-url code="anonymous.component.list.label.link" path="link"/>	
+	<acme:input-textbox code="anonymous.tool.list.label.name" path="name"/>
+	<acme:input-textbox code="anonymous.tool.list.label.code" path="code"/>
+	<acme:input-textbox code="anonymous.tool.list.label.technology" path="technology"/>
+	<acme:input-textarea code="anonymous.tool.list.label.description" path="description"/>
+	<acme:input-money code="anonymous.tool.list.label.retailPrice" path="retailPrice"/>
+	<acme:input-url code="anonymous.tool.list.label.link" path="link"/>	
 </acme:form>

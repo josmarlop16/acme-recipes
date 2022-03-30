@@ -21,7 +21,7 @@ import acme.framework.roles.Anonymous;
 import acme.framework.services.AbstractShowService;
 
 @Service
-public class AnonymousComponentShowService implements AbstractShowService<Anonymous, Item> {
+public class AnonymousComponentToolShowService implements AbstractShowService<Anonymous, Item> {
 
 	// Internal state ---------------------------------------------------------
 
@@ -53,7 +53,7 @@ public class AnonymousComponentShowService implements AbstractShowService<Anonym
 		Item result;
 		int id;
 		id = request.getModel().getInteger("id");
-		result = this.repository.findComponentById(id);
+		result = this.repository.findToolById(id);
 		return result;
 	}
 

@@ -10,34 +10,27 @@
  * they accept any liabilities with respect to them.
  */
 
-package acme.features.authenticated.item;
+package acme.features.inventor.patronageReport;
 
 import javax.annotation.PostConstruct;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-
-import acme.entities.item.Item;
+import acme.entities.patronages.PatronageReport;
 import acme.framework.controllers.AbstractController;
-import acme.framework.roles.Authenticated;
+import acme.roles.Inventor;
 
 @Controller
-public class AuthenticatedComponentController extends AbstractController<Authenticated, Item> {
+public class InventorPatronageReportController extends AbstractController<Inventor, PatronageReport> {
 
 	// Internal state ---------------------------------------------------------
 
 	@Autowired
-	protected AuthenticatedComponentListService		listService;
-	
-	@Autowired
-	protected AuthenticatedComponentShowService		showService;
-	
-	@Autowired
-	protected AuthenticatedComponentToolListService		toollistService;
-	
-	@Autowired
-	protected AuthenticatedComponentToolShowService		toolshowService;
+	protected InventorPatronageReportListService		listService;
 
+	@Autowired
+	protected InventorPatronageReportShowService		showService;
+
+	
 //	@Autowired
 //	protected AnonymousComponentCreateService	createService;
 
@@ -46,8 +39,7 @@ public class AuthenticatedComponentController extends AbstractController<Authent
 
 	@PostConstruct
 	protected void initialise() {
-		super.addCommand("list-component", "list", this.listService);
-		super.addCommand("list-tool", "list", this.toollistService);
+		super.addCommand("list", this.listService);
 		super.addCommand("show", this.showService);
 //		super.addCommand("create", this.createService);
 	}
