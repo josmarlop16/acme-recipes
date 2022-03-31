@@ -77,6 +77,10 @@
 			<acme:menu-suboption code="master.menu.inventor.list-patronage-reports" action="/inventor/patronage-report/list"/>		
     	</acme:menu-option>
     	
+    	<acme:menu-option code="master.menu.inventor.patronages" access="hasRole('Inventor')">
+			<acme:menu-suboption code="master.menu.inventor.list-patronages" action="/inventor/patronage/list"/>		
+    	</acme:menu-option>
+    	
 
 		<acme:menu-option code="master.menu.administrator" access="hasRole('Administrator')">
 			<acme:menu-suboption code="master.menu.administrator.user-accounts" action="/administrator/user-account/list"/>

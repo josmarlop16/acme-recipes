@@ -8,10 +8,13 @@
 # purposes.  The copyright owner does not offer any warranties or representations, nor do
 # they accept any liabilities with respect to them.
 
-anonymous.toolkit.list.label.title = Título
-anonymous.toolkit.list.label.code = Código
-anonymous.toolkit.list.label.description = Descripción
-anonymous.toolkit.list.label.assemblyNotes = Notas de asamblea
-anonymous.toolkit.list.label.link = Link
-anonymous.toolkit.list.label.item.name = Item
-anonymous.toolkit.form.button.item = Comprobar Item
+inventor.patronage.list.label.status = Estatus
+inventor.patronage.list.label.code = Código
+inventor.patronage.list.label.stuff = Cosas
+inventor.patronage.list.label.budget = Presupuesto
+inventor.patronage.list.label.periodOfTime = Periodo de Tiempo
+inventor.patronage.list.label.optionalLink = Link
+
+inventor.patronage.patron.list.label.company = Compañía
+inventor.patronage.patron.list.label.statement = Declaración
+inventor.patronage.patron.list.label.optionalLink = Link

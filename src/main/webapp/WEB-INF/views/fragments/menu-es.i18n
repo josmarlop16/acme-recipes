@@ -17,7 +17,7 @@ master.menu.sign-out = Salir
 master.menu.toolkits = Toolkits
 master.menu.components = Componentes
 master.menu.tools = Herramientas
-
+master.menu.inventor.patronages = Patrones
 
 # master.menu.anonymous #######################################################
 
@@ -65,7 +65,7 @@ master.menu.inventor.tools = Herramientas
 master.menu.inventor.list-tools = Lista de herramientas
 master.menu.inventor.patronage-reports = Reportes de patrones
 master.menu.inventor.list-patronage-reports = Lista de reportes de patrones
-
+master.menu.inventor.list-patronages = Lista de patrones
 
 # master.menu.user-account ####################################################
 
