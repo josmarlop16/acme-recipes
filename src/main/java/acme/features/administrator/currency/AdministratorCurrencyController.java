@@ -10,46 +10,31 @@
  * they accept any liabilities with respect to them.
  */
 
-package acme.features.authenticated.item;
+package acme.features.administrator.currency;
 
 import javax.annotation.PostConstruct;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 
-import acme.entities.item.Item;
+import acme.entities.currency.Currency;
 import acme.framework.controllers.AbstractController;
-import acme.framework.roles.Authenticated;
+import acme.framework.roles.Administrator;
 
 @Controller
-public class AuthenticatedComponentController extends AbstractController<Authenticated, Item> {
+public class AdministratorCurrencyController extends AbstractController<Administrator, Currency> {
 
 	// Internal state ---------------------------------------------------------
 
 	@Autowired
-	protected AuthenticatedComponentListService		listService;
+	protected AdministratorCurrencyListService		listService;
 	
-	@Autowired
-	protected AuthenticatedComponentShowService		showService;
-	
-	@Autowired
-	protected AuthenticatedComponentToolListService		toollistService;
-	
-	@Autowired
-	protected AuthenticatedComponentToolShowService		toolshowService;
-
-//	@Autowired
-//	protected AnonymousComponentCreateService	createService;
-
 	// Constructors -----------------------------------------------------------
 
 
 	@PostConstruct
 	protected void initialise() {
-		super.addCommand("list-component", "list", this.listService);
-		super.addCommand("list-tool", "list", this.toollistService);
-		super.addCommand("show", this.showService);
-//		super.addCommand("create", this.createService);
+		super.addCommand("list", this.listService);
 	}
 
 }

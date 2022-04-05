@@ -10,7 +10,7 @@
  * they accept any liabilities with respect to them.
  */
 
-package acme.features.authenticated.item;
+package acme.features.anonymous.item;
 
 import java.util.Collection;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,16 +18,16 @@ import org.springframework.stereotype.Service;
 import acme.entities.item.Item;
 import acme.framework.components.models.Model;
 import acme.framework.controllers.Request;
-import acme.framework.roles.Authenticated;
+import acme.framework.roles.Anonymous;
 import acme.framework.services.AbstractListService;
 
 @Service
-public class AuthenticatedComponentListService implements AbstractListService<Authenticated, Item> {
+public class AnonymousComponentToolListService implements AbstractListService<Anonymous, Item> {
 
 	// Internal state ---------------------------------------------------------
 
 	@Autowired
-	protected AuthenticatedComponentRepository repository;
+	protected AnonymousComponentRepository repository;
 
 	// AbstractListService<Administrator, Shout> interface --------------
 
@@ -42,9 +42,10 @@ public class AuthenticatedComponentListService implements AbstractListService<Au
 	public Collection<Item> findMany(final Request<Item> request) {
 		assert request != null;
 		Collection<Item> result;
-		result = this.repository.findComponents();
+		result = this.repository.findTools();	
 		return result;
 	}
+	
 	
 	@Override
 	public void unbind(final Request<Item> request, final Item entity, final Model model) {

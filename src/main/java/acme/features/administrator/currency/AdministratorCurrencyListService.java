@@ -10,49 +10,52 @@
  * they accept any liabilities with respect to them.
  */
 
-package acme.features.authenticated.item;
+package acme.features.administrator.currency;
 
 import java.util.Collection;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import acme.entities.item.Item;
+
+import acme.entities.currency.Currency;
 import acme.framework.components.models.Model;
 import acme.framework.controllers.Request;
-import acme.framework.roles.Authenticated;
+import acme.framework.roles.Administrator;
 import acme.framework.services.AbstractListService;
 
 @Service
-public class AuthenticatedComponentListService implements AbstractListService<Authenticated, Item> {
+public class AdministratorCurrencyListService implements AbstractListService<Administrator, Currency> {
 
 	// Internal state ---------------------------------------------------------
 
 	@Autowired
-	protected AuthenticatedComponentRepository repository;
-
-	// AbstractListService<Administrator, Shout> interface --------------
+	protected AdministratorCurrencyRepository repository;
 
 	@Override
-	public boolean authorise(final Request<Item> request) {
+	public boolean authorise(final Request<Currency> request) {
 		assert request != null;
 
 		return true;
 	}
 
 	@Override
-	public Collection<Item> findMany(final Request<Item> request) {
+	public Collection<Currency> findMany(final Request<Currency> request) {
 		assert request != null;
-		Collection<Item> result;
-		result = this.repository.findComponents();
+
+		Collection<Currency> result;
+
+		result = this.repository.findCurrencys();
+
 		return result;
 	}
 	
 	@Override
-	public void unbind(final Request<Item> request, final Item entity, final Model model) {
+	public void unbind(final Request<Currency> request, final Currency entity, final Model model) {
 		assert request != null;
 		assert entity != null;
 		assert model != null;
 
-		request.unbind(entity, model, "name", "code", "technology", "description", "retailPrice", "link", "type");
+		request.unbind(entity, model, "name", "isDefault");
 	}
 
 }

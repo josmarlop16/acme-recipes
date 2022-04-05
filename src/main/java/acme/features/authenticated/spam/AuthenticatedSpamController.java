@@ -10,46 +10,31 @@
  * they accept any liabilities with respect to them.
  */
 
-package acme.features.authenticated.item;
+package acme.features.authenticated.spam;
 
 import javax.annotation.PostConstruct;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 
-import acme.entities.item.Item;
+import acme.entities.spam.Spam;
 import acme.framework.controllers.AbstractController;
 import acme.framework.roles.Authenticated;
 
 @Controller
-public class AuthenticatedComponentController extends AbstractController<Authenticated, Item> {
+public class AuthenticatedSpamController extends AbstractController<Authenticated, Spam> {
 
 	// Internal state ---------------------------------------------------------
 
 	@Autowired
-	protected AuthenticatedComponentListService		listService;
+	protected AuthenticatedSpamListService		listService;
 	
-	@Autowired
-	protected AuthenticatedComponentShowService		showService;
-	
-	@Autowired
-	protected AuthenticatedComponentToolListService		toollistService;
-	
-	@Autowired
-	protected AuthenticatedComponentToolShowService		toolshowService;
-
-//	@Autowired
-//	protected AnonymousComponentCreateService	createService;
-
 	// Constructors -----------------------------------------------------------
 
 
 	@PostConstruct
 	protected void initialise() {
-		super.addCommand("list-component", "list", this.listService);
-		super.addCommand("list-tool", "list", this.toollistService);
-		super.addCommand("show", this.showService);
-//		super.addCommand("create", this.createService);
+		super.addCommand("list", this.listService);
 	}
 
 }

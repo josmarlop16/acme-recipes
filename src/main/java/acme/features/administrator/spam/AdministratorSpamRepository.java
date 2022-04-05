@@ -10,28 +10,20 @@
  * they accept any liabilities with respect to them.
  */
 
-package acme.features.authenticated.item;
+package acme.features.administrator.spam;
 
 import java.util.Collection;
 
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
-import acme.entities.item.Item;
+import acme.entities.spam.Spam;
 import acme.framework.repositories.AbstractRepository;
 
 @Repository
-public interface AuthenticatedComponentRepository extends AbstractRepository {
-	
-	@Query("select i from Item i where i.type = 1")
-	Collection<Item> findComponents();
-	
-	@Query("select i from Item i where i.id = id and i.type = 1")
-	Item findComponentById(int id);
-	
-	@Query("select i from Item i where i.type = 0")
-	Collection<Item> findTools();
-	
-	@Query("select i from Item i where i.id = id and i.type = 0")
-	Item findToolById(int id);
+public interface AdministratorSpamRepository extends AbstractRepository {
+
+	@Query("select s from Spam s")
+	Collection<Spam> findSpams();
+
 }

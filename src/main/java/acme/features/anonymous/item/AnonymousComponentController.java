@@ -31,6 +31,12 @@ public class AnonymousComponentController extends AbstractController<Anonymous, 
 	
 	@Autowired
 	protected AnonymousComponentShowService		showService;
+	
+	@Autowired
+	protected AnonymousComponentToolListService		toollistService;
+	
+	@Autowired
+	protected AnonymousComponentToolShowService		toolshowService;
 
 //	@Autowired
 //	protected AnonymousComponentCreateService	createService;
@@ -40,8 +46,9 @@ public class AnonymousComponentController extends AbstractController<Anonymous, 
 
 	@PostConstruct
 	protected void initialise() {
-		super.addCommand("list", this.listService);
-		super.addCommand("show", this.showService);
+		super.addCommand("list-component", "list", this.listService);
+		super.addCommand("list-tool", "list", this.toollistService);
+		super.addCommand("show", this.toolshowService);
 //		super.addCommand("create", this.createService);
 	}
 

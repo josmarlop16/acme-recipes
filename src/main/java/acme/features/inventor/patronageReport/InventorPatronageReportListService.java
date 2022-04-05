@@ -10,49 +10,55 @@
  * they accept any liabilities with respect to them.
  */
 
-package acme.features.authenticated.item;
+package acme.features.inventor.patronageReport;
 
 import java.util.Collection;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import acme.entities.item.Item;
+import acme.entities.patronages.PatronageReport;
 import acme.framework.components.models.Model;
 import acme.framework.controllers.Request;
-import acme.framework.roles.Authenticated;
+import acme.framework.entities.Principal;
 import acme.framework.services.AbstractListService;
+import acme.roles.Inventor;
 
 @Service
-public class AuthenticatedComponentListService implements AbstractListService<Authenticated, Item> {
+public class InventorPatronageReportListService implements AbstractListService<Inventor, PatronageReport> {
 
 	// Internal state ---------------------------------------------------------
 
 	@Autowired
-	protected AuthenticatedComponentRepository repository;
+	protected InventorPatronageReportRepository repository;
 
-	// AbstractListService<Administrator, Shout> interface --------------
 
 	@Override
-	public boolean authorise(final Request<Item> request) {
+	public boolean authorise(final Request<PatronageReport> request) {
 		assert request != null;
 
 		return true;
 	}
 
 	@Override
-	public Collection<Item> findMany(final Request<Item> request) {
+	public Collection<PatronageReport> findMany(final Request<PatronageReport> request) {
 		assert request != null;
-		Collection<Item> result;
-		result = this.repository.findComponents();
+
+		Collection<PatronageReport> result;
+		Principal principal;
+		
+		principal = request.getPrincipal();
+		result = this.repository.findPatronageReportByInventorId(principal.getActiveRoleId());
+
+
 		return result;
 	}
 	
 	@Override
-	public void unbind(final Request<Item> request, final Item entity, final Model model) {
+	public void unbind(final Request<PatronageReport> request, final PatronageReport entity, final Model model) {
 		assert request != null;
 		assert entity != null;
 		assert model != null;
 
-		request.unbind(entity, model, "name", "code", "technology", "description", "retailPrice", "link", "type");
+		request.unbind(entity, model, "seqNumber", "creation", "memorandum", "optionalLink");
 	}
 
 }
