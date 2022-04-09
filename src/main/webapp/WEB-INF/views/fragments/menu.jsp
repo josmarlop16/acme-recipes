@@ -54,7 +54,10 @@
 
 		<acme:menu-option code="master.menu.inventor.tools" access="hasRole('Inventor')">
 			<acme:menu-suboption code="master.menu.inventor.list-tools" action="/inventor/item/list"/>		
-    </acme:menu-option>
+    	</acme:menu-option>
+		<acme:menu-option code="master.menu.inventor.components" access="hasRole('Inventor')">
+			<acme:menu-suboption code="master.menu.inventor.list-components" action="/inventor/item/list"/>		
+    	</acme:menu-option>
 
 
 		<acme:menu-option code="master.menu.toolkits" access="isAnonymous()">
