@@ -32,6 +32,7 @@ public class InventorToolController extends AbstractController<Inventor, Item> {
 	@Autowired
 	protected InventorToolShowService		showService;
 
+
 	
 //	@Autowired
 //	protected AnonymousComponentCreateService	createService;
