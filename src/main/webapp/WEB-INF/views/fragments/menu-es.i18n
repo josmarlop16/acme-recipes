@@ -75,5 +75,10 @@ master.menu.user-account.general-data = Datos generales
 master.menu.user-account.patron = Datos de patron
 master.menu.user-account.become-patron = Hazte patron
 
+
+# master.menu.announcements ###################################################
+master.menu.announcements = Anuncios
+master.menu.authenticated.list-announcements = Anuncios recientes
+
 master.menu.user-account.become-inventor = Hazte inventor
 master.menu.user-account.inventor = Datos de inventor
