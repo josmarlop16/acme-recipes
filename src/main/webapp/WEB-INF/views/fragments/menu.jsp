@@ -51,32 +51,16 @@
 		<acme:menu-option code="master.menu.patron" access="hasRole('Patron')">
 			<acme:menu-suboption code="master.menu.patron.dashboard" action="/patron/dashboard/show"/>
 		</acme:menu-option>
-
-		<acme:menu-option code="master.menu.inventor.tools" access="hasRole('Inventor')">
-			<acme:menu-suboption code="master.menu.inventor.list-tools" action="/inventor/item/list"/>		
-    </acme:menu-option>
-
-
+   
 		<acme:menu-option code="master.menu.toolkits" access="isAnonymous()">
 			<acme:menu-suboption code="master.menu.anonymous.list-toolkits" action="/anonymous/toolkit/list"/>		
 		</acme:menu-option>
-		
-		<acme:menu-option code="master.menu.toolkits" access="isAuthenticated()">
-			<acme:menu-suboption code="master.menu.authenticated.list-toolkits" action="/authenticated/toolkit/list"/>		
-		</acme:menu-option>
-		
-		<acme:menu-option code="master.menu.patron" access="hasRole('Patron')">
-			<acme:menu-suboption code="master.menu.patron.dashboard" action="/patron/dashboard/show"/>
-		</acme:menu-option>
 
-		<acme:menu-option code="master.menu.inventor.tools" access="hasRole('Inventor')">
-			<acme:menu-suboption code="master.menu.inventor.list-tools" action="/inventor/item/list"/>		
-    	</acme:menu-option>
-    	
-    	<acme:menu-option code="master.menu.inventor.patronage-reports" access="hasRole('Inventor')">
+		<acme:menu-option code="master.menu.inventor" access="hasRole('Inventor')">
 			<acme:menu-suboption code="master.menu.inventor.list-patronage-reports" action="/inventor/patronage-report/list"/>		
-    	</acme:menu-option>
-    	
+			<acme:menu-suboption code="master.menu.inventor.list-tools" action="/inventor/item/list"/>
+			<acme:menu-suboption code="master.menu.inventor.list-toolkits" action="/inventor/toolkit/list"/>
+		</acme:menu-option>
 
 		<acme:menu-option code="master.menu.administrator" access="hasRole('Administrator')">
 			<acme:menu-suboption code="master.menu.administrator.user-accounts" action="/administrator/user-account/list"/>

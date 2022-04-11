@@ -61,8 +61,11 @@ master.menu.patron.dashboard = Dashboard
 
 # master.menu.inventor ##########################################################
 
+master.menu.inventor = Inventor
 master.menu.inventor.tools = Herramientas
-master.menu.inventor.list-tools = Lista de herramientas
+master.menu.inventor.list-tools = Lista de mis herramientas
+master.menu.inventor.toolkit = Kit de herramientas
+master.menu.inventor.list-toolkits = Lista de mis kits de herramientas
 master.menu.inventor.patronage-reports = Reportes de patrones
 master.menu.inventor.list-patronage-reports = Lista de reportes de patrones
 
