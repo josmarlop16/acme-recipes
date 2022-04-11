@@ -14,7 +14,6 @@ package acme.features.authenticated.item;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import acme.entities.item.Item;
 import acme.framework.components.models.Model;
 import acme.framework.controllers.Request;
@@ -52,11 +51,9 @@ public class AuthenticatedComponentShowService implements AbstractShowService<Au
 
 		Item result;
 		int id;
-
 		id = request.getModel().getInteger("id");
 		result = this.repository.findComponentById(id);
-
 		return result;
 	}
-
+	
 }

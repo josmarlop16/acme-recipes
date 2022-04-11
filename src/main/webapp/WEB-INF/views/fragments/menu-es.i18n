@@ -8,19 +8,22 @@
 # purposes.  The copyright owner does not offer any warranties or representations, nor do
 # they accept any liabilities with respect to them.
 
-﻿# master.menu #################################################################
+# master.menu #################################################################
 
 master.menu.home = Inicio
 master.menu.sign-up = Registrarse
 master.menu.sign-in = Entrar
 master.menu.sign-out = Salir
 master.menu.toolkits = Toolkits
+master.menu.components = Componentes
+master.menu.tools = Herramientas
+
 
 # master.menu.anonymous #######################################################
 
 master.menu.anonymous = Anónimo
-master.menu.components = Componentes
 
+master.menu.anonymous.list-tools = Listar herramientas
 master.menu.anonymous.list-components = Listar componentes
 
 master.menu.anonymous.jorge-toledo-vega = 49520347J: TOLEDO VEGA, JORGE
@@ -42,13 +45,26 @@ master.menu.administrator.shut-down = Parar el sistema
 
 # master.menu.authenticated ###################################################
 
-
 master.menu.authenticated.list-toolkits = Listar Toolkits
+master.menu.authenticated.configuration = Configuración
+master.menu.authenticated.configuration.list-spam = Spam
+master.menu.authenticated.configuration.list-currency = Divisas
+master.menu.authenticated.list-components = Listar Componentes
+master.menu.authenticated.list-tools = Listar Herramientas
+
 
 # master.menu.patron ##########################################################
 
 master.menu.patron = Patron
 master.menu.patron.dashboard = Dashboard
+
+
+# master.menu.inventor ##########################################################
+
+master.menu.inventor.tools = Herramientas
+master.menu.inventor.list-tools = Lista de herramientas
+master.menu.inventor.patronage-reports = Reportes de patrones
+master.menu.inventor.list-patronage-reports = Lista de reportes de patrones
 
 
 # master.menu.user-account ####################################################
@@ -58,3 +74,6 @@ master.menu.user-account.general-data = Datos generales
 
 master.menu.user-account.patron = Datos de patron
 master.menu.user-account.become-patron = Hazte patron
+
+master.menu.user-account.become-inventor = Hazte inventor
+master.menu.user-account.inventor = Datos de inventor
