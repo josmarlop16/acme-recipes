@@ -1,4 +1,4 @@
-package acme.features.anonymous.toolkit;
+package acme.features.any.toolkit;
 
 import org.springframework.stereotype.Controller;
 
@@ -6,20 +6,20 @@ import acme.framework.controllers.AbstractController;
 import javax.annotation.PostConstruct;
 
 
-import acme.framework.roles.Anonymous;
+import acme.framework.roles.Any;
 import acme.entities.toolkit.*;
 import org.springframework.beans.factory.annotation.Autowired;
 
 @Controller
-public class AnonymousToolkitController extends AbstractController<Anonymous, Toolkit>{
+public class AnyToolkitController extends AbstractController<Any, Toolkit>{
 	
 	// Internal state ---------------------------------------------------------
 
 	@Autowired
-	protected AnonymousToolkitListAllService listAllService;
+	protected AnyToolkitListAllService listAllService;
 	
 	@Autowired
-	protected AnonymousToolkitShowService showService;
+	protected AnyToolkitShowService showService;
 
 	// Constructors -----------------------------------------------------------
 

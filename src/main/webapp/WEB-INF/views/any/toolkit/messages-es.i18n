@@ -8,11 +8,11 @@
 # purposes.  The copyright owner does not offer any warranties or representations, nor do
 # they accept any liabilities with respect to them.
 
-authenticated.toolkit.list.label.title = Title
-authenticated.toolkit.list.label.code = Code
-authenticated.toolkit.list.label.description = Description
-authenticated.toolkit.list.label.assemblyNotes = Assembly Notes
-authenticated.toolkit.list.label.link = Link
-authenticated.toolkit.list.label.item.name = Item
-authenticated.toolkit.form.button.item = Check Item
-
+any.toolkit.list.label.title = Título
+any.toolkit.list.label.code = Código
+any.toolkit.list.label.description = Descripción
+any.toolkit.list.label.assemblyNotes = Notas de asamblea
+any.toolkit.list.label.link = Link
+any.toolkit.list.label.item.name = Item
+any.toolkit.list.label.item.price = Precio
+any.toolkit.form.button.item = Comprobar Item
