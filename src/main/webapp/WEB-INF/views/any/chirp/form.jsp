@@ -16,12 +16,10 @@
 <%@taglib prefix="acme" uri="urn:jsptagdir:/WEB-INF/tags"%>
 
 <acme:form>
-	<acme:input-textbox code="authenticated.toolkit.list.label.title" path="title"/>
-	<acme:input-textbox code="authenticated.toolkit.list.label.code" path="code"/>
-	<acme:input-textarea code="authenticated.toolkit.list.label.description" path="description"/>
-	<acme:input-textarea code="authenticated.toolkit.list.label.assemblyNotes" path="assemblyNotes"/>
-	<acme:input-url code="authenticated.toolkit.list.label.link" path="link"/>
-	
-	<acme:button code="authenticated.toolkit.form.button.item" action="/authenticated/item/show?id=${itemId}"/>
+	<acme:input-textbox code="any.chirp.list.label.creationMoment" path="creationMoment"/>
+	<acme:input-textbox code="any.chirp.list.label.title" path="title"/>
+	<acme:input-textbox code="any.chirp.list.label.author" path="author"/>
+	<acme:input-textbox code="any.chirp.list.label.body" path="body"/>
+	<acme:input-textbox code="any.chirp.list.label.emailAddress" path="emailAddress"/>
 	
 </acme:form>

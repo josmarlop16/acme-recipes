@@ -8,10 +8,8 @@
 # purposes.  The copyright owner does not offer any warranties or representations, nor do
 # they accept any liabilities with respect to them.
 
-authenticated.toolkit.list.label.title = Título
-authenticated.toolkit.list.label.code = Código
-authenticated.toolkit.list.label.description = Descripción
-authenticated.toolkit.list.label.assemblyNotes = Notas de asamblea
-authenticated.toolkit.list.label.link = Link
-authenticated.toolkit.list.label.item.name = Item
-authenticated.toolkit.form.button.item = Comprobar Item
+any.chirp.list.label.creationMoment = CreationMoment
+any.chirp.list.label.title = Title
+any.chirp.list.label.author = Author
+any.chirp.list.label.body = Body
+any.chirp.list.label.emailAddress = EmailAddress

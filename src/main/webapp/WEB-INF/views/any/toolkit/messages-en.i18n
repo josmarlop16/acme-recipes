@@ -8,22 +8,12 @@
 # purposes.  The copyright owner does not offer any warranties or representations, nor do
 # they accept any liabilities with respect to them.
 
-inventor.patronage.list.label.status = Status
-inventor.patronage.list.label.code = Code
-inventor.patronage.list.label.stuff = Stuff
-inventor.patronage.list.label.budget = Budget
-inventor.patronage.list.label.periodOfTime = Period Of Time
-inventor.patronage.list.label.optionalLink = Link
-
-inventor.patronage.patron.list.label.company = Company
-inventor.patronage.patron.list.label.statement = Statement
-inventor.patronage.patron.list.label.optionalLink = Link
-
-
-
-
-
-
-
-
+any.toolkit.list.label.title = Title
+any.toolkit.list.label.code = Code
+any.toolkit.list.label.description = Description
+any.toolkit.list.label.assemblyNotes = Assembly Notes
+any.toolkit.list.label.link = Link
+any.toolkit.list.label.item.name = Item
+any.toolkit.list.label.item.price = Price
+any.toolkit.form.button.item = Check item
 

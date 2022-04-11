@@ -1,25 +1,24 @@
-package acme.features.authenticated.toolkit;
+package acme.features.any.chirp;
 
-import org.springframework.stereotype.Controller;
-
-import acme.framework.controllers.AbstractController;
 import javax.annotation.PostConstruct;
 
-
-import acme.framework.roles.Authenticated;
-import acme.entities.toolkit.*;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+
+import acme.entities.chirp.Chirp;
+import acme.framework.controllers.AbstractController;
+import acme.framework.roles.Any;
 
 @Controller
-public class AuthenticatedToolkitController extends AbstractController<Authenticated, Toolkit>{
+public class AnyChirpController extends AbstractController<Any, Chirp>{
 	
 	// Internal state ---------------------------------------------------------
 
 	@Autowired
-	protected AuthenticatedToolkitListAllService listAllService;
+	protected AnyChirpListAllService listAllService;
 	
 	@Autowired
-	protected AuthenticatedToolkitShowService showService;
+	protected AnyChirpShowService showService;
 
 	// Constructors -----------------------------------------------------------
 

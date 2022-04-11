@@ -8,22 +8,12 @@
 # purposes.  The copyright owner does not offer any warranties or representations, nor do
 # they accept any liabilities with respect to them.
 
-inventor.patronage.list.label.status = Status
-inventor.patronage.list.label.code = Code
-inventor.patronage.list.label.stuff = Stuff
-inventor.patronage.list.label.budget = Budget
-inventor.patronage.list.label.periodOfTime = Period Of Time
-inventor.patronage.list.label.optionalLink = Link
-
-inventor.patronage.patron.list.label.company = Company
-inventor.patronage.patron.list.label.statement = Statement
-inventor.patronage.patron.list.label.optionalLink = Link
-
-
-
-
-
-
-
-
+authenticated.announcements.list.label.creation = Creation time: 
+authenticated.announcements.list.label.title = Title:
+authenticated.announcements.list.label.body= Body:
+authenticated.announcements.list.label.critical= Critical:
+authenticated.announcements.list.label.optionalLink= Link:
+authenticated.announcements.form.label.title = Title:
+authenticated.announcements.form.label.body = Body:
+authenticated.announcements.form.label.link: Link:
 

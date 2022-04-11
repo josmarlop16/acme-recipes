@@ -1,25 +1,23 @@
-package acme.features.anonymous.toolkit;
+package acme.features.inventor.patronage;
 
 import org.springframework.stereotype.Controller;
-
 import acme.framework.controllers.AbstractController;
 import javax.annotation.PostConstruct;
-
-
-import acme.framework.roles.Anonymous;
-import acme.entities.toolkit.*;
+import acme.roles.Inventor;
+import acme.entities.patronages.Patronage;
 import org.springframework.beans.factory.annotation.Autowired;
 
 @Controller
-public class AnonymousToolkitController extends AbstractController<Anonymous, Toolkit>{
+public class InventorPatronageController extends AbstractController<Inventor, Patronage>{
+
 	
 	// Internal state ---------------------------------------------------------
 
 	@Autowired
-	protected AnonymousToolkitListAllService listAllService;
+	protected InventorPatronageListByInventorService listAllService;
 	
 	@Autowired
-	protected AnonymousToolkitShowService showService;
+	protected InventorPatronageShowService showService;
 
 	// Constructors -----------------------------------------------------------
 
@@ -29,5 +27,4 @@ public class AnonymousToolkitController extends AbstractController<Anonymous, To
 		super.addCommand("list", this.listAllService);
 		super.addCommand("show", this.showService);
 	}
-	
 }

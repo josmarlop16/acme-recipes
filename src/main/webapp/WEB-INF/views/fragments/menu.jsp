@@ -27,6 +27,12 @@
 			<acme:menu-suboption code="master.menu.anonymous.luis-rodriguez-garcia" action="https://github.com/LuisUsrDev"/>
 		</acme:menu-option>
 		
+
+		<acme:menu-option code="master.menu.chirps" access="permitAll()">
+			<acme:menu-suboption code="master.menu.any.list-chirps" action="/any/chirp/list"/>		
+		</acme:menu-option>
+			
+
 		<acme:menu-option code="master.menu.tools" access="isAnonymous()">
 			<acme:menu-suboption code="master.menu.anonymous.list-tools" action="/anonymous/item/list-tool"/>		
 		</acme:menu-option>
@@ -48,6 +54,7 @@
 			<acme:menu-suboption code="master.menu.authenticated.configuration.list-currency" action="/authenticated/currency/list"/>			
 		</acme:menu-option>
 		
+
 		<acme:menu-option code="master.menu.patron" access="hasRole('Patron')">
 			<acme:menu-suboption code="master.menu.patron.dashboard" action="/patron/dashboard/show"/>
 		</acme:menu-option>
@@ -63,9 +70,10 @@
 		<acme:menu-option code="master.menu.toolkits" access="isAnonymous()">
 			<acme:menu-suboption code="master.menu.anonymous.list-toolkits" action="/anonymous/toolkit/list"/>		
 		</acme:menu-option>
+
 		
-		<acme:menu-option code="master.menu.toolkits" access="isAuthenticated()">
-			<acme:menu-suboption code="master.menu.authenticated.list-toolkits" action="/authenticated/toolkit/list"/>		
+		<acme:menu-option code="master.menu.toolkits" access="permitAll()">
+			<acme:menu-suboption code="master.menu.any.list-toolkits" action="/any/toolkit/list"/>		
 		</acme:menu-option>
 		
 		<acme:menu-option code="master.menu.patron" access="hasRole('Patron')">
@@ -80,6 +88,10 @@
 			<acme:menu-suboption code="master.menu.inventor.list-patronage-reports" action="/inventor/patronage-report/list"/>		
     	</acme:menu-option>
     	
+    	<acme:menu-option code="master.menu.inventor.patronages" access="hasRole('Inventor')">
+			<acme:menu-suboption code="master.menu.inventor.list-patronages" action="/inventor/patronage/list"/>		
+    	</acme:menu-option>
+    	
 
 		<acme:menu-option code="master.menu.administrator" access="hasRole('Administrator')">
 			<acme:menu-suboption code="master.menu.administrator.user-accounts" action="/administrator/user-account/list"/>
@@ -89,6 +101,19 @@
 			<acme:menu-suboption code="master.menu.administrator.populate-sample" action="/administrator/populate-sample"/>			
 			<acme:menu-separator/>
 			<acme:menu-suboption code="master.menu.administrator.shut-down" action="/administrator/shut-down"/>
+		</acme:menu-option>
+
+
+		<acme:menu-option code="master.menu.provider" access="hasRole('Provider')">
+			<acme:menu-suboption code="master.menu.provider.favourite-link" action="http://www.example.com/"/>
+		</acme:menu-option>
+		
+		<acme:menu-option code="master.menu.announcements" access="isAuthenticated()">
+			<acme:menu-suboption code="master.menu.authenticated.list-announcements" action="/authenticated/announcement/list"/>		
+		</acme:menu-option>
+
+		<acme:menu-option code="master.menu.consumer" access="hasRole('Consumer')">
+			<acme:menu-suboption code="master.menu.consumer.favourite-link" action="http://www.example.com/"/>
 		</acme:menu-option>
 
 	</acme:menu-left>
