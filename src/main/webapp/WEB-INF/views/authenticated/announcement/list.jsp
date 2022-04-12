@@ -15,7 +15,7 @@
 <%@taglib prefix="jstl" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@taglib prefix="acme" uri="urn:jsptagdir:/WEB-INF/tags"%>
 
-<acme:list readonly="true">
+<acme:list>
 	<acme:list-column code="authenticated.announcements.list.label.creation" path="creation" width="20%"/>
 	<acme:list-column code="authenticated.announcements.list.label.title" path="title" width="50%"/>
 	<acme:list-column code="authenticated.announcements.list.label.critical" path="critical" width="20%"/>

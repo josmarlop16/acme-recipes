@@ -36,7 +36,7 @@ master.menu.any.list-toolkits = Listar Toolkits
 
 # master.menu.administrator ###################################################
 
-master.menu.administrator = Administrador
+master.menu.administrator = Admin
 master.menu.administrator.dashboard = Panel de indicadores
 master.menu.administrator.user-accounts = Cuentas de usuario
 master.menu.administrator.populate-initial = Poblar BD (inicial)
@@ -70,10 +70,12 @@ master.menu.patron.dashboard = Dashboard
 # master.menu.inventor ##########################################################
 
 master.menu.inventor.tools = Herramientas
+master.menu.inventor.items = Objetos
+master.menu.items = Objetos
 master.menu.inventor.components = Componentes
 master.menu.inventor.list-tools = Lista de herramientas
 master.menu.inventor.list-components = Lista de componentes
-master.menu.inventor.patronage-reports = Reportes de patrones
+master.menu.inventor.patronages = Patrocinios
 master.menu.inventor.list-patronage-reports = Lista de reportes de patrones
 master.menu.inventor.list-patronages = Lista de patrones
 
