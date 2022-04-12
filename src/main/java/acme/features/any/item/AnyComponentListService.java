@@ -10,7 +10,7 @@
  * they accept any liabilities with respect to them.
  */
 
-package acme.features.anonymous.item;
+package acme.features.any.item;
 
 import java.util.Collection;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,16 +18,16 @@ import org.springframework.stereotype.Service;
 import acme.entities.item.Item;
 import acme.framework.components.models.Model;
 import acme.framework.controllers.Request;
-import acme.framework.roles.Anonymous;
+import acme.framework.roles.Any;
 import acme.framework.services.AbstractListService;
 
 @Service
-public class AnonymousComponentListService implements AbstractListService<Anonymous, Item> {
+public class AnyComponentListService implements AbstractListService<Any, Item> {
 
 	// Internal state ---------------------------------------------------------
 
 	@Autowired
-	protected AnonymousComponentRepository repository;
+	protected AnyComponentRepository repository;
 
 	// AbstractListService<Administrator, Shout> interface --------------
 
