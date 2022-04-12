@@ -1,13 +1,10 @@
 package acme.features.administrator.dashboard;
 
-import java.util.Map;
-import java.util.stream.Collectors;
+import java.util.List;
 
-import org.apache.commons.lang3.tuple.Pair;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import acme.entities.patronages.PatronageStatus;
 import acme.forms.AdministratorDashboard;
 import acme.framework.components.models.Model;
 import acme.framework.controllers.Request;
@@ -52,71 +49,108 @@ public class AdministratorDashboardShowService implements AbstractShowService<Ad
 		final int totalNumberOfComponents;
 		final int totalNumberOfTools;
 		final int totalNumberOfPatronages;
-		final Map<PatronageStatus,Integer> totalNumberOfPatronagesGroupedByPatronageStatus;
-		
+	//	final Map<PatronageStatus,Integer> totalNumberOfPatronagesGroupedByPatronageStatus;
+		final List<Object[]> totalNumberOfPatronagesGroupedByPatronageStatus;
 //		average
 
-		final Map<Pair<String,String>,Double> averageRetailPriceOfComponentGroupedByTechnologyAndCurrency;
-		final Map<String,Double> averageRetailPriceOfToolGroupedByCurrency;
-		final Map<PatronageStatus,Double> averageBudgetOfPatronagesGroupedByPatronageStatus;
+		final List<Object[]> averageRetailPriceOfComponentGroupedByTechnologyAndCurrency;
+	//	final Map<Pair<String,String>,Double> averageRetailPriceOfComponentGroupedByTechnologyAndCurrency;
+		final List<Object[]>  averageRetailPriceOfToolGroupedByCurrency;
+	//	final Map<String,Double> averageRetailPriceOfToolGroupedByCurrency;
+		final List<Object[]> averageBudgetOfPatronagesGroupedByPatronageStatus;
+	//	final Map<PatronageStatus,Double> averageBudgetOfPatronagesGroupedByPatronageStatus;
 		
 //		deviation
 
-		final Map<Pair<String,String>,Double> deviationRetailPriceOfComponentGroupedByTechnologyAndCurrency;
-		final Map<String,Double> deviationRetailPriceOfToolGroupedByCurrency;
-		final Map<PatronageStatus,Double> deviationBudgetOfPatronagesGroupedByPatronageStatus;
+		final List<Object[]> deviationRetailPriceOfComponentGroupedByTechnologyAndCurrency;
+	//	final Map<Pair<String,String>,Double> deviationRetailPriceOfComponentGroupedByTechnologyAndCurrency;
+		final List<Object[]> deviationRetailPriceOfToolGroupedByCurrency;
+	//	final Map<String,Double> deviationRetailPriceOfToolGroupedByCurrency;
+		final List<Object[]> deviationBudgetOfPatronagesGroupedByPatronageStatus;
+	//	final Map<PatronageStatus,Double> deviationBudgetOfPatronagesGroupedByPatronageStatus;
 		
 //		minimum, and maximum 
-
-		final Map<Pair<String,String>,Double> minimumRetailPriceOfComponentGroupedByTechnologyAndCurrency;
-		final Map<String,Double> minimumRetailPriceOfToolGroupedByCurrency;
-		final Map<PatronageStatus,Double> minimumBudgetOfPatronagesGroupedByPatronageStatus;
+		final List<Object[]> minimumRetailPriceOfComponentGroupedByTechnologyAndCurrency;
+	//	final Map<Pair<String,String>,Double> minimumRetailPriceOfComponentGroupedByTechnologyAndCurrency;
+		final List<Object[]> minimumRetailPriceOfToolGroupedByCurrency;
+	//	final Map<String,Double> minimumRetailPriceOfToolGroupedByCurrency;
+		final List<Object[]> minimumBudgetOfPatronagesGroupedByPatronageStatus;
+	//	final Map<PatronageStatus,Double> minimumBudgetOfPatronagesGroupedByPatronageStatus;
 		
-
-		final Map<Pair<String,String>,Double> maximumRetailPriceOfComponentGroupedByTechnologyAndCurrency;
-		final Map<String,Double> maximumRetailPriceOfToolGroupedByCurrency;
-		final Map<PatronageStatus,Double> maximumBudgetOfPatronagesGroupedByPatronageStatus;
+		final List<Object[]> maximumRetailPriceOfComponentGroupedByTechnologyAndCurrency;
+	//	final Map<Pair<String,String>,Double> maximumRetailPriceOfComponentGroupedByTechnologyAndCurrency;
+		final List<Object[]> maximumRetailPriceOfToolGroupedByCurrency;
+	//	final Map<String,Double> maximumRetailPriceOfToolGroupedByCurrency;
+		final List<Object[]>  maximumBudgetOfPatronagesGroupedByPatronageStatus;
+	//	final Map<PatronageStatus,Double> maximumBudgetOfPatronagesGroupedByPatronageStatus;
+		
 		
 //		Number
 		totalNumberOfComponents=this.repository.totalNumberOfComponents();
 		totalNumberOfTools=this.repository.totalNumberOfTools();
 		totalNumberOfPatronages = this.repository.totalNumberOfPatronages();
-		totalNumberOfPatronagesGroupedByPatronageStatus=this.repository.totalNumberOfPatronagesGroupedByPatronageStatus().stream()
-			.collect(Collectors.toMap(x-> (PatronageStatus)x[0],x->((Long)x[1]).intValue()));
+	//	totalNumberOfPatronagesGroupedByPatronageStatus=this.repository.totalNumberOfPatronagesGroupedByPatronageStatus().stream()
+	//		.collect(Collectors.toMap(x-> (PatronageStatus)x[0],x->((Long)x[1]).intValue()));
+		totalNumberOfPatronagesGroupedByPatronageStatus=this.repository.totalNumberOfPatronagesGroupedByPatronageStatus();
 		
 //		Average 
 
-		averageRetailPriceOfComponentGroupedByTechnologyAndCurrency=this.repository.averageRetailPriceOfComponentGroupedByTechnologyAndCurrency().stream()
-			.collect(Collectors.toMap(x->Pair.of((String)x[0], (String)x[1]), x->(Double) x[2]));
-		averageRetailPriceOfToolGroupedByCurrency=this.repository.averageRetailPriceOfToolGroupedByCurrency().stream()
-			.collect(Collectors.toMap(x->(String)x[0], x->(Double) x[1]));
-		averageBudgetOfPatronagesGroupedByPatronageStatus = this.repository.averageBudgetOfPatronagesGroupedByPatronageStatus().stream()
-			.collect(Collectors.toMap(x->(PatronageStatus)x[0], x->(Double) x[1]));
+	//	averageRetailPriceOfComponentGroupedByTechnologyAndCurrency=this.repository.averageRetailPriceOfComponentGroupedByTechnologyAndCurrency().stream()
+	//		.collect(Collectors.toMap(x->Pair.of((String)x[0], (String)x[1]), x->(Double) x[2]));
+		
+		averageRetailPriceOfComponentGroupedByTechnologyAndCurrency=this.repository.averageRetailPriceOfComponentGroupedByTechnologyAndCurrency();
+		
+	
+	//  averageRetailPriceOfToolGroupedByCurrency=this.repository.averageRetailPriceOfToolGroupedByCurrency().stream()
+	//		.collect(Collectors.toMap(x->(String)x[0], x->(Double) x[1]));
+		averageRetailPriceOfToolGroupedByCurrency=this.repository.averageRetailPriceOfToolGroupedByCurrency();
+		
+	//	averageBudgetOfPatronagesGroupedByPatronageStatus = this.repository.averageBudgetOfPatronagesGroupedByPatronageStatus().stream()
+	//		.collect(Collectors.toMap(x->(PatronageStatus)x[0], x->(Double) x[1]));
+		averageBudgetOfPatronagesGroupedByPatronageStatus = this.repository.averageBudgetOfPatronagesGroupedByPatronageStatus();
 		
 //		Deviation
-		deviationRetailPriceOfComponentGroupedByTechnologyAndCurrency=this.repository.deviationRetailPriceOfComponentGroupedByTechnologyAndCurrency().stream()
-			.collect(Collectors.toMap(x->Pair.of((String)x[0], (String)x[1]), x->(Double) x[2]));
-		deviationRetailPriceOfToolGroupedByCurrency=this.repository.deviationRetailPriceOfToolGroupedByCurrency().stream()
-			.collect(Collectors.toMap(x->(String)x[0], x->(Double) x[1]));
-		deviationBudgetOfPatronagesGroupedByPatronageStatus = this.repository.deviationBudgetOfPatronagesGroupedByPatronageStatus().stream()
-			.collect(Collectors.toMap(x->(PatronageStatus)x[0], x->(Double) x[1]));
+		
+	//	deviationRetailPriceOfComponentGroupedByTechnologyAndCurrency=this.repository.deviationRetailPriceOfComponentGroupedByTechnologyAndCurrency().stream()
+	//		.collect(Collectors.toMap(x->Pair.of((String)x[0], (String)x[1]), x->(Double) x[2]));
+		deviationRetailPriceOfComponentGroupedByTechnologyAndCurrency=this.repository.deviationRetailPriceOfComponentGroupedByTechnologyAndCurrency();
+		
+	//	deviationRetailPriceOfToolGroupedByCurrency=this.repository.deviationRetailPriceOfToolGroupedByCurrency().stream()
+	//		.collect(Collectors.toMap(x->(String)x[0], x->(Double) x[1]));
+		deviationRetailPriceOfToolGroupedByCurrency=this.repository.deviationRetailPriceOfToolGroupedByCurrency();
+		
+	//	deviationBudgetOfPatronagesGroupedByPatronageStatus = this.repository.deviationBudgetOfPatronagesGroupedByPatronageStatus().stream()
+	//		.collect(Collectors.toMap(x->(PatronageStatus)x[0], x->(Double) x[1]));
+		deviationBudgetOfPatronagesGroupedByPatronageStatus = this.repository.deviationBudgetOfPatronagesGroupedByPatronageStatus();
 		
 //		Minimum 
-		minimumRetailPriceOfComponentGroupedByTechnologyAndCurrency=this.repository.minimumRetailPriceOfComponentGroupedByTechnologyAndCurrency().stream()
-			.collect(Collectors.toMap(x->Pair.of((String)x[0], (String)x[1]), x->(Double) x[2]));
-	    minimumRetailPriceOfToolGroupedByCurrency=this.repository.minimumRetailPriceOfToolGroupedByCurrency().stream()
-			.collect(Collectors.toMap(x->(String)x[0], x->(Double) x[1]));
-	    minimumBudgetOfPatronagesGroupedByPatronageStatus = this.repository.minimumBudgetOfPatronagesGroupedByPatronageStatus().stream()
-			.collect(Collectors.toMap(x->(PatronageStatus)x[0], x->Double.valueOf(x[1].toString())));
+		
+	//	minimumRetailPriceOfComponentGroupedByTechnologyAndCurrency=this.repository.minimumRetailPriceOfComponentGroupedByTechnologyAndCurrency().stream()
+	//		.collect(Collectors.toMap(x->Pair.of((String)x[0], (String)x[1]), x->(Double) x[2]));
+		minimumRetailPriceOfComponentGroupedByTechnologyAndCurrency=this.repository.minimumRetailPriceOfComponentGroupedByTechnologyAndCurrency();
+	    
+	//	minimumRetailPriceOfToolGroupedByCurrency=this.repository.minimumRetailPriceOfToolGroupedByCurrency().stream()
+	//		.collect(Collectors.toMap(x->(String)x[0], x->(Double) x[1]));
+		minimumRetailPriceOfToolGroupedByCurrency=this.repository.minimumRetailPriceOfToolGroupedByCurrency();
+		
+	//   minimumBudgetOfPatronagesGroupedByPatronageStatus = this.repository.minimumBudgetOfPatronagesGroupedByPatronageStatus().stream()
+	//		.collect(Collectors.toMap(x->(PatronageStatus)x[0], x->Double.valueOf(x[1].toString())));
+		minimumBudgetOfPatronagesGroupedByPatronageStatus = this.repository.minimumBudgetOfPatronagesGroupedByPatronageStatus();
 		
 //		Maximum 
-	    maximumRetailPriceOfComponentGroupedByTechnologyAndCurrency=this.repository.maximumRetailPriceOfComponentGroupedByTechnologyAndCurrency()
-	    	.stream()
-			.collect(Collectors.toMap(x->Pair.of((String)x[0], (String)x[1]), x->(Double) x[2]));
-		maximumRetailPriceOfToolGroupedByCurrency=this.repository.maximumRetailPriceOfToolGroupedByCurrency().stream()
-			.collect(Collectors.toMap(x->(String)x[0], x->(Double) x[1]));
-		maximumBudgetOfPatronagesGroupedByPatronageStatus = this.repository.maximumBudgetOfPatronagesGroupedByPatronageStatus().stream()
-			.collect(Collectors.toMap(x->(PatronageStatus)x[0], x->Double.valueOf(x[1].toString())));
+			
+	 //   maximumRetailPriceOfComponentGroupedByTechnologyAndCurrency=this.repository.maximumRetailPriceOfComponentGroupedByTechnologyAndCurrency()
+	 //   	.stream()
+	//		.collect(Collectors.toMap(x->Pair.of((String)x[0], (String)x[1]), x->(Double) x[2]));
+			 maximumRetailPriceOfComponentGroupedByTechnologyAndCurrency=this.repository.maximumRetailPriceOfComponentGroupedByTechnologyAndCurrency();
+		
+	//		maximumRetailPriceOfToolGroupedByCurrency=this.repository.maximumRetailPriceOfToolGroupedByCurrency().stream()
+	//		.collect(Collectors.toMap(x->(String)x[0], x->(Double) x[1]));
+		maximumRetailPriceOfToolGroupedByCurrency=this.repository.maximumRetailPriceOfToolGroupedByCurrency();
+		
+	//	maximumBudgetOfPatronagesGroupedByPatronageStatus = this.repository.maximumBudgetOfPatronagesGroupedByPatronageStatus().stream()
+	//		.collect(Collectors.toMap(x->(PatronageStatus)x[0], x->Double.valueOf(x[1].toString())));
+		maximumBudgetOfPatronagesGroupedByPatronageStatus = this.repository.maximumBudgetOfPatronagesGroupedByPatronageStatus();
 		
 		
 		result.setTotalNumberOfComponents(totalNumberOfComponents);
@@ -140,6 +174,8 @@ public class AdministratorDashboardShowService implements AbstractShowService<Ad
 		result.setMaximumRetailPriceOfToolGroupedByCurrency(maximumRetailPriceOfToolGroupedByCurrency);
 		result.setMaximumBudgetOfPatronagesGroupedByPatronageStatus(maximumBudgetOfPatronagesGroupedByPatronageStatus);
 
+		
+		
 		
 		return result;
 	}
