@@ -10,23 +10,23 @@
  * they accept any liabilities with respect to them.
  */
 
-package acme.features.anonymous.item;
+package acme.features.any.item;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import acme.entities.item.Item;
 import acme.framework.components.models.Model;
 import acme.framework.controllers.Request;
-import acme.framework.roles.Anonymous;
+import acme.framework.roles.Any;
 import acme.framework.services.AbstractShowService;
 
 @Service
-public class AnonymousComponentShowService implements AbstractShowService<Anonymous, Item> {
+public class AnyComponentToolShowService implements AbstractShowService<Any, Item> {
 
 	// Internal state ---------------------------------------------------------
 
 	@Autowired
-	protected AnonymousComponentRepository repository;
+	protected AnyComponentRepository repository;
 
 	// AbstractShowService<Anonymous, Job> interface --------------------------
 
@@ -53,7 +53,7 @@ public class AnonymousComponentShowService implements AbstractShowService<Anonym
 		Item result;
 		int id;
 		id = request.getModel().getInteger("id");
-		result = this.repository.findComponentById(id);
+		result = this.repository.findToolById(id);
 		return result;
 	}
 

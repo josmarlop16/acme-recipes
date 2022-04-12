@@ -1,4 +1,4 @@
-package acme.features.anonymous.item;
+package acme.features.any.item;
 ///*
 // * AnonymousShoutCreateService.java
 // *
