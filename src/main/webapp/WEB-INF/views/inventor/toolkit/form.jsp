@@ -20,12 +20,11 @@
 	<acme:input-textbox code="inventor.toolkit.list.label.code" path="code"/>
 	<acme:input-textbox code="inventor.toolkit.list.label.assembly-notes" path="assemblyNotes"/>
 	<acme:input-textarea code="inventor.toolkit.list.label.description" path="description"/>
+	<acme:input-textarea code="inventor.toolkit.list.label.eur.price" path="EUR"/>
+	<acme:input-textarea code="inventor.toolkit.list.label.usd.price" path="USD"/>
+	<acme:input-textarea code="inventor.toolkit.list.label.gbp.price" path="GBP"/>
 	<acme:input-url code="inventor.toolkit.list.label.link" path="link"/>
-	<jstl:forEach items="${items}" var="item">
-		<jstl:out value="${item.name}"></jstl:out>
-		<jstl:out value="${item.retailPrice.currency} ${item.retailPrice.amount}"></jstl:out>
-		<jstl:out value="${item.type}"></jstl:out>
-		<acme:button code="inventor.toolkit.form.button.item" action="/authenticated/item/show?id=${item.id}"/>	
-	</jstl:forEach>	
+	<acme:button code="inventor.toolkit.form.button.item" action="/inventor/item/list-by-toolkitId?toolkitId=${toolkitId}"/>
+
 	
 </acme:form>

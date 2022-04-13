@@ -1,5 +1,5 @@
 /*
- * AnonymousShoutController.java
+ * AdministratorDashboardController.java
  *
  * Copyright (C) 2012-2022 Rafael Corchuelo.
  *
@@ -10,43 +10,31 @@
  * they accept any liabilities with respect to them.
  */
 
-package acme.features.inventor.item;
+package acme.features.authenticated.moneyExchange;
 
 import javax.annotation.PostConstruct;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 
-import acme.entities.item.Item;
+import acme.forms.MoneyExchange;
 import acme.framework.controllers.AbstractController;
-import acme.roles.Inventor;
+import acme.framework.roles.Authenticated;
 
 @Controller
-public class InventorToolController extends AbstractController<Inventor, Item> {
+public class AuthenticatedMoneyExchangeController extends AbstractController<Authenticated, MoneyExchange> {
 
 	// Internal state ---------------------------------------------------------
 
 	@Autowired
-	protected InventorToolListService		listService;
-
-	@Autowired
-	protected InventorToolShowService		showService;
-	
-	@Autowired
-	protected InventorItemListByToolkitService listByToolkitIdService;
-
-	
-//	@Autowired
-//	protected AnonymousComponentCreateService	createService;
+	protected AuthenticatedMoneyExchangePerformService exchangeService;
 
 	// Constructors -----------------------------------------------------------
 
 
 	@PostConstruct
 	protected void initialise() {
-		super.addCommand("list", this.listService);
-		super.addCommand("show", this.showService);
-		super.addCommand("list-by-toolkitId","list", this.listByToolkitIdService);
+		super.addCommand("perform", this.exchangeService);
 	}
 
 }

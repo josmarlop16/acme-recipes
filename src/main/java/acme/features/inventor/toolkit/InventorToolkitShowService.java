@@ -10,6 +10,7 @@ import acme.entities.item.Item;
 import acme.entities.toolkit.Toolkit;
 import acme.framework.components.models.Model;
 import acme.framework.controllers.Request;
+import acme.framework.datatypes.Money;
 import acme.framework.services.AbstractShowService;
 import acme.roles.Inventor;
 
@@ -34,7 +35,49 @@ public class InventorToolkitShowService implements AbstractShowService<Inventor,
 			assert model != null;
 			List<Item> items;
 			items=this.repository.findItemsByToolkitId(entity.getId()).stream().collect(Collectors.toList());
-			model.setAttribute("items", items);
+			
+			
+			final Money eurRetailPrice = new Money();
+			final Money usdRetailPrice = new Money();
+			final Money gbpRetailPrice = new Money();
+			
+			String currency;
+			double eurAmount=0.0;
+		    double usdAmount=0.0;
+			double gbpAmount=0.0;
+			
+			for(final Item item: items){
+				currency=item.getRetailPrice().getCurrency();
+				
+				switch(currency) {
+					case "EUR":
+						eurAmount=+item.getRetailPrice().getAmount();
+						break;
+					case "USD":
+						usdAmount=+item.getRetailPrice().getAmount();
+						break;
+					case "GBP":
+						gbpAmount=+item.getRetailPrice().getAmount();
+						break;
+					default:
+						break;
+						
+				}
+			}
+			eurRetailPrice.setCurrency("EUR");
+			eurRetailPrice.setAmount(eurAmount);
+			
+			usdRetailPrice.setCurrency("USD");
+			usdRetailPrice.setAmount(usdAmount);
+			
+			gbpRetailPrice.setCurrency("GBP");
+			gbpRetailPrice.setAmount(gbpAmount);
+			
+			model.setAttribute("toolkitId", entity.getId());
+			model.setAttribute("EUR", eurRetailPrice);
+			model.setAttribute("USD", usdRetailPrice);
+			model.setAttribute("GBP", gbpRetailPrice);
+			
 			request.unbind(entity, model, "title", "code", "description", "assemblyNotes","link");
 		}
 
