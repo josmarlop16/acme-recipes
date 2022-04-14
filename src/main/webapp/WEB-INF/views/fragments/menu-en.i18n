@@ -74,13 +74,21 @@ master.menu.patron.dashboard = Dashboard
 
 # master.menu.inventor ##########################################################
 
+master.menu.inventor = Inventor
 master.menu.inventor.tools = Tools
+
+master.menu.inventor.list-tools = List my tools
+master.menu.inventor.toolkits= Toolkits
+master.menu.inventor.list-toolkits= List my toolkits
+master.menu.inventor.patronage-reports = Patronage Reports
+
 master.menu.inventor.items = Items
 master.menu.items = Items 
 master.menu.inventor.components = Components
 master.menu.inventor.list-tools = Tool list
 master.menu.inventor.list-components = Components list
 master.menu.inventor.patronages = Patronages 
+
 master.menu.inventor.list-patronage-reports = Patronage Reports list
 master.menu.inventor.list-patronages = Patronage List
 

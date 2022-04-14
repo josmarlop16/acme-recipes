@@ -48,22 +48,33 @@
 			<acme:menu-suboption code="master.menu.authenticated.configuration.list-spam" action="/authenticated/spam/list"/>
 			<acme:menu-suboption code="master.menu.authenticated.configuration.list-currency" action="/authenticated/currency/list"/>			
 		</acme:menu-option>
-		
-		<acme:menu-option code="master.menu.announcements" access="isAuthenticated()">
+    
+    <acme:menu-option code="master.menu.announcements" access="isAuthenticated()">
 			<acme:menu-suboption code="master.menu.authenticated.list-announcements" action="/authenticated/announcement/list"/>		
+		</acme:menu-option> 
+		
+		
+
+		<acme:menu-option code="master.menu.toolkits" access="isAnonymous()">
+			<acme:menu-suboption code="master.menu.anonymous.list-toolkits" action="/anonymous/toolkit/list"/>		
 		</acme:menu-option>
+
+    <!-- Inventor -->
+		<acme:menu-option code="master.menu.inventor" access="hasRole('Inventor')">	
+			<acme:menu-suboption code="master.menu.inventor.list-tools" action="/inventor/item/list"/>
+			<acme:menu-suboption code="master.menu.inventor.list-toolkits" action="/inventor/toolkit/list"/>
+      <acme:menu-suboption code="master.menu.inventor.list-patronage-reports" action="/inventor/patronage-report/list"/>
+			<acme:menu-suboption code="master.menu.inventor.list-patronages" action="/inventor/patronage/list"/>
+		</acme:menu-option>
+
+
 		
 		
 		<!-- Patron -->
 		<acme:menu-option code="master.menu.patron" access="hasRole('Patron')">
 			<acme:menu-suboption code="master.menu.patron.dashboard" action="/patron/dashboard/show"/>
 		</acme:menu-option>
-    	
-    	<acme:menu-option code="master.menu.inventor.patronages" access="hasRole('Inventor')">
-			<acme:menu-suboption code="master.menu.inventor.list-patronage-reports" action="/inventor/patronage-report/list"/>
-			<acme:menu-suboption code="master.menu.inventor.list-patronages" action="/inventor/patronage/list"/>
-    	</acme:menu-option>
-    	
+
 		<acme:menu-option code="master.menu.administrator" access="hasRole('Administrator')">
 			<acme:menu-suboption code="master.menu.administrator.user-accounts" action="/administrator/user-account/list"/>
 			<acme:menu-suboption code="master.menu.administrator.dashboard" action="/administrator/administrator-dashboard/show"/>
