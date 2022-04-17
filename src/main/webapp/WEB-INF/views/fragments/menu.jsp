@@ -53,11 +53,6 @@
 			<acme:menu-suboption code="master.menu.authenticated.list-announcements" action="/authenticated/announcement/list"/>		
 		</acme:menu-option> 
 		
-		
-
-		<acme:menu-option code="master.menu.toolkits" access="isAnonymous()">
-			<acme:menu-suboption code="master.menu.anonymous.list-toolkits" action="/anonymous/toolkit/list"/>		
-		</acme:menu-option>
 
     <!-- Inventor -->
 		<acme:menu-option code="master.menu.inventor" access="hasRole('Inventor')">	

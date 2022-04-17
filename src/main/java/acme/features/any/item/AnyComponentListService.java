@@ -27,7 +27,7 @@ public class AnyComponentListService implements AbstractListService<Any, Item> {
 	// Internal state ---------------------------------------------------------
 
 	@Autowired
-	protected AnyComponentRepository repository;
+	protected AnyItemRepository repository;
 
 	// AbstractListService<Administrator, Shout> interface --------------
 

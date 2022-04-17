@@ -22,7 +22,7 @@ import acme.framework.controllers.AbstractController;
 import acme.framework.roles.Any;
 
 @Controller
-public class AnyComponentController extends AbstractController<Any, Item> {
+public class AnyItemController extends AbstractController<Any, Item> {
 
 	// Internal state ---------------------------------------------------------
 
@@ -30,25 +30,17 @@ public class AnyComponentController extends AbstractController<Any, Item> {
 	protected AnyComponentListService		listService;
 	
 	@Autowired
-	protected AnyComponentShowService		showService;
+	protected AnyItemShowService		showService;
 	
 	@Autowired
-	protected AnyComponentToolListService		toollistService;
-	
-	@Autowired
-	protected AnyComponentToolShowService		toolshowService; 
-
-//	@Autowired
-//	protected AnonymousComponentCreateService	createService;
-
-	// Constructors -----------------------------------------------------------
+	protected AnyToolListService		toollistService;
 
 
 	@PostConstruct
 	protected void initialise() {
 		super.addCommand("list-component", "list", this.listService);
 		super.addCommand("list-tool", "list", this.toollistService);
-		super.addCommand("show", this.toolshowService);
+		super.addCommand("show", this.showService);
 //		super.addCommand("create", this.createService);
 	}
 

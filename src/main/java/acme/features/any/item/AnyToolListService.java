@@ -22,12 +22,12 @@ import acme.framework.roles.Any;
 import acme.framework.services.AbstractListService;
 
 @Service
-public class AnyComponentToolListService implements AbstractListService<Any, Item> {
+public class AnyToolListService implements AbstractListService<Any, Item> {
 
 	// Internal state ---------------------------------------------------------
 
 	@Autowired
-	protected AnyComponentRepository repository;
+	protected AnyItemRepository repository;
 
 	// AbstractListService<Administrator, Shout> interface --------------
 
