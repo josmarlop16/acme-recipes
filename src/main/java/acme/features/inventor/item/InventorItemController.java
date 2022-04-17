@@ -22,15 +22,18 @@ import acme.framework.controllers.AbstractController;
 import acme.roles.Inventor;
 
 @Controller
-public class InventorToolController extends AbstractController<Inventor, Item> {
+public class InventorItemController extends AbstractController<Inventor, Item> {
 
 	// Internal state ---------------------------------------------------------
 
 	@Autowired
 	protected InventorToolListService		listService;
+	
+	@Autowired
+	protected InventorComponentListService		listComponentService;
 
 	@Autowired
-	protected InventorToolShowService		showService;
+	protected InventorItemShowService		showService;
 	
 	@Autowired
 	protected InventorItemListByToolkitService listByToolkitIdService;
@@ -47,6 +50,7 @@ public class InventorToolController extends AbstractController<Inventor, Item> {
 	protected void initialise() {
 		super.addCommand("list", this.listService);
 		super.addCommand("show", this.showService);
+		super.addCommand("list-component","list", this.listComponentService);
 		super.addCommand("list-by-toolkitId","list", this.listByToolkitIdService);
 	}
 

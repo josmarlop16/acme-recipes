@@ -1,5 +1,6 @@
 package acme.features.inventor.toolkit;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -8,6 +9,7 @@ import org.springframework.stereotype.Service;
 
 import acme.entities.item.Item;
 import acme.entities.toolkit.Toolkit;
+import acme.features.authenticated.moneyExchange.AuthenticatedMoneyExchangePerformService;
 import acme.framework.components.models.Model;
 import acme.framework.controllers.Request;
 import acme.framework.datatypes.Money;
@@ -20,6 +22,9 @@ public class InventorToolkitShowService implements AbstractShowService<Inventor,
 
 		@Autowired
 		protected InventorToolkitRepository repository;
+		
+		@Autowired
+		protected AuthenticatedMoneyExchangePerformService exchangeService;
 
 
 		@Override
@@ -40,6 +45,7 @@ public class InventorToolkitShowService implements AbstractShowService<Inventor,
 			final Money eurRetailPrice = new Money();
 			final Money usdRetailPrice = new Money();
 			final Money gbpRetailPrice = new Money();
+			final String systemCurrency= this.repository.systemCurrency();
 			
 			String currency;
 			double eurAmount=0.0;
@@ -73,10 +79,36 @@ public class InventorToolkitShowService implements AbstractShowService<Inventor,
 			gbpRetailPrice.setCurrency("GBP");
 			gbpRetailPrice.setAmount(gbpAmount);
 			
+			final List<Money> retailPrices = new ArrayList<>();
+			retailPrices.add(gbpRetailPrice);
+			retailPrices.add(usdRetailPrice);
+			retailPrices.add(eurRetailPrice);
+			
+			final Money totalComputed=new Money();
+			totalComputed.setCurrency(systemCurrency);
+			Double amounts=0.0;
+			for(final Money retailPrice:retailPrices) {
+				amounts+=this.exchangeService.computeMoneyExchange(retailPrice, systemCurrency).getTarget().getAmount();
+				totalComputed.setAmount(amounts);
+			}
+			
+
+//			final Double gbpToSystemCurrency=this.exchangeService.computeMoneyExchange(gbpRetailPrice, systemCurrency).getTarget().getAmount();			
+//			final Double eurToSystemCurrency=this.exchangeService.computeMoneyExchange(eurRetailPrice, systemCurrency).getTarget().getAmount();
+//			final Double usdToSystemCurrency=this.exchangeService.computeMoneyExchange(usdRetailPrice, systemCurrency).getTarget().getAmount();
+			
+			
+//			final Double totalSum = gbpToSystemCurrency + eurToSystemCurrency + usdToSystemCurrency;
+//			final Money totalComputedPrice= new Money();
+//			totalComputedPrice.setCurrency(systemCurrency);
+//			totalComputedPrice.setAmount(totalSum);
+			
 			model.setAttribute("toolkitId", entity.getId());
 			model.setAttribute("EUR", eurRetailPrice);
 			model.setAttribute("USD", usdRetailPrice);
 			model.setAttribute("GBP", gbpRetailPrice);
+			
+			model.setAttribute("computedPrice", totalComputed);
 			
 			request.unbind(entity, model, "title", "code", "description", "assemblyNotes","link");
 		}

@@ -21,7 +21,7 @@ import acme.entities.item.Item;
 import acme.framework.repositories.AbstractRepository;
 
 @Repository
-public interface InventorToolRepository extends AbstractRepository {
+public interface InventorItemRepository extends AbstractRepository {
 
 	@Query("select i from Item i where i.type = 0 and i.inventor.id = :inventorId")
 	Collection<Item> findToolsByInventorId(int inventorId);
@@ -37,6 +37,8 @@ public interface InventorToolRepository extends AbstractRepository {
 
 	@Query("select i from Item i where i.id = :id and i.type = 1 and i.inventor.id = :inventorId")
 	Item findComponentById(int id);
-
+	
+	@Query("select i from Item i where i.id = :id")
+	Item findItemById(int id);
 
 }

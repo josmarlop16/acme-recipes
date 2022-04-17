@@ -18,3 +18,4 @@ inventor.toolkit.form.button.item = Ver item
 inventor.toolkit.list.label.eur.price= Precio en EUR
 inventor.toolkit.list.label.usd.price= Precio en USD
 inventor.toolkit.list.label.gbp.price= Precio en GBP
+inventor.toolkit.list.label.computed.price = Precio en la divisa del sistema
