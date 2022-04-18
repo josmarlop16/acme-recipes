@@ -50,7 +50,9 @@
 			<acme:message code="administrator.dashboard.form.label.total-number-of-patronages-groupedby-status"/>
 		</th>
 		<td>
-			<acme:print value="${totalNumberOfPatronagesGroupedByPatronageStatus}"/>
+			<jstl:forEach var="entry" items="${totalNumberOfPatronagesGroupedByPatronageStatus}">
+				<acme:print value="${entry.key}:${entry.value} "/>	
+			</jstl:forEach>
 		</td>
 	</tr> 
 	<tr>
@@ -58,7 +60,10 @@
 			<acme:message code="administrator.dashboard.form.label.average-retailprice-components-groupedby-technology"/>
 		</th>
 		<td>
-			<acme:print value="${averageRetailPriceOfComponentGroupedByTechnologyAndCurrency}"/>
+		<jstl:forEach var="entry" items="${averageRetailPriceOfComponentGroupedByTechnologyAndCurrency}">
+				<acme:print value="${entry.key}:${entry.value} "/>	
+		</jstl:forEach>
+			
 		</td>
 	</tr>
 
@@ -68,7 +73,10 @@
 			<acme:message code="administrator.dashboard.form.label.average-retailprice-tools-groupedby-currency"/>
 		</th>
 		<td>
-			<acme:print value="${averageRetailPriceOfToolGroupedByCurrency}"/>
+		<jstl:forEach var="entry" items="${averageRetailPriceOfToolGroupedByCurrency}">
+				<acme:print value="${entry.key}:${entry.value} "/>	
+		</jstl:forEach>
+			
 		</td>
 	</tr> 
 	<tr>
@@ -76,7 +84,10 @@
 			<acme:message code="administrator.dashboard.form.label.average-budget-patronages-groupedby-status"/>
 		</th>
 		<td>
-			<acme:print value="${averageBudgetOfPatronagesGroupedByPatronageStatus}"/>
+			<jstl:forEach var="entry" items="${averageBudgetOfPatronagesGroupedByPatronageStatus}">
+					<acme:print value="${entry.key}:${entry.value} "/>	
+			</jstl:forEach>
+			
 		</td>
 	</tr> 
 
@@ -85,7 +96,10 @@
 			<acme:message code="administrator.dashboard.form.label.deviation-retailprice-components-groupedby-technology"/>
 		</th>
 		<td>
-			<acme:print value="${deviationRetailPriceOfComponentGroupedByTechnologyAndCurrency}"/>
+		<jstl:forEach var="entry" items="${deviationRetailPriceOfComponentGroupedByTechnologyAndCurrency}">
+					<acme:print value="${entry.key}:${entry.value} "/>	
+		</jstl:forEach>
+			
 		</td>
 	</tr> 
  
@@ -94,7 +108,10 @@
 			<acme:message code="administrator.dashboard.form.label.deviation-retailprice-tools-groupedby-currency"/>
 		</th>
 		<td>
-			<acme:print value="${deviationRetailPriceOfToolGroupedByCurrency}"/>
+		<jstl:forEach var="entry" items="${deviationRetailPriceOfToolGroupedByCurrency}">
+					<acme:print value="${entry.key}:${entry.value} "/>	
+		</jstl:forEach>
+			
 		</td>
 	</tr>  
 	<tr>
@@ -102,7 +119,10 @@
 			<acme:message code="administrator.dashboard.form.label.deviation-budget-patronages-groupedby-status"/>
 		</th>
 		<td>
-			<acme:print value="${deviationBudgetOfPatronagesGroupedByPatronageStatus}"/>
+		<jstl:forEach var="entry" items="${deviationBudgetOfPatronagesGroupedByPatronageStatus}">
+					<acme:print value="${entry.key}:${entry.value} "/>	
+		</jstl:forEach>
+			
 		</td>
 	</tr> 
 
@@ -111,7 +131,10 @@
 			<acme:message code="administrator.dashboard.form.label.minimum-retailprice-components-groupedby-technology"/>
 		</th>
 		<td>
-			<acme:print value="${minimumRetailPriceOfComponentGroupedByTechnologyAndCurrency}"/>
+		<jstl:forEach var="entry" items="${minimumRetailPriceOfComponentGroupedByTechnologyAndCurrency}">
+					<acme:print value="${entry.key}:${entry.value} "/>	
+		</jstl:forEach>
+			
 		</td>
 		
 	</tr>
@@ -121,7 +144,10 @@
 			<acme:message code="administrator.dashboard.form.label.minimum-retailprice-tools-groupedby-currency"/>
 		</th>
 		<td>
-			<acme:print value="${minimumRetailPriceOfToolGroupedByCurrency}"/>
+		<jstl:forEach var="entry" items="${minimumRetailPriceOfToolGroupedByCurrency}">
+					<acme:print value="${entry.key}:${entry.value} "/>	
+		</jstl:forEach>
+			
 		</td>
 		
 	</tr>
@@ -130,7 +156,10 @@
 			<acme:message code="administrator.dashboard.form.label.minimum-budget-of-patronages-groupedby-status"/>
 		</th>
 		<td>
-			<acme:print value="${minimumBudgetOfPatronagesGroupedByPatronageStatus}"/>
+		<jstl:forEach var="entry" items="${minimumBudgetOfPatronagesGroupedByPatronageStatus}">
+					<acme:print value="${entry.key}:${entry.value} "/>	
+		</jstl:forEach>
+		
 		</td>
 		
 	</tr> 
@@ -140,7 +169,10 @@
 			<acme:message code="administrator.dashboard.form.label.maximum-retailprice-components-groupedby-technology"/>
 		</th>
 		<td>
-			<acme:print value="${maximumRetailPriceOfComponentGroupedByTechnologyAndCurrency}"/>
+		<jstl:forEach var="entry" items="${maximumRetailPriceOfComponentGroupedByTechnologyAndCurrency}">
+					<acme:print value="${entry.key}:${entry.value} "/>	
+		</jstl:forEach>
+			
 		</td>
 		
 	</tr> 
@@ -150,7 +182,10 @@
 			<acme:message code="administrator.dashboard.form.label.maximum-retailprice-tools-groupedby-currency"/>
 		</th>
 		<td>
-			<acme:print value="${maximumRetailPriceOfToolGroupedByCurrency}"/>
+		<jstl:forEach var="entry" items="${maximumRetailPriceOfToolGroupedByCurrency}">
+					<acme:print value="${entry.key}:${entry.value} "/>	
+		</jstl:forEach>
+			
 		</td>
 		
 	</tr>  
@@ -159,7 +194,10 @@
 			<acme:message code="administrator.dashboard.form.label.maximum-budget-of-patronages-groupedby-status"/>
 		</th>
 		<td>
-			<acme:print value="${maximumBudgetOfPatronagesGroupedByPatronageStatus}"/>
+		<jstl:forEach var="entry" items="${maximumBudgetOfPatronagesGroupedByPatronageStatus}">
+					<acme:print value="${entry.key}:${entry.value} "/>	
+		</jstl:forEach>
+			
 		</td>
 		
 	</tr> 
