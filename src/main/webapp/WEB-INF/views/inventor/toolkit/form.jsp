@@ -23,7 +23,7 @@
 	<acme:input-textarea code="inventor.toolkit.list.label.eur.price" path="EUR"/>
 	<acme:input-textarea code="inventor.toolkit.list.label.usd.price" path="USD"/>
 	<acme:input-textarea code="inventor.toolkit.list.label.gbp.price" path="GBP"/>
-	<acme:input-textarea code="inventor.toolkit.list.label.computed.price" path="computedPrice"/>
+	<%-- <acme:input-textarea code="inventor.toolkit.list.label.computed.price" path="computedPrice"/> --%>
 	<acme:input-url code="inventor.toolkit.list.label.link" path="link"/>
 	<acme:button code="inventor.toolkit.form.button.item" action="/inventor/item/list-by-toolkitId?toolkitId=${toolkitId}"/>
 

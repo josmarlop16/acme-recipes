@@ -52,6 +52,8 @@ public class InventorToolkitShowService implements AbstractShowService<Inventor,
 		    double usdAmount=0.0;
 			double gbpAmount=0.0;
 			
+			final List<Money> retailPrices = new ArrayList<>();
+			
 			for(final Item item: items){
 				currency=item.getRetailPrice().getCurrency();
 				
@@ -79,36 +81,29 @@ public class InventorToolkitShowService implements AbstractShowService<Inventor,
 			gbpRetailPrice.setCurrency("GBP");
 			gbpRetailPrice.setAmount(gbpAmount);
 			
-			final List<Money> retailPrices = new ArrayList<>();
-			retailPrices.add(gbpRetailPrice);
-			retailPrices.add(usdRetailPrice);
-			retailPrices.add(eurRetailPrice);
+			if(gbpRetailPrice.getAmount() != 0.0) {
+				retailPrices.add(gbpRetailPrice);
+			}else if(usdRetailPrice.getAmount() !=0) {
+				retailPrices.add(usdRetailPrice);
+			}else {
+				retailPrices.add(eurRetailPrice);
+			}
 			
 			final Money totalComputed=new Money();
 			totalComputed.setCurrency(systemCurrency);
-			Double amounts=0.0;
+			final Double amounts=0.0;
 			for(final Money retailPrice:retailPrices) {
-				amounts+=this.exchangeService.computeMoneyExchange(retailPrice, systemCurrency).getTarget().getAmount();
-				totalComputed.setAmount(amounts);
+			//	amounts+=this.exchangeService.computeMoneyExchange(retailPrice, systemCurrency).getTarget().getAmount();
+				
+			//	totalComputed.setAmount(amounts);
 			}
-			
-
-//			final Double gbpToSystemCurrency=this.exchangeService.computeMoneyExchange(gbpRetailPrice, systemCurrency).getTarget().getAmount();			
-//			final Double eurToSystemCurrency=this.exchangeService.computeMoneyExchange(eurRetailPrice, systemCurrency).getTarget().getAmount();
-//			final Double usdToSystemCurrency=this.exchangeService.computeMoneyExchange(usdRetailPrice, systemCurrency).getTarget().getAmount();
-			
-			
-//			final Double totalSum = gbpToSystemCurrency + eurToSystemCurrency + usdToSystemCurrency;
-//			final Money totalComputedPrice= new Money();
-//			totalComputedPrice.setCurrency(systemCurrency);
-//			totalComputedPrice.setAmount(totalSum);
-			
+						
 			model.setAttribute("toolkitId", entity.getId());
 			model.setAttribute("EUR", eurRetailPrice);
 			model.setAttribute("USD", usdRetailPrice);
 			model.setAttribute("GBP", gbpRetailPrice);
 			
-			model.setAttribute("computedPrice", totalComputed);
+			//model.setAttribute("computedPrice", totalComputed);
 			
 			request.unbind(entity, model, "title", "code", "description", "assemblyNotes","link");
 		}
