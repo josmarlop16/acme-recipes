@@ -1,5 +1,5 @@
 /*
- * AnonymousUserAccountController.java
+ * AdministratorUserAccountController.java
  *
  * Copyright (C) 2012-2022 Rafael Corchuelo.
  *
@@ -10,7 +10,7 @@
  * they accept any liabilities with respect to them.
  */
 
-package acme.features.anonymous.userAccount;
+package acme.framework.features.Any.userAccount;
 
 import javax.annotation.PostConstruct;
 
@@ -19,25 +19,25 @@ import org.springframework.stereotype.Controller;
 
 import acme.framework.controllers.AbstractController;
 import acme.framework.entities.UserAccount;
-import acme.framework.roles.Anonymous;
+import acme.framework.roles.Any;
 
 @Controller
-public class AnonymousUserAccountController extends AbstractController<Anonymous, UserAccount> {
+public class AnyUserAccountController extends AbstractController<Any, UserAccount> {
 
 	// Internal state ---------------------------------------------------------
 
 	@Autowired
-	protected AnonymousUserAccountListAllService listAllService;
-	
+	protected AnyUserAccountListService	listService;
+
 	@Autowired
-	protected AnonymousUserAccountShowService showService;
+	protected AnyUserAccountShowService	showService;
 
 	// Constructors -----------------------------------------------------------
 
 
 	@PostConstruct
 	protected void initialise() {
-		super.addCommand("list", this.listAllService);
+		super.addCommand("list", this.listService);
 		super.addCommand("show", this.showService);
 	}
 

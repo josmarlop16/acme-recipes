@@ -62,7 +62,7 @@
 		</acme:menu-option>
 		
 		<acme:menu-option code="master.menu.userAccounts" access="isAnonymous()">
-			<acme:menu-suboption code="master.menu.anonymous.list-userAccounts" action="/anonymous/userAccount/list"/>		
+			<acme:menu-suboption code="master.menu.anonymous.list-userAccounts" action="/any/userAccount/list"/>		
 		</acme:menu-option>
 		
 		<acme:menu-option code="master.menu.toolkits" access="isAuthenticated()">
@@ -83,7 +83,7 @@
     	
 
 		<acme:menu-option code="master.menu.administrator" access="hasRole('Administrator')">
-			<acme:menu-suboption code="master.menu.administrator.user-accounts" action="/administrator/user-account/list"/>
+			<acme:menu-suboption code="master.menu.administrator.user-accounts" action="/any/user-account/list"/>
 			<acme:menu-suboption code="master.menu.administrator.dashboard" action="/administrator/dashboard/show"/>
 			<acme:menu-separator/>
 			<acme:menu-suboption code="master.menu.administrator.populate-initial" action="/administrator/populate-initial"/>

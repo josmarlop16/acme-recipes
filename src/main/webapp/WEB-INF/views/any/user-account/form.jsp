@@ -1,5 +1,5 @@
 <%--
-- list.jsp
+- form.jsp
 -
 - Copyright (C) 2012-2022 Rafael Corchuelo.
 -
@@ -15,12 +15,13 @@
 <%@taglib prefix="jstl" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@taglib prefix="acme" uri="urn:jsptagdir:/WEB-INF/tags"%>
 
-<acme:list>
-	<acme:list-column code="authenticated.toolkit.list.label.title" path="title" width="20%"/>
-	<acme:list-column code="authenticated.toolkit.list.label.code" path="code" width="20%"/>
-	<acme:list-column code="authenticated.toolkit.list.label.description" path="description" width="20%"/>
-	<acme:list-column code="authenticated.toolkit.list.label.assemblyNotes" path="assemblyNotes" width="20%"/>
-	<acme:list-column code="authenticated.toolkit.list.label.link" path="link" width="20%"/>
-	<acme:list-column code="authenticated.toolkit.list.label.item.name" path="item.name" width="20%"/>
+<acme:form>
+	<acme:input-textbox code="any.user-account.form.label.username" path="username"/>
+	<acme:input-password code="any.user-account.form.label.password" path="password"/>
+	<acme:input-password code="any.user-account.form.label.confirmation" path="confirmation"/>
 	
-</acme:list> 
+	<acme:input-textbox code="any.user-account.form.label.name" path="identity.name"/>
+	<acme:input-textbox code="any.user-account.form.label.surname" path="identity.surname"/>
+	<acme:input-email code="any.user-account.form.label.email" path="identity.email"/>
+		
+</acme:form>
