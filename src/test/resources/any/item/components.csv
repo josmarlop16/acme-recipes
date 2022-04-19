@@ -1,0 +1,4 @@
+recordIndex,name,code,technology,description,link,key:inventor
+0,Component-01,TRE-897-O,Technology-01,This is a description,http://www.component-01.org,inventor-01
+1,Component-02,TRE-897-V,Technology-01,This is a description,http://www.component-02.org,inventor-01
+2,Component-03,TRE-897-Z,Technology-02,This is a description,http://www.component-03.org,inventor-01
