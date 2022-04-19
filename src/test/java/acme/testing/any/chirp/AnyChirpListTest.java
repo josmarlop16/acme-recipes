@@ -16,27 +16,62 @@ public class AnyChirpListTest extends TestHarness{
 	@ParameterizedTest
 	@CsvFileSource(resources = "/any/chirp/list-chirp.csv", encoding = "utf-8", numLinesToSkip = 1)
 	@Order(10)
-	public void positiveTest(final String creationMoment, final String title, final String author, final String body, final String emailAddress) {
+	public void positiveTestAdministrator(final int recordIndex, final String creationMoment, final String title, final String author, final String body, final String emailAddress) {
 		super.signIn("administrator", "administrator");
 
 		super.clickOnMenu("Chirps", "List Chirps");
 		super.checkListingExists();
 		super.sortListing(0, "asc");
 		
-		super.checkColumnHasValue(0, 0, "2022/04/09 11:00");
-		super.checkColumnHasValue(0, 1, "Chirp-04");
-		super.checkColumnHasValue(0, 2, "Mike Doe");
-		super.checkColumnHasValue(0, 3, "This is the body");
-		super.checkColumnHasValue(0, 4, "mikedoe@gmail.com");
-		super.checkColumnHasValue(1, 0, "2022/04/10 11:00");
-		super.checkColumnHasValue(1, 1, "Chirp-03");
-		super.checkColumnHasValue(1, 2, "Mike Doe");
-		super.checkColumnHasValue(1, 3, "This is the body");
-		super.checkColumnHasValue(1, 4, "mikedoe@gmail.com");
+		super.checkColumnHasValue(recordIndex, 0, creationMoment);
+		super.checkColumnHasValue(recordIndex, 1, title);
+		super.checkColumnHasValue(recordIndex, 2, author);
+		super.checkColumnHasValue(recordIndex, 3, body);
+		super.checkColumnHasValue(recordIndex, 4, emailAddress);
+
 
 		
 
-		//super.clickOnListingRecord(0);
+
+		super.signOut();
+	}
+	
+	@ParameterizedTest
+	@CsvFileSource(resources = "/any/chirp/list-chirp.csv", encoding = "utf-8", numLinesToSkip = 1)
+	@Order(20)
+	public void positiveTestAnonymous(final int recordIndex, final String creationMoment, final String title, final String author, final String body, final String emailAddress) {
+
+		super.clickOnMenu("Chirps", "List Chirps");
+		super.checkListingExists();
+		super.sortListing(0, "asc");
+		
+		super.checkColumnHasValue(recordIndex, 0, creationMoment);
+		super.checkColumnHasValue(recordIndex, 1, title);
+		super.checkColumnHasValue(recordIndex, 2, author);
+		super.checkColumnHasValue(recordIndex, 3, body);
+		super.checkColumnHasValue(recordIndex, 4, emailAddress);
+
+	}
+	
+	@ParameterizedTest
+	@CsvFileSource(resources = "/any/chirp/list-chirp.csv", encoding = "utf-8", numLinesToSkip = 1)
+	@Order(30)
+	public void positiveTestInventor(final int recordIndex, final String creationMoment, final String title, final String author, final String body, final String emailAddress) {
+		super.signIn("inventor03", "inventor03");
+
+		super.clickOnMenu("Chirps", "List Chirps");
+		super.checkListingExists();
+		super.sortListing(0, "asc");
+		
+		super.checkColumnHasValue(recordIndex, 0, creationMoment);
+		super.checkColumnHasValue(recordIndex, 1, title);
+		super.checkColumnHasValue(recordIndex, 2, author);
+		super.checkColumnHasValue(recordIndex, 3, body);
+		super.checkColumnHasValue(recordIndex, 4, emailAddress);
+
+
+		
+
 
 		super.signOut();
 	}
