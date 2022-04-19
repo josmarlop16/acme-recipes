@@ -13,13 +13,13 @@ public class InventorPatronageShowPatronTest extends TestHarness {
 	// Test cases -------------------------------------------------------------
 
 	@ParameterizedTest
-	@CsvFileSource(resources = "/inventor/patronageReports/show-patron.csv", encoding = "utf-8", numLinesToSkip = 1)
+	@CsvFileSource(resources = "/inventor/patronage/show-patron.csv", encoding = "utf-8", numLinesToSkip = 1)
 	@Order(10)
 	public void positiveTest(final String company, final String statement, final String optionalLink) {
 		
 		super.signIn("administrator", "administrator");
 
-		super.clickOnMenu("Inventor", "Patronage Reports list");
+		super.clickOnMenu("Inventor", "Patronage List");
 		super.checkListingExists();
 		super.sortListing(0, "asc");
 
