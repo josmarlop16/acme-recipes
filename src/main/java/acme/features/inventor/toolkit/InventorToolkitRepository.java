@@ -21,6 +21,9 @@ public interface InventorToolkitRepository extends AbstractRepository {
 	@Query("select q.item from Quantity q where q.toolkit.id = :id")
 	Collection<Item> findItemsByToolkitId(int id);
 	
+	@Query("select c.name from Currency c where c.isDefault=true")
+	String systemCurrency();
+	
 	
 	
 	

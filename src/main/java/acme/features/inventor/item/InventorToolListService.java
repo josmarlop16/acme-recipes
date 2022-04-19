@@ -30,7 +30,7 @@ public class InventorToolListService implements AbstractListService<Inventor, It
 	// Internal state ---------------------------------------------------------
 
 	@Autowired
-	protected InventorToolRepository repository;
+	protected InventorItemRepository repository;
 
 
 	@Override

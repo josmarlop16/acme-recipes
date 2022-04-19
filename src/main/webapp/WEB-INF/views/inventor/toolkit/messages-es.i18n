@@ -14,7 +14,9 @@ inventor.toolkit.list.label.assembly-notes = Notas de montaje
 inventor.toolkit.list.label.description = Descripción
 inventor.toolkit.list.label.link = Link
 inventor.toolkit.form.button.item = Ver item
+inventor.toolkit.list.label.item = Item
 
 inventor.toolkit.list.label.eur.price= Precio en EUR
 inventor.toolkit.list.label.usd.price= Precio en USD
 inventor.toolkit.list.label.gbp.price= Precio en GBP
+inventor.toolkit.list.label.computed.price = Precio en la divisa del sistema

@@ -22,12 +22,12 @@ import acme.framework.services.AbstractShowService;
 import acme.roles.Inventor;
 
 @Service
-public class InventorToolShowService implements AbstractShowService<Inventor, Item> {
+public class InventorItemShowService implements AbstractShowService<Inventor, Item> {
 
 	// Internal state ---------------------------------------------------------
 
 	@Autowired
-	protected InventorToolRepository repository;
+	protected InventorItemRepository repository;
 
 
 	@Override
@@ -53,7 +53,7 @@ public class InventorToolShowService implements AbstractShowService<Inventor, It
 		int id;
 
 		id = request.getModel().getInteger("id");
-		result = this.repository.findToolById(id);
+		result = this.repository.findItemById(id);
 
 		return result;
 	}

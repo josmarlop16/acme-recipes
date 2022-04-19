@@ -29,7 +29,7 @@ public class InventorItemListByToolkitService implements AbstractListService<Inv
 	// Internal state ---------------------------------------------------------
 
 	@Autowired
-	protected InventorToolRepository repository;
+	protected InventorItemRepository repository;
 
 
 	@Override
