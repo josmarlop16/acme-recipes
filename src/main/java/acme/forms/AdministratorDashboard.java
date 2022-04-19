@@ -13,8 +13,11 @@
 package acme.forms;
 
 import java.io.Serializable;
-import java.util.List;
+import java.util.Map;
 
+import org.apache.commons.lang3.tuple.Pair;
+
+import acme.entities.patronages.PatronageStatus;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -30,38 +33,38 @@ public class AdministratorDashboard implements Serializable {
 	int						totalNumberOfComponents;
 	int						totalNumberOfTools;
 	int						totalNumberOfPatronages;
-//	Map<PatronageStatus,Integer> totalNumberOfPatronagesGroupedByPatronageStatus;
-	List<Object[]> totalNumberOfPatronagesGroupedByPatronageStatus;
+	Map<PatronageStatus,Integer> totalNumberOfPatronagesGroupedByPatronageStatus;
+
 	
 	//	average 
-	//Map<Pair<String,String>,Double> averageRetailPriceOfComponentGroupedByTechnologyAndCurrency;
-	List<Object[]> averageRetailPriceOfComponentGroupedByTechnologyAndCurrency;
-	//Map<String,Double> averageRetailPriceOfToolGroupedByCurrency;
-	List<Object[]> averageRetailPriceOfToolGroupedByCurrency;
-	//Map<PatronageStatus,Double> averageBudgetOfPatronagesGroupedByPatronageStatus;
-	List<Object[]> averageBudgetOfPatronagesGroupedByPatronageStatus;
+	Map<Pair<String,String>,Double> averageRetailPriceOfComponentGroupedByTechnologyAndCurrency;
+
+	Map<String,Double> averageRetailPriceOfToolGroupedByCurrency;
+
+	Map<PatronageStatus,Double> averageBudgetOfPatronagesGroupedByPatronageStatus;
+
 
 	//	deviation 
-	//Map<Pair<String,String>,Double> deviationRetailPriceOfComponentGroupedByTechnologyAndCurrency;
-	List<Object[]> deviationRetailPriceOfComponentGroupedByTechnologyAndCurrency;
-	//Map<String,Double> deviationRetailPriceOfToolGroupedByCurrency;
-	List<Object[]> deviationRetailPriceOfToolGroupedByCurrency;
-	//Map<PatronageStatus,Double> deviationBudgetOfPatronagesGroupedByPatronageStatus;
-	List<Object[]> deviationBudgetOfPatronagesGroupedByPatronageStatus;
+	Map<Pair<String,String>,Double> deviationRetailPriceOfComponentGroupedByTechnologyAndCurrency;
+
+	Map<String,Double> deviationRetailPriceOfToolGroupedByCurrency;
+
+	Map<PatronageStatus,Double> deviationBudgetOfPatronagesGroupedByPatronageStatus;
+
 
 	//	minimum, and maximum 
-	//Map<Pair<String,String>,Double> minimumRetailPriceOfComponentGroupedByTechnologyAndCurrency;
-	List<Object[]> minimumRetailPriceOfComponentGroupedByTechnologyAndCurrency;
-	//Map<String,Double> minimumRetailPriceOfToolGroupedByCurrency;
-	List<Object[]> minimumRetailPriceOfToolGroupedByCurrency;
-	//Map<PatronageStatus,Double> minimumBudgetOfPatronagesGroupedByPatronageStatus;
-	List<Object[]> minimumBudgetOfPatronagesGroupedByPatronageStatus;
+	Map<Pair<String,String>,Double> minimumRetailPriceOfComponentGroupedByTechnologyAndCurrency;
+
+	Map<String,Double> minimumRetailPriceOfToolGroupedByCurrency;
+
+	Map<PatronageStatus,Double> minimumBudgetOfPatronagesGroupedByPatronageStatus;
+
 	
-	//Map<Pair<String,String>,Double> maximumRetailPriceOfComponentGroupedByTechnologyAndCurrency;
-	List<Object[]> maximumRetailPriceOfComponentGroupedByTechnologyAndCurrency;
-	//Map<String,Double> maximumRetailPriceOfToolGroupedByCurrency;
-	List<Object[]> maximumRetailPriceOfToolGroupedByCurrency;
-	//Map<PatronageStatus,Double> maximumBudgetOfPatronagesGroupedByPatronageStatus;
-	List<Object[]>  maximumBudgetOfPatronagesGroupedByPatronageStatus;
+	Map<Pair<String,String>,Double> maximumRetailPriceOfComponentGroupedByTechnologyAndCurrency;
+
+	Map<String,Double> maximumRetailPriceOfToolGroupedByCurrency;
+
+	Map<PatronageStatus,Double> maximumBudgetOfPatronagesGroupedByPatronageStatus;
+
 
 }
