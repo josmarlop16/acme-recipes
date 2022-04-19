@@ -1,0 +1,4 @@
+name,accepted,is-default
+EUR,true,true
+GBP,true,false
+USD,true,false
