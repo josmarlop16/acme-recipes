@@ -14,6 +14,7 @@ package acme.features.any.item;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
 import acme.entities.item.Item;
 import acme.framework.components.models.Model;
 import acme.framework.controllers.Request;
@@ -21,12 +22,12 @@ import acme.framework.roles.Any;
 import acme.framework.services.AbstractShowService;
 
 @Service
-public class AnyComponentToolShowService implements AbstractShowService<Any, Item> {
+public class AnyItemShowService implements AbstractShowService<Any, Item> {
 
 	// Internal state ---------------------------------------------------------
 
 	@Autowired
-	protected AnyComponentRepository repository;
+	protected AnyItemRepository repository;
 
 	// AbstractShowService<Anonymous, Job> interface --------------------------
 
@@ -53,7 +54,7 @@ public class AnyComponentToolShowService implements AbstractShowService<Any, Ite
 		Item result;
 		int id;
 		id = request.getModel().getInteger("id");
-		result = this.repository.findToolById(id);
+		result = this.repository.findItemById(id);
 		return result;
 	}
 

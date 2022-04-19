@@ -10,7 +10,7 @@
  * they accept any liabilities with respect to them.
  */
 
-package acme.features.inventor.item;
+package acme.features.any.item;
 
 import javax.annotation.PostConstruct;
 
@@ -19,35 +19,29 @@ import org.springframework.stereotype.Controller;
 
 import acme.entities.item.Item;
 import acme.framework.controllers.AbstractController;
-import acme.roles.Inventor;
+import acme.framework.roles.Any;
 
 @Controller
-public class InventorToolController extends AbstractController<Inventor, Item> {
+public class AnyItemController extends AbstractController<Any, Item> {
 
 	// Internal state ---------------------------------------------------------
 
 	@Autowired
-	protected InventorToolListService		listService;
-
-	@Autowired
-	protected InventorToolShowService		showService;
+	protected AnyComponentListService		listService;
 	
 	@Autowired
-	protected InventorItemListByToolkitService listByToolkitIdService;
-
-
+	protected AnyItemShowService		showService;
 	
-//	@Autowired
-//	protected AnonymousComponentCreateService	createService;
-
-	// Constructors -----------------------------------------------------------
+	@Autowired
+	protected AnyToolListService		toollistService;
 
 
 	@PostConstruct
 	protected void initialise() {
-		super.addCommand("list", this.listService);
+		super.addCommand("list-component", "list", this.listService);
+		super.addCommand("list-tool", "list", this.toollistService);
 		super.addCommand("show", this.showService);
-		super.addCommand("list-by-toolkitId","list", this.listByToolkitIdService);
+//		super.addCommand("create", this.createService);
 	}
 
 }

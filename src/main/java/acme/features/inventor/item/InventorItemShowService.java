@@ -10,30 +10,29 @@
  * they accept any liabilities with respect to them.
  */
 
-package acme.features.any.item;
+package acme.features.inventor.item;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
 import acme.entities.item.Item;
 import acme.framework.components.models.Model;
 import acme.framework.controllers.Request;
-import acme.framework.roles.Any;
 import acme.framework.services.AbstractShowService;
+import acme.roles.Inventor;
 
 @Service
-public class AnyComponentShowService implements AbstractShowService<Any, Item> {
+public class InventorItemShowService implements AbstractShowService<Inventor, Item> {
 
 	// Internal state ---------------------------------------------------------
 
 	@Autowired
-	protected AnyComponentRepository repository;
+	protected InventorItemRepository repository;
 
-	// AbstractShowService<Anonymous, Job> interface --------------------------
 
 	@Override
 	public boolean authorise(final Request<Item> request) {
 		assert request != null;
-
 		return true;
 	}
 
@@ -52,8 +51,10 @@ public class AnyComponentShowService implements AbstractShowService<Any, Item> {
 
 		Item result;
 		int id;
+
 		id = request.getModel().getInteger("id");
-		result = this.repository.findComponentById(id);
+		result = this.repository.findItemById(id);
+
 		return result;
 	}
 

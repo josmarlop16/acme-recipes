@@ -10,32 +10,36 @@
  * they accept any liabilities with respect to them.
  */
 
-package acme.features.any.item;
+package acme.features.inventor.item;
 
 import javax.annotation.PostConstruct;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+
 import acme.entities.item.Item;
 import acme.framework.controllers.AbstractController;
-import acme.framework.roles.Any;
+import acme.roles.Inventor;
 
 @Controller
-public class AnyComponentController extends AbstractController<Any, Item> {
+public class InventorItemController extends AbstractController<Inventor, Item> {
 
 	// Internal state ---------------------------------------------------------
 
 	@Autowired
-	protected AnyComponentListService		listService;
+	protected InventorToolListService		listService;
 	
 	@Autowired
-	protected AnyComponentShowService		showService;
-	
-	@Autowired
-	protected AnyComponentToolListService		toollistService;
-	
-	@Autowired
-	protected AnyComponentToolShowService		toolshowService;
+	protected InventorComponentListService		listComponentService;
 
+	@Autowired
+	protected InventorItemShowService		showService;
+	
+	@Autowired
+	protected InventorItemListByToolkitService listByToolkitIdService;
+
+
+	
 //	@Autowired
 //	protected AnonymousComponentCreateService	createService;
 
@@ -44,10 +48,10 @@ public class AnyComponentController extends AbstractController<Any, Item> {
 
 	@PostConstruct
 	protected void initialise() {
-		super.addCommand("list-component", "list", this.listService);
-		super.addCommand("list-tool", "list", this.toollistService);
-		super.addCommand("show", this.toolshowService);
-//		super.addCommand("create", this.createService);
+		super.addCommand("list", this.listService);
+		super.addCommand("show", this.showService);
+		super.addCommand("list-component","list", this.listComponentService);
+		super.addCommand("list-by-toolkitId","list", this.listByToolkitIdService);
 	}
 
 }

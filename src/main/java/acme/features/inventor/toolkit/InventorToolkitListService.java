@@ -1,10 +1,14 @@
 package acme.features.inventor.toolkit;
 
+import java.util.ArrayList;
 import java.util.Collection;
+import java.util.List;
+import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import acme.entities.item.Item;
 import acme.entities.toolkit.Toolkit;
 import acme.framework.components.models.Model;
 import acme.framework.controllers.Request;
@@ -45,7 +49,17 @@ public class InventorToolkitListService implements AbstractListService<Inventor,
 			assert request != null;
 			assert entity != null;
 			assert model != null;
-
+			
+			List<Item> items;
+			items=this.repository.findItemsByToolkitId(entity.getId()).stream().collect(Collectors.toList());
+			
+			final List<String> itemNames = new ArrayList<>();
+			
+			for (final Item item:items) {
+				itemNames.add(item.getName());
+			}
+			model.setAttribute("items", itemNames);
+			
 			request.unbind(entity, model, "title", "code", "description", "assemblyNotes","link");
 		}
 }

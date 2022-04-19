@@ -21,4 +21,5 @@
 	<acme:list-column code="inventor.toolkit.list.label.assembly-notes" path="assemblyNotes" width="20%"/>
 	<acme:list-column code="inventor.toolkit.list.label.description" path="description" width="20%"/>
 	<acme:list-column code="inventor.toolkit.list.label.link" path="link" width="60%"/>
+	<acme:list-column code="inventor.toolkit.list.label.item" path="items" width="60%"/>
 </acme:list>
