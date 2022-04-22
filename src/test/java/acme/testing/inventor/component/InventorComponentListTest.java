@@ -12,7 +12,7 @@ public class InventorComponentListTest extends TestHarness {
 		// Test cases -------------------------------------------------------------
 
 		@ParameterizedTest
-		@CsvFileSource(resources = "/inventor/item/component-list.csv", encoding = "utf-8", numLinesToSkip = 1)
+		@CsvFileSource(resources = "/inventor/component/component-list.csv", encoding = "utf-8", numLinesToSkip = 1)
 		@Order(10)
 		public void positiveTest(final int recordIndex, final String name, final String code, final String technology, final String description,final String retailPrice,final String link) {
 			
