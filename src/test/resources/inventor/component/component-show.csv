@@ -1,0 +1,4 @@
+recordIndex,,name,code,technology,description,retailPrice,link,
+0,Component-01,TRE-897-O,Technology-01,This is a description,EUR 13.00,http://www.component-01.org
+1,Component-02,TRE-897-V,Technology-01,This is a description,EUR 15.00,http://www.component-02.org
+2,Component-03,TRE-897-Z,Technology-02,This is a description,EUR 15.00,http://www.component-03.org
