@@ -91,12 +91,12 @@ public class InventorToolkitShowService implements AbstractShowService<Inventor,
 			
 			final Money totalComputed=new Money();
 			totalComputed.setCurrency(systemCurrency);
-			final Double amounts=0.0;
-			for(final Money retailPrice:retailPrices) {
-			//	amounts+=this.exchangeService.computeMoneyExchange(retailPrice, systemCurrency).getTarget().getAmount();
-				
-			//	totalComputed.setAmount(amounts);
-			}
+//			final Double amounts=0.0;
+//			for(final Money retailPrice:retailPrices) {
+//			//	amounts+=this.exchangeService.computeMoneyExchange(retailPrice, systemCurrency).getTarget().getAmount();
+//				
+//			//	totalComputed.setAmount(amounts);
+//			}
 						
 			model.setAttribute("toolkitId", entity.getId());
 			model.setAttribute("EUR", eurRetailPrice);
