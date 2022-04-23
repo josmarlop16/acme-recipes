@@ -37,11 +37,6 @@
 			<acme:menu-suboption code="master.menu.any.list-tools" action="/any/item/list-tool"/>	
 			<acme:menu-suboption code="master.menu.any.list-components" action="/any/item/list-component"/>		
 		</acme:menu-option>
-	
-		
-		<acme:menu-option code="master.menu.toolkits" access="permitAll()">
-			<acme:menu-suboption code="master.menu.any.list-toolkits" action="/any/toolkit/list"/>		
-		</acme:menu-option>
 		
 		<!-- Authenticated principals -->
 		<acme:menu-option code="master.menu.authenticated.configuration" access="isAuthenticated()">

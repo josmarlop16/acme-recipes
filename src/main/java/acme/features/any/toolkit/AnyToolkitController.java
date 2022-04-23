@@ -7,7 +7,7 @@ import acme.framework.roles.Any;
 import acme.entities.toolkit.*;
 import org.springframework.beans.factory.annotation.Autowired;
 
-@Controller
+//@Controller
 public class AnyToolkitController extends AbstractController<Any, Toolkit>{
 	
 	// Internal state ---------------------------------------------------------
