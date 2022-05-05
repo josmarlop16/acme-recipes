@@ -32,7 +32,11 @@
 		<acme:menu-option code="master.menu.chirps" access="permitAll()">
 			<acme:menu-suboption code="master.menu.any.list-chirps" action="/any/chirp/list"/>		
 		</acme:menu-option>
-
+		
+		<acme:menu-option code="master.menu.toolkits" access="permitAll()">
+			<acme:menu-suboption code="master.menu.any.list-toolkits" action="/any/toolkit/list"/>	
+		</acme:menu-option>
+		
 		<acme:menu-option code="master.menu.items" access="permitAll()">
 			<acme:menu-suboption code="master.menu.any.list-tools" action="/any/item/list-tool"/>	
 			<acme:menu-suboption code="master.menu.any.list-components" action="/any/item/list-component"/>		
