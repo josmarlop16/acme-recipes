@@ -17,7 +17,7 @@ master.menu.sign-out = Sign out
 master.menu.toolkits = Toolkits
 master.menu.components = Components
 master.menu.tools = Tools
-master.menu.user-accounts = User Accounts List
+master.menu.anonymous.list-userAccounts = User Accounts List
 
 
 # master.menu.anonymous #######################################################

@@ -20,7 +20,6 @@ import org.springframework.stereotype.Service;
 import acme.framework.components.models.Model;
 import acme.framework.controllers.Request;
 import acme.framework.entities.UserAccount;
-import acme.framework.entities.UserAccountStatus;
 import acme.framework.roles.Any;
 import acme.framework.roles.UserRole;
 import acme.framework.services.AbstractListService;
@@ -54,7 +53,6 @@ public class AnyUserAccountListService implements AbstractListService<Any, UserA
 			userAccount.getRoles().forEach(r -> {
 			});
 		}
-
 		return result;
 	}
 	
@@ -64,25 +62,29 @@ public class AnyUserAccountListService implements AbstractListService<Any, UserA
 		assert entity != null;
 		assert model != null;
 
-		StringBuilder buffer;
-		Collection<UserRole> roles;
-
-		request.unbind(entity, model, "username", "identity.name", "identity.surname", "identity.email");
-
-		roles = entity.getRoles();
-		buffer = new StringBuilder();
-		for (final UserRole role : roles) {
-			buffer.append(role.getAuthorityName());
-			buffer.append(" ");
-		}
-
-		model.setAttribute("roleList", buffer.toString());
-
+		final StringBuilder buffer = new StringBuilder();
+		final Collection<UserRole> roles = entity.getRoles();
+		
+		
 		if (entity.isEnabled()) {
-			model.setAttribute("status", UserAccountStatus.ENABLED);
-		} else {
-			model.setAttribute("status", UserAccountStatus.DISABLED);
-		}
+			Integer aux = 0;
+			for (final UserRole role: roles) {
+				aux++;
+				if(role.getAuthorityName().contains("Administrator")) {
+					break;
+				} else {
+					
+					buffer.append(role.getAuthorityName());
+					buffer.append(" ");
+					
+					if(aux == roles.size()) {
+						model.setAttribute("roleList", buffer.toString());
+						request.unbind(entity, model, "username", "identity.name", "identity.surname");
+					}
+				} 
+			}
+			
+		} 		
 	}
 
 }

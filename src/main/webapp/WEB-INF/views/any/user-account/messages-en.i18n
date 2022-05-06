@@ -11,6 +11,7 @@
 any.user-account.list.label.username = Username
 any.user-account.list.label.name = Name
 any.user-account.list.label.surname = Surname
+any.user-account.list.label.role-list = Role List
 
 any.user-account.form.label.username = Username:
 any.user-account.form.label.password = Password:
