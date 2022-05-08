@@ -21,5 +21,6 @@
 	<acme:input-textbox code="inventor.item.list.label.technology" path="technology"/>
 	<acme:input-textarea code="inventor.item.list.label.description" path="description"/>
 	<acme:input-money code="inventor.item.list.label.retailPrice" path="retailPrice"/>
+	<acme:input-money code="inventor.item.list.label.computedPrice" path="computedPrice"/>
 	<acme:input-url code="inventor.item.list.label.link" path="link"/>	
 </acme:form>

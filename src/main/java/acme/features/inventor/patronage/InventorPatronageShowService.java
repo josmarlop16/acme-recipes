@@ -1,11 +1,14 @@
 package acme.features.inventor.patronage;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import acme.roles.Inventor;
+
 import acme.entities.patronages.Patronage;
+import acme.features.moneyExchange.MoneyExchangePerform;
 import acme.framework.components.models.Model;
 import acme.framework.controllers.Request;
+import acme.framework.datatypes.Money;
 import acme.framework.services.AbstractShowService;
+import acme.roles.Inventor;
 
 @Service
 public class InventorPatronageShowService implements AbstractShowService<Inventor, Patronage>{
@@ -27,8 +30,14 @@ public class InventorPatronageShowService implements AbstractShowService<Invento
 		assert request != null;
 		assert entity != null;
 		assert model != null;
+		final String systemCurrency = this.repository.systemCurrency();
 		
-		request.unbind(entity, model, "status", "code", "stuff", "budget", "periodOfTime", "optionalLink",
+		final Money computedPrice=MoneyExchangePerform.computeMoneyExchange(entity.getBudget(), systemCurrency).getTarget();
+		
+		model.setAttribute("computedPrice", computedPrice);
+		
+		
+		request.unbind(entity, model, "status", "code", "stuff", "periodOfTime", "budget","optionalLink",
 				"patron.name", "patron.company", "patron.statement", "patron.optionalLink");
 	}
 	
