@@ -5,7 +5,6 @@
 
 <acme:form>
 
-	<acme:input-moment code="authenticated.announcements.list.label.creation" path="creation"/>
 	<acme:input-textbox code="authenticated.announcements.form.label.title" path="title"/>	
 	<acme:input-textarea code="authenticated.announcements.form.label.body" path="body"/>
 	<acme:input-checkbox code="authenticated.announcements.list.label.critical" path="critical"/>

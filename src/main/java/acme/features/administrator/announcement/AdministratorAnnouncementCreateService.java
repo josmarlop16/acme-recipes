@@ -1,5 +1,7 @@
 package acme.features.administrator.announcement;
 
+import java.util.Date;
+
 import org.springframework.beans.factory.annotation.Autowired;
 
 import acme.framework.components.models.Model;
@@ -34,6 +36,9 @@ public class AdministratorAnnouncementCreateService implements AbstractCreateSer
 		assert request != null;
 		Announcement result;
 		result = new Announcement();
+		Date fecha = new Date();
+		result.setCreation(fecha);
+		result.setCritical(false);
 		return result;
 	}
 
@@ -43,7 +48,7 @@ public class AdministratorAnnouncementCreateService implements AbstractCreateSer
 		assert entity != null;
 		assert errors != null;
 
-		request.bind(entity, errors, "creation", "title", "critical", "body", "optionalLink", "confirm");
+		request.bind(entity, errors, "title", "critical", "body", "optionalLink", "confirm");
 	}
 	
 	@Override
@@ -64,7 +69,7 @@ public class AdministratorAnnouncementCreateService implements AbstractCreateSer
 		assert entity != null;
 		assert model != null;
 
-		request.unbind(entity, model, "creation", "title", "critical", "body", "optionalLink");
+		request.unbind(entity, model, "title", "critical", "body", "optionalLink");
 	}
 
 
