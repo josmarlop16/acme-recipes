@@ -47,7 +47,7 @@ public class AnyItemShowService implements AbstractShowService<Any, Item> {
 		
 		final String systemCurrency=this.repository.systemCurrency();
 		
-		model.setAttribute("retailPrice", MoneyExchangePerform.computeMoneyExchange(entity.getRetailPrice(), systemCurrency).getTarget());
+		model.setAttribute("computedPrice", MoneyExchangePerform.computeMoneyExchange(entity.getRetailPrice(), systemCurrency).getTarget());
 
 		request.unbind(entity, model, "name", "code", "technology", "description", "retailPrice", "link", "type");
 	}

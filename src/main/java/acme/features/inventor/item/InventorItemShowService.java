@@ -48,7 +48,8 @@ public class InventorItemShowService implements AbstractShowService<Inventor, It
 		
 		final Money computedPrice=MoneyExchangePerform.computeMoneyExchange(entity.getRetailPrice(), systemCurrency).getTarget();
 		
-		model.setAttribute("retailPrice", computedPrice);
+		model.setAttribute("retailPrice", entity.getRetailPrice());
+		model.setAttribute("computedPrice", computedPrice);
 
 		request.unbind(entity, model, "name", "code", "technology", "description", "link", "type");
 	}

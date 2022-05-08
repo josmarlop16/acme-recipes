@@ -56,7 +56,7 @@ public class AnyToolkitShowService implements AbstractShowService<Any, Toolkit>{
 		
 		computedPrice.setAmount(amounts);
 		computedPrice.setCurrency(systemCurrency);
-		model.setAttribute("retailPrice", computedPrice);
+		model.setAttribute("computedPrice", computedPrice);
 //		model.setAttribute("itemPrice", entity.getItem().getRetailPrice());
 		
 		

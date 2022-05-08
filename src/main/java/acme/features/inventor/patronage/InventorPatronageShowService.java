@@ -34,10 +34,10 @@ public class InventorPatronageShowService implements AbstractShowService<Invento
 		
 		final Money computedPrice=MoneyExchangePerform.computeMoneyExchange(entity.getBudget(), systemCurrency).getTarget();
 		
-		model.setAttribute("budget", computedPrice);
+		model.setAttribute("computedPrice", computedPrice);
 		
 		
-		request.unbind(entity, model, "status", "code", "stuff", "periodOfTime", "optionalLink",
+		request.unbind(entity, model, "status", "code", "stuff", "periodOfTime", "budget","optionalLink",
 				"patron.name", "patron.company", "patron.statement", "patron.optionalLink");
 	}
 	

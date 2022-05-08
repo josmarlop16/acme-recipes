@@ -20,6 +20,8 @@
 	<acme:input-textbox code="anonymous.toolkit.list.label.code" path="code"/>
 	<acme:input-textarea code="anonymous.toolkit.list.label.description" path="description"/>
 	<acme:input-textarea code="anonymous.toolkit.list.label.assemblyNotes" path="assemblyNotes"/>
+	<acme:input-money code="inventor.item.list.label.retailPrice" path="retailPrice"/>
+	<acme:input-money code="inventor.item.list.label.computedPrice" path="computedPrice"/>
 	<acme:input-url code="anonymous.toolkit.list.label.link" path="link"/>
 	
 	<acme:button code="anonymous.toolkit.form.button.item" action="/anonymous/item/show?id=${itemId}"/>
