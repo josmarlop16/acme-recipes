@@ -16,10 +16,13 @@
 <%@taglib prefix="acme" uri="urn:jsptagdir:/WEB-INF/tags"%>
 
 <acme:list>
-	<acme:list-column code="inventor.item.list.label.name" path="name" width="20%"/>
+	<acme:list-column code="inventor.item.list.label.name" path="name" width="15%"/>
 	<acme:list-column code="inventor.item.list.label.code" path="code" width="20%"/>
-	<acme:list-column code="inventor.item.list.label.technology" path="technology" width="20%"/>
+	<acme:list-column code="inventor.item.list.label.technology" path="technology" width="10%"/>
 	<acme:list-column code="inventor.item.list.label.description" path="description" width="20%"/>
-	<acme:list-column code="inventor.item.list.label.retailPrice" path="retailPrice" width="20%"/>
+	<acme:list-column code="inventor.item.list.label.retailPrice" path="retailPrice" width="10%"/>
+	<acme:input-textbox code="inventor.item.list.label.technology" path="technology"/>
+	<acme:list-column code="inventor.item.list.label.published" path="published" width="10%"/>
 	<acme:list-column code="inventor.item.list.label.link" path="link" width="60%"/>
 </acme:list>
+<acme:button code="inventor.item.form.button.create" action="/inventor/item/create"/>
