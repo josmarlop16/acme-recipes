@@ -3,6 +3,7 @@ package acme.features.inventor.toolkit;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import acme.entities.toolkit.Toolkit;
+import acme.features.inventor.item.InventorItemRepository;
 import acme.framework.components.models.Model;
 import acme.framework.controllers.Errors;
 import acme.framework.controllers.Request;
@@ -14,6 +15,9 @@ public class InventorToolkitCreateService implements AbstractCreateService<Inven
 	
 	@Autowired
 	protected InventorToolkitRepository repository;
+	
+	@Autowired
+	protected InventorItemRepository ItemRepository;
 
 	@Override
 	public boolean authorise(final Request<Toolkit> request) {
@@ -52,7 +56,7 @@ public class InventorToolkitCreateService implements AbstractCreateService<Inven
 		result.setAssemblyNotes("");
 		result.setInventor(inventor);
 		result.setPublished(false);
-
+		
 		return result;
 	}
 

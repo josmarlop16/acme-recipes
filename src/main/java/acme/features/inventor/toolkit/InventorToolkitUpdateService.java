@@ -78,8 +78,6 @@ public class InventorToolkitUpdateService implements AbstractUpdateService<Inven
 	public void update(final Request<Toolkit> request, final Toolkit entity) {
 		assert request != null;
 		assert entity != null;
-
-		entity.setPublished(true);
 		this.repository.save(entity);
 	}
 	
