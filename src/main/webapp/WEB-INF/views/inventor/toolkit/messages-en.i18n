@@ -13,6 +13,15 @@ inventor.toolkit.list.label.code = Code
 inventor.toolkit.list.label.assembly-notes = Assembly notes
 inventor.toolkit.list.label.description = Description
 inventor.toolkit.list.label.link = Link
+inventor.toolkit.list.label.published = Published
+
+inventor.toolkit.form.button.publish = Publish
+inventor.toolkit.form.button.create = Create
+inventor.toolkit.form.button.update = Update
+inventor.toolkit.form.button.delete = Delete
+
+inventor.toolkit.form.error.code-exists= Code introduced already exists
+
 inventor.toolkit.form.button.item = Check item
 
 inventor.toolkit.list.label.item = Item

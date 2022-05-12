@@ -18,7 +18,8 @@ import acme.roles.Inventor;
 
 @Service
 public class InventorToolkitShowService implements AbstractShowService<Inventor, Toolkit> {
-	// Internal state ---------------------------------------------------------
+	
+		// Internal state ---------------------------------------------------------
 
 		@Autowired
 		protected InventorToolkitRepository repository;
@@ -91,21 +92,13 @@ public class InventorToolkitShowService implements AbstractShowService<Inventor,
 			
 			final Money totalComputed=new Money();
 			totalComputed.setCurrency(systemCurrency);
-//			final Double amounts=0.0;
-//			for(final Money retailPrice:retailPrices) {
-//			//	amounts+=this.exchangeService.computeMoneyExchange(retailPrice, systemCurrency).getTarget().getAmount();
-//				
-//			//	totalComputed.setAmount(amounts);
-//			}
 						
 			model.setAttribute("toolkitId", entity.getId());
 			model.setAttribute("EUR", eurRetailPrice);
 			model.setAttribute("USD", usdRetailPrice);
 			model.setAttribute("GBP", gbpRetailPrice);
 			
-			//model.setAttribute("computedPrice", totalComputed);
-			
-			request.unbind(entity, model, "title", "code", "description", "assemblyNotes","link");
+			request.unbind(entity, model, "title", "code", "description", "assemblyNotes", "link", "published");
 		}
 
 		@Override
