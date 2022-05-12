@@ -19,6 +19,7 @@ import acme.entities.item.Item;
 import acme.features.moneyExchange.MoneyExchangePerform;
 import acme.framework.components.models.Model;
 import acme.framework.controllers.Request;
+import acme.framework.datatypes.Money;
 import acme.framework.roles.Any;
 import acme.framework.services.AbstractShowService;
 
@@ -46,8 +47,9 @@ public class AnyItemShowService implements AbstractShowService<Any, Item> {
 		assert model != null;
 		
 		final String systemCurrency=this.repository.systemCurrency();
+		final Money computedPrice= MoneyExchangePerform.computeMoneyExchange(entity.getRetailPrice(), systemCurrency).getTarget();
 		
-		model.setAttribute("computedPrice", MoneyExchangePerform.computeMoneyExchange(entity.getRetailPrice(), systemCurrency).getTarget());
+		model.setAttribute("computedPrice", computedPrice);
 
 		request.unbind(entity, model, "name", "code", "technology", "description", "retailPrice", "link", "type");
 	}

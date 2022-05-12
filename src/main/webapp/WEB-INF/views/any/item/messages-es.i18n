@@ -14,3 +14,4 @@ any.component.list.label.technology = Tecnología
 any.component.list.label.description = Descripción
 any.component.list.label.retailPrice = Precio
 any.component.list.label.link = Enlace
+any.component.list.label.computedPrice = Precio en la divisa del sistema

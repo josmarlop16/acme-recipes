@@ -22,7 +22,10 @@
 	<acme:input-textarea code="any.toolkit.list.label.assemblyNotes" path="assemblyNotes"/>
 	<acme:input-url code="any.toolkit.list.label.link" path="link"/>
 	<acme:input-money code="any.toolkit.list.label.item.price" path="retailPrice"/>
-	<acme:input-money code="inventor.item.list.label.computedPrice" path="computedPrice"/>
+	<acme:input-money code="any.toolkit.list.label.item.priceEUR" path="EUR"/>
+	<acme:input-money code="any.toolkit.list.label.item.priceUSD" path="USD"/>
+	<acme:input-money code="any.toolkit.list.label.item.priceGBP" path="GBP"/>
+	<acme:input-money code="any.toolkit.list.label.computedPrice" path="computedPrice"/>
 	
 	<acme:button code="any.toolkit.form.button.item" action="/any/item/show?id=${itemId}"/>
 	

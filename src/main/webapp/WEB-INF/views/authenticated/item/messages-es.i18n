@@ -14,3 +14,4 @@ authenticated.component.list.label.technology = Tecnología
 authenticated.component.list.label.description = Descripción
 authenticated.component.list.label.retailPrice = Precio
 authenticated.component.list.label.link = Enlace
+authenticated.component.list.label.computedPrice= Precio en la divisa del sistema

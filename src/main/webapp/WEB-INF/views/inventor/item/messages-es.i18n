@@ -14,3 +14,4 @@ inventor.item.list.label.technology = Tecnología
 inventor.item.list.label.description = Descripción
 inventor.item.list.label.retailPrice = Precio
 inventor.item.list.label.link = Enlace
+inventor.item.list.label.computedPrice= Precio en la divisa del sistema

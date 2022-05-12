@@ -21,7 +21,7 @@
 	<acme:input-textbox code="inventor.patronage.list.label.code" path="code"/>
 	<acme:input-textarea code="inventor.patronage.list.label.stuff" path="stuff"/>
 	<acme:input-money code="inventor.patronage.list.label.budget" path="budget"/>
-	<acme:input-money code="inventor.item.list.label.computedPrice" path="computedPrice"/>
+	<acme:input-money code="inventor.patronage.list.label.computedPrice" path="computedPrice"/>
 	<acme:input-moment code="inventor.patronage.list.label.periodOfTime" path="periodOfTime"/>
 	<acme:input-url code="inventor.patronage.list.label.optionalLink" path="optionalLink"/>
 	

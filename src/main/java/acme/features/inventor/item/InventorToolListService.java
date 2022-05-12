@@ -61,7 +61,7 @@ public class InventorToolListService implements AbstractListService<Inventor, It
 		assert request != null;
 		assert entity != null;
 		assert model != null;
-		final String systemCurrency = this.repository.systemCurrency();
+		final String systemCurrency =  "EUR";//this.repository.systemCurrency();
 		
 		final Money computedPrice=MoneyExchangePerform.computeMoneyExchange(entity.getRetailPrice(), systemCurrency).getTarget();
 		

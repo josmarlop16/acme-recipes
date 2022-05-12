@@ -38,59 +38,53 @@ public class InventorToolkitShowService implements AbstractShowService<Inventor,
 			items=this.repository.findItemsByToolkitId(entity.getId()).stream().collect(Collectors.toList());
 			
 			
-//			final Money eurRetailPrice = new Money();
-//			final Money usdRetailPrice = new Money();
-//			final Money gbpRetailPrice = new Money();
+			final Money eurRetailPrice = new Money();
+			final Money usdRetailPrice = new Money();
+			final Money gbpRetailPrice = new Money();
 			final String systemCurrency= this.repository.systemCurrency();
 			
-//			final String currency;
+			String currency;
 			final List<Money> retailPrices = new ArrayList<>();
-			for (final Item item:items) {
-				retailPrices.add(item.getRetailPrice());
-			}
-			/*
-			 * double eurAmount=0.0;
-			 * double usdAmount=0.0;
-			 * double gbpAmount=0.0;
-			 * 
-			 * final List<Money> retailPrices = new ArrayList<>();
-			 * 
-			 * for(final Item item: items){
-			 * currency=item.getRetailPrice().getCurrency();
-			 * 
-			 * switch(currency) {
-			 * case "EUR":
-			 * eurAmount=+item.getRetailPrice().getAmount();
-			 * break;
-			 * case "USD":
-			 * usdAmount=+item.getRetailPrice().getAmount();
-			 * break;
-			 * case "GBP":
-			 * gbpAmount=+item.getRetailPrice().getAmount();
-			 * break;
-			 * default:
-			 * break;
-			 * 
-			 * }
-			 * }
-			 * eurRetailPrice.setCurrency("EUR");
-			 * eurRetailPrice.setAmount(eurAmount);
-			 * 
-			 * usdRetailPrice.setCurrency("USD");
-			 * usdRetailPrice.setAmount(usdAmount);
-			 * 
-			 * gbpRetailPrice.setCurrency("GBP");
-			 * gbpRetailPrice.setAmount(gbpAmount);
-			 * 
-			 * if(gbpRetailPrice.getAmount() != 0.0) {
-			 * retailPrices.add(gbpRetailPrice);
-			 * }else if(usdRetailPrice.getAmount() !=0) {
-			 * retailPrices.add(usdRetailPrice);
-			 * }else {
-			 * retailPrices.add(eurRetailPrice);
-			 * }
-			 */
+	//		for (final Item item:items) {
+	//			retailPrices.add(item.getRetailPrice());
+	//		}
 			
+			  double eurAmount=0.0;
+			  double usdAmount=0.0;
+			  double gbpAmount=0.0;
+			  
+			  
+			  
+			  for(final Item item: items){
+				  currency=item.getRetailPrice().getCurrency();
+			  
+			  switch(currency) {
+			  	case "EUR":
+			  		eurAmount=+item.getRetailPrice().getAmount();
+			  		break;
+			  	case "USD":
+			  		usdAmount=+item.getRetailPrice().getAmount();
+			  		break;
+			  	case "GBP":
+			  		gbpAmount=+item.getRetailPrice().getAmount();
+			  		break;
+			  	default:
+			  		break;
+			  
+			  	}
+			  }
+			  eurRetailPrice.setCurrency("EUR");
+			  eurRetailPrice.setAmount(eurAmount);
+			  retailPrices.add(eurRetailPrice);
+			  
+			  usdRetailPrice.setCurrency("USD");
+			  usdRetailPrice.setAmount(usdAmount);
+			  retailPrices.add(usdRetailPrice);
+
+			  gbpRetailPrice.setCurrency("GBP");
+			  gbpRetailPrice.setAmount(gbpAmount);
+			  retailPrices.add(gbpRetailPrice);
+	
 			final Money totalComputed=new Money();
 			totalComputed.setCurrency(systemCurrency);
 			Double amounts=0.0;
@@ -103,9 +97,9 @@ public class InventorToolkitShowService implements AbstractShowService<Inventor,
 			totalComputed.setCurrency(systemCurrency);
 						
 			model.setAttribute("toolkitId", entity.getId());
-//			model.setAttribute("EUR", eurRetailPrice);
-//			model.setAttribute("USD", usdRetailPrice);
-//			model.setAttribute("GBP", gbpRetailPrice);
+			model.setAttribute("EUR", eurRetailPrice);
+			model.setAttribute("USD", usdRetailPrice);
+			model.setAttribute("GBP", gbpRetailPrice);
 			
 			model.setAttribute("computedPrice", totalComputed);
 			

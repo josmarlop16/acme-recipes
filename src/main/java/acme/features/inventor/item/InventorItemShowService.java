@@ -44,14 +44,15 @@ public class InventorItemShowService implements AbstractShowService<Inventor, It
 		assert entity != null;
 		assert model != null;
 		
-		final String systemCurrency = this.repository.systemCurrency();
-		
+		final String systemCurrency = "EUR";//this.repository.systemCurrency();
+		System.out.println("aaa");
 		final Money computedPrice=MoneyExchangePerform.computeMoneyExchange(entity.getRetailPrice(), systemCurrency).getTarget();
-		
+		System.out.println("bbb");
 		model.setAttribute("retailPrice", entity.getRetailPrice());
 		model.setAttribute("computedPrice", computedPrice);
 
 		request.unbind(entity, model, "name", "code", "technology", "description", "link", "type");
+		System.out.println("ccc"+computedPrice);
 	}
 
 	@Override
