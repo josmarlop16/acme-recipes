@@ -45,7 +45,8 @@
 		</acme:menu-option>
     
     <acme:menu-option code="master.menu.announcements" access="isAuthenticated()">
-			<acme:menu-suboption code="master.menu.authenticated.list-announcements" action="/authenticated/announcement/list"/>		
+			<acme:menu-suboption code="master.menu.authenticated.list-announcements" action="/authenticated/announcement/list"/>
+			<acme:menu-suboption code="master.menu.administrator.create-announcements" action="/administrator/announcement/create" access="hasRole('Administrator')"/>	
 		</acme:menu-option> 
 		
 
