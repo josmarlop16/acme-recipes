@@ -13,3 +13,8 @@ any.chirp.list.label.title = Title
 any.chirp.list.label.author = Author
 any.chirp.list.label.body = Body
 any.chirp.list.label.emailAddress = EmailAddress
+any.chirp.form.button.create = Create
+
+any.chirp.form.confirm.message = Remember that chirps cannot be updated or deleted. Please, confirm that you want to create this chirp
+any.chirp.form.confirm = Confirm
+any.chirp.form.error.must-confirm = Please, confirm that you want to create this chirp

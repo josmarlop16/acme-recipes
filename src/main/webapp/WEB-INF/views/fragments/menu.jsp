@@ -30,7 +30,8 @@
 		
         <!-- Any principals -->
 		<acme:menu-option code="master.menu.chirps" access="permitAll()">
-			<acme:menu-suboption code="master.menu.any.list-chirps" action="/any/chirp/list"/>		
+			<acme:menu-suboption code="master.menu.any.list-chirps" action="/any/chirp/list"/>	
+			<acme:menu-suboption code="master.menu.any.create-chirps" action="/any/chirp/create"/>		
 		</acme:menu-option>
 
 		<acme:menu-option code="master.menu.items" access="permitAll()">
