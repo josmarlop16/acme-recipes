@@ -89,7 +89,12 @@ public class InventorToolkitShowService implements AbstractShowService<Inventor,
 			totalComputed.setCurrency(systemCurrency);
 			Double amounts=0.0;
 			for(final Money retailPrice:retailPrices) {
-				amounts+=MoneyExchangePerform.computeMoneyExchange(retailPrice, systemCurrency).getTarget().getAmount();
+				if(retailPrice.getCurrency() != systemCurrency) {
+					amounts+=MoneyExchangePerform.computeMoneyExchange(retailPrice, systemCurrency).getTarget().getAmount();
+				}else {
+					amounts+=retailPrice.getAmount();
+				}
+				
 				
 			}
 			

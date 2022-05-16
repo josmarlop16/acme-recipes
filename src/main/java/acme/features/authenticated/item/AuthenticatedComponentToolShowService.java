@@ -46,8 +46,13 @@ public class AuthenticatedComponentToolShowService implements AbstractShowServic
 		assert model != null;
 		final String systemCurrency = this.repository.systemCurrency();
 		
-		final Money computedPrice=MoneyExchangePerform.computeMoneyExchange(entity.getRetailPrice(), systemCurrency).getTarget();
-		model.setAttribute("computedPrice", computedPrice);
+		if(entity.getRetailPrice().getCurrency()!=systemCurrency) {
+			final Money retailPrice=MoneyExchangePerform.computeMoneyExchange(entity.getRetailPrice(),systemCurrency).getTarget();
+			model.setAttribute("computedPrice", retailPrice);
+		}else {
+			model.setAttribute("computedPrice", entity.getRetailPrice());
+		}
+		
 
 		request.unbind(entity, model, "name", "code", "technology", "description", "retailPrice", "link", "type");
 	}

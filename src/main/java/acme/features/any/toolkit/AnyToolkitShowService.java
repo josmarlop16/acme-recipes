@@ -50,15 +50,17 @@ public class AnyToolkitShowService implements AbstractShowService<Any, Toolkit>{
 		computedPrice.setCurrency(systemCurrency);
 		Double amounts=0.0;
 		for(final Money retailPrice:retailPrices) {
-			amounts+=MoneyExchangePerform.computeMoneyExchange(retailPrice, systemCurrency).getTarget().getAmount();
-			
+			if(retailPrice.getCurrency()!=systemCurrency) {
+				amounts+=MoneyExchangePerform.computeMoneyExchange(retailPrice, systemCurrency).getTarget().getAmount();
+			}
+			else {
+				amounts+=retailPrice.getAmount();
+			}
 		}
 		
 		computedPrice.setAmount(amounts);
 		computedPrice.setCurrency(systemCurrency);
 		model.setAttribute("computedPrice", computedPrice);
-//		model.setAttribute("itemPrice", entity.getItem().getRetailPrice());
-		
 		
 
 		request.unbind(entity, model, "title", "code", "description", "assemblyNotes", "link");
