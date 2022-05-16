@@ -1,31 +1,29 @@
-package acme.features.any.toolkit;
+package acme.features.administrator.announcement;
 
 import javax.annotation.PostConstruct;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import acme.entities.toolkit.Toolkit;
+
 import acme.framework.controllers.AbstractController;
-import acme.framework.roles.Any;
+import acme.framework.roles.Administrator;
+import acme.entities.announcement.Announcement;
 
 @Controller
-public class AnyToolkitController extends AbstractController<Any, Toolkit>{
-	
+public class AdministratorAnnouncementController extends AbstractController <Administrator, Announcement>{
+
 	// Internal state ---------------------------------------------------------
 
 	@Autowired
-	protected AnyToolkitListAllService listAllService;
-	
-	@Autowired
-	protected AnyToolkitShowService showService;
+	protected AdministratorAnnouncementCreateService	createService;
+
 
 	// Constructors -----------------------------------------------------------
 
 
 	@PostConstruct
 	protected void initialise() {
-		super.addCommand("list", this.listAllService);
-		super.addCommand("show", this.showService);
+		super.addCommand("create", this.createService);
 	}
 	
 }

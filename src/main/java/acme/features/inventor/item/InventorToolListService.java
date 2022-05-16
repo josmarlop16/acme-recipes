@@ -67,7 +67,7 @@ public class InventorToolListService implements AbstractListService<Inventor, It
 		
 		model.setAttribute("computedPrice", computedPrice);
 
-		request.unbind(entity, model, "name", "code", "technology", "description", "retailPrice", "link", "type");
+		request.unbind(entity, model, "name", "code", "technology", "description", "retailPrice", "link", "type","published");
 	}
 
 }

@@ -51,10 +51,10 @@ public class InventorItemShowService implements AbstractShowService<Inventor, It
 		}else {
 			model.setAttribute("computedPrice", entity.getRetailPrice());
 		}
-		model.setAttribute("retailPrice", entity.getRetailPrice());
 
-		request.unbind(entity, model, "name", "code", "technology", "description", "link", "type");
-		
+
+		request.unbind(entity, model, "name", "code", "technology", "description", "retailPrice", "link", "type","published");
+
 	}
 
 	@Override

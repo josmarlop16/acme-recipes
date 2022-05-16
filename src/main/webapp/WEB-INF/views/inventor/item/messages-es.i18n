@@ -14,4 +14,20 @@ inventor.item.list.label.technology = Tecnología
 inventor.item.list.label.description = Descripción
 inventor.item.list.label.retailPrice = Precio
 inventor.item.list.label.link = Enlace
+
 inventor.item.list.label.computedPrice= Precio en la divisa del sistema
+
+inventor.item.list.label.published = Publicado
+inventor.item.list.label.type= Tipo
+true= Verdad
+false= Falso
+component=Componente
+tool=Herramienta
+
+inventor.item.form.button.publish = Publicar
+inventor.item.form.button.create = Crear
+inventor.item.form.button.update = Actualizar
+inventor.item.form.button.delete = Eliminar
+inventor.invention.form.error.retailPrice-notAllowed= Divisa introducida no soportada
+inventor.item.form.error.code-exists= Código introducido ya existe
+
