@@ -10,3 +10,9 @@
 
 authenticated.currency.list.label.name = Nombre
 authenticated.currency.list.label.isDefault = Moneda por defecto
+authenticated.currency.list.label.accepted = Moneda aceptada
+
+administrator.currency.form.button.create = Crear
+administrator.currency.form.confirm.message = Recuerde que las monedas no pueden ser modificadas o borradas. ¿Está seguro que quiere crear esta moneda?
+administrator.currency.form.confirm = Confirmar
+administrator.currency.form.error.must-confirm = Por favor, confirma que quieres crear esta moneda
