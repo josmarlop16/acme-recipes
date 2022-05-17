@@ -1,11 +1,12 @@
 package acme.features.inventor.patronage;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import acme.roles.Inventor;
+
 import acme.entities.patronages.Patronage;
 import acme.framework.components.models.Model;
 import acme.framework.controllers.Request;
 import acme.framework.services.AbstractShowService;
+import acme.roles.Inventor;
 
 @Service
 public class InventorPatronageShowService implements AbstractShowService<Inventor, Patronage>{
@@ -29,7 +30,7 @@ public class InventorPatronageShowService implements AbstractShowService<Invento
 		assert model != null;
 		
 		request.unbind(entity, model, "status", "code", "stuff", "budget", "periodOfTime", "optionalLink",
-				"patron.name", "patron.company", "patron.statement", "patron.optionalLink");
+			"patron.company", "patron.statement", "patron.optionalLink");
 	}
 	
 	@Override

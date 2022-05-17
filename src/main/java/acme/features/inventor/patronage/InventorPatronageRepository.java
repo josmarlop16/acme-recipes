@@ -15,4 +15,7 @@ public interface InventorPatronageRepository extends AbstractRepository{
 	@Query("select p from Patronage p where p.id = :id")
 	Patronage findOnePatronageById(int id);
 	
+	@Query("select p from Patronage p where p.code = :code")
+	Patronage findPatronageByCode(String code);
+	
 }

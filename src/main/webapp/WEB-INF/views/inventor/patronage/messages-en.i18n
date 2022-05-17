@@ -14,5 +14,9 @@ anonymous.toolkit.list.label.description = Description
 anonymous.toolkit.list.label.assemblyNotes = Assembly Notes
 anonymous.toolkit.list.label.link = Link
 anonymous.toolkit.list.label.item.name = Item
-anonymous.toolkit.form.button.item = Check item
+anonymous.toolkit.form.button.item = Check 
+
+# FORM
+inventor.patronage.form.button.accept = Accept
+inventor.patronage.form.button.decline = Decline
 
