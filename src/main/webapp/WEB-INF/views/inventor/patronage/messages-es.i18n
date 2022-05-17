@@ -8,6 +8,7 @@
 # purposes.  The copyright owner does not offer any warranties or representations, nor do
 # they accept any liabilities with respect to them.
 
+
 inventor.patronage.list.label.status = Estado
 inventor.patronage.list.label.code = Código
 inventor.patronage.list.label.stuff= Cosas
@@ -19,3 +20,18 @@ inventor.patronage.list.label.optionalLink= Link
 inventor.patronage.patron.list.label.company= Compañia
 inventor.patronage.patron.list.label.statement= Declaracion
 inventor.patronage.patron.list.label.optionalLink= Link
+
+
+anonymous.toolkit.list.label.title = Título
+anonymous.toolkit.list.label.code = Código
+anonymous.toolkit.list.label.description = Descripción
+anonymous.toolkit.list.label.assemblyNotes = Notas de asamblea
+anonymous.toolkit.list.label.link = Link
+anonymous.toolkit.list.label.item.name = Item
+anonymous.toolkit.form.button.item = Comprobar Item
+
+# FORM
+
+inventor.patronage.form.button.accept = Aceptar
+inventor.patronage.form.button.decline = Rechazar
+
