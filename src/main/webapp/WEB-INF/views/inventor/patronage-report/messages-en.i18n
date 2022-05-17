@@ -13,3 +13,9 @@ inventor.patronageReport.list.label.creation = Creation
 inventor.patronageReport.list.label.memorandum = Memorandum
 inventor.patronageReport.list.label.optionalLink = Link
 
+inventor.patronageReport.form.confirm = Confirm
+inventor.patronageReport.form.button.update = Update
+inventor.patronageReport.form.button.delete = Delete
+inventor.patronageReport.form.button.create = Create
+
+inventor.patronageReport.form.error.must-confirm = You must confirm

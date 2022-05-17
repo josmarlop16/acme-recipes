@@ -21,3 +21,4 @@
 	<acme:list-column code="inventor.patronageReport.list.label.memorandum" path="memorandum" width="35%"/>
 	<acme:list-column code="inventor.patronageReport.list.label.optionalLink" path="optionalLink" width="35%"/>
 </acme:list>
+<acme:button code="inventor.toolkit.form.button.create" action="/inventor/patronage-report/create"/> 
