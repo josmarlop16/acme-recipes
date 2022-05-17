@@ -40,7 +40,7 @@ master.menu.administrator.create-currency = Create Currencies
 master.menu.administrator.create-spam = Create Spam Terms
 
 # master.menu.any ###################################################
-
+master.menu.any.create-chirps = Create Chirps
 master.menu.any.list-chirps = List Chirps
 master.menu.any.list-tools = Tools list
 master.menu.any.list-components = Components list

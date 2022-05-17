@@ -51,6 +51,7 @@ master.menu.administrator.create-spam = Crear Terminos de Spam
 
 
 master.menu.authenticated.list-chirps = Listar Chirps
+master.menu.any.create-chirps = Crear Chirps
 
 # master.menu.chirps ##########################################################
 

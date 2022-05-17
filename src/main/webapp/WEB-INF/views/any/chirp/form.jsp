@@ -22,4 +22,10 @@
 	<acme:input-textbox code="any.chirp.list.label.body" path="body"/>
 	<acme:input-textbox code="any.chirp.list.label.emailAddress" path="emailAddress"/>
 	
+	<jstl:choose>
+		<jstl:when test="${command == 'create'}">
+			<acme:submit code="any.chirp.form.button.create" action = "/any/chirp/create"/>
+		</jstl:when>
+	</jstl:choose>
+	
 </acme:form>
