@@ -17,3 +17,5 @@ inventor.patronageReport.form.confirm = Confirmar
 inventor.patronageReport.form.button.update = Actualizar
 inventor.patronageReport.form.button.delete = Eliminar
 inventor.patronageReport.form.button.create = Crear
+
+inventor.patronageReport.form.error.must-confirm = Debes confirmar

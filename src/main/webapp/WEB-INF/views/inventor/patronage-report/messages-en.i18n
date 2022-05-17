@@ -18,3 +18,4 @@ inventor.patronageReport.form.button.update = Update
 inventor.patronageReport.form.button.delete = Delete
 inventor.patronageReport.form.button.create = Create
 
+inventor.patronageReport.form.error.must-confirm = You must confirm

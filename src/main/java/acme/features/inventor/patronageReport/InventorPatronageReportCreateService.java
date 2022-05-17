@@ -5,7 +5,9 @@ import java.util.Date;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import acme.entities.patronages.Patronage;
 import acme.entities.patronages.PatronageReport;
+import acme.features.inventor.patronage.InventorPatronageRepository;
 import acme.framework.components.models.Model;
 import acme.framework.controllers.Errors;
 import acme.framework.controllers.Request;
@@ -19,6 +21,9 @@ public class InventorPatronageReportCreateService implements AbstractCreateServi
 
 	@Autowired
 	protected InventorPatronageReportRepository repository;
+	
+	@Autowired
+	protected InventorPatronageRepository patronageRepository;
 
 	@Override
 	public boolean authorise(final Request<PatronageReport> request) {
@@ -31,11 +36,20 @@ public class InventorPatronageReportCreateService implements AbstractCreateServi
 	@Override
 	public PatronageReport instantiate(final Request<PatronageReport> request) {
 		assert request != null;
-		PatronageReport result;
-		result = new PatronageReport();
+		
+		final PatronageReport patronageReport = new PatronageReport();
+		final Inventor inventor = this.repository.findInventorById(request.getPrincipal().getActiveRoleId());
+		final Patronage patronage = this.patronageRepository.findOnePatronageById(27);
 		final Date fecha = new Date();
-		result.setCreation(fecha);
-		return result;
+		
+		patronageReport.setCreation(fecha);
+		patronageReport.setMemorandum("");
+		patronageReport.setInventor(inventor);
+		patronageReport.setOptionalLink("");
+		patronageReport.setPatronage(patronage);
+		patronageReport.setSeqNumber("");
+		
+		return patronageReport;
 	}
 
 	@Override
