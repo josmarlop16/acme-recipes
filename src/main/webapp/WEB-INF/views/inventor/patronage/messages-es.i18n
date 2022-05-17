@@ -15,3 +15,8 @@ anonymous.toolkit.list.label.assemblyNotes = Notas de asamblea
 anonymous.toolkit.list.label.link = Link
 anonymous.toolkit.list.label.item.name = Item
 anonymous.toolkit.form.button.item = Comprobar Item
+
+# FORM
+
+inventor.patronage.form.button.accept = Aceptar
+inventor.patronage.form.button.decline = Rechazar
