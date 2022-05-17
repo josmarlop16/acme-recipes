@@ -36,6 +36,15 @@ public class InventorPatronageAcceptService implements AbstractUpdateService<Inv
 	}
 	
 	@Override
+	public void bind(final Request<Patronage> request, final Patronage entity, final Errors errors) {
+		assert request != null;
+		assert entity != null;
+		assert errors != null;
+		
+		request.bind(entity, errors, "status", "code", "stuff", "budget", "periodOfTime", "optionalLink", "patron.company", "patron.statement", "patron.optionalLink");
+	}
+	
+	@Override
 	public void validate(final Request<Patronage> request, final Patronage entity, final Errors errors) {
 		assert request != null;
 		assert entity != null;
@@ -67,8 +76,7 @@ public class InventorPatronageAcceptService implements AbstractUpdateService<Inv
 		assert entity != null;
 		assert model != null;
 		
-		request.unbind(entity, model, "status", "code", "stuff", "budget", "periodOfTime", "optionalLink",
-				 "patron.company", "patron.statement", "patron.optionalLink");
+		request.unbind(entity, model, "status", "code", "stuff", "budget", "periodOfTime", "optionalLink", "patron.company", "patron.statement", "patron.optionalLink");
 	}
 
 	
