@@ -42,6 +42,10 @@ public interface InventorItemRepository extends AbstractRepository {
 	@Query("select i from Item i where i.id = :id")
 	Item findItemById(int id);
 	
+
+	@Query("select c.name from Currency c where c.isDefault=true")
+	String systemCurrency();
+
 	@Query("select c.name from Currency c")
 	String[] findAllowedCurrencies();
 	
@@ -50,5 +54,6 @@ public interface InventorItemRepository extends AbstractRepository {
 	
 	@Query("select i from Inventor i where i.id = :id ")
 	Inventor findInventorById(int id);
+
 
 }

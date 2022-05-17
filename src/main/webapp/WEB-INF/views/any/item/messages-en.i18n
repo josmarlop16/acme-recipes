@@ -16,5 +16,6 @@ any.component.list.label.technology = Technology
 any.component.list.label.description = Description
 any.component.list.label.retailPrice = Retail price
 any.component.list.label.link = Link
+any.component.list.label.computedPrice = Retail price in System Currency
 
 

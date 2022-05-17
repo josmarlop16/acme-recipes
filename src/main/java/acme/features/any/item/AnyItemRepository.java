@@ -31,5 +31,8 @@ public interface AnyItemRepository extends AbstractRepository {
 	
 	@Query("select i from Item i where i.id = :id")
 	Item findItemById(int id);
+	
+	@Query("select c.name from Currency c where c.isDefault=true")
+	String systemCurrency();
 
 }

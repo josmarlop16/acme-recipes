@@ -16,3 +16,7 @@ any.toolkit.list.label.link = Link
 any.toolkit.list.label.item.name = Item
 any.toolkit.list.label.item.price = Precio
 any.toolkit.form.button.item = Comprobar Item
+any.toolkit.list.label.item.priceGBP=Precio GBP
+any.toolkit.list.label.item.priceEUR=Precio EUR
+any.toolkit.list.label.item.priceUSD=Precio USD
+any.toolkit.list.label.item.computedPrice= Precio en la divisa del sistema
