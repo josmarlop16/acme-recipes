@@ -51,7 +51,7 @@ public class AnyUserAccountListService implements AbstractListService<Any, UserA
 		result = this.repository.findAllUserAccounts();
 		for (final UserAccount userAccount : result) {
 			userAccount.getRoles().forEach(r -> {
-			});
+			;});
 		}
 		return result;
 	}
@@ -67,24 +67,21 @@ public class AnyUserAccountListService implements AbstractListService<Any, UserA
 		
 		
 		if (entity.isEnabled()) {
-			Integer aux = 0;
-			for (final UserRole role: roles) {
-				aux++;
-				if(role.getAuthorityName().contains("Administrator")) {
-					break;
-				} else {
-					
-					buffer.append(role.getAuthorityName());
-					buffer.append(" ");
-					
-					if(aux == roles.size()) {
-						model.setAttribute("roleList", buffer.toString());
-						request.unbind(entity, model, "username", "identity.name", "identity.surname");
-					}
-				} 
-			}
 			
-		} 		
+			
+		} 	
+		
+		for (final UserRole role: roles) {
+			
+			buffer.append(role.getAuthorityName());
+			buffer.append(" ");
+				
+				
+			model.setAttribute("roleList", buffer.toString());
+			request.unbind(entity, model, "username", "identity.name", "identity.surname");
+				
+			
+		}
 	}
 
 }
