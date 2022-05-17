@@ -26,7 +26,7 @@ inventor.toolkit.form.button.item = Check item
 
 inventor.toolkit.list.label.item = Item
 
-inventor.toolkit.list.label.eur.price= Retail price in EUR
-inventor.toolkit.list.label.usd.price= Retail price in USD
-inventor.toolkit.list.label.gbp.price= Retail price in GBP
-inventor.toolkit.list.label.computed.price = Retail price in System Currency
+inventor.toolkit.list.label.retailPriceEUR= Retail price in EUR
+inventor.toolkit.list.label.retailPriceUSD= Retail price in USD
+inventor.toolkit.list.label.retailPriceGBP= Retail price in GBP
+inventor.toolkit.list.label.computedPrice = Retail price in System Currency

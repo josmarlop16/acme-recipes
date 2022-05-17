@@ -34,4 +34,7 @@ public interface AuthenticatedComponentRepository extends AbstractRepository {
 	
 	@Query("select i from Item i where i.id = id and i.type = 0")
 	Item findToolById(int id);
+
+	@Query("select c.name from Currency c where c.isDefault=true")
+	String systemCurrency();
 }

@@ -14,6 +14,9 @@ inventor.item.list.label.technology = Technology
 inventor.item.list.label.description = Description
 inventor.item.list.label.retailPrice = Retail price
 inventor.item.list.label.link = Link
+
+inventor.item.list.label.computedPrice= Retail price in System currency
+
 inventor.item.list.label.published = Published
 inventor.item.list.label.type= Type
 
@@ -24,4 +27,5 @@ inventor.item.form.button.delete = Delete
 
 inventor.invention.form.error.retailPrice-notAllowed= Currency introduced is not supported
 inventor.item.form.error.code-exists= Code introduced already exists
+
 

@@ -14,6 +14,10 @@ inventor.toolkit.list.label.assembly-notes = Notas de montaje
 inventor.toolkit.list.label.description = Descripción
 inventor.toolkit.list.label.link = Link
 
+inventor.toolkit.form.button.item = Ver objetos
+inventor.toolkit.list.label.item = Objetos
+
+
 inventor.toolkit.list.label.published = Publicado
 true= Verdad
 false= Falso
@@ -27,10 +31,7 @@ inventor.toolkit.form.button.delete = Eliminar
 
 inventor.toolkit.form.error.code-exists= Código introducido ya existe
 
-inventor.toolkit.form.button.item = Ver item
-inventor.toolkit.list.label.item = Item
-
-inventor.toolkit.list.label.eur.price= Precio en EUR
-inventor.toolkit.list.label.usd.price= Precio en USD
-inventor.toolkit.list.label.gbp.price= Precio en GBP
-inventor.toolkit.list.label.computed.price = Precio en la divisa del sistema
+inventor.toolkit.list.label.retailPriceEUR= Precio en EUR
+inventor.toolkit.list.label.retailPriceUSD= Precio en USD
+inventor.toolkit.list.label.retailPriceGBP= Precio en GBP
+inventor.toolkit.list.label.computedPrice = Precio en la divisa del sistema

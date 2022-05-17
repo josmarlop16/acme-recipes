@@ -16,8 +16,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import acme.entities.item.Item;
+import acme.features.moneyExchange.MoneyExchangePerform;
 import acme.framework.components.models.Model;
 import acme.framework.controllers.Request;
+import acme.framework.datatypes.Money;
 import acme.framework.roles.Any;
 import acme.framework.services.AbstractShowService;
 
@@ -43,7 +45,14 @@ public class AnyItemShowService implements AbstractShowService<Any, Item> {
 		assert request != null;
 		assert entity != null;
 		assert model != null;
-
+		final String defaultCurrency = this.repository.systemCurrency();
+		if(entity.getRetailPrice().getCurrency()!=defaultCurrency) {
+			final Money retailPrice=MoneyExchangePerform.computeMoneyExchange(entity.getRetailPrice(),defaultCurrency).getTarget();
+			model.setAttribute("computedPrice", retailPrice);
+		}else {
+			model.setAttribute("computedPrice", entity.getRetailPrice());
+		}
+		
 		request.unbind(entity, model, "name", "code", "technology", "description", "retailPrice", "link", "type");
 	}
 

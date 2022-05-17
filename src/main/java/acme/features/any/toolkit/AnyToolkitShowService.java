@@ -1,11 +1,18 @@
 package acme.features.any.toolkit;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.stream.Collectors;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import acme.entities.item.Item;
 import acme.entities.toolkit.Toolkit;
+import acme.features.moneyExchange.MoneyExchangePerform;
 import acme.framework.components.models.Model;
 import acme.framework.controllers.Request;
+import acme.framework.datatypes.Money;
 import acme.framework.roles.Any;
 import acme.framework.services.AbstractShowService;
 
@@ -30,11 +37,33 @@ public class AnyToolkitShowService implements AbstractShowService<Any, Toolkit>{
 		assert request != null;
 		assert entity != null;
 		assert model != null;
+		final String systemCurrency=this.repository.systemCurrency();
+		List<Item> items;
+		items=this.repository.findItemsByToolkitId(entity.getId()).stream().collect(Collectors.toList());
 		
-		model.setAttribute("itemId", entity.getItem().getId());
-//		model.setAttribute("itemPrice", entity.getItem().getRetailPrice());
+		final List<Money> retailPrices = new ArrayList<>();
+		for (final Item item:items) {
+			retailPrices.add(item.getRetailPrice());
+		}
+		
+		final Money computedPrice=new Money();
+		computedPrice.setCurrency(systemCurrency);
+		Double amounts=0.0;
+		for(final Money retailPrice:retailPrices) {
+			if(retailPrice.getCurrency()!=systemCurrency) {
+				amounts+=MoneyExchangePerform.computeMoneyExchange(retailPrice, systemCurrency).getTarget().getAmount();
+			}
+			else {
+				amounts+=retailPrice.getAmount();
+			}
+		}
+		
+		computedPrice.setAmount(amounts);
+		computedPrice.setCurrency(systemCurrency);
+		model.setAttribute("computedPrice", computedPrice);
+		
 
-		request.unbind(entity, model, "title", "code", "description", "assemblyNotes", "link", "item.retailPrice");
+		request.unbind(entity, model, "title", "code", "description", "assemblyNotes", "link");
 	}
 	
 	@Override
