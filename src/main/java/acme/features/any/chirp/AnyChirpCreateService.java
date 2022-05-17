@@ -8,22 +8,15 @@ import org.springframework.stereotype.Service;
 import acme.entities.chirp.Chirp;
 import acme.framework.components.models.Model;
 import acme.framework.controllers.Errors;
-import acme.framework.controllers.HttpMethod;
 import acme.framework.controllers.Request;
-import acme.framework.controllers.Response;
-import acme.framework.helpers.PrincipalHelper;
 import acme.framework.roles.Any;
 import acme.framework.services.AbstractCreateService;
 
 @Service
 public class AnyChirpCreateService implements AbstractCreateService<Any, Chirp> {
 
-	// Internal state ---------------------------------------------------------
-
 	@Autowired
 	protected AnyChirpRepository repository;
-
-	// AbstractCreateService<Any, Chirp> interface ---------------
 
 
 	@Override
@@ -42,7 +35,7 @@ public class AnyChirpCreateService implements AbstractCreateService<Any, Chirp> 
 		Chirp result;
 		
 		result = new Chirp();
-		Date fecha = new Date();
+		final Date fecha = new Date();
 		result.setCreationMoment(fecha);
 		
 		return result;

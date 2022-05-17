@@ -21,7 +21,6 @@
 	<acme:input-textbox code="any.chirp.list.label.author" path="author"/>
 	<acme:input-textbox code="any.chirp.list.label.body" path="body"/>
 	<acme:input-textbox code="any.chirp.list.label.emailAddress" path="emailAddress"/>
-	<acme:input-checkbox code="any.chirp.form.confirm" path="confirm"/>
 	
 	<jstl:choose>
 		<jstl:when test="${command == 'create'}">
