@@ -23,8 +23,8 @@
 	<acme:input-money code="inventor.patronage.list.label.budget" path="budget"/>
 	<acme:input-moment code="inventor.patronage.list.label.periodOfTime" path="periodOfTime"/>
 	<acme:input-url code="inventor.patronage.list.label.optionalLink" path="optionalLink"/>
-	<acme:button code="inventor.patronage.form.button.accept" action="/inventor/patronage/accept"/>
-	<acme:button code="inventor.patronage.form.button.decline" action="/inventor/patronage/decline"/>
+	<acme:submit code="inventor.patronage.form.button.accept" action="/inventor/patronage/accept"/>
+	<acme:submit code="inventor.patronage.form.button.decline" action="/inventor/patronage/denied"/>
 
 	<h1>PATRON</h1>
 	<acme:input-textbox code="inventor.patronage.patron.list.label.company" path="patron.company"/>

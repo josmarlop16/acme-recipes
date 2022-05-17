@@ -11,7 +11,7 @@ import acme.framework.services.AbstractUpdateService;
 import acme.roles.Inventor;
 
 @Service
-public class InventorPatronageAcceptService implements AbstractUpdateService<Inventor, Patronage>{
+public class InventorPatronageDeniedService implements AbstractUpdateService<Inventor, Patronage>{
 
 	// Internal state ---------------------------------------------------------
 
@@ -91,7 +91,7 @@ public class InventorPatronageAcceptService implements AbstractUpdateService<Inv
 		assert request != null;
 		assert entity != null;
 		
-		entity.setStatus(PatronageStatus.ACCEPTED);
+		entity.setStatus(PatronageStatus.DENIED);
 		this.repository.save(entity);
 		
 	}
