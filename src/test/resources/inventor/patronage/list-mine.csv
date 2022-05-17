@@ -1,2 +1,2 @@
-status,code,stuff,budget,periodOfTime,optionalLink
-PROPOSED,AGD-146-F,stuff-01,EUR 3.00,2021/11/13 12:30,http://www.example.com
+recordIndex,status,code,stuff,budget,periodOfTime,optionalLink
+0,PROPOSED,AGD-146-F,stuff-01,EUR 3.00,2021/11/13 12:30,http://www.example.com
