@@ -34,16 +34,7 @@ public class InventorPatronageAcceptService implements AbstractUpdateService<Inv
 		result=patronage.getStatus() == PatronageStatus.PROPOSED && request.isPrincipal(inventor);
 		return result;
 	}
-	
-	@Override
-	public void bind(final Request<Patronage> request, final Patronage entity, final Errors errors) {
-		assert request != null;
-		assert entity != null;
-		assert errors != null;
-		
-		request.bind(entity, errors, "status", "code", "stuff", "budget", "periodOfTime", "optionalLink", "patron.company", "patron.statement", "patron.optionalLink");
-	}
-	
+
 	@Override
 	public void validate(final Request<Patronage> request, final Patronage entity, final Errors errors) {
 		assert request != null;
