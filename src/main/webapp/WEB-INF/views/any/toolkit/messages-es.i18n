@@ -19,4 +19,4 @@ any.toolkit.form.button.item = Comprobar Item
 any.toolkit.list.label.item.priceGBP=Precio GBP
 any.toolkit.list.label.item.priceEUR=Precio EUR
 any.toolkit.list.label.item.priceUSD=Precio USD
-any.toolkit.list.label.item.computedPrice= Precio en la divisa del sistema
+any.toolkit.list.label.computedPrice= Precio en la divisa del sistema

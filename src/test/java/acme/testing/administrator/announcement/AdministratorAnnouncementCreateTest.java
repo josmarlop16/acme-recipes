@@ -14,7 +14,7 @@ public class AdministratorAnnouncementCreateTest extends TestHarness {
 	@ParameterizedTest
 	@CsvFileSource(resources = "/administrator/announcement/create-positive.csv", encoding = "utf-8", numLinesToSkip = 1)
 	@Order(10)
-	public void positiveTest(final int recordIndex, final String title,final String body, final String critical,final String optionalLink) {
+	public void positiveTest(final int recordIndex, final String creation,final String title,final String body, final String critical,final String optionalLink) {
 		super.signIn("administrator", "administrator");
 
 		super.clickOnMenu("Announcements", "Create Announcements");
@@ -29,7 +29,11 @@ public class AdministratorAnnouncementCreateTest extends TestHarness {
 		super.clickOnMenu("Announcements", "Recent Announcements");
 		super.checkListingExists();
 		super.sortListing(0, "asc");
+		
 		super.checkColumnHasValue(recordIndex, 1, title);
+		super.checkColumnHasValue(recordIndex, 2, critical);
+		
+		
 		super.clickOnListingRecord(recordIndex);
 
 		super.checkFormExists();
@@ -45,7 +49,7 @@ public class AdministratorAnnouncementCreateTest extends TestHarness {
 	@ParameterizedTest
 	@CsvFileSource(resources = "/administrator/announcement/create-negative.csv", encoding = "utf-8", numLinesToSkip = 1)
 	@Order(10)
-	public void negativeTest(final int recordIndex, final String title,final String body, final String critical,final String optionalLink) {
+	public void negativeTest(final int recordIndex, final String creation,final String title,final String body, final String critical,final String optionalLink) {
 		super.signIn("administrator", "administrator");
 
 		super.clickOnMenu("Announcements", "Create Announcements");
