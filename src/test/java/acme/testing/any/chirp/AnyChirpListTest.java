@@ -28,6 +28,15 @@ public class AnyChirpListTest extends TestHarness{
 		super.checkColumnHasValue(recordIndex, 2, author);
 		super.checkColumnHasValue(recordIndex, 3, body);
 		super.checkColumnHasValue(recordIndex, 4, emailAddress);
+		
+		super.clickOnListingRecord(recordIndex);
+		
+		super.checkFormExists();
+		super.checkInputBoxHasValue("creationMoment", creationMoment);
+		super.checkInputBoxHasValue("title", title);
+		super.checkInputBoxHasValue("author", author);
+		super.checkInputBoxHasValue("body", body);
+		super.checkInputBoxHasValue("emailAddress", emailAddress);
 
 
 		
@@ -50,6 +59,15 @@ public class AnyChirpListTest extends TestHarness{
 		super.checkColumnHasValue(recordIndex, 2, author);
 		super.checkColumnHasValue(recordIndex, 3, body);
 		super.checkColumnHasValue(recordIndex, 4, emailAddress);
+		
+		super.clickOnListingRecord(recordIndex);
+		
+		super.checkFormExists();
+		super.checkInputBoxHasValue("creationMoment", creationMoment);
+		super.checkInputBoxHasValue("title", title);
+		super.checkInputBoxHasValue("author", author);
+		super.checkInputBoxHasValue("body", body);
+		super.checkInputBoxHasValue("emailAddress", emailAddress);
 
 	}
 	
@@ -68,6 +86,15 @@ public class AnyChirpListTest extends TestHarness{
 		super.checkColumnHasValue(recordIndex, 2, author);
 		super.checkColumnHasValue(recordIndex, 3, body);
 		super.checkColumnHasValue(recordIndex, 4, emailAddress);
+		
+		super.clickOnListingRecord(recordIndex);
+		
+		super.checkFormExists();
+		super.checkInputBoxHasValue("creationMoment", creationMoment);
+		super.checkInputBoxHasValue("title", title);
+		super.checkInputBoxHasValue("author", author);
+		super.checkInputBoxHasValue("body", body);
+		super.checkInputBoxHasValue("emailAddress", emailAddress);
 
 
 		
