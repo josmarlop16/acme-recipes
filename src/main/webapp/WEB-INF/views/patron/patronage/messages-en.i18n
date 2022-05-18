@@ -16,8 +16,13 @@ patron.patronage.list.label.periodOfTime = Period Of Time
 patron.patronage.list.label.optionalLink = Optional Link
 patron.patronage.list.label.published = Published
 
+patron.patronage.list.label.inventor = Inventor
+
 patron.patronage.inventor.list.label.company = Company
 patron.patronage.inventor.list.label.statement = Statement
 patron.patronage.inventor.list.label.optionalLink = Optional Link
 
 patron.patronage.form.button.create = Create
+patron.patronage.form.button.update = Update
+patron.patronage.form.button.delete = Delete
+patron.patronage.form.button.publish = Publish

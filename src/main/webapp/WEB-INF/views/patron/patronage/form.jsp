@@ -16,8 +16,8 @@
 <%@taglib prefix="acme" uri="urn:jsptagdir:/WEB-INF/tags"%>
 
 <acme:form>
-	<h1>PATRONAGE</h1>
-	<acme:input-textbox code="patron.patronage.list.label.status" path="status"/>
+	<h1>Patronage</h1>
+	<acme:input-textbox code="patron.patronage.list.label.status" path="status" readonly = "true"/>
 	<acme:input-textbox code="patron.patronage.list.label.code" path="code"/>
 	<acme:input-textarea code="patron.patronage.list.label.stuff" path="stuff"/>
 	<acme:input-money code="patron.patronage.list.label.budget" path="budget"/>
@@ -28,23 +28,29 @@
 		<acme:input-option code="true" value="true" selected="${published == true}"/>
 	</acme:input-select>	
 	
+
+
 	<acme:input-select code="patron.patronage.list.label.inventor" path="inventorId">
-	
 		<jstl:forEach items="${inventors}" var="inventor">
 			<acme:input-option code="${inventor.getUserAccount().getUsername()}" value="${inventor.getId()}" selected="${ inventor.getId() == inventId }"/>
 		</jstl:forEach>
-	
 	</acme:input-select>
-	
-	<h1>INVENTOR</h1>
-	<acme:input-textbox code="patron.patronage.inventor.list.label.company" path="inventor.company"/>
-	<acme:input-textarea code="patron.patronage.inventor.list.label.statement" path="inventor.statement"/>
-	<acme:input-url code="patron.patronage.inventor.list.label.optionalLink" path="inventor.optionalLink"/>
-	 
+
+	<h1>Inventor</h1>
+	<acme:input-textbox code="patron.patronage.inventor.list.label.company" path="inventor.company" readonly = "true"/>
+	<acme:input-textbox code="patron.patronage.inventor.list.label.company" path="inventor.company" readonly = "true"/>
+	<acme:input-textarea code="patron.patronage.inventor.list.label.statement" path="inventor.statement" readonly = "true"/>
+	<acme:input-url code="patron.patronage.inventor.list.label.optionalLink" path="inventor.optionalLink" readonly = "true"/>
+
 	
 	<jstl:choose>
 		<jstl:when test="${command == 'create'}">
 			<acme:submit code="patron.patronage.form.button.create" action = "/patron/patronage/create"/>
+		</jstl:when>
+		<jstl:when test="${acme:anyOf(command,'show, update, delete, publish') && published == false}"> 
+			<acme:submit code="patron.patronage.form.button.update" action="/patron/patronage/update"/>
+			<acme:submit code="patron.patronage.form.button.delete" action="/patron/patronage/delete"/>
+			<acme:submit code="patron.patronage.form.button.publish" action="/patron/patronage/publish"/>
 		</jstl:when>
 	</jstl:choose>
 </acme:form>
