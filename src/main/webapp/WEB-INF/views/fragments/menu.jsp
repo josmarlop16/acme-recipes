@@ -64,6 +64,8 @@
 		<!-- Patron -->
 		<acme:menu-option code="master.menu.patron" access="hasRole('Patron')">
 			<acme:menu-suboption code="master.menu.patron.dashboard" action="/patron/dashboard/show"/>
+			<acme:menu-suboption code="master.menu.patron.list-patronages" action="/patron/patronage/list"/>
+			<acme:menu-suboption code="master.menu.patron.create-patronages" action="/patron/patronage/create"/>
 		</acme:menu-option>
 
 		<acme:menu-option code="master.menu.administrator" access="hasRole('Administrator')">

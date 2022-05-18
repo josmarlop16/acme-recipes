@@ -14,7 +14,7 @@ public class InventorPatronageListMineTest extends TestHarness {
 	@ParameterizedTest
 	@CsvFileSource(resources = "/inventor/patronage/list-mine.csv", encoding = "utf-8", numLinesToSkip = 1)
 	@Order(10)
-	public void positiveTest(final String status, final String code, final String stuff, final String budget, final String periodOfTime, final String optionalLink) {
+	public void positiveTest(final String status, final String code, final String stuff, final String budget, final String periodOfTime, final String optionalLink, final String published) {
 		super.signIn("administrator", "administrator");
 
 		super.clickOnMenu("Inventor", "Patronage List");
@@ -31,6 +31,7 @@ public class InventorPatronageListMineTest extends TestHarness {
 		super.checkInputBoxHasValue("budget", budget);
 		super.checkInputBoxHasValue("periodOfTime", periodOfTime);
 		super.checkInputBoxHasValue("optionalLink", optionalLink);
+		super.checkInputBoxHasValue("published", published);
 
 		super.signOut();
 	}

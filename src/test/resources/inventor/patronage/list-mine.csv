@@ -1,2 +1,2 @@
-status,code,stuff,budget,periodOfTime,optionalLink
-ACCEPTED,AGD-146-F,stuff-01,EUR 3.00,2021/11/13 12:30,http://www.example.com
+status,code,stuff,budget,periodOfTime,optionalLink,published
+ACCEPTED,AGD-146-F,stuff-01,EUR 3.00,2021/11/13 12:30,http://www.example.com,true

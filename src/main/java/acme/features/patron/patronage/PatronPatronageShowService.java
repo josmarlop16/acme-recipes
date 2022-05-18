@@ -1,19 +1,20 @@
-package acme.features.inventor.patronage;
+package acme.features.patron.patronage;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import acme.roles.Inventor;
+
 import acme.entities.patronages.Patronage;
 import acme.framework.components.models.Model;
 import acme.framework.controllers.Request;
 import acme.framework.services.AbstractShowService;
+import acme.roles.Patron;
 
 @Service
-public class InventorPatronageShowService implements AbstractShowService<Inventor, Patronage>{
+public class PatronPatronageShowService implements AbstractShowService<Patron, Patronage>{
 
 	// Internal state ---------------------------------------------------------
 
 	@Autowired
-	protected InventorPatronageRepository repository;
+	protected PatronPatronageRepository repository;
 
 
 	@Override
@@ -28,8 +29,8 @@ public class InventorPatronageShowService implements AbstractShowService<Invento
 		assert entity != null;
 		assert model != null;
 		
-		request.unbind(entity, model, "status", "code", "stuff", "budget", "periodOfTime", "optionalLink",
-				 "patron.company", "patron.statement", "patron.optionalLink");
+		request.unbind(entity, model, "status", "code", "stuff", "budget", "periodOfTime", "optionalLink","published",
+				 "inventor.company", "inventor.statement", "inventor.optionalLink");
 	}
 	
 	@Override
