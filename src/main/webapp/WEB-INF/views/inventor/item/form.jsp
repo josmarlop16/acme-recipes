@@ -23,7 +23,7 @@
 	<acme:input-money code="inventor.item.list.label.retailPrice" path="retailPrice"/>
 	<acme:input-textbox code="inventor.item.list.label.type" path="type"/>
 
-	<acme:input-money code="inventor.item.list.label.computedPrice" path="computedPrice"/>
+	<acme:input-money code="inventor.item.list.label.computedPrice" path="computedPrice" readonly="true"/>
 	<acme:input-url code="inventor.item.list.label.link" path="link"/>	
 
 	<acme:input-select code="inventor.item.list.label.type" path="type">

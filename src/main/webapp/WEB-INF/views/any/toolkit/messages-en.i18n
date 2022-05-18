@@ -19,5 +19,5 @@ any.toolkit.form.button.item = Check item
 any.toolkit.list.label.item.priceGBP=GBP Price
 any.toolkit.list.label.item.priceEUR=EUR Price
 any.toolkit.list.label.item.priceUSD=USD Price
-any.toolkit.list.label.item.computedPrice= Price in System Currency
+any.toolkit.list.label.computedPrice= Price in System Currency
 
