@@ -1,2 +1,2 @@
-recordIndex,creation,title,critical
-0,2022/04/01 13:50,Title-01,true
+recordIndex,creation,title,body,critical,optionalLink
+0,2022/05/17 13:50,Title-01,This is a body-01,true,http://www.announcement-01.org
