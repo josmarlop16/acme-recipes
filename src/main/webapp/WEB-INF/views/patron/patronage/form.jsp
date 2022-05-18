@@ -28,10 +28,9 @@
 		<acme:input-option code="true" value="true" selected="${published == true}"/>
 	</acme:input-select>	
 	
-	<acme:input-select code="patron.patronage.list.label.inventor" path="inventor">
+	<acme:input-select code="patron.patronage.list.label.inventor" path="inventorId">
 	
-		<jstl:forEach items="${inventors}" var="i">
-			<acme:input-option code="1" value="${i}" selected="${inventor == i}"/>
+		<jstl:forEach items="${inventors}" var="inventor">
 			<acme:input-option code="${inventor.getUserAccount().getUsername()}" value="${inventor.getId()}" selected="${ inventor.getId() == inventId }"/>
 		</jstl:forEach>
 	
