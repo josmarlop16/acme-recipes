@@ -44,7 +44,7 @@ public class InventorPatronageReportCreateService implements AbstractCreateServi
 		
 		final PatronageReport patronageReport = new PatronageReport();
 		final Inventor inventor = this.repository.findInventorById(request.getPrincipal().getActiveRoleId());
-		final Patronage patronage = this.patronageRepository.findOnePatronageById(27);
+		final Patronage patronage = this.patronageRepository.findOnePatronageById(9);
 		final Date fecha = new Date();
 		
 		patronageReport.setCreation(fecha);
