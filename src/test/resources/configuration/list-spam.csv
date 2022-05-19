@@ -4,11 +4,11 @@ recordIndex,spam-term,is-strong,threshold
 2,"hardcore",true,10
 3,"has ganado",false,25
 4,"nigeria",false,25
-5,"one mil-lion",false,25
+5,"one million",false,25
 6,"sensual",false,25
 7,"sex",true,10
 8,"sexo",true,10
 9,"sexy",false,25
-10,"un mil-lon",false,25
+10,"un millon",false,25
 11,"viagra",true,10
 12,"you've won",false,25
