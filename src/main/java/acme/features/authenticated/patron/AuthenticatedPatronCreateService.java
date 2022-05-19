@@ -15,6 +15,8 @@ package acme.features.authenticated.patron;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import acme.components.SpamModule;
+import acme.features.administrator.spam.AdministratorSpamRepository;
 import acme.framework.components.models.Model;
 import acme.framework.controllers.Errors;
 import acme.framework.controllers.HttpMethod;
@@ -35,8 +37,8 @@ public class AuthenticatedPatronCreateService implements AbstractCreateService<A
 	@Autowired
 	protected AuthenticatedPatronRepository repository;
 
-	// AbstractCreateService<Authenticated, Patron> interface ---------------
-
+	@Autowired
+	protected AdministratorSpamRepository spamRepository;
 
 	@Override
 	public boolean authorise(final Request<Patron> request) {
@@ -91,6 +93,19 @@ public class AuthenticatedPatronCreateService implements AbstractCreateService<A
 		assert request != null;
 		assert entity != null;
 		assert errors != null;
+		
+		if (!errors.hasErrors("company")) {
+            errors.state(request, SpamModule.spamValidator(entity.getCompany(), this.spamRepository.findWeakSpamsWords(), this.spamRepository.findStrongSpamsWords()), "company", "form.error.spam");
+        }
+		
+		if (!errors.hasErrors("statement")) {
+            errors.state(request, SpamModule.spamValidator(entity.getStatement(), this.spamRepository.findWeakSpamsWords(), this.spamRepository.findStrongSpamsWords()), "statement", "form.error.spam");
+        }
+		
+		if (!errors.hasErrors("optionalLink")) {
+            errors.state(request, SpamModule.spamValidator(entity.getOptionalLink(), this.spamRepository.findWeakSpamsWords(), this.spamRepository.findStrongSpamsWords()), "optionalLink", "form.error.spam");
+        }
+		
 	}
 
 	@Override

@@ -85,8 +85,25 @@ public class InventorItemCreateService implements AbstractCreateService<Inventor
 		assert errors != null;
 		
 		if (!errors.hasErrors("name")) {
-            errors.state(request, SpamModule.spamValidator(entity.getName(), this.spamRepository.findWeakSpamsWords(), this.spamRepository.findStrongSpamsWords()), "name", "Contains spam");
+            errors.state(request, SpamModule.spamValidator(entity.getName(), this.spamRepository.findWeakSpamsWords(), this.spamRepository.findStrongSpamsWords()), "name", "form.error.spam");
         }
+		
+		if (!errors.hasErrors("technology")) {
+            errors.state(request, SpamModule.spamValidator(entity.getTechnology(), this.spamRepository.findWeakSpamsWords(), this.spamRepository.findStrongSpamsWords()), "technology", "form.error.spam");
+        }
+		
+		if (!errors.hasErrors("description")) {
+            errors.state(request, SpamModule.spamValidator(entity.getDescription(), this.spamRepository.findWeakSpamsWords(), this.spamRepository.findStrongSpamsWords()), "description", "form.error.spam");
+        }
+		
+		if (!errors.hasErrors("code")) {
+            errors.state(request, SpamModule.spamValidator(entity.getCode(), this.spamRepository.findWeakSpamsWords(), this.spamRepository.findStrongSpamsWords()), "code", "form.error.spam");
+        }
+		
+		if (!errors.hasErrors("link")) {
+            errors.state(request, SpamModule.spamValidator(entity.getLink(), this.spamRepository.findWeakSpamsWords(), this.spamRepository.findStrongSpamsWords()), "link", "form.error.spam");
+        }
+	
 	
 		if (!errors.hasErrors("code")) {
 			final Item existingItem;

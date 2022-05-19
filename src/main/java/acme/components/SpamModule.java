@@ -21,8 +21,8 @@ public class SpamModule {
 		final String myRegexStrong = SpamModule.regexBuilder(strongSpamWords);
 		final String myRegexWeak = SpamModule.regexBuilder(weakSpamWords);
 		
-		final Double strongPercentage = SpamModule.percentageStrongSpamWords(myRegexStrong, text);
-		final Double weakPercentage = SpamModule.percentageStrongSpamWords(myRegexWeak, text);
+		final Double strongPercentage = SpamModule.percentageSpamWords(myRegexStrong, text);
+		final Double weakPercentage = SpamModule.percentageSpamWords(myRegexWeak, text);
 		
 //		Comprobamos si supera o no el umbral de palabras strong-spam
 		if(strongPercentage >= 10.0 ) {
@@ -54,7 +54,7 @@ public class SpamModule {
 	
 	
 //	Devuelve el porcentaje de strog-spam-words dentro de un texto
-	private static double percentageStrongSpamWords(final String myRegex, final String text) {
+	private static double percentageSpamWords(final String myRegex, final String text) {
 	    final Pattern pattern = Pattern.compile(myRegex, Pattern.CASE_INSENSITIVE);
 	    final Matcher matchResult = pattern.matcher(text);
 	    

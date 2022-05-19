@@ -3,14 +3,16 @@ package acme.features.administrator.announcement;
 import java.util.Date;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
+import acme.components.SpamModule;
+import acme.entities.announcement.Announcement;
+import acme.features.administrator.spam.AdministratorSpamRepository;
 import acme.framework.components.models.Model;
 import acme.framework.controllers.Errors;
 import acme.framework.controllers.Request;
 import acme.framework.roles.Administrator;
 import acme.framework.services.AbstractCreateService;
-import acme.entities.announcement.Announcement;
-import org.springframework.stereotype.Service;
 
 @Service
 public class AdministratorAnnouncementCreateService implements AbstractCreateService<Administrator, Announcement> {
@@ -20,7 +22,8 @@ public class AdministratorAnnouncementCreateService implements AbstractCreateSer
 	@Autowired
 	protected AdministratorAnnouncementRepository repository;
 
-	// AbstractCreateService<Administrator, Announcement> interface ---------------
+	@Autowired
+	protected AdministratorSpamRepository spamRepository;
 
 
 	@Override
@@ -36,7 +39,7 @@ public class AdministratorAnnouncementCreateService implements AbstractCreateSer
 		assert request != null;
 		Announcement result;
 		result = new Announcement();
-		Date fecha = new Date();
+		final Date fecha = new Date();
 		result.setCreation(fecha);
 		result.setCritical(false);
 		return result;
@@ -56,6 +59,18 @@ public class AdministratorAnnouncementCreateService implements AbstractCreateSer
 		assert request != null;
 		assert entity != null;
 		assert errors != null;
+		
+		if (!errors.hasErrors("title")) {
+            errors.state(request, SpamModule.spamValidator(entity.getTitle(), this.spamRepository.findWeakSpamsWords(), this.spamRepository.findStrongSpamsWords()), "title", "form.error.spam");
+        }
+		
+		if (!errors.hasErrors("optionalLink")) {
+            errors.state(request, SpamModule.spamValidator(entity.getOptionalLink(), this.spamRepository.findWeakSpamsWords(), this.spamRepository.findStrongSpamsWords()), "optionalLink", "form.error.spam");
+        }
+		
+		if (!errors.hasErrors("body")) {
+            errors.state(request, SpamModule.spamValidator(entity.getBody(), this.spamRepository.findWeakSpamsWords(), this.spamRepository.findStrongSpamsWords()), "body", "form.error.spam");
+        }
 		
 		boolean isConfirmed;
 		
