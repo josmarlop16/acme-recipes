@@ -106,7 +106,7 @@ public class SpamModule {
 						auxBuilder.append(parts[j]);
 //					Aun no hemos llegado a la ultima palabra de la palabra compuesta ( Ej nuesta palabra es "one million dollar" y vamos por "million"
 					}else {
-						auxBuilder.append(parts[j]+"[^\\\\w]*");
+						auxBuilder.append(parts[j]+"[^\\w]*");
 					}
 				}
 				
