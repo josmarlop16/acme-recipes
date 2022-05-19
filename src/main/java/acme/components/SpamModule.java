@@ -17,7 +17,7 @@ public class SpamModule {
 		final Boolean res;
 		final Boolean weakSpamCondition;
 		final Boolean strongSpamCondition;
-		
+	
 		final String myRegexStrong = SpamModule.regexBuilder(strongSpamWords);
 		final String myRegexWeak = SpamModule.regexBuilder(weakSpamWords);
 		
