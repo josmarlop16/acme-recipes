@@ -28,4 +28,4 @@ inventor.item.form.button.delete = Delete
 inventor.invention.form.error.retailPrice-notAllowed= Currency introduced is not supported
 inventor.item.form.error.code-exists= Code introduced already exists
 
-
+form.error.spam = Contains spam

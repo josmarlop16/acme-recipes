@@ -31,3 +31,5 @@ inventor.item.form.button.delete = Eliminar
 inventor.invention.form.error.retailPrice-notAllowed= Divisa introducida no soportada
 inventor.item.form.error.code-exists= Código introducido ya existe
 
+form.error.spam = Contiene spam
+

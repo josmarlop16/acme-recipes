@@ -2,7 +2,10 @@ package acme.features.inventor.toolkit;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import acme.components.SpamModule;
 import acme.entities.toolkit.Toolkit;
+import acme.features.administrator.spam.AdministratorSpamRepository;
 import acme.framework.components.models.Model;
 import acme.framework.controllers.Errors;
 import acme.framework.controllers.Request;
@@ -14,6 +17,9 @@ public class InventorToolkitPublishService implements AbstractUpdateService<Inve
 	
 	@Autowired
 	protected InventorToolkitRepository repository;
+	
+	@Autowired
+	protected AdministratorSpamRepository spamRepository;
 
 	@Override
 	public boolean authorise(final Request<Toolkit> request) {
@@ -53,6 +59,26 @@ public class InventorToolkitPublishService implements AbstractUpdateService<Inve
 		assert request != null;
 		assert entity != null;
 		assert errors != null;
+		
+		if (!errors.hasErrors("title")) {
+            errors.state(request, SpamModule.spamValidator(entity.getTitle(), this.spamRepository.findWeakSpamsWords(), this.spamRepository.findStrongSpamsWords()), "title", "form.error.spam");
+        }
+
+		if (!errors.hasErrors("code")) {
+            errors.state(request, SpamModule.spamValidator(entity.getCode(), this.spamRepository.findWeakSpamsWords(), this.spamRepository.findStrongSpamsWords()), "code", "form.error.spam");
+        }
+		
+		if (!errors.hasErrors("description")) {
+            errors.state(request, SpamModule.spamValidator(entity.getDescription(), this.spamRepository.findWeakSpamsWords(), this.spamRepository.findStrongSpamsWords()), "description", "form.error.spam");
+        }
+		
+		if (!errors.hasErrors("assemblyNotes")) {
+            errors.state(request, SpamModule.spamValidator(entity.getAssemblyNotes(), this.spamRepository.findWeakSpamsWords(), this.spamRepository.findStrongSpamsWords()), "assemblyNotes", "form.error.spam");
+        }
+		
+		if (!errors.hasErrors("link")) {
+            errors.state(request, SpamModule.spamValidator(entity.getLink(), this.spamRepository.findWeakSpamsWords(), this.spamRepository.findStrongSpamsWords()), "link", "form.error.spam");
+        }
 
 		if (!errors.hasErrors("code")) {
 			final Toolkit existingToolkit;

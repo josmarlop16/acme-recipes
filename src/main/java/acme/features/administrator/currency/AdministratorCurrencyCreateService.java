@@ -2,7 +2,10 @@ package acme.features.administrator.currency;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import acme.components.SpamModule;
 import acme.entities.currency.Currency;
+import acme.features.administrator.spam.AdministratorSpamRepository;
 import acme.framework.components.models.Model;
 import acme.framework.controllers.Errors;
 import acme.framework.controllers.Request;
@@ -16,6 +19,9 @@ public class AdministratorCurrencyCreateService implements AbstractCreateService
 
 	@Autowired
 	protected AdministratorCurrencyRepository repository;
+	
+	@Autowired
+	protected AdministratorSpamRepository spamRepository;
 
 	@Override
 	public boolean authorise(final Request<Currency> request) {
@@ -50,6 +56,10 @@ public class AdministratorCurrencyCreateService implements AbstractCreateService
 		assert request != null;
 		assert entity != null;
 		assert errors != null;
+		
+		if (!errors.hasErrors("name")) {
+            errors.state(request, SpamModule.spamValidator(entity.getName(), this.spamRepository.findWeakSpamsWords(), this.spamRepository.findStrongSpamsWords()), "name", "form.error.spam");
+        }
 
 		boolean isConfirmed;
 

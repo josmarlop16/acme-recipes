@@ -5,8 +5,10 @@ import java.util.Date;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import acme.components.SpamModule;
 import acme.entities.patronages.Patronage;
 import acme.entities.patronages.PatronageReport;
+import acme.features.administrator.spam.AdministratorSpamRepository;
 import acme.features.inventor.patronage.InventorPatronageRepository;
 import acme.framework.components.models.Model;
 import acme.framework.controllers.Errors;
@@ -24,6 +26,9 @@ public class InventorPatronageReportCreateService implements AbstractCreateServi
 	
 	@Autowired
 	protected InventorPatronageRepository patronageRepository;
+	
+	@Autowired
+	protected AdministratorSpamRepository spamRepository;
 
 	@Override
 	public boolean authorise(final Request<PatronageReport> request) {
@@ -39,7 +44,7 @@ public class InventorPatronageReportCreateService implements AbstractCreateServi
 		
 		final PatronageReport patronageReport = new PatronageReport();
 		final Inventor inventor = this.repository.findInventorById(request.getPrincipal().getActiveRoleId());
-		final Patronage patronage = this.patronageRepository.findOnePatronageById(27);
+		final Patronage patronage = this.patronageRepository.findOnePatronageById(9);
 		final Date fecha = new Date();
 		
 		patronageReport.setCreation(fecha);
@@ -68,6 +73,18 @@ public class InventorPatronageReportCreateService implements AbstractCreateServi
 		assert errors != null;
 		
 		boolean isConfirmed;
+		
+		if (!errors.hasErrors("seqNumber")) {
+            errors.state(request, SpamModule.spamValidator(entity.getSeqNumber(), this.spamRepository.findWeakSpamsWords(), this.spamRepository.findStrongSpamsWords()), "seqNumber", "form.error.spam");
+        }
+		
+		if (!errors.hasErrors("memorandum")) {
+            errors.state(request, SpamModule.spamValidator(entity.getMemorandum(), this.spamRepository.findWeakSpamsWords(), this.spamRepository.findStrongSpamsWords()), "memorandum", "form.error.spam");
+        }
+		
+		if (!errors.hasErrors("optionalLink")) {
+            errors.state(request, SpamModule.spamValidator(entity.getOptionalLink(), this.spamRepository.findWeakSpamsWords(), this.spamRepository.findStrongSpamsWords()), "optionalLink", "form.error.spam");
+        }
 		
 		isConfirmed = request.getModel().getBoolean("confirm");
 		errors.state(request, isConfirmed, "confirm", "inventor.patronageReport.form.error.must-confirm");

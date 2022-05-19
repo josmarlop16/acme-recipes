@@ -5,7 +5,9 @@ import java.util.Date;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import acme.components.SpamModule;
 import acme.entities.chirp.Chirp;
+import acme.features.administrator.spam.AdministratorSpamRepository;
 import acme.framework.components.models.Model;
 import acme.framework.controllers.Errors;
 import acme.framework.controllers.Request;
@@ -17,6 +19,9 @@ public class AnyChirpCreateService implements AbstractCreateService<Any, Chirp> 
 
 	@Autowired
 	protected AnyChirpRepository repository;
+	
+	@Autowired
+	protected AdministratorSpamRepository spamRepository;
 
 
 	@Override
@@ -55,6 +60,24 @@ public class AnyChirpCreateService implements AbstractCreateService<Any, Chirp> 
 		assert request != null;
 		assert entity != null;
 		assert errors != null;
+		
+		if (!errors.hasErrors("title")) {
+            errors.state(request, SpamModule.spamValidator(entity.getTitle(), this.spamRepository.findWeakSpamsWords(), this.spamRepository.findStrongSpamsWords()), "title", "form.error.spam");
+        }
+		
+		if (!errors.hasErrors("author")) {
+            errors.state(request, SpamModule.spamValidator(entity.getAuthor(), this.spamRepository.findWeakSpamsWords(), this.spamRepository.findStrongSpamsWords()), "author", "form.error.spam");
+        }
+		
+		if (!errors.hasErrors("body")) {
+            errors.state(request, SpamModule.spamValidator(entity.getBody(), this.spamRepository.findWeakSpamsWords(), this.spamRepository.findStrongSpamsWords()), "body", "form.error.spam");
+        }
+		
+		
+		if (!errors.hasErrors("emailAddress")) {
+            errors.state(request, SpamModule.spamValidator(entity.getEmailAddress(), this.spamRepository.findWeakSpamsWords(), this.spamRepository.findStrongSpamsWords()), "emailAddress", "form.error.spam");
+        }
+		
 		
 		boolean isConfirmed;
 		
