@@ -19,7 +19,7 @@
 	<acme:list-column code="any.toolkit.list.label.title" path="title" width="20%"/>
 	<acme:list-column code="any.toolkit.list.label.code" path="code" width="20%"/>
 	<acme:list-column code="any.toolkit.list.label.description" path="description" width="20%"/>
-	<acme:list-column code="any.toolkit.list.label.assemblyNotes" path="assemblyNotes" width="20%"/>
+	<acme:list-column code="any.toolkit.list.label.assembly-notes" path="assemblyNotes" width="20%"/>
 	<acme:list-column code="any.toolkit.list.label.link" path="link" width="20%"/>
 	<acme:list-column code="any.toolkit.list.label.item.name" path="item.name" width="20%"/>
 	<acme:list-column code="any.toolkit.list.label.published" path="published" width="10%"/>
