@@ -27,6 +27,8 @@
 		</jstl:forEach>
 	</acme:input-select>
 	
+	<acme:input-textbox code="inventor.patronageReport.list.label.patronage.code" path="patronageCode" readonly="true"/>
+	
 	<jstl:choose>
 		<jstl:when test="${command == 'create'}">
 			<acme:input-checkbox code="inventor.patronageReport.form.confirm" path="confirm"/>

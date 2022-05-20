@@ -12,6 +12,8 @@ inventor.patronageReport.list.label.seqNumber = Sequence Number
 inventor.patronageReport.list.label.creation = Creation
 inventor.patronageReport.list.label.memorandum = Memorandum
 inventor.patronageReport.list.label.optionalLink = Link
+inventor.patronageReport.list.label.patronage = Choose a patronage
+inventor.patronageReport.list.label.patronage.code = Patronage's code
 
 inventor.patronageReport.form.confirm = Confirm
 inventor.patronageReport.form.button.update = Update
