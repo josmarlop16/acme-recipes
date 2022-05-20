@@ -48,7 +48,7 @@ public class InventorToolkitCreateService implements AbstractCreateService<Inven
 		assert model!=null;
 		
 		final List<Item> Item = this.itemRepository.findAllItem();
-		model.setAttribute("allItems", Item);
+		model.setAttribute("items", Item);
 		
 		request.unbind(entity, model, "title", "code", "description", "assemblyNotes", "link", "published");
 	}
@@ -98,8 +98,6 @@ public class InventorToolkitCreateService implements AbstractCreateService<Inven
             errors.state(request, SpamModule.spamValidator(entity.getLink(), this.spamRepository.findWeakSpamsWords(), this.spamRepository.findStrongSpamsWords()), "link", "form.error.spam");
         }
 		
-		
-
 		if (!errors.hasErrors("code")) {
 			final Toolkit existingToolkit;
 			existingToolkit=this.repository.findToolkitByCode(entity.getCode());

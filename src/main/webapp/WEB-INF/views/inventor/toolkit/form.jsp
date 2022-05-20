@@ -28,7 +28,7 @@
 
 	<acme:input-url code="inventor.toolkit.list.label.link" path="link"/>
 
-	<acme:input-select code="inventor.toolkit.list.label.items" path="itemId">
+	<acme:input-select code="inventor.toolkit.list.label.item" path="itemId">
 		<jstl:forEach items="${items}" var="item">
 			<acme:input-option code="${item.getName()}" value="${item.getId()}" selected="${item.getId() == itemId }"/>
 		</jstl:forEach>
