@@ -74,6 +74,7 @@ master.menu.patron = Patron
 master.menu.patron.dashboard = Dashboard
 master.menu.patron.list-patronages = List Patronages
 master.menu.patron.create-patronages = Create Patronages
+master.menu.patron.list-patronage-reports = List my patronage reports
 
 
 # master.menu.inventor ##########################################################

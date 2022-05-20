@@ -74,6 +74,8 @@
 			<acme:menu-suboption code="master.menu.patron.dashboard" action="/patron/dashboard/show"/>
 			<acme:menu-suboption code="master.menu.patron.list-patronages" action="/patron/patronage/list"/>
 			<acme:menu-suboption code="master.menu.patron.create-patronages" action="/patron/patronage/create"/>
+			<acme:menu-suboption code="master.menu.patron.list-patronage-reports" action="/patron/patronage-report/list"/>
+			
 		</acme:menu-option>
 
 		<acme:menu-option code="master.menu.administrator" access="hasRole('Administrator')">
