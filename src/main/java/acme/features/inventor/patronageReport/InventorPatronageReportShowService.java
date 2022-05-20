@@ -16,6 +16,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import acme.entities.patronages.PatronageReport;
+import acme.features.inventor.patronage.InventorPatronageRepository;
 import acme.framework.components.models.Model;
 import acme.framework.controllers.Request;
 import acme.framework.services.AbstractShowService;
@@ -28,6 +29,9 @@ public class InventorPatronageReportShowService implements AbstractShowService<I
 
 	@Autowired
 	protected InventorPatronageReportRepository repository;
+	
+	@Autowired
+	protected InventorPatronageRepository patronageRepository;
 
 
 	@Override
@@ -41,6 +45,9 @@ public class InventorPatronageReportShowService implements AbstractShowService<I
 		assert request != null;
 		assert entity != null;
 		assert model != null;
+		
+		model.setAttribute("patronageCode", this.patronageRepository.findAllPatronage());
+		model.setAttribute("code", entity.getPatronage().getCode());
 
 		request.unbind(entity, model, "seqNumber", "creation", "memorandum", "optionalLink");
 	}

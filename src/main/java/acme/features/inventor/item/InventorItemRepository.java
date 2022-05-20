@@ -13,6 +13,7 @@
 package acme.features.inventor.item;
 
 import java.util.Collection;
+import java.util.List;
 
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
@@ -42,7 +43,6 @@ public interface InventorItemRepository extends AbstractRepository {
 	@Query("select i from Item i where i.id = :id")
 	Item findItemById(int id);
 	
-
 	@Query("select c.name from Currency c where c.isDefault=true")
 	String systemCurrency();
 
@@ -54,6 +54,9 @@ public interface InventorItemRepository extends AbstractRepository {
 	
 	@Query("select i from Inventor i where i.id = :id ")
 	Inventor findInventorById(int id);
+	
+	@Query("select i from Item i")
+	List<Item> findAllItem();
 
 
 }

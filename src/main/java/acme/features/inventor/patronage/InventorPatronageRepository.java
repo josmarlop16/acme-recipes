@@ -1,6 +1,7 @@
 package acme.features.inventor.patronage;
 
 import java.util.Collection;
+import java.util.List;
 
 import org.springframework.data.jpa.repository.Query;
 
@@ -21,6 +22,11 @@ public interface InventorPatronageRepository extends AbstractRepository{
 
 	@Query("select p from Patronage p where p.code = :code")
 	Patronage findPatronageByCode(String code);
+	
+	@Query("select p from Patronage p")
+	List<Patronage> findAllPatronage();
+	
+	
 	
 
 }

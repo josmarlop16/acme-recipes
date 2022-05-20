@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 
 import acme.entities.item.Item;
 import acme.entities.toolkit.Toolkit;
+import acme.features.inventor.item.InventorItemRepository;
 import acme.features.moneyExchange.MoneyExchangePerform;
 import acme.framework.components.models.Model;
 import acme.framework.controllers.Request;
@@ -23,6 +24,9 @@ public class InventorToolkitShowService implements AbstractShowService<Inventor,
 
 		@Autowired
 		protected InventorToolkitRepository repository;
+		
+		@Autowired
+		protected InventorItemRepository itemRepository;
 
 		@Override
 		public boolean authorise(final Request<Toolkit> request) {
@@ -53,8 +57,6 @@ public class InventorToolkitShowService implements AbstractShowService<Inventor,
 			  double eurAmount=0.0;
 			  double usdAmount=0.0;
 			  double gbpAmount=0.0;
-			  
-			  
 			  
 			  for(final Item item: items){
 				  currency=item.getRetailPrice().getCurrency();
@@ -109,6 +111,9 @@ public class InventorToolkitShowService implements AbstractShowService<Inventor,
 			
 
 			model.setAttribute("computedPrice", totalComputed);
+			
+			model.setAttribute("items", this.itemRepository.findAllItem());
+			model.setAttribute("itemId", entity.getItem().getId());
 			
 
 			request.unbind(entity, model, "title", "code", "description", "assemblyNotes", "link", "published");

@@ -27,13 +27,19 @@
 	<acme:input-money code="inventor.toolkit.list.label.computedPrice" path="computedPrice"/>
 
 	<acme:input-url code="inventor.toolkit.list.label.link" path="link"/>
+
+	<acme:input-select code="inventor.toolkit.list.label.items" path="itemId">
+		<jstl:forEach items="${items}" var="item">
+			<acme:input-option code="${item.getName()}" value="${item.getId()}" selected="${item.getId() == itemId }"/>
+		</jstl:forEach>
+	</acme:input-select>
 	
 	<jstl:choose>
 	
 		<jstl:when test="${acme:anyOf(command,'show' ) && published == true}">
-			<acme:input-double code="inventor.toolkit.list.label.eur.price" path="EUR"/>
-			<acme:input-double code="inventor.toolkit.list.label.usd.price" path="USD"/>
-			<acme:input-double code="inventor.toolkit.list.label.gbp.price" path="GBP"/>
+			<acme:input-double code="inventor.toolkit.list.label.retailPriceEUR" path="EUR"/>
+			<acme:input-double code="inventor.toolkit.list.label.retailPriceUSD" path="USD"/>
+			<acme:input-double code="inventor.toolkit.list.label.retailPriceGBP" path="GBP"/>
 		</jstl:when>
 		
 		<jstl:when test="${published == false}">
