@@ -24,6 +24,9 @@
 	<acme:input-money code="inventor.patronage.list.label.computedPrice" path="computedPrice"/>
 	<acme:input-moment code="inventor.patronage.list.label.periodOfTime" path="periodOfTime"/>
 	<acme:input-url code="inventor.patronage.list.label.optionalLink" path="optionalLink"/>
+	<acme:input-textbox code="inventor.patronage.list.label.published" path="published" />
+
+    
 	<jstl:choose>
 		<jstl:when test="${status=='PROPOSED'}">
 			<acme:submit code="inventor.patronage.form.button.accept" action="/inventor/patronage/accept"/>

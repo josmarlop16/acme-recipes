@@ -13,6 +13,7 @@
 package acme.features.administrator.currency;
 
 import java.util.Collection;
+import java.util.List;
 
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
@@ -25,5 +26,8 @@ public interface AdministratorCurrencyRepository extends AbstractRepository {
 
 	@Query("select c from Currency c where c.accepted = 1")
 	Collection<Currency> findCurrencys();
+	
+	@Query("select c.name from Currency c where c.accepted = 1")
+	List<String> findCurrencyNames();
 
 }

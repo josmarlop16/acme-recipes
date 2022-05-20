@@ -1,22 +1,20 @@
-package acme.features.inventor.patronage;
+package acme.features.patron.patronage;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import acme.entities.patronages.Patronage;
-import acme.features.moneyExchange.MoneyExchangePerform;
 import acme.framework.components.models.Model;
 import acme.framework.controllers.Request;
-import acme.framework.datatypes.Money;
 import acme.framework.services.AbstractShowService;
-import acme.roles.Inventor;
+import acme.roles.Patron;
 
 @Service
-public class InventorPatronageShowService implements AbstractShowService<Inventor, Patronage>{
+public class PatronPatronageShowService implements AbstractShowService<Patron, Patronage>{
 
 	// Internal state ---------------------------------------------------------
 
 	@Autowired
-	protected InventorPatronageRepository repository;
+	protected PatronPatronageRepository repository;
 
 
 	@Override
@@ -30,17 +28,11 @@ public class InventorPatronageShowService implements AbstractShowService<Invento
 		assert request != null;
 		assert entity != null;
 		assert model != null;
-		final String systemCurrency = this.repository.systemCurrency();
 		
-		if(!entity.getBudget().getCurrency().equals(systemCurrency)) {
-			final Money retailPrice=MoneyExchangePerform.computeMoneyExchange(entity.getBudget(),systemCurrency).getTarget();
-			model.setAttribute("computedPrice", retailPrice);
-		}else {
-			model.setAttribute("computedPrice", entity.getBudget());
-		}
-
-		request.unbind(entity, model, "status", "code", "stuff", "budget", "periodOfTime", "optionalLink",
-				 "patron.company", "patron.statement", "patron.optionalLink", "published");
+		model.setAttribute("inventors", this.repository.findAllInventors());
+		model.setAttribute("inventId", entity.getInventor().getId());
+		request.unbind(entity, model, "status", "code", "stuff", "budget", "periodOfTime", "optionalLink","published",
+				 "inventor.company", "inventor.statement", "inventor.optionalLink");
 	}
 	
 	@Override

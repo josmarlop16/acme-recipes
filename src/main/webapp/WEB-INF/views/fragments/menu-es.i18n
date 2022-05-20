@@ -70,7 +70,8 @@ master.menu.authenticated.list-tools = Listar Herramientas
 
 master.menu.patron = Patron
 master.menu.patron.dashboard = Dashboard
-
+master.menu.patron.list-patronages = Lista de patrones
+master.menu.patron.create-patronages = Crear patrones
 
 # master.menu.inventor ##########################################################
 

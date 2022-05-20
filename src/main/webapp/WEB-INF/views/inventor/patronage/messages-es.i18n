@@ -16,6 +16,7 @@ inventor.patronage.list.label.budget= Presupuesto
 inventor.patronage.list.label.computedPrice= Presupuesto en divisa del sistema
 inventor.patronage.list.label.periodOfTime =Periodo de tiempo
 inventor.patronage.list.label.optionalLink= Link
+inventor.patronage.list.label.published = Publicado
 
 inventor.patronage.patron.list.label.company= Compañia
 inventor.patronage.patron.list.label.statement= Declaracion

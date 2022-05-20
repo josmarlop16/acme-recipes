@@ -1,4 +1,2 @@
-key,status,code,stuff,budget,periodOfTime,optionalLink,key:patron,key:inventor
-patronage-01,PROPOSED,AGD-146-F,stuff-01,EUR 3.0,2021/11/13 12:30,http://www.example.com,patron-01,inventor-01
-patronage-02,PROPOSED,BGD-146-F,stuff-02,EUR 3.0,2021/11/13 12:30,http://www.example.com,patron-02,inventor-01
-patronage-03,PROPOSED,CGD-146-F,stuff-03,EUR 3.0,2021/11/13 12:30,http://www.example.com,patron-03,inventor-01
+key,status,code,stuff,budget,periodOfTime,optionalLink,published,key:patron,key:inventor
+patronage-01,PROPOSED,AGD-146-F,stuff-01,EUR 3.0,2021/11/13 12:30,http://www.example.com,true,patron-01,inventor-01

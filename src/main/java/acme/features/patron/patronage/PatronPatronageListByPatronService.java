@@ -1,4 +1,4 @@
-package acme.features.inventor.patronage;
+package acme.features.patron.patronage;
 
 import java.util.Collection;
 
@@ -10,15 +10,15 @@ import acme.framework.components.models.Model;
 import acme.framework.controllers.Request;
 import acme.framework.entities.Principal;
 import acme.framework.services.AbstractListService;
-import acme.roles.Inventor;
+import acme.roles.Patron;
 
 @Service
-public class InventorPatronageListByInventorService implements AbstractListService<Inventor, Patronage>{
+public class PatronPatronageListByPatronService implements AbstractListService<Patron, Patronage>{
 	
 	// Internal state ---------------------------------------------------------
 
 	@Autowired
-	protected InventorPatronageRepository repository;
+	protected PatronPatronageRepository repository;
 	
 	@Override
 	public boolean authorise(final Request<Patronage> request) {
@@ -36,7 +36,7 @@ public class InventorPatronageListByInventorService implements AbstractListServi
 		Principal principal;
 
 		principal = request.getPrincipal();		
-		result = this.repository.findAllPatronagesByInventorId(principal.getActiveRoleId());
+		result = this.repository.findAllPatronagesByPatronId(principal.getActiveRoleId());
 		
 		return result;
 	}
