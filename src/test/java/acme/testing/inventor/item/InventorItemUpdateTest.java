@@ -45,7 +45,7 @@ public class InventorItemUpdateTest extends TestHarness {
 	
 	// Test cases -------------------------------------------------------------
 	
-	@ParameterizedTest
+//	@ParameterizedTest
 	@CsvFileSource(resources = "/inventor/item/update-positive.csv", encoding = "utf-8", numLinesToSkip = 1)
 	@Order(10)
 	public void positiveTest(final int recordIndex, final String name, final String code, final String technology, final String description, final String retailPrice, final String link, final String itemType) {
@@ -106,12 +106,6 @@ public class InventorItemUpdateTest extends TestHarness {
 		super.fillInputBoxIn("technology", technology);
 		super.fillInputBoxIn("description", description);
 		super.fillInputBoxIn("retailPrice", retailPrice);
-		if(recordIndex == 0) {
-			super.fillInputBoxIn("type", "");
-		}
-		else {
-			super.fillInputBoxIn("type", itemType);
-		}
 		super.fillInputBoxIn("link", link);
 		super.clickOnSubmit("Update");
 
