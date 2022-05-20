@@ -1,6 +1,7 @@
 package acme.features.inventor.patronageReport;
 
 import java.util.Date;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -44,14 +45,12 @@ public class InventorPatronageReportCreateService implements AbstractCreateServi
 		
 		final PatronageReport patronageReport = new PatronageReport();
 		final Inventor inventor = this.repository.findInventorById(request.getPrincipal().getActiveRoleId());
-		final Patronage patronage = this.patronageRepository.findOnePatronageById(9);
 		final Date fecha = new Date();
 		
 		patronageReport.setCreation(fecha);
 		patronageReport.setMemorandum("");
 		patronageReport.setInventor(inventor);
 		patronageReport.setOptionalLink("");
-		patronageReport.setPatronage(patronage);
 		patronageReport.setSeqNumber("");
 		
 		return patronageReport;
@@ -62,7 +61,8 @@ public class InventorPatronageReportCreateService implements AbstractCreateServi
 		assert request != null;
 		assert entity != null;
 		assert errors != null;
-
+		
+		entity.setPatronage(this.patronageRepository.findOnePatronageById(Integer.valueOf(request.getModel().getAttribute("patronageId").toString())));
 		request.bind(entity, errors, "seqNumber", "creation", "memorandum", "optionalLink", "confirm");
 	}
 	
@@ -95,6 +95,10 @@ public class InventorPatronageReportCreateService implements AbstractCreateServi
 		assert request != null;
 		assert entity != null;
 		assert model != null;
+		
+		final Integer inventorId = request.getPrincipal().getActiveRoleId();
+		final List<Patronage> myPatronages= (List<Patronage>) this.patronageRepository.findAllPatronagesByInventorId(inventorId);
+		model.setAttribute("myPatronages", myPatronages);
 
 		request.unbind(entity, model, "seqNumber", "creation", "memorandum", "optionalLink");
 	}
