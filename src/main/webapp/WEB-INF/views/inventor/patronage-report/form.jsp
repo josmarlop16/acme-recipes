@@ -23,18 +23,19 @@
 	
 	<jstl:choose>
 		<jstl:when test="${command == 'create'}">
-			<acme:input-checkbox code="inventor.patronageReport.form.confirm" path="confirm"/>
 			<acme:input-select code="inventor.patronageReport.list.label.patronage" path="patronageId">
 			<jstl:forEach items="${myPatronages}" var="patronage">
 				<acme:input-option code="${patronage.getCode()}" value="${patronage.getId()}" selected="${patronage.getId() == patronageId }"/>
 			</jstl:forEach>
 			</acme:input-select>
-			<acme:submit code="inventor.patronageReport.form.button.create" action="/inventor/patronage-report/create"/>
 		</jstl:when>
 	</jstl:choose>
 	
-	
-	<acme:input-textbox code="inventor.patronageReport.list.label.patronageCode" path="code" readonly="true"/>
+	<jstl:choose>
+		<jstl:when test="${command == 'show'}">
+			<acme:input-textbox code="inventor.patronageReport.list.label.patronageCode" path="code" readonly="true"/>
+		</jstl:when>
+	</jstl:choose>
 	
 	<jstl:choose>
 		<jstl:when test="${command == 'create'}">
