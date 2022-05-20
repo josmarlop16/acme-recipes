@@ -45,7 +45,7 @@ public class InventorItemShowService implements AbstractShowService<Inventor, It
 		assert model != null;
 		
 		final String systemCurrency = this.repository.systemCurrency();
-		if(entity.getRetailPrice().getCurrency()!=systemCurrency) {
+		if(!entity.getRetailPrice().getCurrency().equals(systemCurrency)) {
 			final Money retailPrice=MoneyExchangePerform.computeMoneyExchange(entity.getRetailPrice(),systemCurrency).getTarget();
 			model.setAttribute("computedPrice", retailPrice);
 		}else {

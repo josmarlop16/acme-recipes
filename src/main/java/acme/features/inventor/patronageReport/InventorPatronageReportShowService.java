@@ -14,6 +14,7 @@ package acme.features.inventor.patronageReport;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
 import acme.entities.patronages.PatronageReport;
 import acme.framework.components.models.Model;
 import acme.framework.controllers.Request;
@@ -40,10 +41,6 @@ public class InventorPatronageReportShowService implements AbstractShowService<I
 		assert request != null;
 		assert entity != null;
 		assert model != null;
-
-		Patronage patronage = entity.getPatronage().getId()
-		String patronageCode = patronage.getCode()
-		model.setAttribute("patronageCode",patronageCode)
 
 		request.unbind(entity, model, "seqNumber", "creation", "memorandum", "optionalLink");
 	}
