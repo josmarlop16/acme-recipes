@@ -29,7 +29,6 @@
 	</acme:input-select>	
 	
 
-
 	<acme:input-select code="patron.patronage.list.label.inventor" path="inventorId">
 		<jstl:forEach items="${inventors}" var="inventor">
 			<acme:input-option code="${inventor.getUserAccount().getUsername()}" value="${inventor.getId()}" selected="${ inventor.getId() == inventId }"/>
@@ -37,7 +36,6 @@
 	</acme:input-select>
 
 	<h1>Inventor</h1>
-	<acme:input-textbox code="patron.patronage.inventor.list.label.company" path="inventor.company" readonly = "true"/>
 	<acme:input-textbox code="patron.patronage.inventor.list.label.company" path="inventor.company" readonly = "true"/>
 	<acme:input-textarea code="patron.patronage.inventor.list.label.statement" path="inventor.statement" readonly = "true"/>
 	<acme:input-url code="patron.patronage.inventor.list.label.optionalLink" path="inventor.optionalLink" readonly = "true"/>
