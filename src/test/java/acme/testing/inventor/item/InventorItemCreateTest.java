@@ -82,12 +82,6 @@ public class InventorItemCreateTest extends TestHarness {
 		super.fillInputBoxIn("technology", technology);
 		super.fillInputBoxIn("description", description);
 		super.fillInputBoxIn("retailPrice", retailPrice);
-		if(recordIndex == 0) {
-			super.fillInputBoxIn("type", "");
-		}
-		else {
-			super.fillInputBoxIn("type", itemType);
-		}
 		super.fillInputBoxIn("link", link);
 		super.clickOnSubmit("Create");
 
