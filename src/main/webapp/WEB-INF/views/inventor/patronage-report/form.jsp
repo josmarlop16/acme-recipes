@@ -21,6 +21,12 @@
 	<acme:input-textbox code="inventor.patronageReport.list.label.memorandum" path="memorandum"/>
 	<acme:input-url code="inventor.patronageReport.list.label.optionalLink" path="optionalLink"/>
 	
+	<acme:input-select code="inventor.patronageReport.list.label.patronage" path="patronageId">
+		<jstl:forEach items="${myPatronages}" var="patronage">
+			<acme:input-option code="${patronage.getCode()}" value="${patronage.getId()}" selected="${patronage.getId() == patronageId }"/>
+		</jstl:forEach>
+	</acme:input-select>
+	
 	<jstl:choose>
 		<jstl:when test="${command == 'create'}">
 			<acme:input-checkbox code="inventor.patronageReport.form.confirm" path="confirm"/>
