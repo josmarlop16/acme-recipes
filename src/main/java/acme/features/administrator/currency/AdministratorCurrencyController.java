@@ -28,6 +28,8 @@ public class AdministratorCurrencyController extends AbstractController<Administ
 
 	@Autowired
 	protected AdministratorCurrencyListService		listService;
+	@Autowired
+	protected AdministratorCurrencyCreateService	createService;
 	
 	// Constructors -----------------------------------------------------------
 
@@ -35,6 +37,7 @@ public class AdministratorCurrencyController extends AbstractController<Administ
 	@PostConstruct
 	protected void initialise() {
 		super.addCommand("list", this.listService);
+		super.addCommand("create", this.createService);
 	}
 
 }

@@ -50,7 +50,9 @@ public class Item extends AbstractEntity{
 	@NotNull
 	protected ItemType type;
 	
-//	Relations
+	// Relationships ----------------------------------------------------------
+	@NotNull
+	protected Boolean published;
 	
 	@NotNull
 	@Valid

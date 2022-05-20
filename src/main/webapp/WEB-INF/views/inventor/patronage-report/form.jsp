@@ -19,5 +19,12 @@
 	<acme:input-textbox code="inventor.patronageReport.list.label.seqNumber" path="seqNumber"/>
 	<acme:input-textbox code="inventor.patronageReport.list.label.creation" path="creation"/>
 	<acme:input-textbox code="inventor.patronageReport.list.label.memorandum" path="memorandum"/>
-	<acme:input-textarea code="inventor.patronageReport.list.label.optionalLink" path="optionalLink"/>
+	<acme:input-url code="inventor.patronageReport.list.label.optionalLink" path="optionalLink"/>
+	
+	<jstl:choose>
+		<jstl:when test="${command == 'create'}">
+			<acme:input-checkbox code="inventor.patronageReport.form.confirm" path="confirm"/>
+			<acme:submit code="inventor.patronageReport.form.button.create" action="/inventor/patronage-report/create"/>
+		</jstl:when>
+	</jstl:choose>
 </acme:form>

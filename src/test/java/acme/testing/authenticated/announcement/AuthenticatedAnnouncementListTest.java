@@ -14,7 +14,7 @@ public class AuthenticatedAnnouncementListTest extends TestHarness {
 		@ParameterizedTest
 		@CsvFileSource(resources = "/authenticated/announcement/list.csv", encoding = "utf-8", numLinesToSkip = 1)
 		@Order(10)
-		public void positiveTest(final int recordIndex,final String creation, final String title,final String critical) {
+		public void positiveTest(final int recordIndex,final String creation, final String title,final String body,final String critical,final String optionalLink) {
 			super.signIn("administrator", "administrator");
 
 			super.clickOnMenu("Announcements", "Recent Announcements");
@@ -23,14 +23,15 @@ public class AuthenticatedAnnouncementListTest extends TestHarness {
 			
 			super.checkColumnHasValue(recordIndex, 0, creation);
 			super.checkColumnHasValue(recordIndex, 1, title);
+			super.checkColumnHasValue(recordIndex, 2, critical);
 
 			super.clickOnListingRecord(recordIndex);
 			super.checkFormExists();
 			super.checkInputBoxHasValue("creation", creation);
 			super.checkInputBoxHasValue("title", title);
-		//	super.checkInputBoxHasValue("body", body);
+			super.checkInputBoxHasValue("body", body);
 			super.checkInputBoxHasValue("critical", critical);
-		//	super.checkInputBoxHasValue("optionalLink", optionalLink);
+			super.checkInputBoxHasValue("optionalLink", optionalLink);
 
 			super.signOut();
 		}

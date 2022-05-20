@@ -10,5 +10,10 @@
 
 authenticated.currency.list.label.name = Name
 authenticated.currency.list.label.isDefault = Default currency
+authenticated.currency.list.label.accepted = Accepted currency
 
+administrator.currency.form.button.create = Create
+administrator.currency.form.confirm.message = Remember that currencies cannot be updated or deleted. Please, confirm that you want to submit this currency
+administrator.currency.form.confirm = Confirm
+administrator.currency.form.error.must-confirm = Please, confirm that you want to submit this currency 
 

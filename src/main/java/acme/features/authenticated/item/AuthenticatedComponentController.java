@@ -38,9 +38,6 @@ public class AuthenticatedComponentController extends AbstractController<Authent
 	@Autowired
 	protected AuthenticatedComponentToolShowService		toolshowService;
 
-//	@Autowired
-//	protected AnonymousComponentCreateService	createService;
-
 	// Constructors -----------------------------------------------------------
 
 
@@ -49,7 +46,6 @@ public class AuthenticatedComponentController extends AbstractController<Authent
 		super.addCommand("list-component", "list", this.listService);
 		super.addCommand("list-tool", "list", this.toollistService);
 		super.addCommand("show", this.showService);
-//		super.addCommand("create", this.createService);
 	}
 
 }

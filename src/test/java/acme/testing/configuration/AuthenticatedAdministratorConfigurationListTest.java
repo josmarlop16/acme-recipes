@@ -18,7 +18,7 @@ public class AuthenticatedAdministratorConfigurationListTest extends TestHarness
 	public void positiveCurrencyAuthenticatedTest(final int recordIndex, final String name, final String isDefault) {
 		super.signIn("inventor2", "inventor2");
 
-		super.clickOnMenu("Configuration", "Currency");
+		super.clickOnMenu("Configuration", "Currencies");
 		super.checkListingExists();
 		super.sortListing(0, "asc");
 		
@@ -34,7 +34,7 @@ public class AuthenticatedAdministratorConfigurationListTest extends TestHarness
 	public void positiveCurrencyAdministratorTest(final int recordIndex, final String name, final String isDefault) {
 		super.signIn("administrator", "administrator");
 
-		super.clickOnMenu("Configuration", "Currency");
+		super.clickOnMenu("Configuration", "Currencies");
 		super.checkListingExists();
 		super.sortListing(0, "asc");
 		

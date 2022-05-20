@@ -13,6 +13,7 @@
 package acme.features.administrator.spam;
 
 import java.util.Collection;
+import java.util.List;
 
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
@@ -25,5 +26,11 @@ public interface AdministratorSpamRepository extends AbstractRepository {
 
 	@Query("select s from Spam s")
 	Collection<Spam> findSpams();
+	
+	@Query("select s.spamTerm from Spam s where s.isStrong = 0")
+	List<String> findWeakSpamsWords();
+	
+	@Query("select s.spamTerm from Spam s where s.isStrong = 1")
+	List<String> findStrongSpamsWords();
 
 }

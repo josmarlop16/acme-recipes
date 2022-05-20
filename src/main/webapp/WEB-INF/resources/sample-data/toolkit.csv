@@ -1,3 +1,5 @@
-key,title,code,description,assemblyNotes,link,key:item
-toolkit-01,Toolkit-01,AEG-234-R,This is a description,This is an assembyNote,http://www.toolkit-01.org,item-01
-toolkit-02,Toolkit-02,AEG-234-X,This is a description,This is an assembyNote,http://www.toolkit-02.org,item-02
+key,title,code,description,assemblyNotes,link,published,key:item,key:inventor
+toolkit-01,Toolkit-01,AEG-234-R,This is a description,This is an assembyNote,http://www.toolkit-01.org,true,item-01,inventor-01
+toolkit-03,Toolkit-03,AEJ-239-H,This is a description,This is an assembyNote,http://www.toolkit-03.org,true,item-03,inventor-03
+toolkit-05,Toolkit-05,AEH-247-K,This is a description,This is an assembyNote,http://www.toolkit-05.org,true,item-01,inventor-01
+toolkit-06,Toolkit-06,AGF-536-L,This is a description,This is an assembyNote,http://www.toolkit-06.org,false,item-02,inventor-03

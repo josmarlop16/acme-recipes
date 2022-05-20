@@ -1,14 +1,14 @@
 key,spam-term,is-strong,threshold
-spam-01,"sex",true,10
-spam-02,"sexo",true,10
-spam-03,"hardcore",true,10
-spam-04,"duro",true,10
-spam-05,"viagra",true,10
-spam-06,"cialis",true,10
-spam-07,"sexy",false,25
-spam-08,"sensual",false,25
-spam-09,"nigeria",false,25
-spam-10,"you've won",false,25
-spam-11,"has ganado",false,25
-spam-12,"one mil-lion",false,25
-spam-13,"un mil-lon",false,25
+spam-01,sex,TRUE,10
+spam-02,sexo,TRUE,10
+spam-03,hardcore,TRUE,10
+spam-04,duro,TRUE,10
+spam-05,viagra,TRUE,10
+spam-06,cialis,TRUE,10
+spam-07,sexy,FALSE,25
+spam-08,sensual,FALSE,25
+spam-09,nigeria,FALSE,25
+spam-10,you've won,FALSE,25
+spam-11,has ganado,FALSE,25
+spam-12,one million,FALSE,25
+spam-13,un millon,FALSE,25

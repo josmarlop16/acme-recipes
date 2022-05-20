@@ -18,8 +18,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import acme.entities.item.Item;
+import acme.features.moneyExchange.MoneyExchangePerform;
 import acme.framework.components.models.Model;
 import acme.framework.controllers.Request;
+import acme.framework.datatypes.Money;
 import acme.framework.entities.Principal;
 import acme.framework.services.AbstractListService;
 import acme.roles.Inventor;
@@ -59,8 +61,13 @@ public class InventorToolListService implements AbstractListService<Inventor, It
 		assert request != null;
 		assert entity != null;
 		assert model != null;
+		final String systemCurrency =  "EUR";//this.repository.systemCurrency();
+		
+		final Money computedPrice=MoneyExchangePerform.computeMoneyExchange(entity.getRetailPrice(), systemCurrency).getTarget();
+		
+		model.setAttribute("computedPrice", computedPrice);
 
-		request.unbind(entity, model, "name", "code", "technology", "description", "retailPrice", "link", "type");
+		request.unbind(entity, model, "name", "code", "technology", "description", "retailPrice", "link", "type","published");
 	}
 
 }

@@ -3,6 +3,7 @@ package acme.testing.inventor.patronage;
 import org.junit.jupiter.api.Order;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvFileSource;
+
 import acme.testing.TestHarness;
 
 public class InventorPatronageListMineTest extends TestHarness {
@@ -22,9 +23,16 @@ public class InventorPatronageListMineTest extends TestHarness {
 		super.sortListing(0, "asc");
 
 		super.checkColumnHasValue(0, 0, status);
+		super.checkColumnHasValue(0, 1, code);
+		super.checkColumnHasValue(0, 2, stuff);
+		super.checkColumnHasValue(0, 3, budget);
+		super.checkColumnHasValue(0, 4, periodOfTime);
+		super.checkColumnHasValue(0, 5, optionalLink);
+				
 
 		super.clickOnListingRecord(0);
 		super.checkFormExists();
+		
 		super.checkInputBoxHasValue("status", status);
 		super.checkInputBoxHasValue("code", code);
 		super.checkInputBoxHasValue("stuff", stuff);
@@ -36,6 +44,4 @@ public class InventorPatronageListMineTest extends TestHarness {
 		super.signOut();
 	}
 
-	// Ancillary methods ------------------------------------------------------
-	
 }

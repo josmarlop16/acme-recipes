@@ -60,6 +60,6 @@ public class InventorToolkitListService implements AbstractListService<Inventor,
 			}
 			model.setAttribute("items", itemNames);
 			
-			request.unbind(entity, model, "title", "code", "description", "assemblyNotes","link");
+			request.unbind(entity, model, "title", "code", "description", "assemblyNotes", "link", "published");
 		}
 }

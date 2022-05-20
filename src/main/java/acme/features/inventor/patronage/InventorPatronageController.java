@@ -1,11 +1,13 @@
 package acme.features.inventor.patronage;
 
-import org.springframework.stereotype.Controller;
-import acme.framework.controllers.AbstractController;
 import javax.annotation.PostConstruct;
-import acme.roles.Inventor;
-import acme.entities.patronages.Patronage;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+
+import acme.entities.patronages.Patronage;
+import acme.framework.controllers.AbstractController;
+import acme.roles.Inventor;
 
 @Controller
 public class InventorPatronageController extends AbstractController<Inventor, Patronage>{
@@ -18,6 +20,12 @@ public class InventorPatronageController extends AbstractController<Inventor, Pa
 	
 	@Autowired
 	protected InventorPatronageShowService showService;
+	
+	@Autowired
+	protected InventorPatronageAcceptService acceptService;
+	
+	@Autowired
+	protected InventorPatronageDeniedService deniedService;
 
 	// Constructors -----------------------------------------------------------
 
@@ -26,5 +34,7 @@ public class InventorPatronageController extends AbstractController<Inventor, Pa
 	protected void initialise() {
 		super.addCommand("list", this.listAllService);
 		super.addCommand("show", this.showService);
+		super.addCommand("accept", "update", this.acceptService);
+		super.addCommand("denied", "update", this.deniedService);
 	}
 }

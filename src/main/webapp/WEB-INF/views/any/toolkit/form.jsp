@@ -18,11 +18,16 @@
 <acme:form>
 	<acme:input-textbox code="any.toolkit.list.label.title" path="title"/>
 	<acme:input-textbox code="any.toolkit.list.label.code" path="code"/>
+	<acme:input-textbox code="any.toolkit.list.label.assembly-notes" path="assemblyNotes"/>
 	<acme:input-textarea code="any.toolkit.list.label.description" path="description"/>
-	<acme:input-textarea code="any.toolkit.list.label.assemblyNotes" path="assemblyNotes"/>
+
+	<acme:input-money code="any.toolkit.list.label.retailPriceEUR" path="EUR"/>
+	<acme:input-money code="any.toolkit.list.label.retailPriceUSD" path="USD"/>
+	<acme:input-money code="any.toolkit.list.label.retailPriceGBP" path="GBP"/>
+	<acme:input-money code="any.toolkit.list.label.computedPrice" path="computedPrice"/>
+
 	<acme:input-url code="any.toolkit.list.label.link" path="link"/>
-	<acme:input-money code="any.toolkit.list.label.item.price" path="item.retailPrice"/>
 	
-	<acme:button code="any.toolkit.form.button.item" action="/any/item/show?id=${itemId}"/>
-	
+	<acme:button code="any.toolkit.form.button.item" action="/any/item/list-by-toolkitId?toolkitId=${toolkitId}"/>
+
 </acme:form>

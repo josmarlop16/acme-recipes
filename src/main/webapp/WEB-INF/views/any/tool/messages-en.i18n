@@ -16,5 +16,6 @@ any.tool.list.label.technology = Technology
 any.tool.list.label.description = Description
 any.tool.list.label.retailPrice = Retail price
 any.tool.list.label.link = Link
+any.tool.list.label.computedPrice = Retail price in System Currency
 
 

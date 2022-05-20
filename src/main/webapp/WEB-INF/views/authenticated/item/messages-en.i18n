@@ -14,4 +14,5 @@ authenticated.component.list.label.technology = Technology
 authenticated.component.list.label.description = Description
 authenticated.component.list.label.retailPrice = Retail price
 authenticated.component.list.label.link = Link
+authenticated.component.list.label.computedPrice= Retail price in System Currency
 

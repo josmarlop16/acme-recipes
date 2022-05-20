@@ -30,9 +30,14 @@
 		
         <!-- Any principals -->
 		<acme:menu-option code="master.menu.chirps" access="permitAll()">
-			<acme:menu-suboption code="master.menu.any.list-chirps" action="/any/chirp/list"/>		
+			<acme:menu-suboption code="master.menu.any.list-chirps" action="/any/chirp/list"/>	
+			<acme:menu-suboption code="master.menu.any.create-chirps" action="/any/chirp/create"/>		
 		</acme:menu-option>
-
+		
+		<acme:menu-option code="master.menu.toolkits" access="permitAll()">
+			<acme:menu-suboption code="master.menu.any.list-toolkits" action="/any/toolkit/list"/>	
+		</acme:menu-option>
+		
 		<acme:menu-option code="master.menu.items" access="permitAll()">
 			<acme:menu-suboption code="master.menu.any.list-tools" action="/any/item/list-tool"/>	
 			<acme:menu-suboption code="master.menu.any.list-components" action="/any/item/list-component"/>		
@@ -41,11 +46,14 @@
 		<!-- Authenticated principals -->
 		<acme:menu-option code="master.menu.authenticated.configuration" access="isAuthenticated()">
 			<acme:menu-suboption code="master.menu.authenticated.configuration.list-spam" action="/authenticated/spam/list"/>
-			<acme:menu-suboption code="master.menu.authenticated.configuration.list-currency" action="/authenticated/currency/list"/>			
+			<acme:menu-suboption code="master.menu.administrator.create-spam" action="/administrator/spam/create" access="hasRole('Administrator')"/>
+			<acme:menu-suboption code="master.menu.authenticated.configuration.list-currency" action="/authenticated/currency/list"/>
+			<acme:menu-suboption code="master.menu.administrator.create-currency" action="/administrator/currency/create" access="hasRole('Administrator')"/>				
 		</acme:menu-option>
     
     <acme:menu-option code="master.menu.announcements" access="isAuthenticated()">
-			<acme:menu-suboption code="master.menu.authenticated.list-announcements" action="/authenticated/announcement/list"/>		
+			<acme:menu-suboption code="master.menu.authenticated.list-announcements" action="/authenticated/announcement/list"/>
+			<acme:menu-suboption code="master.menu.administrator.create-announcements" action="/administrator/announcement/create" access="hasRole('Administrator')"/>	
 		</acme:menu-option> 
 		
 

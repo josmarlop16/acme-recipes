@@ -11,8 +11,13 @@
 any.toolkit.list.label.title = Título
 any.toolkit.list.label.code = Código
 any.toolkit.list.label.description = Descripción
-any.toolkit.list.label.assemblyNotes = Notas de asamblea
+any.toolkit.list.label.assembly-notes = Notas de asamblea
 any.toolkit.list.label.link = Link
 any.toolkit.list.label.item.name = Item
 any.toolkit.list.label.item.price = Precio
+any.toolkit.list.label.published = Publicado
 any.toolkit.form.button.item = Comprobar Item
+any.toolkit.list.label.retailPriceGBP=Precio GBP
+any.toolkit.list.label.retailPriceEUR=Precio EUR
+any.toolkit.list.label.retailPriceUSD=Precio USD
+any.toolkit.list.label.computedPrice= Precio en la divisa del sistema
