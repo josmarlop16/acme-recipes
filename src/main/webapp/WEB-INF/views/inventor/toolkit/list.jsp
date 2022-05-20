@@ -18,10 +18,9 @@
 <acme:list>
 	<acme:list-column code="inventor.toolkit.list.label.title" path="title" width="20%"/>
 	<acme:list-column code="inventor.toolkit.list.label.code" path="code" width="20%"/>
-	<acme:list-column code="inventor.toolkit.list.label.assembly-notes" path="assemblyNotes" width="20%"/>
-	<acme:list-column code="inventor.toolkit.list.label.description" path="description" width="20%"/>
+	<acme:list-column code="inventor.toolkit.list.label.assembly-notes" path="assemblyNotes" width="30%"/>
+	<acme:list-column code="inventor.toolkit.list.label.description" path="description" width="30%"/>
 	<acme:list-column code="inventor.toolkit.list.label.link" path="link" width="50%"/>
-	<acme:list-column code="inventor.toolkit.list.label.item" path="items" width="50%"/>
 	<acme:list-column code="inventor.toolkit.list.label.published" path="published" width="10%"/>
 </acme:list>
 <acme:button code="inventor.toolkit.form.button.create" action="/inventor/toolkit/create"/> 

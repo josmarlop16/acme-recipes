@@ -13,6 +13,8 @@ inventor.toolkit.list.label.code = Código
 inventor.toolkit.list.label.assembly-notes = Notas de montaje
 inventor.toolkit.list.label.description = Descripción
 inventor.toolkit.list.label.link = Link
+inventor.toolkit.list.label.items = Items
+
 
 inventor.toolkit.form.button.item = Ver objetos
 inventor.toolkit.list.label.item = Objetos

@@ -25,6 +25,7 @@ public class PatronPatronageCreateService implements AbstractCreateService<Patro
 
 	@Autowired
 	protected PatronPatronageRepository repository;
+	
 	@Autowired
 	protected AdministratorSpamRepository spamRepository;
 	

@@ -1,11 +1,13 @@
 package acme.features.inventor.toolkit;
 
+import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import acme.components.SpamModule;
+import acme.entities.item.Item;
 import acme.entities.toolkit.Toolkit;
 import acme.features.administrator.spam.AdministratorSpamRepository;
+import acme.features.inventor.item.InventorItemRepository;
 import acme.framework.components.models.Model;
 import acme.framework.controllers.Errors;
 import acme.framework.controllers.Request;
@@ -20,6 +22,9 @@ public class InventorToolkitCreateService implements AbstractCreateService<Inven
 	
 	@Autowired
 	protected AdministratorSpamRepository spamRepository;
+	
+	@Autowired
+	protected InventorItemRepository itemRepository;
 
 	@Override
 	public boolean authorise(final Request<Toolkit> request) {
@@ -32,6 +37,7 @@ public class InventorToolkitCreateService implements AbstractCreateService<Inven
 		assert request != null;
 		assert entity != null;
 		assert errors != null;
+		entity.setItem(this.itemRepository.findItemById(Integer.valueOf(request.getModel().getAttribute("itemId").toString())));
 		request.bind(entity, errors, "title", "code", "description", "assemblyNotes", "link", "published");
 	}
 
@@ -40,6 +46,10 @@ public class InventorToolkitCreateService implements AbstractCreateService<Inven
 		assert request != null;
 		assert entity != null;
 		assert model!=null;
+		
+		final List<Item> Item = this.itemRepository.findAllItem();
+		model.setAttribute("items", Item);
+		
 		request.unbind(entity, model, "title", "code", "description", "assemblyNotes", "link", "published");
 	}
 
@@ -88,8 +98,6 @@ public class InventorToolkitCreateService implements AbstractCreateService<Inven
             errors.state(request, SpamModule.spamValidator(entity.getLink(), this.spamRepository.findWeakSpamsWords(), this.spamRepository.findStrongSpamsWords()), "link", "form.error.spam");
         }
 		
-		
-
 		if (!errors.hasErrors("code")) {
 			final Toolkit existingToolkit;
 			existingToolkit=this.repository.findToolkitByCode(entity.getCode());

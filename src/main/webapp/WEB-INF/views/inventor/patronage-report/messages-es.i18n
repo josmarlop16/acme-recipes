@@ -13,7 +13,7 @@ inventor.patronageReport.list.label.creation = Fecha de creacion
 inventor.patronageReport.list.label.memorandum = Memorandum
 inventor.patronageReport.list.label.optionalLink = Enlace
 inventor.patronageReport.list.label.patronage = Elige el patronaje
-inventor.patronageReport.list.label.patronage.code = Codigo del patronaje
+inventor.patronageReport.list.label.patronageCode = Codigo del patronaje
 
 inventor.patronageReport.form.confirm = Confirmar
 inventor.patronageReport.form.button.update = Actualizar

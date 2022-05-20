@@ -1,11 +1,15 @@
 package acme.features.inventor.toolkit;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import acme.components.SpamModule;
+import acme.entities.item.Item;
 import acme.entities.toolkit.Toolkit;
 import acme.features.administrator.spam.AdministratorSpamRepository;
+import acme.features.inventor.item.InventorItemRepository;
 import acme.framework.components.models.Model;
 import acme.framework.controllers.Errors;
 import acme.framework.controllers.Request;
@@ -20,6 +24,9 @@ public class InventorToolkitUpdateService implements AbstractUpdateService<Inven
 	
 	@Autowired
 	protected AdministratorSpamRepository spamRepository;
+	
+	@Autowired
+	protected InventorItemRepository itemRepository;
 
 	@Override
 	public boolean authorise(final Request<Toolkit> request) {
@@ -43,6 +50,7 @@ public class InventorToolkitUpdateService implements AbstractUpdateService<Inven
 		assert request != null;
 		assert entity != null;
 		assert errors != null;
+		entity.setItem(this.itemRepository.findItemById(Integer.valueOf(request.getModel().getAttribute("itemId").toString())));
 		request.bind(entity, errors, "title", "code", "description", "assemblyNotes", "link", "published");
 	}
 
@@ -51,6 +59,10 @@ public class InventorToolkitUpdateService implements AbstractUpdateService<Inven
 		assert request != null;
 		assert entity != null;
 		assert model!=null;
+		
+		final List<Item> Item = this.itemRepository.findAllItem();
+		model.setAttribute("allItems", Item);
+		
 		request.unbind(entity, model, "title", "code", "description", "assemblyNotes", "link", "published");
 	}
 
@@ -90,13 +102,10 @@ public class InventorToolkitUpdateService implements AbstractUpdateService<Inven
 	@Override
 	public Toolkit findOne(final Request<Toolkit> request) {
 		assert request != null;
-
 		Toolkit result;
 		int id;
-
 		id=request.getModel().getInteger("id");
 		result=this.repository.findToolkitById(id);
-
 		return result;
 	}
 

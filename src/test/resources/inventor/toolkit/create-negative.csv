@@ -1,3 +1,3 @@
-recordIndex,title,code,description,assemblyNotes,link
-0,Toolkit-10,AEG-130-J,This is a description,This is an assembyNote,wronglink
-1,Toolkit-11,WRONGCODE,This is a description,This is an assembyNote,http://www.toolkit-11.org
+recordIndex,title,code,description,assemblyNotes,link,item
+0,Toolkit-10,AEG-130-J,This is a description,This is an assembyNote,wronglink,item-06
+1,Toolkit-11,WRONGCODE,This is a description,This is an assembyNote,http://www.toolkit-11.org,item-06
