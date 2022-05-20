@@ -21,9 +21,9 @@
 	<acme:input-textbox code="inventor.toolkit.list.label.assembly-notes" path="assemblyNotes"/>
 	<acme:input-textarea code="inventor.toolkit.list.label.description" path="description"/>
 
-	<acme:input-money code="inventor.item.list.label.retailPriceEUR" path="EUR"/>
-	<acme:input-money code="inventor.item.list.label.retailPriceUSD" path="USD"/>
-	<acme:input-money code="inventor.item.list.label.retailPriceGBP" path="GBP"/>
+	<acme:input-money code="inventor.toolkit.list.label.retailPriceEUR" path="EUR"/>
+	<acme:input-money code="inventor.toolkit.list.label.retailPriceUSD" path="USD"/>
+	<acme:input-money code="inventor.toolkit.list.label.computedPrice" path="GBP"/>
 	<acme:input-money code="inventor.toolkit.list.label.computedPrice" path="computedPrice"/>
 
 	<acme:input-url code="inventor.toolkit.list.label.link" path="link"/>

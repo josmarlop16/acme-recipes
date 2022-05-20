@@ -21,9 +21,9 @@
 	<acme:input-textbox code="any.toolkit.list.label.assembly-notes" path="assemblyNotes"/>
 	<acme:input-textarea code="any.toolkit.list.label.description" path="description"/>
 
-	<acme:input-money code="any.item.list.label.retailPriceEUR" path="EUR"/>
-	<acme:input-money code="any.item.list.label.retailPriceUSD" path="USD"/>
-	<acme:input-money code="any.item.list.label.retailPriceGBP" path="GBP"/>
+	<acme:input-money code="any.toolkit.list.label.retailPriceEUR" path="EUR"/>
+	<acme:input-money code="any.toolkit.list.label.retailPriceUSD" path="USD"/>
+	<acme:input-money code="any.toolkit.list.label.retailPriceGBP" path="GBP"/>
 	<acme:input-money code="any.toolkit.list.label.computedPrice" path="computedPrice"/>
 
 	<acme:input-url code="any.toolkit.list.label.link" path="link"/>
