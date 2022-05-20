@@ -26,3 +26,6 @@ patron.patronage.form.button.create = Create
 patron.patronage.form.button.update = Update
 patron.patronage.form.button.delete = Delete
 patron.patronage.form.button.publish = Publish
+
+patron.patronage.form.error.negative-budget = The amount selected could not be negative
+patron.patronage.form.error.accepted-currency = Invalid currency

@@ -1,9 +1,14 @@
 package acme.features.patron.patronage;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import acme.components.SpamModule;
 import acme.entities.patronages.Patronage;
+import acme.features.administrator.currency.AdministratorCurrencyRepository;
+import acme.features.administrator.spam.AdministratorSpamRepository;
 import acme.framework.components.models.Model;
 import acme.framework.controllers.Errors;
 import acme.framework.controllers.Request;
@@ -18,6 +23,11 @@ public class PatronPatronageUpdateService implements AbstractUpdateService<Patro
 	@Autowired
 	protected PatronPatronageRepository repository;
 	
+	@Autowired
+	protected AdministratorSpamRepository spamRepository;
+	
+	@Autowired
+	protected AdministratorCurrencyRepository currencyRepository;
 
 	// AbstractUpdateService<Patron, Patronage> -------------------------------------
 
@@ -65,7 +75,25 @@ public class PatronPatronageUpdateService implements AbstractUpdateService<Patro
 		assert entity != null;
 		assert errors != null;
 		
+		if (!errors.hasErrors("code")) {
+            errors.state(request, SpamModule.spamValidator(entity.getCode(), this.spamRepository.findWeakSpamsWords(), this.spamRepository.findStrongSpamsWords()), "code", "form.error.spam");
+        }
+		if (!errors.hasErrors("stuff")) {
+            errors.state(request, SpamModule.spamValidator(entity.getStuff(), this.spamRepository.findWeakSpamsWords(), this.spamRepository.findStrongSpamsWords()), "stuff", "form.error.spam");
+        }
+		if (!errors.hasErrors("optionalLink")) {
+            errors.state(request, SpamModule.spamValidator(entity.getOptionalLink(), this.spamRepository.findWeakSpamsWords(), this.spamRepository.findStrongSpamsWords()), "optionalLink", "form.error.spam");
+        }
+		
+		if (!errors.hasErrors("budget")) {
 
+			List<String> acceptedCurrency= this.currencyRepository.findCurrencyNames();
+			String selectedCurrency = entity.getBudget().getCurrency();
+			errors.state(request,acceptedCurrency.contains(selectedCurrency),"budget", "patron.patronage.form.error.accepted-currency");
+				
+			
+			errors.state(request, entity.getBudget().getAmount() > 0, "budget", "patron.patronage.form.error.negative-budget");
+		}
 		
 
 	}
