@@ -68,6 +68,8 @@
 
 
 		
+		<acme:menu-option code="master.menu.userAccounts" action="/any/user-account/list" access="permitAll()">	
+		</acme:menu-option>
 		
 		<!-- Patron -->
 		<acme:menu-option code="master.menu.patron" access="hasRole('Patron')">
