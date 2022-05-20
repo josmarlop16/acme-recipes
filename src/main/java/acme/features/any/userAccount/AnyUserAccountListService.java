@@ -12,7 +12,9 @@
 
 package acme.features.any.userAccount;
 
+import java.util.ArrayList;
 import java.util.Collection;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -20,6 +22,9 @@ import org.springframework.stereotype.Service;
 import acme.framework.components.models.Model;
 import acme.framework.controllers.Request;
 import acme.framework.entities.UserAccount;
+import acme.framework.entities.UserAccountStatus;
+import acme.framework.roles.Administrator;
+import acme.framework.roles.Anonymous;
 import acme.framework.roles.Any;
 import acme.framework.roles.UserRole;
 import acme.framework.services.AbstractListService;
@@ -32,8 +37,6 @@ public class AnyUserAccountListService implements AbstractListService<Any, UserA
 	@Autowired
 	protected AnyUserAccountRepository repository;
 
-	// AbstractListService<Administrator, UserAccount> interface --------------
-
 
 	@Override
 	public boolean authorise(final Request<UserAccount> request) {
@@ -44,15 +47,25 @@ public class AnyUserAccountListService implements AbstractListService<Any, UserA
 	
 	@Override
 	public Collection<UserAccount> findMany(final Request<UserAccount> request) {
-		assert request != null;
 
 		Collection<UserAccount> result;
 
 		result = this.repository.findAllUserAccounts();
-		for (final UserAccount userAccount : result) {
-			userAccount.getRoles().forEach(r -> {
-			;});
+		final List<UserAccount> userAccounts = new ArrayList<>();
+		
+		for(final UserAccount ua: result) {
+			if(ua.isEnabled()== false || ua.hasRole(Anonymous.class) || ua.hasRole(Administrator.class)) {
+				userAccounts.add(ua);
+			}
 		}
+		
+		result.removeAll(userAccounts);
+		
+		for (final UserAccount ua : result) {
+			ua.getRoles().forEach(r -> {
+			});
+		}
+
 		return result;
 	}
 	
@@ -62,26 +75,30 @@ public class AnyUserAccountListService implements AbstractListService<Any, UserA
 		assert entity != null;
 		assert model != null;
 
-		final StringBuilder buffer = new StringBuilder();
-		final Collection<UserRole> roles = entity.getRoles();
+		StringBuilder buffer;
+		Collection<UserRole> roles;
+
+		request.unbind(entity, model, "username", "identity.name", "identity.surname", "identity.email");
+
+		roles = entity.getRoles();
+		buffer = new StringBuilder();
 		
 		
-		if (entity.isEnabled()) {
-			
-			
-		} 	
 		
-		for (final UserRole role: roles) {
-			
+		for (final UserRole role : roles) {
 			buffer.append(role.getAuthorityName());
 			buffer.append(" ");
-				
-				
-			model.setAttribute("roleList", buffer.toString());
-			request.unbind(entity, model, "username", "identity.name", "identity.surname");
-				
-			
 		}
-	}
+		model.setAttribute("roleList", buffer.toString());
 
+		
+
+		if (entity.isEnabled()) {
+			model.setAttribute("status", UserAccountStatus.ENABLED);
+		} else {
+			model.setAttribute("status", UserAccountStatus.DISABLED);
+		}
+			
+	}
+		
 }
