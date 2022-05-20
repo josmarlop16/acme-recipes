@@ -68,8 +68,7 @@
 
 
 		
-		<acme:menu-option code="master.menu.userAccounts" access="isAnonymous()">
-			<acme:menu-suboption code="master.menu.anonymous.list-userAccounts" action="/any/userAccount/list"/>		
+		<acme:menu-option code="master.menu.userAccounts" action="/any/user-account/list" access="permitAll()">	
 		</acme:menu-option>
 		
 		<!-- Patron -->

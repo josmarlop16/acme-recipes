@@ -18,8 +18,7 @@ master.menu.toolkits = Toolkits
 master.menu.components = Componentes
 master.menu.tools = Herramientas
 master.menu.inventor.patronages = Patrones
-master.menu.userAccounts = Cuentas de usuario
-master.menu.user-account = Lista de usuarios
+master.menu.userAccounts = Cuentas de usuario por rol
 
 # master.menu.anonymous #######################################################
 
@@ -28,7 +27,7 @@ master.menu.anonymous = Anónimo
 master.menu.any.list-tools = Listar herramientas
 master.menu.any.list-components = Listar componentes
 
-master.menu.anonymous.list-userAccounts = Listar cuentas de usuario
+master.menu.any.list-userAccounts = Listar cuentas de usuario por rol
 
 master.menu.anonymous.jorge-toledo-vega = 49520347J: TOLEDO VEGA, JORGE
 master.menu.anonymous.jose-antonio-marquez-lopez = 80236202N: MARQUEZ LOPEZ, JOSE ANTONIO
