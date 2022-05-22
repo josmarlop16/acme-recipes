@@ -54,7 +54,7 @@ public class AnyUserAccountListService implements AbstractListService<Any, UserA
 		final List<UserAccount> userAccounts = new ArrayList<>();
 		
 		for(final UserAccount ua: result) {
-			if(ua.isEnabled()== false || ua.hasRole(Anonymous.class) || ua.hasRole(Administrator.class)) {
+			if(!ua.isEnabled() || ua.hasRole(Anonymous.class) || ua.hasRole(Administrator.class)) {
 				userAccounts.add(ua);
 			}
 		}

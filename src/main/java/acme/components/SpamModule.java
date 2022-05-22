@@ -6,6 +6,10 @@ import java.util.regex.Pattern;
 
 public class SpamModule {
 
+	private SpamModule() {
+	    throw new IllegalStateException("Utility class");
+	  }
+
 	/**
 	 * Metodo para validar si una cadena de texto contiene una cantidad de spam por encima o por debajo del umbral permitido
 	 * @param text Cadena de texto que queremos validar

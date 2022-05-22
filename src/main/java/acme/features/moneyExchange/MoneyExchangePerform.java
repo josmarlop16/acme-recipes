@@ -8,6 +8,10 @@ import acme.framework.datatypes.Money;
 import acme.framework.helpers.StringHelper;
 
 public class MoneyExchangePerform {
+	
+	private MoneyExchangePerform() {
+	    throw new IllegalStateException("Utility class");
+	  }
 	// Ancillary methods ------------------------------------------------------
 
 		public static MoneyExchange computeMoneyExchange(final Money source, final String targetCurrency) {
