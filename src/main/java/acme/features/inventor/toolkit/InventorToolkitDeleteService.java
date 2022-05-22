@@ -2,6 +2,7 @@ package acme.features.inventor.toolkit;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
 import acme.entities.toolkit.Toolkit;
 import acme.framework.components.models.Model;
 import acme.framework.controllers.Errors;
@@ -27,7 +28,7 @@ public class InventorToolkitDeleteService implements AbstractDeleteService<Inven
 		masterId=request.getModel().getInteger("id");
 		toolkit=this.repository.findToolkitById(masterId);
 		inventor=toolkit.getInventor();
-		result=toolkit.getPublished() == false && request.isPrincipal(inventor);
+		result=!toolkit.getPublished() && request.isPrincipal(inventor);
 
 		return result;
 	}

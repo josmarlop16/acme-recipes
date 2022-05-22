@@ -23,10 +23,10 @@ import acme.framework.repositories.AbstractRepository;
 @Repository
 public interface AnyItemRepository extends AbstractRepository {
 	
-	@Query("select i from Item i where i.type = 1")
+	@Query("select i from Item i where i.type = 1 and i.published=1")
 	Collection<Item> findComponents();
 	
-	@Query("select i from Item i where i.type = 0")
+	@Query("select i from Item i where i.type = 0 and i.published=1")
 	Collection<Item> findTools();
 	
 	@Query("select i from Item i where i.id = :id")
@@ -35,7 +35,5 @@ public interface AnyItemRepository extends AbstractRepository {
 	@Query("select c.name from Currency c where c.isDefault=true")
 	String systemCurrency();
 	
-	@Query("select t.item from Toolkit t where t.id = :toolkitId")
-	Collection<Item> findItemsByToolkitId(int toolkitId);
-
+	
 }

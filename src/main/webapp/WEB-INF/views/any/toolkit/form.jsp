@@ -28,6 +28,6 @@
 
 	<acme:input-url code="any.toolkit.list.label.link" path="link"/>
 	
-	<acme:button code="any.toolkit.form.button.item" action="/any/item/list-by-toolkitId?toolkitId=${toolkitId}"/>
-
+	<%-- <acme:button code="any.toolkit.form.button.item" action="/any/item/list-by-toolkitId?toolkitId=${toolkitId}"/>
+ --%>
 </acme:form>

@@ -1,8 +1,10 @@
 package acme.features.inventor.toolkit;
 
 import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
 import acme.components.SpamModule;
 import acme.entities.item.Item;
 import acme.entities.toolkit.Toolkit;
@@ -37,7 +39,7 @@ public class InventorToolkitCreateService implements AbstractCreateService<Inven
 		assert request != null;
 		assert entity != null;
 		assert errors != null;
-		entity.setItem(this.itemRepository.findItemById(Integer.valueOf(request.getModel().getAttribute("itemId").toString())));
+		
 		request.bind(entity, errors, "title", "code", "description", "assemblyNotes", "link", "published");
 	}
 
@@ -47,8 +49,8 @@ public class InventorToolkitCreateService implements AbstractCreateService<Inven
 		assert entity != null;
 		assert model!=null;
 		
-		final List<Item> Item = this.itemRepository.findAllItem();
-		model.setAttribute("items", Item);
+		final List<Item> item = this.itemRepository.findAllItem();
+		model.setAttribute("items", item);
 		
 		request.unbind(entity, model, "title", "code", "description", "assemblyNotes", "link", "published");
 	}

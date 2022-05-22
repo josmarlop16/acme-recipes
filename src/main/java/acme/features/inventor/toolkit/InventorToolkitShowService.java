@@ -1,15 +1,14 @@
 package acme.features.inventor.toolkit;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
-import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import acme.entities.item.Item;
+import acme.entities.quantity.Quantity;
 import acme.entities.toolkit.Toolkit;
-import acme.features.inventor.item.InventorItemRepository;
 import acme.features.moneyExchange.MoneyExchangePerform;
 import acme.framework.components.models.Model;
 import acme.framework.controllers.Request;
@@ -25,8 +24,6 @@ public class InventorToolkitShowService implements AbstractShowService<Inventor,
 		@Autowired
 		protected InventorToolkitRepository repository;
 		
-		@Autowired
-		protected InventorItemRepository itemRepository;
 
 		@Override
 		public boolean authorise(final Request<Toolkit> request) {
@@ -39,64 +36,73 @@ public class InventorToolkitShowService implements AbstractShowService<Inventor,
 			assert request != null;
 			assert entity != null;
 			assert model != null;
-			List<Item> items;
-			items=this.repository.findItemsByToolkitId(entity.getId()).stream().collect(Collectors.toList());
+			Collection<Quantity> quantities;
+			quantities=this.repository.findQuantityByToolkitId(entity.getId());
 			
-			
-			final Money eurRetailPrice = new Money();
-			final Money usdRetailPrice = new Money();
-			final Money gbpRetailPrice = new Money();
 			final String systemCurrency= this.repository.systemCurrency();
 			
 			String currency;
 			final List<Money> retailPrices = new ArrayList<>();
-	//		for (final Item item:items) {
-	//			retailPrices.add(item.getRetailPrice());
-	//		}
 			
 			  double eurAmount=0.0;
 			  double usdAmount=0.0;
 			  double gbpAmount=0.0;
 			  
-			  for(final Item item: items){
-				  currency=item.getRetailPrice().getCurrency();
+		
+			 
 			  
-			  switch(currency) {
-			  	case "EUR":
-			  		eurAmount=+item.getRetailPrice().getAmount();
-			  		break;
-			  	case "USD":
-			  		usdAmount=+item.getRetailPrice().getAmount();
-			  		break;
-			  	case "GBP":
-			  		gbpAmount=+item.getRetailPrice().getAmount();
-			  		break;
-			  	default:
-			  		break;
+			  for(final Quantity item: quantities){
+				  
+				  currency=item.getItem().getRetailPrice().getCurrency();
+				  
+				 if(currency.equals("EUR")) {
+					 eurAmount=eurAmount+item.getItem().getRetailPrice().getAmount()*item.getQuantity();
+			  		 
+				 }else if(currency.equals("USD")) {
+					 usdAmount=usdAmount+item.getItem().getRetailPrice().getAmount()*item.getQuantity();
+				 }else if(currency.equals("GBP")) {
+					 gbpAmount=gbpAmount+item.getItem().getRetailPrice().getAmount()*item.getQuantity();
+				 }
 			  
-			  	}
 			  }
-			  eurRetailPrice.setCurrency("EUR");
-			  eurRetailPrice.setAmount(eurAmount);
-			  retailPrices.add(eurRetailPrice);
+			  if(eurAmount !=0.0) {
+				  final Money eurRetailPrice = new Money();
+				  eurRetailPrice.setCurrency("EUR");
+				  eurRetailPrice.setAmount(eurAmount);
+				  retailPrices.add(eurRetailPrice);
+				  model.setAttribute("EUR", eurRetailPrice);
+					
+			  }
+			 
+			  if(usdAmount!=0.0) {
+				  final Money usdRetailPrice = new Money();
+				  usdRetailPrice.setCurrency("USD");
+				  usdRetailPrice.setAmount(usdAmount);
+				  retailPrices.add(usdRetailPrice);
+				  model.setAttribute("USD", usdRetailPrice);
+			
+			  }
+			 
+			  if(gbpAmount!=0.0) {
+				  final Money gbpRetailPrice = new Money();
+				  gbpRetailPrice.setCurrency("GBP");
+				  gbpRetailPrice.setAmount(gbpAmount);
+				  retailPrices.add(gbpRetailPrice);
+				  model.setAttribute("GBP", gbpRetailPrice);
+			  }
 			  
-			  usdRetailPrice.setCurrency("USD");
-			  usdRetailPrice.setAmount(usdAmount);
-			  retailPrices.add(usdRetailPrice);
-
-			  gbpRetailPrice.setCurrency("GBP");
-			  gbpRetailPrice.setAmount(gbpAmount);
-			  retailPrices.add(gbpRetailPrice);
-	
+			  
+			
 			final Money totalComputed=new Money();
 			totalComputed.setCurrency(systemCurrency);
 			Double amounts=0.0;
 			for(final Money retailPrice:retailPrices) {
-				if(retailPrice.getCurrency() != systemCurrency) {
-					amounts+=MoneyExchangePerform.computeMoneyExchange(retailPrice, systemCurrency).getTarget().getAmount();
-				}else {
+				if(retailPrice.getCurrency().equals(systemCurrency)) {
 					amounts+=retailPrice.getAmount();
+				}else {
+					amounts+=MoneyExchangePerform.computeMoneyExchange(retailPrice, systemCurrency).getTarget().getAmount();
 				}
+				
 				
 				
 			}
@@ -105,15 +111,10 @@ public class InventorToolkitShowService implements AbstractShowService<Inventor,
 			totalComputed.setCurrency(systemCurrency);
 						
 			model.setAttribute("toolkitId", entity.getId());
-			model.setAttribute("EUR", eurRetailPrice);
-			model.setAttribute("USD", usdRetailPrice);
-			model.setAttribute("GBP", gbpRetailPrice);
-			
 
 			model.setAttribute("computedPrice", totalComputed);
 			
-			model.setAttribute("items", this.itemRepository.findAllItem());
-			model.setAttribute("itemId", entity.getItem().getId());
+			
 			
 
 			request.unbind(entity, model, "title", "code", "description", "assemblyNotes", "link", "published");
