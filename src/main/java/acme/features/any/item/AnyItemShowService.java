@@ -46,7 +46,7 @@ public class AnyItemShowService implements AbstractShowService<Any, Item> {
 		assert entity != null;
 		assert model != null;
 		final String defaultCurrency = this.repository.systemCurrency();
-		if(entity.getRetailPrice().getCurrency()!=defaultCurrency) {
+		if(!entity.getRetailPrice().getCurrency().equals(defaultCurrency)) {
 			final Money retailPrice=MoneyExchangePerform.computeMoneyExchange(entity.getRetailPrice(),defaultCurrency).getTarget();
 			model.setAttribute("computedPrice", retailPrice);
 		}else {

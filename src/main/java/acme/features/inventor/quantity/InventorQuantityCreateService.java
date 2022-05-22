@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import acme.entities.item.Item;
+import acme.entities.item.ItemType;
 import acme.entities.quantity.Quantity;
 import acme.entities.toolkit.Toolkit;
 import acme.features.administrator.spam.AdministratorSpamRepository;
@@ -54,7 +55,11 @@ public class InventorQuantityCreateService implements AbstractCreateService<Inve
 		assert entity != null;
 		assert model!=null;
 		
-		final List<Item> items = this.repository.findItems();
+		
+		final List<Item> itemsToolkit=this.repository.findItemsByToolkidId(entity.getToolkit().getId());
+		final List<Item> items=this.repository.findItemPublished();
+		
+		items.removeAll(itemsToolkit);
 		model.setAttribute("items", items);
 		model.setAttribute("toolkitId", request.getModel().getAttribute("toolkitId"));
 		
@@ -90,6 +95,9 @@ public class InventorQuantityCreateService implements AbstractCreateService<Inve
 		if (!errors.hasErrors("quantity")) {
 			
 			errors.state(request, entity.getQuantity() >0, "quantity", "inventor.quantity.form.error.nullquantity");
+		}
+		if(entity.getItem().getType().equals(ItemType.TOOL)) {
+			errors.state(request, entity.getQuantity() == 1, "quantity", "inventor.quantity.form.error.one-tool");
 		}
 		
        

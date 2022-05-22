@@ -2,6 +2,6 @@ key,type,name,code,technology,description,retailPrice,link,published,key:invento
 item-01,COMPONENT,Component-01,TRE-897-O,Technology-01,This is a description,EUR 13.00,http://www.component-01.org,true,inventor-01
 item-02,TOOL,Tool-01,TYE-567-U,Technology-01,This is a description,EUR 10.87,http://www.tool-01.org,true,inventor-01
 item-03,COMPONENT,Component-02,TRE-897-V,Technology-01,This is a description,EUR 15.00,http://www.component-02.org,false,inventor-01
-item-04,COMPONENT,Component-03,TRE-897-Z,Technology-02,This is a description,EUR 15.00,http://www.component-03.org,false,inventor-01
+item-04,COMPONENT,Component-03,TRE-897-Z,Technology-02,This is a description,EUR 15.00,http://www.component-03.org,true,inventor-01
 item-05,TOOL,Tool-02,TYF-567-U,Technology-01,This is a description,EUR 10.87,http://www.tool-02.org,false,inventor-01
 item-06,TOOL,Tool-03,TYG-567-U,Technology-02,This is a description,EUR 10.87,http://www.tool-03.org,false,inventor-01

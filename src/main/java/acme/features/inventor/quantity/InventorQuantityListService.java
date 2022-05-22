@@ -1,10 +1,12 @@
 package acme.features.inventor.quantity;
 
 import java.util.Collection;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import acme.entities.item.Item;
 import acme.entities.quantity.Quantity;
 import acme.entities.toolkit.Toolkit;
 import acme.framework.components.models.Model;
@@ -46,7 +48,14 @@ public class InventorQuantityListService implements AbstractListService<Inventor
 		
 		final Integer toolkitId=request.getModel().getInteger("toolkitId");
 		final Toolkit toolkit=this.repository.findOneToolkitById(toolkitId);
-		showCreate=(request.isPrincipal(toolkit.getInventor())) && !toolkit.getPublished();
+		
+		final List<Item> itemsToolkit=this.repository.findItemsByToolkidId(toolkitId);
+		final List<Item> items=this.repository.findItemPublished();
+		
+		items.removeAll(itemsToolkit);
+		
+		showCreate=(request.isPrincipal(toolkit.getInventor())) && !toolkit.getPublished() && !items.isEmpty();
+		
 		
 		model.setAttribute("toolkitId", toolkitId);
 		model.setAttribute("showCreate", showCreate);

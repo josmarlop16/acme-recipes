@@ -45,10 +45,14 @@ public class InventorQuantityShowService implements AbstractShowService<Inventor
 		assert request != null;
 		assert entity != null;
 		assert model != null;
-		final Integer quantityId=request.getModel().getInteger("id");
-
-		final List<Item> items=this.repository.findItemByQuantityId(quantityId);
-		model.setAttribute("items", items);
+		
+		
+		final List<Item> itemsToolkit=this.repository.findItemsByToolkidId(entity.getToolkit().getId());
+		final List<Item> items=this.repository.findItemPublished();
+		
+		itemsToolkit.removeAll(items);
+		
+		model.setAttribute("items", itemsToolkit);
 		model.setAttribute("item.name", entity.getItem().getName());
 		model.setAttribute("item.code", entity.getItem().getCode());
 		model.setAttribute("item.technology", entity.getItem().getTechnology());
