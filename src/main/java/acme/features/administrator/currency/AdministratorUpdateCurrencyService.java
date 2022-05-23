@@ -10,10 +10,10 @@ import acme.framework.components.models.Model;
 import acme.framework.controllers.Errors;
 import acme.framework.controllers.Request;
 import acme.framework.roles.Administrator;
-import acme.framework.services.AbstractCreateService;
+import acme.framework.services.AbstractUpdateService;
 
 @Service
-public class AdministratorCurrencyCreateService implements AbstractCreateService<Administrator, Currency> {
+public class AdministratorUpdateCurrencyService implements AbstractUpdateService<Administrator, Currency> {
 
 	// Internal state ---------------------------------------------------------
 
@@ -32,23 +32,12 @@ public class AdministratorCurrencyCreateService implements AbstractCreateService
 	}
 
 	@Override
-	public Currency instantiate(final Request<Currency> request) {
-		assert request != null;
-		Currency result;
-		result = new Currency();
-		result.setName("");
-		result.setAccepted(false);
-		result.setIsDefault(false);
-		return result;
-	}
-
-	@Override
 	public void bind(final Request<Currency> request, final Currency entity, final Errors errors) {
 		assert request != null;
 		assert entity != null;
 		assert errors != null;
 
-		request.bind(entity, errors, "name", "accepted", "isDefault", "confirm");
+		request.bind(entity, errors, "name", "accepted", "isDefault");
 	}
 
 	@Override
@@ -60,11 +49,23 @@ public class AdministratorCurrencyCreateService implements AbstractCreateService
 		if (!errors.hasErrors("name")) {
             errors.state(request, SpamModule.spamValidator(entity.getName(), this.spamRepository.findWeakSpamsWords(), this.spamRepository.findStrongSpamsWords()), "name", "form.error.spam");
         }
-
-		boolean isConfirmed;
-
-		isConfirmed = request.getModel().getBoolean("confirm");
-		errors.state(request, isConfirmed, "confirm", "administrator.currency.form.error.must-confirm");
+		
+		final boolean defaultSelected = request.getModel().getAttribute("isDefault").equals("true");
+		
+		if(defaultSelected) {
+			final Currency currentDefault = this.repository.findDefaultCurrency();	
+			
+			final String currentSelectedName = entity.getName();
+			final String currentDefaultName = currentDefault.getName();
+			
+			if(!currentSelectedName.equals(currentDefaultName)) {
+				currentDefault.setIsDefault(false);
+				this.repository.save(currentDefault);
+			}
+		}
+		
+		
+		
 	}
 
 	@Override
@@ -78,11 +79,24 @@ public class AdministratorCurrencyCreateService implements AbstractCreateService
 
 
 	@Override
-	public void create(final Request<Currency> request, final Currency entity) {
+	public void update(final Request<Currency> request, final Currency entity) {
 		assert request != null;
 		assert entity != null;
 
 		this.repository.save(entity);
+	}
+
+	@Override
+	public Currency findOne(final Request<Currency> request) {
+		assert request != null;
+		
+		Currency result;
+		int id;
+		
+		id=request.getModel().getInteger("id");
+		result=this.repository.findCurrencyById(id);
+		
+		return result;
 	}
 
 

@@ -1,15 +1,15 @@
 package acme.features.inventor.item;
 
-import java.util.Collections;
-import java.util.HashSet;
-import java.util.Set;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import acme.components.SpamModule;
+import acme.entities.currency.Currency;
 import acme.entities.item.Item;
 import acme.entities.item.ItemType;
+import acme.features.administrator.currency.AdministratorCurrencyRepository;
 import acme.features.administrator.spam.AdministratorSpamRepository;
 import acme.framework.components.models.Model;
 import acme.framework.controllers.Errors;
@@ -23,6 +23,9 @@ public class InventorItemCreateService implements AbstractCreateService<Inventor
 	
 	@Autowired
 	protected InventorItemRepository repository;
+	
+	@Autowired
+	protected AdministratorCurrencyRepository currencyRepository;
 	
 	@Autowired
 	protected AdministratorSpamRepository spamRepository;
@@ -58,6 +61,7 @@ public class InventorItemCreateService implements AbstractCreateService<Inventor
 		
 		final Item result;
 		final Inventor inventor;
+		final String defaultCurrencyName = this.currencyRepository.findDefaultCurrency().getName();
 	
 		inventor = this.repository.findInventorById(request.getPrincipal().getActiveRoleId());
 		result = new Item();
@@ -68,7 +72,7 @@ public class InventorItemCreateService implements AbstractCreateService<Inventor
 		
 		final Money defaultMoney = new Money();
 		defaultMoney.setAmount(0.0);
-		defaultMoney.setCurrency("EUR");
+		defaultMoney.setCurrency(defaultCurrencyName);
 		result.setRetailPrice(defaultMoney);
 		result.setInventor(inventor);
 		result.setType(ItemType.TOOL);
@@ -83,6 +87,8 @@ public class InventorItemCreateService implements AbstractCreateService<Inventor
 		assert request != null;
 		assert entity != null;
 		assert errors != null;
+		
+		System.out.println(entity.getRetailPrice());
 		
 		if (!errors.hasErrors("name")) {
             errors.state(request, SpamModule.spamValidator(entity.getName(), this.spamRepository.findWeakSpamsWords(), this.spamRepository.findStrongSpamsWords()), "name", "form.error.spam");
@@ -104,7 +110,7 @@ public class InventorItemCreateService implements AbstractCreateService<Inventor
             errors.state(request, SpamModule.spamValidator(entity.getLink(), this.spamRepository.findWeakSpamsWords(), this.spamRepository.findStrongSpamsWords()), "link", "form.error.spam");
         }
 	
-	
+		
 		if (!errors.hasErrors("code")) {
 			final Item existingItem;
 			
@@ -113,15 +119,19 @@ public class InventorItemCreateService implements AbstractCreateService<Inventor
 		}
 		
 		if (!errors.hasErrors("retailPrice")) {
-			final Set<String> allowedCurrencies;
-			allowedCurrencies=new HashSet<String>();
-			final String[] allowedCurrenciesArray=this.repository.findAllowedCurrencies();
-			Collections.addAll(allowedCurrencies, allowedCurrenciesArray);
-			
-			errors.state(request, allowedCurrencies.contains(entity.getRetailPrice().getCurrency()) , "retailPrice", "inventor.invention.form.error.retailPrice-notAllowed");
+			final Boolean validateCurrency = this.validateRetailPrice(entity.getRetailPrice());
+			errors.state(request, validateCurrency , "retailPrice", "inventor.invention.form.error.retailPrice-notAllowed");
 		}
        
 		
+	}
+	
+	private Boolean validateRetailPrice(final Money retailPrice) {
+		final List<Currency> acceptedCurrencies = this.currencyRepository.findAcceptedCurrencies();
+		
+		final String myCurrency = retailPrice.getCurrency();
+
+		return acceptedCurrencies.stream().anyMatch(c -> c.getName().equals(myCurrency));
 	}
 
 	

@@ -17,6 +17,7 @@ public class Currency extends AbstractEntity{
 
 	protected static final long serialVersionUID = 1L;
 	
+	
 	// Attributes -------------------------------------------------------------
 	
 	@NotBlank
