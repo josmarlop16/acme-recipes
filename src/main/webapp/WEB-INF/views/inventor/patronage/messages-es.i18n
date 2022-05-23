@@ -18,6 +18,7 @@ inventor.patronage.list.label.periodOfTime =Periodo de tiempo
 inventor.patronage.list.label.optionalLink= Link
 inventor.patronage.list.label.published = Publicado
 
+inventor.patronage.patron.list.label.username = Nombre del Patron
 inventor.patronage.patron.list.label.company= Compañia
 inventor.patronage.patron.list.label.statement= Declaracion
 inventor.patronage.patron.list.label.optionalLink= Link

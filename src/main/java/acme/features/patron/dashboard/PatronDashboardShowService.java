@@ -53,7 +53,7 @@ public class PatronDashboardShowService implements AbstractShowService<Patron, D
 	@Override
 	public Dashboard findOne(final Request<Dashboard> request) {
 		assert request != null;
-		
+		int patronId = request.getPrincipal().getActiveRoleId();
 		final Dashboard result = new Dashboard();
 		
 //		total number of pro-posed/accepted/denied patronages
@@ -82,32 +82,32 @@ public class PatronDashboardShowService implements AbstractShowService<Patron, D
 		final Double maximumBudgetOfDeniedPatronages;
 		
 //		Number of proposed patronages
-		totalNumberOfProposedPatronages = this.repository.totalNumberOfProposedPatronages();
-		totalNumberOfAcceptedPatronages = this.repository.totalNumberOfAcceptedPatronages();
-		totalNumberOfDeniedPatronages = this.repository.totalNumberOfDeniedPatronages();
+		totalNumberOfProposedPatronages = this.repository.totalNumberOfProposedPatronages(patronId);
+		totalNumberOfAcceptedPatronages = this.repository.totalNumberOfAcceptedPatronages(patronId);
+		totalNumberOfDeniedPatronages = this.repository.totalNumberOfDeniedPatronages(patronId);
 		
 //		Average patronage budget
-		averageBudgetOfProposedPatronages = this.repository.averageBudgetOfProposedPatronages();
-		averageBudgetOfAcceptedPatronages = this.repository.averageBudgetOfAcceptedPatronages();
-		averageBudgetOfDeniedPatronages = this.repository.averageBudgetOfDeniedPatronages();
+		averageBudgetOfProposedPatronages = this.repository.averageBudgetOfProposedPatronages(patronId);
+		averageBudgetOfAcceptedPatronages = this.repository.averageBudgetOfAcceptedPatronages(patronId);
+		averageBudgetOfDeniedPatronages = this.repository.averageBudgetOfDeniedPatronages(patronId);
 		
 		
 //		Deviation budget
-		deviationBudgetOfProposedPatronages = this.repository.deviationBudgetOfProposedPatronages();
-		deviationBudgetOfAcceptedPatronages = this.repository.deviationBudgetOfAcceptedPatronages();
-		deviationBudgetOfDeniedPatronages = this.repository.deviationBudgetOfDeniedPatronages();
+		deviationBudgetOfProposedPatronages = this.repository.deviationBudgetOfProposedPatronages(patronId);
+		deviationBudgetOfAcceptedPatronages = this.repository.deviationBudgetOfAcceptedPatronages(patronId);
+		deviationBudgetOfDeniedPatronages = this.repository.deviationBudgetOfDeniedPatronages(patronId);
 		
 		
 //		Minimum patronages budget
-		minimumBudgetOfProposedPatronages = this.repository.minimumBudgetOfProposedPatronages();
-		minimumBudgetOfAcceptedPatronages = this.repository.minimumBudgetOfAcceptedPatronages();
-		minimumBudgetOfDeniedPatronages = this.repository.minimumBudgetOfDeniedPatronages();
+		minimumBudgetOfProposedPatronages = this.repository.minimumBudgetOfProposedPatronages(patronId);
+		minimumBudgetOfAcceptedPatronages = this.repository.minimumBudgetOfAcceptedPatronages(patronId);
+		minimumBudgetOfDeniedPatronages = this.repository.minimumBudgetOfDeniedPatronages(patronId);
 		
 		
 //		Maximum patronages budget
-		maximumBudgetOfProposedPatronages = this.repository.maximumBudgetOfProposedPatronages();
-		maximumBudgetOfAcceptedPatronages = this.repository.maximumBudgetOfAcceptedPatronages();
-		maximumBudgetOfDeniedPatronages = this.repository.maximumBudgetOfDeniedPatronages();
+		maximumBudgetOfProposedPatronages = this.repository.maximumBudgetOfProposedPatronages(patronId);
+		maximumBudgetOfAcceptedPatronages = this.repository.maximumBudgetOfAcceptedPatronages(patronId);
+		maximumBudgetOfDeniedPatronages = this.repository.maximumBudgetOfDeniedPatronages(patronId);
 		
 		result.setTotalNumberOfProposedPatronages(totalNumberOfProposedPatronages);
 		result.setTotalNumberOfAcceptedPatronages(totalNumberOfAcceptedPatronages);
