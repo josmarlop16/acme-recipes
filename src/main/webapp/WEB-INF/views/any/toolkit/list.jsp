@@ -22,6 +22,7 @@
 	<acme:list-column code="any.toolkit.list.label.assembly-notes" path="assemblyNotes" width="20%"/>
 	<acme:list-column code="any.toolkit.list.label.link" path="link" width="20%"/>
 	<acme:list-column code="any.toolkit.list.label.published" path="published" width="10%"/>
+	<acme:list-payload path="payload"/>
 	
 	
 </acme:list> 
