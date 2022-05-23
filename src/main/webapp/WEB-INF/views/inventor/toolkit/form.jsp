@@ -53,7 +53,6 @@
 		
 	</jstl:choose>
 
-	
 	<jstl:choose>
 	
 		<jstl:when test="${acme:anyOf(command,'show, update, delete, publish' ) && published == false}">

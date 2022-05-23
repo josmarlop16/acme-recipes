@@ -46,7 +46,6 @@ public class InventorQuantityCreateService implements AbstractCreateService<Inve
 		
 		entity.setItem(item);
 		request.bind(entity, errors, "quantity","item.name");
-	
 	}
 
 	@Override
@@ -54,7 +53,6 @@ public class InventorQuantityCreateService implements AbstractCreateService<Inve
 		assert request != null;
 		assert entity != null;
 		assert model!=null;
-		
 		
 		final List<Item> itemsToolkit=this.repository.findItemsByToolkidId(entity.getToolkit().getId());
 		final List<Item> items=this.repository.findItemPublished();
@@ -64,8 +62,6 @@ public class InventorQuantityCreateService implements AbstractCreateService<Inve
 		model.setAttribute("toolkitId", request.getModel().getAttribute("toolkitId"));
 		
 		request.unbind(entity, model, "quantity","item.name");
-	
-		
 	}
 
 	@Override
@@ -78,11 +74,8 @@ public class InventorQuantityCreateService implements AbstractCreateService<Inve
 		final Integer toolkitId=request.getModel().getInteger("toolkitId");
 		final Toolkit toolkit= this.repository.findOneToolkitById(toolkitId);
 		
-		
-		
 		result.setToolkit(toolkit);
-
-
+		
 		return result;
 	}
 
@@ -93,18 +86,12 @@ public class InventorQuantityCreateService implements AbstractCreateService<Inve
 		assert errors != null;
 		
 		if (!errors.hasErrors("quantity")) {
-			
 			errors.state(request, entity.getQuantity() >0, "quantity", "inventor.quantity.form.error.nullquantity");
 		}
 		if(entity.getItem().getType().equals(ItemType.TOOL)) {
 			errors.state(request, entity.getQuantity() == 1, "quantity", "inventor.quantity.form.error.one-tool");
 		}
-		
-       
-		
 	}
-
-	
 
 	@Override
 	public void create(final Request<Quantity> request, final Quantity entity) {
@@ -112,10 +99,7 @@ public class InventorQuantityCreateService implements AbstractCreateService<Inve
 		assert entity != null;
 		final String itemName= request.getModel().getAttribute("item.name").toString();
 		final Item item=this.repository.findItemByName(itemName);
-		
 		entity.setItem(item);
-
 		this.repository.save(entity);
-		
 	}
 }
