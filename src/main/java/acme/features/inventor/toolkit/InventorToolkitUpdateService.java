@@ -40,7 +40,7 @@ public class InventorToolkitUpdateService implements AbstractUpdateService<Inven
 		masterId=request.getModel().getInteger("id");
 		toolkit=this.repository.findToolkitById(masterId);
 		inventor=toolkit.getInventor();
-		result=toolkit.getPublished() == false && request.isPrincipal(inventor);
+		result=!toolkit.getPublished()  && request.isPrincipal(inventor);
 
 		return result;
 	}
@@ -50,7 +50,7 @@ public class InventorToolkitUpdateService implements AbstractUpdateService<Inven
 		assert request != null;
 		assert entity != null;
 		assert errors != null;
-		entity.setItem(this.itemRepository.findItemById(Integer.valueOf(request.getModel().getAttribute("itemId").toString())));
+		
 		request.bind(entity, errors, "title", "code", "description", "assemblyNotes", "link", "published");
 	}
 
@@ -60,8 +60,8 @@ public class InventorToolkitUpdateService implements AbstractUpdateService<Inven
 		assert entity != null;
 		assert model!=null;
 		
-		final List<Item> Item = this.itemRepository.findAllItem();
-		model.setAttribute("allItems", Item);
+		final List<Item> item = this.itemRepository.findAllItem();
+		model.setAttribute("allItems", item);
 		
 		request.unbind(entity, model, "title", "code", "description", "assemblyNotes", "link", "published");
 	}

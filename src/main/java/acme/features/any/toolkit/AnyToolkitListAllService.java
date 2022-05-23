@@ -1,9 +1,10 @@
 package acme.features.any.toolkit;
 
 import java.util.Collection;
-import java.util.stream.Collectors;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
 import acme.entities.toolkit.Toolkit;
 import acme.framework.components.models.Model;
 import acme.framework.controllers.Request;
@@ -43,8 +44,6 @@ public class AnyToolkitListAllService implements AbstractListService<Any, Toolki
 		assert request != null;
 		assert entity != null;
 		assert model != null;
-		
-		model.setAttribute("items", this.repository.findItemsByToolkitId(entity.getId()).stream().collect(Collectors.toList()));
 		
 		request.unbind(entity, model, "title", "code", "description", "assemblyNotes", "link", "published");
 	}

@@ -1,0 +1,19 @@
+inventor.quantity.form.label.quantity= Quantity
+inventor.quantity.list.label.quantity=Quantity
+inventor.item.form.label.name = Name
+inventor.item.form.label.code = Code
+inventor.item.form.label.technology = Technology
+inventor.item.form.label.description = Description
+inventor.item.form.label.type = Type
+inventor.item.form.label.link = Link
+inventor.item.form.button.update = Update
+nventor.item.form.button.delete = Delete
+inventor.quantity.form.label.select = Select
+inventor.quantity.list.button.create = Create
+inventor.quantity.list.label.computedPrice= Retail price in system currency
+inventor.item.form.label.price= Retail price
+inventor.quantity.form.button.create= Create
+inventor.quantity.form.error.nullquantity= Not null quantity
+inventor.quantity.form.error.one-tool= Toolkit already has one tool of this type associated
+
+

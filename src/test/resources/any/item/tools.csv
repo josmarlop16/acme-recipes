@@ -1,4 +1,3 @@
-recordIndex,name,code,technology,description,link,key:inventor
-0,Tool-01,TYE-567-U,Technology-01,This is a description,http://www.tool-01.org,inventor-01
-1,Tool-02,TYF-567-U,Technology-01,This is a description,http://www.tool-02.org,inventor-01
-2,Tool-03,TYG-567-U,Technology-02,This is a description,http://www.tool-03.org,inventor-01
+recordIndex,name,code,technology,description,link,key:inventor,published
+0,Tool-01,TYE-567-U,Technology-01,This is a description,http://www.tool-01.org,inventor-01,true
+2,Tool-03,TYG-567-U,Technology-02,This is a description,http://www.tool-03.org,inventor-01,true
