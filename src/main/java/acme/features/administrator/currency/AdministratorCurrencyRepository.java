@@ -30,4 +30,13 @@ public interface AdministratorCurrencyRepository extends AbstractRepository {
 	@Query("select c.name from Currency c where c.accepted = 1")
 	List<String> findCurrencyNames();
 
+	@Query("select c from Currency c where c.id = :id")
+	Currency findCurrencyById(int id);
+
+	@Query("select c from Currency c")
+	Collection<Currency> findCurrencysAdmin();
+	
+	@Query("select c from Currency c where c.isDefault = 1")
+	Currency findDefaultCurrency();
+
 }

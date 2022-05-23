@@ -44,7 +44,7 @@ public class AdministratorCurrencyListService implements AbstractListService<Adm
 
 		Collection<Currency> result;
 
-		result = this.repository.findCurrencys();
+		result = this.repository.findCurrencysAdmin();
 
 		return result;
 	}
