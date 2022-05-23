@@ -39,7 +39,7 @@ public class InventorPatronageShowService implements AbstractShowService<Invento
 			model.setAttribute("computedPrice", entity.getBudget());
 		}
 
-		request.unbind(entity, model, "status", "code", "stuff", "budget", "periodOfTime", "optionalLink",
+		request.unbind(entity, model, "status", "code", "stuff", "budget", "creationMoment", "startDate", "endDate", "optionalLink",
 				 "patron.company", "patron.statement", "patron.optionalLink", "published");
 		model.setAttribute("patronUsername", entity.getPatron().getUserAccount().getUsername());
 	}

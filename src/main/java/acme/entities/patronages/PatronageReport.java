@@ -37,6 +37,7 @@ public class PatronageReport extends AbstractEntity{
 	
 	@Past
 	@Temporal(TemporalType.DATE)
+	@NotNull
 	protected Date creation;
 	
 	@NotBlank

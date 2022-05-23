@@ -20,7 +20,7 @@ public class InventorPatronageDeclinePositiveTest extends TestHarness {
 		super.clickOnMenu("Inventor", "Patronage List");
 		super.checkListingExists();
 		super.sortListing(0, "asc");
-
+		
 		super.clickOnListingRecord(0);
 		super.checkFormExists();
 		super.checkInputBoxHasValue("status", "PROPOSED");

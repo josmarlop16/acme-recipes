@@ -21,7 +21,11 @@
 	<acme:input-textbox code="patron.patronage.list.label.code" path="code"/>
 	<acme:input-textarea code="patron.patronage.list.label.stuff" path="stuff"/>
 	<acme:input-money code="patron.patronage.list.label.budget" path="budget"/>
-	<acme:input-moment code="patron.patronage.list.label.periodOfTime" path="periodOfTime"/>
+
+	<acme:input-moment readonly="true" code="patron.patronage.list.label.startDate" path="creationMoment"/>
+	<acme:input-moment readonly="true" code="patron.patronage.list.label.startDate" path="startDate"/>
+	<acme:input-moment readonly="true" code="patron.patronage.list.label.endDate" path="endDate"/>
+	
 	<acme:input-url code="patron.patronage.list.label.optionalLink" path="optionalLink"/>
 	<acme:input-select code="patron.patronage.list.label.published" path="published">
 		<acme:input-option code="false" value="false" selected="${published == false }"/>

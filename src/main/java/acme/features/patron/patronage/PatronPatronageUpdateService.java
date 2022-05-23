@@ -66,7 +66,7 @@ public class PatronPatronageUpdateService implements AbstractUpdateService<Patro
 		assert entity != null;
 		assert errors != null;
 		entity.setInventor(this.repository.findInventorById(Integer.valueOf(request.getModel().getAttribute("inventorId").toString())));
-		request.bind(entity, errors, "status", "code", "stuff", "budget", "periodOfTime", "optionalLink", "published");
+		request.bind(entity, errors, "status", "code", "stuff", "budget","creationMoment", "startDate","endDate", "optionalLink", "published");
 	}
 
 	@Override
@@ -84,11 +84,13 @@ public class PatronPatronageUpdateService implements AbstractUpdateService<Patro
 		if (!errors.hasErrors("optionalLink")) {
             errors.state(request, SpamModule.spamValidator(entity.getOptionalLink(), this.spamRepository.findWeakSpamsWords(), this.spamRepository.findStrongSpamsWords()), "optionalLink", "form.error.spam");
         }
+
+		
 		
 		if (!errors.hasErrors("budget")) {
 
-			List<String> acceptedCurrency= this.currencyRepository.findCurrencyNames();
-			String selectedCurrency = entity.getBudget().getCurrency();
+			final List<String> acceptedCurrency= this.currencyRepository.findCurrencyNames();
+			final String selectedCurrency = entity.getBudget().getCurrency();
 			errors.state(request,acceptedCurrency.contains(selectedCurrency),"budget", "patron.patronage.form.error.accepted-currency");
 				
 			
@@ -104,7 +106,7 @@ public class PatronPatronageUpdateService implements AbstractUpdateService<Patro
 		assert entity != null;
 		assert model != null;
 		
-		request.unbind(entity, model, "status", "code", "stuff", "budget", "periodOfTime", "optionalLink", "published");
+		request.unbind(entity, model, "status", "code", "stuff", "budget","creationMoment","startDate","endDate", "optionalLink", "published");
 		model.setAttribute("inventors", this.repository.findAllInventors());
 		model.setAttribute("inventId", entity.getInventor().getId());
 	}

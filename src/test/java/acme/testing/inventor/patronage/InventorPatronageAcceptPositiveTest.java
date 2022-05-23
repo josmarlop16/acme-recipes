@@ -15,7 +15,8 @@ public class InventorPatronageAcceptPositiveTest extends TestHarness {
 	@ParameterizedTest
 	@CsvFileSource(resources = "/inventor/patronage/list-mine.csv", encoding = "utf-8", numLinesToSkip = 1)
 	@Order(10)
-	public void acceptPositiveTest(final String status, final String code, final String stuff, final String budget, final String periodOfTime, final String optionalLink) {
+	public void acceptPositiveTest(final int recordIndex, final String status, final String code, final String stuff, final String budget, 
+								   final String creationMoment, final String startDate, final String endDate, final String optionalLink) {
 		super.signIn("administrator", "administrator");
 		super.clickOnMenu("Inventor", "Patronage List");
 		super.checkListingExists();

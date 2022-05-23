@@ -29,7 +29,7 @@
 			<acme:input-money code="inventor.toolkit.list.label.retailPriceUSD" path="USD" readonly="true"/>
 			<acme:input-money code="inventor.toolkit.list.label.retailPriceGBP" path="GBP" readonly="true"/> 
 			<acme:input-money code="inventor.toolkit.list.label.computedPrice" path="computedPrice" readonly="true"/>
-			<acme:input-select code="inventor.toolkit.list.label.published" path="published" readonly="true">
+			<acme:input-select  code="inventor.toolkit.list.label.published" path="published" readonly="true">
 				<acme:input-option code="true" value="true" selected="${published == true}"/>
 				<acme:input-option code="false" value="false" selected="${published == false }"/>
 		</acme:input-select>	
@@ -45,7 +45,7 @@
 			<acme:input-money code="inventor.toolkit.list.label.retailPriceUSD" path="USD" readonly="true"/>
 			<acme:input-money code="inventor.toolkit.list.label.retailPriceGBP" path="GBP" readonly="true"/>
 			<acme:input-money code="inventor.toolkit.list.label.computedPrice" path="computedPrice" readonly="true"/>
-			<acme:input-select code="inventor.toolkit.list.label.published" path="published">
+			<acme:input-select code="inventor.toolkit.list.label.published" path="published" readonly="true">
 				<acme:input-option code="true" value="true" selected="${published == true}"/>
 				<acme:input-option code="false" value="false" selected="${published == false }"/>
 			</acme:input-select>	

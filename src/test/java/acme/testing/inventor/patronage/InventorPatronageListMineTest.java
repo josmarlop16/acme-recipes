@@ -15,19 +15,20 @@ public class InventorPatronageListMineTest extends TestHarness {
 	@ParameterizedTest
 	@CsvFileSource(resources = "/inventor/patronage/list-mine.csv", encoding = "utf-8", numLinesToSkip = 1)
 	@Order(10)
-	public void positiveTest(final String status, final String code, final String stuff, final String budget, final String periodOfTime, final String optionalLink, final String published) {
+	public void positiveTest(final int recordIndex, final String status, final String code, final String stuff, final String budget, 
+		   					final String creationMoment, final String startDate, final String endDate, final String optionalLink, final String published) {
 		super.signIn("administrator", "administrator");
 
 		super.clickOnMenu("Inventor", "Patronage List");
 		super.checkListingExists();
 		super.sortListing(0, "asc");
 
-		super.checkColumnHasValue(0, 0, status);
-		super.checkColumnHasValue(0, 1, code);
-		super.checkColumnHasValue(0, 2, stuff);
-		super.checkColumnHasValue(0, 3, budget);
-		super.checkColumnHasValue(0, 4, periodOfTime);
-		super.checkColumnHasValue(0, 5, optionalLink);
+		super.checkColumnHasValue(recordIndex, 0, status);
+		super.checkColumnHasValue(recordIndex, 1, code);
+		super.checkColumnHasValue(recordIndex, 2, stuff);
+		super.checkColumnHasValue(recordIndex, 3, budget);
+		super.checkColumnHasValue(recordIndex, 4, creationMoment);
+		super.checkColumnHasValue(recordIndex, 5, optionalLink);
 				
 
 		super.clickOnListingRecord(0);
@@ -37,7 +38,9 @@ public class InventorPatronageListMineTest extends TestHarness {
 		super.checkInputBoxHasValue("code", code);
 		super.checkInputBoxHasValue("stuff", stuff);
 		super.checkInputBoxHasValue("budget", budget);
-		super.checkInputBoxHasValue("periodOfTime", periodOfTime);
+		super.checkInputBoxHasValue("creationMoment", creationMoment);
+		super.checkInputBoxHasValue("startDate", startDate);
+		super.checkInputBoxHasValue("endDate", endDate);
 		super.checkInputBoxHasValue("optionalLink", optionalLink);
 		super.checkInputBoxHasValue("published", published);
 
