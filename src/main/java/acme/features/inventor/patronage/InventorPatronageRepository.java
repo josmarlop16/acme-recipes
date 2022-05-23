@@ -10,7 +10,7 @@ import acme.framework.repositories.AbstractRepository;
 
 public interface InventorPatronageRepository extends AbstractRepository{
 
-	@Query("select p from Patronage p where p.inventor.id = :inventorId")
+	@Query("select p from Patronage p where p.inventor.id = :inventorId and p.published=true")
 	Collection<Patronage> findAllPatronagesByInventorId(int inventorId);
 	
 	@Query("select p from Patronage p where p.id = :id")

@@ -17,13 +17,13 @@
 
 <acme:form>
 	<h1>PATRONAGE</h1>
-	<acme:input-textbox code="inventor.patronage.list.label.status" path="status"/>
-	<acme:input-textbox code="inventor.patronage.list.label.code" path="code"/>
-	<acme:input-textarea code="inventor.patronage.list.label.stuff" path="stuff"/>
-	<acme:input-money code="inventor.patronage.list.label.budget" path="budget"/>
+	<acme:input-textbox code="inventor.patronage.list.label.status" path="status" readonly="true"/>
+	<acme:input-textbox code="inventor.patronage.list.label.code" path="code" readonly="true"/>
+	<acme:input-textarea code="inventor.patronage.list.label.stuff" path="stuff" readonly="true"/>
+	<acme:input-money code="inventor.patronage.list.label.budget" path="budget" readonly="true"/>
 	<acme:input-money code="inventor.patronage.list.label.computedPrice" path="computedPrice" readonly="true"/>
-	<acme:input-moment code="inventor.patronage.list.label.periodOfTime" path="periodOfTime"/>
-	<acme:input-url code="inventor.patronage.list.label.optionalLink" path="optionalLink"/>
+	<acme:input-moment code="inventor.patronage.list.label.periodOfTime" path="periodOfTime" readonly="true"/>
+	<acme:input-url code="inventor.patronage.list.label.optionalLink" path="optionalLink" readonly="true"/>
 	<acme:input-textbox code="inventor.patronage.list.label.published" path="published" readonly="true"/>
 
     
@@ -37,6 +37,7 @@
 	
 
 	<h1>PATRON</h1>
+	<acme:input-textbox code="inventor.patronage.patron.list.label.username" path="patronUsername" readonly = "true"/>
 	<acme:input-textbox code="inventor.patronage.patron.list.label.company" path="patron.company" readonly="true"/>
 	<acme:input-textarea code="inventor.patronage.patron.list.label.statement" path="patron.statement" readonly="true"/>
 	<acme:input-url code="inventor.patronage.patron.list.label.optionalLink" path="patron.optionalLink" readonly="true"/>

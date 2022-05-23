@@ -35,11 +35,15 @@
 		</jstl:forEach>
 	</acme:input-select>
 
-	<h1>Inventor</h1>
-	<acme:input-textbox code="patron.patronage.inventor.list.label.company" path="inventor.company" readonly = "true"/>
-	<acme:input-textarea code="patron.patronage.inventor.list.label.statement" path="inventor.statement" readonly = "true"/>
-	<acme:input-url code="patron.patronage.inventor.list.label.optionalLink" path="inventor.optionalLink" readonly = "true"/>
-
+	<jstl:choose>
+		<jstl:when test="${command == 'show'}">
+			<h1>Inventor</h1>
+			<acme:input-textbox code="patron.patronage.inventor.list.label.username" path="inventorUsername" readonly = "true"/>
+			<acme:input-textbox code="patron.patronage.inventor.list.label.company" path="inventor.company" readonly = "true"/>
+			<acme:input-textarea code="patron.patronage.inventor.list.label.statement" path="inventor.statement" readonly = "true"/>
+			<acme:input-url code="patron.patronage.inventor.list.label.optionalLink" path="inventor.optionalLink" readonly = "true"/>
+		</jstl:when>
+	</jstl:choose>
 	
 	<jstl:choose>
 		<jstl:when test="${command == 'create'}">
