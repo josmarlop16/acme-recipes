@@ -22,7 +22,6 @@ public class Quantity extends AbstractEntity {
 	@Min(1)
 	protected Integer quantity;
 
-	
 	@NotNull
 	@Valid
 	@ManyToOne(optional = false)
