@@ -50,7 +50,7 @@ public class AdministratorUpdateCurrencyService implements AbstractUpdateService
             errors.state(request, SpamModule.spamValidator(entity.getName(), this.spamRepository.findWeakSpamsWords(), this.spamRepository.findStrongSpamsWords()), "name", "form.error.spam");
         }
 		
-		final Boolean defaultSelected = request.getModel().getAttribute("isDefault").equals("true");
+		final boolean defaultSelected = request.getModel().getAttribute("isDefault").equals("true");
 		
 		if(defaultSelected) {
 			final Currency currentDefault = this.repository.findDefaultCurrency();	
