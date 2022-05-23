@@ -30,7 +30,10 @@ public class AdministratorSpamController extends AbstractController<Administrato
 	protected AdministratorSpamListService		listService;
 	
 	@Autowired
-	protected AdministratorSpamCreateService		createService;
+	protected AdministratorSpamUpdateService		updateService;
+	
+	@Autowired
+	protected AdministratorSpamShowService	showService;
 	
 	// Constructors -----------------------------------------------------------
 
@@ -38,7 +41,8 @@ public class AdministratorSpamController extends AbstractController<Administrato
 	@PostConstruct
 	protected void initialise() {
 		super.addCommand("list", this.listService);
-		super.addCommand("create", this.createService);
+		super.addCommand("update", this.updateService);
+		super.addCommand("show", this.showService);
 	}
 
 }

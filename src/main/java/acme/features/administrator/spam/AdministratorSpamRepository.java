@@ -33,4 +33,7 @@ public interface AdministratorSpamRepository extends AbstractRepository {
 	@Query("select s.spamTerm from Spam s where s.isStrong = 1")
 	List<String> findStrongSpamsWords();
 
+	@Query("select s from Spam s where s.id = :id")
+	Spam findSpamWordById(int id);
+
 }

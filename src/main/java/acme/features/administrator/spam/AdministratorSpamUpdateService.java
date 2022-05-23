@@ -2,15 +2,16 @@ package acme.features.administrator.spam;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
 import acme.entities.spam.Spam;
 import acme.framework.components.models.Model;
 import acme.framework.controllers.Errors;
 import acme.framework.controllers.Request;
 import acme.framework.roles.Administrator;
-import acme.framework.services.AbstractCreateService;
+import acme.framework.services.AbstractUpdateService;
 
 @Service
-public class AdministratorSpamCreateService implements AbstractCreateService<Administrator, Spam> {
+public class AdministratorSpamUpdateService implements AbstractUpdateService<Administrator, Spam> {
 
 	// Internal state ---------------------------------------------------------
 
@@ -24,37 +25,32 @@ public class AdministratorSpamCreateService implements AbstractCreateService<Adm
 		result = request.getPrincipal().hasRole(Administrator.class);
 		return result;
 	}
-
-	@Override
-	public Spam instantiate(final Request<Spam> request) {
-		assert request != null;
-		Spam result;
-		result = new Spam();
-		result.setSpamTerm("");
-		result.setIsStrong(false);
-		result.setThreshold(2);
-		return result;
-	}
-
+	
 	@Override
 	public void bind(final Request<Spam> request, final Spam entity, final Errors errors) {
 		assert request != null;
 		assert entity != null;
 		assert errors != null;
-
-		request.bind(entity, errors, "spamTerm", "isStrong", "threshold", "confirm");
+		
+		request.bind(entity, errors, "spamTerm", "isStrong", "threshold");
 	}
 
+	
+	
 	@Override
 	public void validate(final Request<Spam> request, final Spam entity, final Errors errors) {
 		assert request != null;
 		assert entity != null;
 		assert errors != null;
-
-		boolean isConfirmed;
-
-		isConfirmed = request.getModel().getBoolean("confirm");
-		errors.state(request, isConfirmed, "confirm", "administrator.spam.form.error.must-confirm");
+		
+		if(request.getModel().getAttribute("isStrong").equals("true")) {
+			entity.setThreshold(10);
+			entity.setIsStrong(true);
+		}else{
+			entity.setThreshold(25);
+			entity.setIsStrong(false);
+		}
+		
 	}
 
 	@Override
@@ -67,8 +63,22 @@ public class AdministratorSpamCreateService implements AbstractCreateService<Adm
 	}
 
 
+
 	@Override
-	public void create(final Request<Spam> request, final Spam entity) {
+	public Spam findOne(final Request<Spam> request) {
+		assert request != null;
+		
+		Spam result;
+		int id;
+		
+		id=request.getModel().getInteger("id");
+		result=this.repository.findSpamWordById(id);
+		
+		return result;
+	}
+
+	@Override
+	public void update(final Request<Spam> request, final Spam entity) {
 		assert request != null;
 		assert entity != null;
 

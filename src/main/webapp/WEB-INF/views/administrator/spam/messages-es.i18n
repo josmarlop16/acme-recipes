@@ -12,7 +12,6 @@ authenticated.spam.list.label.spamTerm = Palabra
 authenticated.spam.list.label.isStrong = Explícito
 authenticated.spam.list.label.threshold = Umbral
 
-administrator.spam.form.button.create = Crear
+administrator.spam.form.button.update = Actualizar
 administrator.spam.form.confirm.message = Recuerde que las palabras no válidas no pueden ser modificadas o borradas. ¿Está seguro que quiere crear esta palabra?
 administrator.spam.form.confirm = Confirmar
-administrator.spam.form.error.must-confirm = Por favor, confirma que quieres crear esta palabra
