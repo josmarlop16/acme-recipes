@@ -68,6 +68,10 @@
 		
 	</jstl:choose>
 	
-	<acme:button code="inventor.toolkit.form.button.item" action="/inventor/quantity/list?toolkitId=${toolkitId}"/>
+	<jstl:choose>
+		<jstl:when test="${command == 'show'}">
+			<acme:button code="inventor.toolkit.form.button.item" action="/inventor/quantity/list?toolkitId=${toolkitId}"/>
+		</jstl:when>
+	</jstl:choose>
 
 </acme:form>

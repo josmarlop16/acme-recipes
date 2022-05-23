@@ -5,7 +5,9 @@ import java.util.Collection;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import acme.entities.item.Item;
 import acme.entities.toolkit.Toolkit;
+import acme.features.any.item.AnyItemRepository;
 import acme.framework.components.models.Model;
 import acme.framework.controllers.Request;
 import acme.framework.roles.Any;
@@ -20,7 +22,9 @@ public class AnyToolkitListAllService implements AbstractListService<Any, Toolki
 	@Autowired
 	protected AnyToolkitRepository repository;
 
-
+	@Autowired
+	protected AnyItemRepository itemRepository;
+	
 	@Override
 	public boolean authorise(final Request<Toolkit> request) {
 		assert request != null;
@@ -45,7 +49,20 @@ public class AnyToolkitListAllService implements AbstractListService<Any, Toolki
 		assert entity != null;
 		assert model != null;
 		
+		StringBuilder payloadBuilder = new StringBuilder();
+		
 		request.unbind(entity, model, "title", "code", "description", "assemblyNotes", "link", "published");
+		
+		Collection<Item> listItems = itemRepository.findItemsByToolkitId(entity.getId());
+		
+		for (Item i : listItems) {
+			payloadBuilder.append(i.getName());
+			payloadBuilder.append(", ");
+		}
+		
+		String payload = payloadBuilder.toString();
+		
+		model.setAttribute("payload", payload);
 	}
 
 }
