@@ -22,7 +22,9 @@
 	<acme:input-textarea code="inventor.patronage.list.label.stuff" path="stuff" readonly="true"/>
 	<acme:input-money code="inventor.patronage.list.label.budget" path="budget" readonly="true"/>
 	<acme:input-money code="inventor.patronage.list.label.computedPrice" path="computedPrice" readonly="true"/>
-	<acme:input-moment code="inventor.patronage.list.label.periodOfTime" path="periodOfTime" readonly="true"/>
+	<acme:input-moment readonly="true" code="patron.patronage.list.label.startDate" path="creationMoment"/>
+	<acme:input-moment readonly="true" code="patron.patronage.list.label.startDate" path="startDate"/>
+	<acme:input-moment readonly="true" code="patron.patronage.list.label.endDate" path="endDate"/>
 	<acme:input-url code="inventor.patronage.list.label.optionalLink" path="optionalLink" readonly="true"/>
 	<acme:input-textbox code="inventor.patronage.list.label.published" path="published" readonly="true"/>
 

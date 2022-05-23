@@ -56,7 +56,7 @@ public class InventorPatronageDeniedService implements AbstractUpdateService<Inv
 		assert entity != null;
 		assert errors != null;
 		
-		request.bind(entity, errors, "status", "code", "stuff", "budget", "periodOfTime", "optionalLink",
+		request.bind(entity, errors, "status", "code", "stuff", "budget", "creationMoment", "startDate", "endDate", "optionalLink",
 				"patron.company", "patron.statement", "patron.optionalLink");
 	}
 	
@@ -67,7 +67,7 @@ public class InventorPatronageDeniedService implements AbstractUpdateService<Inv
 		assert entity != null;
 		assert model != null;
 		
-		request.unbind(entity, model, "status", "code", "stuff", "budget", "periodOfTime", "optionalLink",
+		request.unbind(entity, model, "status", "code", "stuff", "budget", "creationMoment", "startDate", "endDate", "optionalLink",
 				 "patron.company", "patron.statement", "patron.optionalLink");
 	}
 

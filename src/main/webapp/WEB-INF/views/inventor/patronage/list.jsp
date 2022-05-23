@@ -20,6 +20,6 @@
 	<acme:list-column code="inventor.patronage.list.label.code" path="code" width="20%"/>
 	<acme:list-column code="inventor.patronage.list.label.stuff" path="stuff" width="20%"/>
 	<acme:list-column code="inventor.patronage.list.label.budget" path="budget" width="20%"/>
-	<acme:list-column code="inventor.patronage.list.label.periodOfTime" path="periodOfTime" width="20%"/>
+	<acme:list-column code="inventor.patronage.list.label.periodOfTime" path="creationMoment" width="20%"/>
 	<acme:list-column code="inventor.patronage.list.label.optionalLink" path="optionalLink" width="20%"/>
 </acme:list> 

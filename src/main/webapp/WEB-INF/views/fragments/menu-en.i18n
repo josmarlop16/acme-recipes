@@ -18,7 +18,7 @@ master.menu.toolkits = Toolkits
 master.menu.inventor.patronages = Patronages
 master.menu.components = Components
 master.menu.tools = Tools
-master.menu.userAccounts = User Accounts by Role
+master.menu.userAccounts = Users
 
 # master.menu.anonymous #######################################################
 

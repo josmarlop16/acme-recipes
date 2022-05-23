@@ -64,9 +64,10 @@ public class InventorQuantityUpdateService implements AbstractUpdateService<Inve
 	public void validate(final Request<Quantity> request, final Quantity entity, final Errors errors) {
 		assert request != null;
 		assert errors != null;
+		
+		
 		if (!errors.hasErrors("quantity")) {
-			
-			errors.state(request, entity.getQuantity() >0, "quantity", "inventor.quantity.form.error.nullquantity");
+			errors.state(request, entity.getQuantity() > 0, "quantity", "inventor.quantity.form.error.nullquantity");
 		}
 		
 		if(entity.getItem().getType().equals(ItemType.TOOL)) {

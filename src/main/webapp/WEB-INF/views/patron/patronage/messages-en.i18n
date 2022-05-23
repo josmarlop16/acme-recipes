@@ -18,6 +18,10 @@ patron.patronage.list.label.published = Published
 
 patron.patronage.list.label.inventor = Inventor
 
+patron.patronage.list.label.creation-moment = Creation moment
+patron.patronage.list.label.startDate = Start date
+patron.patronage.list.label.endDate = End Date
+
 patron.patronage.inventor.list.label.username = Inventor's Name
 patron.patronage.inventor.list.label.company = Company
 patron.patronage.inventor.list.label.statement = Statement
@@ -30,3 +34,5 @@ patron.patronage.form.button.publish = Publish
 
 patron.patronage.form.error.negative-budget = The amount selected could not be negative
 patron.patronage.form.error.accepted-currency = Invalid currency
+
+patron.patronage.form.error.period-of-time = Invalid period of time
