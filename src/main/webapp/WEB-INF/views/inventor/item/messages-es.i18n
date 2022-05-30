@@ -29,7 +29,7 @@ inventor.item.form.button.publish = Publicar
 inventor.item.form.button.create = Crear
 inventor.item.form.button.update = Actualizar
 inventor.item.form.button.delete = Eliminar
-inventor.invention.form.error.retailPrice-notAllowed= Por favor, usa la divisa por defecto del sistema
+inventor.invention.form.error.retailPrice-notAllowed= Por favor, usa una divisa aceptada del sistema
 inventor.item.form.error.code-exists= Código introducido ya existe
 
 form.error.spam = Contiene spam
