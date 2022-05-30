@@ -14,6 +14,7 @@ inventor.item.list.label.technology = Tecnología
 inventor.item.list.label.description = Descripción
 inventor.item.list.label.retailPrice = Precio
 inventor.item.list.label.link = Enlace
+inventor.invention.form.error.retailPrice-amountNotAllowed= La cantidad debe ser mayor a 0
 
 inventor.item.list.label.computedPrice= Precio en la divisa del sistema
 
