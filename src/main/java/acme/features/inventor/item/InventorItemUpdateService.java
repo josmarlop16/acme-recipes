@@ -99,9 +99,10 @@ public class InventorItemUpdateService implements AbstractUpdateService<Inventor
 			final String[] allowedCurrenciesArray=this.repository.findAllowedCurrencies();
 			final Set<String> allowedCurrencies=new HashSet<String>();
 			Collections.addAll(allowedCurrencies, allowedCurrenciesArray);
-			
 			errors.state(request, allowedCurrencies.contains(entity.getRetailPrice().getCurrency()) , "retailPrice", "inventor.invention.form.error.retailPrice-notAllowed");
-		}
+			errors.state(request, entity.getRetailPrice().getAmount()>0, "retailPrice", "inventor.invention.form.error.retailPrice-amountNotAllowed");		}
+		
+		
 		
 		
 		

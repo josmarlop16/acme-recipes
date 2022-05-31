@@ -121,6 +121,7 @@ public class InventorItemCreateService implements AbstractCreateService<Inventor
 		if (!errors.hasErrors("retailPrice")) {
 			final Boolean validateCurrency = this.validateRetailPrice(entity.getRetailPrice());
 			errors.state(request, validateCurrency , "retailPrice", "inventor.invention.form.error.retailPrice-notAllowed");
+			errors.state(request, entity.getRetailPrice().getAmount()>0, "retailPrice", "inventor.invention.form.error.retailPrice-amountNotAllowed");
 		}
        
 		
