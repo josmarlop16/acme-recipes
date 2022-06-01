@@ -14,7 +14,7 @@ inventor.patronage.list.label.code = Code
 inventor.patronage.list.label.stuff= Stuff
 inventor.patronage.list.label.budget= Budget
 inventor.patronage.list.label.computedPrice= Budget in System currency
-inventor.patronage.list.label.periodOfTime =Period of time
+inventor.patronage.list.label.creation-moment = Creation moment
 inventor.patronage.list.label.optionalLink= Link
 inventor.patronage.list.label.published = Published
 

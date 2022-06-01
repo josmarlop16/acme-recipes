@@ -47,7 +47,7 @@ public class PatronPatronageListByPatronService implements AbstractListService<P
 		assert entity != null;
 		assert model != null;
 		
-		request.unbind(entity, model, "status", "code", "stuff", "budget", "periodOfTime", "optionalLink");
+		request.unbind(entity, model, "status", "code", "stuff", "budget","creationMoment","startDate","endDate", "optionalLink");
 		
 	}
 }

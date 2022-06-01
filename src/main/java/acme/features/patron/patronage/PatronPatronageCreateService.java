@@ -72,6 +72,7 @@ public class PatronPatronageCreateService implements AbstractCreateService<Patro
 		result.setStartDate(startDate);
 		result.setEndDate(endDate);
 		result.setCreationMoment(now);
+		result.setPublished(false);
 		result.setStatus(PatronageStatus.PROPOSED);
 		result.setPatron(p);
 		
@@ -84,7 +85,7 @@ public class PatronPatronageCreateService implements AbstractCreateService<Patro
 		assert entity != null;
 		assert errors != null;
 		entity.setInventor(this.repository.findInventorById(Integer.valueOf(request.getModel().getAttribute("inventorId").toString())));
-		request.bind(entity, errors, "status", "code", "stuff", "budget","creationMoment","startDate","endDate", "optionalLink", "published");
+		request.bind(entity, errors, "status", "code", "stuff", "budget","creationMoment","startDate","endDate", "optionalLink","published");
 	}
 	
 	@Override
@@ -107,14 +108,12 @@ public class PatronPatronageCreateService implements AbstractCreateService<Patro
 			final Boolean validateCurrency = this.validateBudget(entity.getBudget());
 			errors.state(request, validateCurrency , "budget", "inventor.invention.form.error.retailPrice-notAllowed");
 		}
-		
+		 
 		if (!errors.hasErrors("budget")) {
 
 			final List<String> acceptedCurrency= this.currencyRepository.findCurrencyNames();
 			final String selectedCurrency = entity.getBudget().getCurrency();
 			errors.state(request,acceptedCurrency.contains(selectedCurrency),"budget", "patron.patronage.form.error.accepted-currency");
-				
-			
 			errors.state(request, entity.getBudget().getAmount() > 0, "budget", "patron.patronage.form.error.negative-budget");
 		}
 		
@@ -137,7 +136,7 @@ public class PatronPatronageCreateService implements AbstractCreateService<Patro
 		assert model != null;
 		final List<Inventor> lsInventors= this.repository.findAllInventors();
 		model.setAttribute("inventors", lsInventors);
-		request.unbind(entity, model, "status", "code", "stuff", "budget","creationMoment","startDate","endDate", "optionalLink", "published");
+		request.unbind(entity, model, "status", "code", "stuff", "budget","creationMoment","startDate","endDate", "optionalLink","published");
 	}
 
 

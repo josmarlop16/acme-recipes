@@ -48,17 +48,15 @@
 		</jstl:when>
 		
 		<jstl:when test="${command == 'create'}">
-			<acme:input-integer code="inventor.quantity.form.label.quantity" path="quantity"/>		
-			<acme:input-select code="inventor.quantity.form.label.select" path="item.name">
+			<acme:input-integer code="inventor.quantity.form.label.quantity" path="quantity"/>	
+				
+			<acme:input-select code="inventor.quantity.form.label.select" path="itemId">
 				<jstl:forEach items="${items}" var="item">
-					<acme:input-option code="${item.name}" value="${item.name}"/>
+					<acme:input-option code="${item.getName()}" value="${item.getId()}" selected="${item.getId() == itemId}"/>
 				</jstl:forEach>
 			</acme:input-select>
 			<acme:submit code="inventor.quantity.form.button.create" action="/inventor/quantity/create?toolkitId=${toolkitId}"/>			
 		</jstl:when>	
-		
-		
-		
 	</jstl:choose>
 	
 </acme:form>

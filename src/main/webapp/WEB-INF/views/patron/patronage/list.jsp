@@ -20,6 +20,6 @@
 	<acme:list-column code="patron.patronage.list.label.code" path="code" width="20%"/>
 	<acme:list-column code="patron.patronage.list.label.stuff" path="stuff" width="20%"/>
 	<acme:list-column code="patron.patronage.list.label.budget" path="budget" width="20%"/>
-	<acme:list-column code="patron.patronage.list.label.periodOfTime" path="periodOfTime" width="20%"/>
+	<acme:list-column code="patron.patronage.list.label.creation-moment" path="creationMoment" width="20%"/>
 	<acme:list-column code="patron.patronage.list.label.optionalLink" path="optionalLink" width="20%"/>
 </acme:list> 
