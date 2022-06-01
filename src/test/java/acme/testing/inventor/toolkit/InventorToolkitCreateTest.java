@@ -21,7 +21,7 @@ public class InventorToolkitCreateTest extends TestHarness {
 
 		super.checkListingExists();
 
-		super.clickOnButton("Create");
+		super.clickOnButton("Create"); 
 		super.fillInputBoxIn("title", title);
 		super.fillInputBoxIn("code", code);
 		super.fillInputBoxIn("description", description);

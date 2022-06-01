@@ -55,17 +55,45 @@ public class InventorItemDeleteTest extends TestHarness {
 		super.checkNotErrorsExist();
 		
 		super.signOut();
-
-		
-		
-		
-
 		
 	}
 	
-		// En este caso, segun esta implementado, no tendria sentido hacer un caso negativo, ya que un patron siempre puede borrar los chimpums
-		// creados por el, siempre le aparecera la opcion de borrar.
-
+	
+	@ParameterizedTest
+	@CsvFileSource(resources = "/inventor/item/delete-negative-component.csv", encoding = "utf-8", numLinesToSkip = 1)
+	@Order(20)
+	public void negativeComponentTest(final int recordIndex,final String name, final String code, final String technology, 
+							 final String description, final String retailPrice, final String link, final String itemType) {
+		super.signIn("administrator", "administrator");
+		
+		super.clickOnMenu("Inventor", "Components list");
+		
+		super.checkListingExists();
+		super.clickOnListingRecord(recordIndex);
+		super.checkNotButtonExists("Delete");
+		
+		
+		super.signOut();
+		
+	}
+	
+	@ParameterizedTest
+	@CsvFileSource(resources = "/inventor/item/delete-negative-tool.csv", encoding = "utf-8", numLinesToSkip = 1)
+	@Order(30)
+	public void negativeToolTest(final int recordIndex,final String name, final String code, final String technology, 
+							 final String description, final String retailPrice, final String link, final String itemType) {
+		super.signIn("administrator", "administrator");
+		
+		super.clickOnMenu("Inventor", "Tool list");
+		
+		super.checkListingExists();
+		super.clickOnListingRecord(recordIndex);
+		super.checkNotButtonExists("Delete");
+		
+		
+		super.signOut();
+		
+	}
 
 
 }
