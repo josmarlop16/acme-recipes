@@ -1,0 +1,7 @@
+recordIndex,name,code,technology,description,retailPrice,link,itemType
+0,Component-01,TRS-897-O,Technology-01,This is a description,EUR 13.00,http://www.component-01.org,COMPONENT
+1,Component-02,TRS-897-V,Technology-01,This is a description,EUR 15.00,http://www.component-02.org,COMPONENT
+2,Component-03,TRS-897-Z,Technology-02,This is a description,EUR 15.00,http://www.component-03.org,COMPONENT
+3,Tool-01,TOO-435-C,Technology-01,This is a description,EUR 10.00,http://www.tool-01.org,TOOL
+4,Tool-02,TOO-435-D,Technology-02,This is a description,EUR 13.00,http://www.tool-02.org,TOOL
+5,Tool-03,TOO-435-E,Technology-02,This is a description,EUR 13.00,http://www.tool-03.org,TOOL
