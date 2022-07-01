@@ -17,7 +17,7 @@ master.menu.sign-out = Salir
 master.menu.toolkits = Toolkits
 master.menu.components = Componentes
 master.menu.tools = Herramientas
-master.menu.inventor.patronages = Patrones
+master.menu.chef.patronages = Patrones
 master.menu.userAccounts = Usuarios
 
 # master.menu.anonymous #######################################################
@@ -69,46 +69,46 @@ master.menu.authenticated.list-tools = Listar Herramientas
 
 
 
-# master.menu.patron ##########################################################
+# master.menu.epicure ##########################################################
 
-master.menu.patron = Patron
-master.menu.patron.dashboard = Dashboard
-master.menu.patron.list-patronages = Lista de patrones
-master.menu.patron.create-patronages = Crear patrones
-master.menu.patron.list-patronage-reports = Listar mis reportes
+master.menu.epicure = Epicure
+master.menu.epicure.dashboard = Dashboard
+master.menu.epicure.list-patronages = Lista de patrones
+master.menu.epicure.create-patronages = Crear patrones
+master.menu.epicure.list-patronage-reports = Listar mis reportes
 
-# master.menu.inventor ##########################################################
+# master.menu.chef ##########################################################
 
-master.menu.inventor = Inventor
-master.menu.inventor.tools = Herramientas
+master.menu.chef = Chef
+master.menu.chef.tools = Herramientas
 
-master.menu.inventor.list-tools = Lista de mis herramientas
-master.menu.inventor.toolkit = Kit de herramientas
-master.menu.inventor.list-toolkits = Lista de mis kits de herramientas
-master.menu.inventor.patronage-reports = Reportes de patrones
+master.menu.chef.list-tools = Lista de mis herramientas
+master.menu.chef.toolkit = Kit de herramientas
+master.menu.chef.list-toolkits = Lista de mis kits de herramientas
+master.menu.chef.patronage-reports = Reportes de patrones
 
-master.menu.inventor.items = Objetos
+master.menu.chef.items = Objetos
 master.menu.items = Objetos
-master.menu.inventor.components = Componentes
-master.menu.inventor.list-tools = Lista de herramientas
-master.menu.inventor.list-components = Lista de componentes
-master.menu.inventor.patronages = Patrocinios
+master.menu.chef.components = Componentes
+master.menu.chef.list-tools = Lista de herramientas
+master.menu.chef.list-components = Lista de componentes
+master.menu.chef.patronages = Patrocinios
 
-master.menu.inventor.list-patronage-reports = Lista de reportes de patrones
-master.menu.inventor.list-patronages = Lista de patrones
+master.menu.chef.list-patronage-reports = Lista de reportes de patrones
+master.menu.chef.list-patronages = Lista de patrones
 
 # master.menu.user-account ####################################################
 
 master.menu.user-account = Cuenta
 master.menu.user-account.general-data = Datos generales
 
-master.menu.user-account.patron = Datos de patron
-master.menu.user-account.become-patron = Hazte patron
+master.menu.user-account.epicure = Datos de sibarita
+master.menu.user-account.become-epicure = Hazte sibarita
 
 
 # master.menu.announcements ###################################################
 master.menu.announcements = Anuncios
 master.menu.authenticated.list-announcements = Anuncios recientes
 
-master.menu.user-account.become-inventor = Hazte inventor
-master.menu.user-account.inventor = Datos de inventor
+master.menu.user-account.become-chef = Hazte chef
+master.menu.user-account.chef = Datos de chef

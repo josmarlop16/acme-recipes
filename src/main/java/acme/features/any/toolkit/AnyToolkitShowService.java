@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
 
 import acme.entities.quantity.Quantity;
 import acme.entities.toolkit.Toolkit;
-import acme.features.inventor.toolkit.InventorToolkitRepository;
+import acme.features.chef.toolkit.ChefToolkitRepository;
 import acme.features.moneyExchange.MoneyExchangePerform;
 import acme.framework.components.models.Model;
 import acme.framework.controllers.Request;
@@ -23,7 +23,7 @@ public class AnyToolkitShowService implements AbstractShowService<Any, Toolkit>{
 	// Internal state ---------------------------------------------------------
 
 	@Autowired
-	protected InventorToolkitRepository repository;
+	protected ChefToolkitRepository repository;
 
 	@Override
 	public boolean authorise(final Request<Toolkit> request) {

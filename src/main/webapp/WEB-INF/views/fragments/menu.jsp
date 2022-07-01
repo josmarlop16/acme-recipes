@@ -10,7 +10,7 @@
 - they accept any liabilities with respect to them.
 --%>
 
-<%@page language="java" import="acme.framework.helpers.PrincipalHelper,acme.roles.Patron,acme.roles.Inventor"%>
+<%@page language="java" import="acme.framework.helpers.PrincipalHelper,acme.roles.Patron,acme.roles.Chef"%>
 
 <%@taglib prefix="jstl" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@taglib prefix="tiles" uri="http://tiles.apache.org/tags-tiles"%>
@@ -55,13 +55,13 @@
 		</acme:menu-option> 
 		
 
-    <!-- Inventor -->
-		<acme:menu-option code="master.menu.inventor" access="hasRole('Inventor')">	
-			<acme:menu-suboption code="master.menu.inventor.list-tools" action="/inventor/item/list"/>
-			<acme:menu-suboption code="master.menu.inventor.list-components" action="/inventor/item/list-component"/>
-			<acme:menu-suboption code="master.menu.inventor.list-toolkits" action="/inventor/toolkit/list"/>
-      <acme:menu-suboption code="master.menu.inventor.list-patronage-reports" action="/inventor/patronage-report/list"/>
-			<acme:menu-suboption code="master.menu.inventor.list-patronages" action="/inventor/patronage/list"/>
+    <!-- Chef -->
+		<acme:menu-option code="master.menu.chef" access="hasRole('Chef')">	
+			<acme:menu-suboption code="master.menu.chef.list-tools" action="/chef/item/list"/>
+			<acme:menu-suboption code="master.menu.chef.list-components" action="/chef/item/list-component"/>
+			<acme:menu-suboption code="master.menu.chef.list-toolkits" action="/chef/toolkit/list"/>
+      <acme:menu-suboption code="master.menu.chef.list-patronage-reports" action="/chef/patronage-report/list"/>
+			<acme:menu-suboption code="master.menu.chef.list-patronages" action="/chef/patronage/list"/>
 		</acme:menu-option>
 
 
@@ -70,11 +70,11 @@
 		</acme:menu-option>
 		
 		<!-- Patron -->
-		<acme:menu-option code="master.menu.patron" access="hasRole('Patron')">
-			<acme:menu-suboption code="master.menu.patron.dashboard" action="/patron/dashboard/show"/>
-			<acme:menu-suboption code="master.menu.patron.list-patronages" action="/patron/patronage/list"/>
-			<acme:menu-suboption code="master.menu.patron.create-patronages" action="/patron/patronage/create"/>
-			<acme:menu-suboption code="master.menu.patron.list-patronage-reports" action="/patron/patronage-report/list"/>
+		<acme:menu-option code="master.menu.epicure" access="hasRole('Epicure')">
+			<acme:menu-suboption code="master.menu.epicure.dashboard" action="/epicure/dashboard/show"/>
+			<acme:menu-suboption code="master.menu.epicure.list-patronages" action="/epicure/patronage/list"/>
+			<acme:menu-suboption code="master.menu.epicure.create-patronages" action="/epicure/patronage/create"/>
+			<acme:menu-suboption code="master.menu.epicure.list-patronage-reports" action="/epicure/patronage-report/list"/>
 			
 		</acme:menu-option>
 
@@ -97,10 +97,10 @@
 		<acme:menu-option code="master.menu.sign-in" action="/master/sign-in" access="isAnonymous()"/>
 		<acme:menu-option code="master.menu.user-account" access="isAuthenticated()">
 			<acme:menu-suboption code="master.menu.user-account.general-data" action="/authenticated/user-account/update"/>		
-			<acme:menu-suboption code="master.menu.user-account.become-patron" action="/authenticated/patron/create" access="!hasRole('Patron')"/>
-			<acme:menu-suboption code="master.menu.user-account.patron" action="/authenticated/patron/update" access="hasRole('Patron')"/>
-			<acme:menu-suboption code="master.menu.user-account.become-inventor" action="/authenticated/inventor/create" access="!hasRole('Inventor')"/>
-			<acme:menu-suboption code="master.menu.user-account.inventor" action="/authenticated/inventor/update" access="hasRole('Inventor')"/>
+			<acme:menu-suboption code="master.menu.user-account.become-epicure" action="/authenticated/epicure/create" access="!hasRole('Epicure')"/>
+			<acme:menu-suboption code="master.menu.user-account.epicure" action="/authenticated/epicure/update" access="hasRole('Epicure')"/>
+			<acme:menu-suboption code="master.menu.user-account.become-chef" action="/authenticated/chef/create" access="!hasRole('Chef')"/>
+			<acme:menu-suboption code="master.menu.user-account.chef" action="/authenticated/chef/update" access="hasRole('Chef')"/>
 		</acme:menu-option>
 		<acme:menu-option code="master.menu.sign-out" action="/master/sign-out" access="isAuthenticated()"/>
 	</acme:menu-right>

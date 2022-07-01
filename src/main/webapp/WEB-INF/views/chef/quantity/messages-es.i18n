@@ -1,0 +1,18 @@
+chef.quantity.form.label.quantity= Cantidad
+chef.quantity.list.label.quantity= Cantidad
+chef.item.form.label.name = Nombre
+chef.item.form.label.code = Código
+chef.item.form.label.technology = Tecnología
+chef.item.form.label.description = Descripción
+chef.item.form.label.type = Tipo
+chef.item.form.label.link = Enlace
+chef.item.form.button.update = actualizar
+chef.item.form.button.delete = borrar
+chef.quantity.form.label.select = selector
+chef.quantity.list.button.create = crear
+chef.quantity.list.label.computedPrice= Precio en la divisa del sistema
+chef.item.form.label.price= Precio
+chef.quantity.form.button.create= crear
+
+chef.quantity.form.error.nullquantity= Cantidad nula
+chef.quantity.form.error.one-tool= Ya hay una herramienta de este tipo asociada

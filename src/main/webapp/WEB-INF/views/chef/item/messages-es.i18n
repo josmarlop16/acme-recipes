@@ -1,0 +1,36 @@
+# i18n-es.i18n
+#
+# Copyright (C) 2012-2022 Rafael Corchuelo.
+#
+# In keeping with the traditional purpose of furthering education and research, it is
+# the policy of the copyright owner to permit non-commercial use and redistribution of
+# this software. It has been tested carefully, but it is not guaranteed for any particular
+# purposes.  The copyright owner does not offer any warranties or representations, nor do
+# they accept any liabilities with respect to them.
+
+chef.item.list.label.name = Nombre
+chef.item.list.label.code = Código
+chef.item.list.label.technology = Tecnología
+chef.item.list.label.description = Descripción
+chef.item.list.label.retailPrice = Precio
+chef.item.list.label.link = Enlace
+chef.invention.form.error.retailPrice-amountNotAllowed= La cantidad debe ser mayor a 0
+
+chef.item.list.label.computedPrice= Precio en la divisa del sistema
+
+chef.item.list.label.published = Publicado
+chef.item.list.label.type= Tipo
+true= Verdad
+false= Falso
+component=Componente
+tool=Herramienta
+
+chef.item.form.button.publish = Publicar
+chef.item.form.button.create = Crear
+chef.item.form.button.update = Actualizar
+chef.item.form.button.delete = Eliminar
+chef.invention.form.error.retailPrice-notAllowed= Por favor, usa una divisa aceptada del sistema
+chef.item.form.error.code-exists= Código introducido ya existe
+
+form.error.spam = Contiene spam
+

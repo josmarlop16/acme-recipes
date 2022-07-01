@@ -1,6 +1,6 @@
-key,title,code,description,assemblyNotes,link,published,key:inventor
-toolkit-01,Toolkit-01,AEG-234-R,This is a description,This is an assembyNote,http://www.toolkit-01.org,true,inventor-01
-toolkit-03,Toolkit-03,AEJ-239-H,This is a description,This is an assembyNote,http://www.toolkit-03.org,true,inventor-03
-toolkit-05,Toolkit-05,AEH-247-K,This is a description,This is an assembyNote,http://www.toolkit-05.org,true,inventor-01
-toolkit-06,Toolkit-06,AGF-536-L,This is a description,This is an assembyNote,http://www.toolkit-06.org,false,inventor-03
-toolkit-07,Toolkit-07,AGF-536-M,This is a description,This is an assembyNote,http://www.toolkit-07.org,false,inventor-01
+key,title,code,description,assemblyNotes,link,published,key:chef
+toolkit-01,Toolkit-01,AEG-234-R,This is a description,This is an assembyNote,http://www.toolkit-01.org,true,chef-01
+toolkit-03,Toolkit-03,AEJ-239-H,This is a description,This is an assembyNote,http://www.toolkit-03.org,true,chef-03
+toolkit-05,Toolkit-05,AEH-247-K,This is a description,This is an assembyNote,http://www.toolkit-05.org,true,chef-01
+toolkit-06,Toolkit-06,AGF-536-L,This is a description,This is an assembyNote,http://www.toolkit-06.org,false,chef-03
+toolkit-07,Toolkit-07,AGF-536-M,This is a description,This is an assembyNote,http://www.toolkit-07.org,false,chef-01

@@ -8,12 +8,12 @@
 # purposes.  The copyright owner does not offer any warranties or representations, nor do
 # they accept any liabilities with respect to them.
 
-master.company.title = Acme Toolkits
+master.company.title = Acme Recipes
 master.company.text = \
-	Acme - Toolkits \
+	Acme - Recipes \
 	estudiantes de la asignatura Diseño y Pruebas de la titulación de \
 	Ingeniería del Software en la Universidad de Sevilla. 
-master.company.name = Acme Toolkits, Inc.
-master.company.address = 01 Acme Toolkits, Seville
+master.company.name = Acme Recipes, Inc.
+master.company.address = 01 Acme Recipes, Seville
 master.company.phone = +1 000 111 222
-master.company.email = toolkits@info.com
+master.company.email = recipes@info.com

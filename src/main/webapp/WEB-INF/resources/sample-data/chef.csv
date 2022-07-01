@@ -1,0 +1,4 @@
+key,key:user-account,organisation,assertion,optionalLink
+chef-01,user-account-administrator-01,Organisation-01,This is a assertion,http://www.chef-01.org
+chef-02,user-account-chef-02,Organisation-02,This is a assertion,http://www.chef-02.org
+chef-03,user-account-chef-03,Organisation-03,This is a assertion,http://www.chef-03.org

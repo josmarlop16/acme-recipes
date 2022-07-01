@@ -1,0 +1,4 @@
+key,key:user-account,organisation,assertion,optionalLink
+epicure-01,user-account-administrator-01,Organisation-01,This is a assertion,http://epicure-01.org
+epicure-02,user-account-epicure-02,Organisation-02,This is a assertion,http://epicure-02.org
+epicure-03,user-account-epicure-03,Organisation-03,This is a assertion,http://epicure-03.org

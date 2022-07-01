@@ -1,0 +1,39 @@
+# i18n-en.i18n
+#
+# Copyright (C) 2012-2022 Rafael Corchuelo.
+#
+# In keeping with the traditional purpose of furthering education and research, it is
+# the policy of the copyright owner to permit non-commercial use and redistribution of
+# this software. It has been tested carefully, but it is not guaranteed for any particular
+# purposes.  The copyright owner does not offer any warranties or representations, nor do
+# they accept any liabilities with respect to them.
+
+
+chef.patronage.list.label.status = Status
+chef.patronage.list.label.code = Code
+chef.patronage.list.label.stuff= Stuff
+chef.patronage.list.label.budget= Budget
+chef.patronage.list.label.computedPrice= Budget in System currency
+chef.patronage.list.label.creation-moment = Creation moment
+chef.patronage.list.label.optionalLink= Link
+chef.patronage.list.label.published = Published
+
+chef.patronage.patron.list.label.username = Patron's Name
+chef.patronage.patron.list.label.company= Company
+chef.patronage.patron.list.label.statement= Statement
+chef.patronage.patron.list.label.optionalLink= Link
+
+anonymous.toolkit.list.label.title = Title
+anonymous.toolkit.list.label.code = Code
+anonymous.toolkit.list.label.description = Description
+anonymous.toolkit.list.label.assemblyNotes = Assembly Notes
+anonymous.toolkit.list.label.link = Link
+anonymous.toolkit.list.label.item.name = Item
+
+anonymous.toolkit.form.button.item = Check 
+
+# FORM
+chef.patronage.form.button.accept = Accept
+chef.patronage.form.button.decline = Decline
+
+

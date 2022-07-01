@@ -1,0 +1,19 @@
+chef.quantity.form.label.quantity= Quantity
+chef.quantity.list.label.quantity=Quantity
+chef.item.form.label.name = Name
+chef.item.form.label.code = Code
+chef.item.form.label.technology = Technology
+chef.item.form.label.description = Description
+chef.item.form.label.type = Type
+chef.item.form.label.link = Link
+chef.item.form.button.update = Update
+chef.item.form.button.delete = Delete
+chef.quantity.form.label.select = Select
+chef.quantity.list.button.create = Create
+chef.quantity.list.label.computedPrice= Retail price in system currency
+chef.item.form.label.price= Retail price
+chef.quantity.form.button.create= Create
+chef.quantity.form.error.nullquantity= Not null quantity
+chef.quantity.form.error.one-tool= Toolkit already has one tool of this type associated
+
+
