@@ -1,27 +1,27 @@
-package acme.features.any.chirp;
+package acme.features.any.peep;
 
 import javax.annotation.PostConstruct;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 
-import acme.entities.chirp.Chirp;
+import acme.entities.peep.Peep;
 import acme.framework.controllers.AbstractController;
 import acme.framework.roles.Any;
 
 @Controller
-public class AnyChirpController extends AbstractController<Any, Chirp>{
+public class AnyPeepController extends AbstractController<Any, Peep>{
 	
 	// Internal state ---------------------------------------------------------
 
 	@Autowired
-	protected AnyChirpListAllService listAllService;
+	protected AnyPeepListAllService listAllService;
 	
 	@Autowired
-	protected AnyChirpCreateService createService;
+	protected AnyPeepCreateService createService;
 	
 	@Autowired
-	protected AnyChirpShowService showService;
+	protected AnyPeepShowService showService;
 
 	// Constructors -----------------------------------------------------------
 

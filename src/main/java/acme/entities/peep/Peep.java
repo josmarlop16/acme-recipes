@@ -1,4 +1,4 @@
-package acme.entities.chirp;
+package acme.entities.peep;
 
 import java.util.Date;
 
@@ -20,7 +20,7 @@ import lombok.Setter;
 @Entity
 @Getter
 @Setter
-public class Chirp extends AbstractEntity{
+public class Peep extends AbstractEntity{
 	
 	// Serialisation identifier -----------------------------------------------
 	protected static final long	serialVersionUID	= 1L;
@@ -28,19 +28,19 @@ public class Chirp extends AbstractEntity{
 	// Attributes -------------------------------------------------------------
 	@Past
 	@Temporal(TemporalType.TIMESTAMP)
-	protected Date creationMoment;
+	protected Date instantiationMoment;
 	
 	@NotBlank
 	@Length(max = 100)
-	protected String title;
+	protected String heading;
 	
 	@NotBlank
 	@Length(max = 100)
-	protected String author;
+	protected String writer;
 	
 	@NotBlank
 	@Length(max = 255)
-	protected String body;
+	protected String text;
 	
 	@Email
 	protected String emailAddress;

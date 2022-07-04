@@ -48,15 +48,15 @@ master.menu.administrator.create-currency = Create Currencies
 master.menu.administrator.create-spam = Create Spam Terms
 
 # master.menu.any ###################################################
-master.menu.any.create-chirps = Create Chirps
-master.menu.any.list-chirps = List Chirps
+master.menu.any.create-peeps = Create Peeps
+master.menu.any.list-peeps = List Peeps
 master.menu.any.list-tools = Tools list
 master.menu.any.list-components = Components list
 master.menu.any.list-toolkits = List Toolkits
 
-# master.menu.chirps ##########################################################
+# master.menu.peeps ##########################################################
 
-master.menu.chirps = Chirps
+master.menu.peeps = Peeps
 
 # master.menu.tools ###########################################################
 

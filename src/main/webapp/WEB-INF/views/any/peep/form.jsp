@@ -16,19 +16,19 @@
 <%@taglib prefix="acme" uri="urn:jsptagdir:/WEB-INF/tags"%>
 
 <acme:form>
-	<acme:input-textbox code="any.chirp.list.label.creationMoment" path="creationMoment"/>
-	<acme:input-textbox code="any.chirp.list.label.title" path="title"/>
-	<acme:input-textbox code="any.chirp.list.label.author" path="author"/>
-	<acme:input-textbox code="any.chirp.list.label.body" path="body"/>
-	<acme:input-textbox code="any.chirp.list.label.emailAddress" path="emailAddress"/>
+	<acme:input-textbox code="any.peep.list.label.instantiationMoment" path="instantiationMoment"/>
+	<acme:input-textbox code="any.peep.list.label.heading" path="heading"/>
+	<acme:input-textbox code="any.peep.list.label.writer" path="writer"/>
+	<acme:input-textbox code="any.peep.list.label.text" path="text"/>
+	<acme:input-textbox code="any.peep.list.label.emailAddress" path="emailAddress"/>
 	<jstl:choose>
 		<jstl:when test="${command == 'create'}">
-			<acme:input-checkbox code="any.chirp.form.confirm" path="confirm"/>
+			<acme:input-checkbox code="any.peep.form.confirm" path="confirm"/>
 		</jstl:when>
 		</jstl:choose>
 	<jstl:choose>
 		<jstl:when test="${command == 'create'}">
-			<acme:submit code="any.chirp.form.button.create" action = "/any/chirp/create"/>
+			<acme:submit code="any.peep.form.button.create" action = "/any/peep/create"/>
 		</jstl:when>
 	</jstl:choose>
 	

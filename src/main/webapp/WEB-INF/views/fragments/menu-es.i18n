@@ -53,12 +53,12 @@ master.menu.administrator.create-spam = Crear Terminos de Spam
 # master.menu.authenticated ###################################################
 
 
-master.menu.authenticated.list-chirps = Listar Chirps
-master.menu.any.create-chirps = Crear Chirps
+master.menu.authenticated.list-peeps = Listar Peeps
+master.menu.any.create-peeps = Crear Peeps
 
-# master.menu.chirps ##########################################################
+# master.menu.peeps ##########################################################
 
-master.menu.chirps = Chirps
+master.menu.peeps = Peeps
 
 master.menu.authenticated.list-toolkits = Listar Toolkits
 master.menu.authenticated.configuration = Configuración

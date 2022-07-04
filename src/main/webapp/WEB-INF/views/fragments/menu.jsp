@@ -29,9 +29,9 @@
 		
 		
         <!-- Any principals -->
-		<acme:menu-option code="master.menu.chirps" access="permitAll()">
-			<acme:menu-suboption code="master.menu.any.list-chirps" action="/any/chirp/list"/>	
-			<acme:menu-suboption code="master.menu.any.create-chirps" action="/any/chirp/create"/>		
+		<acme:menu-option code="master.menu.peeps" access="permitAll()">
+			<acme:menu-suboption code="master.menu.any.list-peeps" action="/any/peep/list"/>	
+			<acme:menu-suboption code="master.menu.any.create-peeps" action="/any/peep/create"/>		
 		</acme:menu-option>
 		
 		<acme:menu-option code="master.menu.toolkits" access="permitAll()">
